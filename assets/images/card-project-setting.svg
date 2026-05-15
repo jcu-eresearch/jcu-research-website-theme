@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Abstract project setting image</title>
+  <rect width="900" height="506" fill="#00857A"/>
+  <path d="M0 340c110-64 220-74 330-30s202 46 300-22 185-80 270-36v254H0z" fill="#005EB8"/>
+  <circle cx="650" cy="130" r="82" fill="#F6C643"/>
+  <path d="M174 310l92-150 92 150z" fill="#ffffff" opacity=".82"/>
+  <path d="M282 310l122-198 122 198z" fill="#ffffff" opacity=".52"/>
+  <rect x="120" y="310" width="540" height="24" rx="12" fill="#ffffff" opacity=".42"/>
+</svg>

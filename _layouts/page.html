@@ -27,6 +27,8 @@ layout: default
         {% include blocks/gallery.html block=block %}
       {% when 'partner-logos' %}
         {% include blocks/partner-logos.html block=block %}
+      {% when 'page-cards' %}
+        {% include blocks/page-cards.html block=block %}
     {% endcase %}
   {% endfor %}
 </article>

@@ -15,6 +15,13 @@ blocks:
       - title: "Contact us"
         image: "/assets/images/gallery-contact.svg"
         url: "/contact/"
+  - type: page-cards
+    title: "Background pages"
+    folder: "background-pages/"
+    columns: 1
+    link_text: "Read more"
+    content: |
+      These cards are generated from Markdown pages in the `background-pages` folder.
 ---
 
 Use headings, lists, links, and images in Markdown to build out the background narrative over time.

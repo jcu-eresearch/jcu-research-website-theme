@@ -298,6 +298,80 @@ a.partner-logo:hover {
   object-fit: contain;
 }
 
+.page-cards-intro {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+}
+
+.page-cards {
+  display: grid;
+  grid-template-columns: repeat(var(--page-card-columns), minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.page-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.page-card-image {
+  display: block;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.page-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.page-card-image:hover img {
+  transform: scale(1.04);
+}
+
+.page-card-body {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.page-card-body h3 {
+  color: var(--color-primary);
+}
+
+.page-card-body p {
+  margin: 0 0 1rem;
+}
+
+.page-card-link {
+  margin-top: auto;
+  font-weight: 800;
+}
+
+.page-cards--single {
+  grid-template-columns: 1fr;
+}
+
+.page-cards--single .page-card {
+  display: grid;
+  grid-template-columns: minmax(12rem, 32%) minmax(0, 1fr);
+}
+
+.page-cards--single .page-card-image img {
+  height: 100%;
+  min-height: 13rem;
+  aspect-ratio: auto;
+}
+
 @media (max-width: 900px) {
   .site-shell {
     display: block;
@@ -348,6 +422,20 @@ a.partner-logo:hover {
 
   .partner-logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .page-cards--single .page-card {
+    grid-template-columns: 1fr;
+  }
+
+  .page-cards--single .page-card-image img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
 
   h1 {

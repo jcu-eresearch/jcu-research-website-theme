@@ -102,6 +102,40 @@ Then add a logo block to any page:
       logo: "/assets/images/partner-placeholder.svg"
 ```
 
+### Page cards
+
+Set the default number of cards per row in `_config.yml`:
+
+```yml
+theme_settings:
+  page_card_columns: 3
+  page_card_link_text: "View page"
+```
+
+Then add a card block to any page. The `folder` value matches Markdown pages in that folder:
+
+```yml
+- type: page-cards
+  title: "Background pages"
+  folder: "background-pages/"
+  columns: 2
+  link_text: "Read more"
+```
+
+Each page in the folder can provide card metadata:
+
+```yml
+---
+title: Research Context
+permalink: /background/research-context/
+order: 1
+image: "/assets/images/card-research-context.svg"
+summary: "A short overview of the project setting."
+---
+```
+
+If `columns: 1`, each card uses a wide layout with the image on the left and the summary on the right on desktop screens.
+
 ## Run locally
 
 Use Ruby `3.3.4` to match the GitHub Pages build environment, then run:

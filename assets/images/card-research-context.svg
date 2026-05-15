@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Abstract research context image</title>
+  <rect width="900" height="506" fill="#005EB8"/>
+  <circle cx="190" cy="150" r="92" fill="#F6C643"/>
+  <rect x="330" y="96" width="420" height="58" rx="12" fill="#ffffff" opacity=".8"/>
+  <rect x="330" y="196" width="300" height="42" rx="10" fill="#ffffff" opacity=".45"/>
+  <rect x="330" y="276" width="390" height="42" rx="10" fill="#ffffff" opacity=".45"/>
+  <path d="M110 398c120-92 240-98 360-18s214 82 320-6v132H110z" fill="#00857A"/>
+</svg>

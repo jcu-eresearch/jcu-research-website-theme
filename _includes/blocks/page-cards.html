@@ -1,0 +1,38 @@
+<section class="content-block">
+  {% if include.block.title %}
+    <h2>{{ include.block.title }}</h2>
+  {% endif %}
+  {% if include.block.content %}
+    <div class="prose page-cards-intro">
+      {{ include.block.content | markdownify }}
+    </div>
+  {% endif %}
+
+  {% assign cards_folder = include.block.folder | default: "" %}
+  {% assign page_card_columns = include.block.columns | default: site.theme_settings.page_card_columns | default: 3 %}
+  {% assign page_card_link_text = include.block.link_text | default: site.theme_settings.page_card_link_text | default: "View page" %}
+  {% assign card_pages = site.pages | where_exp: "item", "item.path contains cards_folder" | sort: "order" %}
+
+  <div class="page-cards{% if page_card_columns == 1 %} page-cards--single{% endif %}" style="--page-card-columns: {{ page_card_columns }};">
+    {% for card_page in card_pages %}
+      {% unless card_page.path == page.path or card_page.name == 'index.md' %}
+        <article class="page-card">
+          {% if card_page.image %}
+            <a class="page-card-image" href="{{ card_page.url | relative_url }}" aria-label="View {{ card_page.title }}">
+              <img src="{{ card_page.image | relative_url }}" alt="">
+            </a>
+          {% endif %}
+          <div class="page-card-body">
+            <h3>{{ card_page.title }}</h3>
+            {% if card_page.summary %}
+              <p>{{ card_page.summary }}</p>
+            {% elsif card_page.description %}
+              <p>{{ card_page.description }}</p>
+            {% endif %}
+            <a class="page-card-link" href="{{ card_page.url | relative_url }}">{{ page_card_link_text }}</a>
+          </div>
+        </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</section>
