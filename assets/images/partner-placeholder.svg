@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title">
+  <title id="title">Partner organisation logo placeholder</title>
+  <rect width="520" height="150" rx="10" fill="#ffffff"/>
+  <circle cx="88" cy="75" r="48" fill="#00857A"/>
+  <path d="M88 36l34 78H54z" fill="#F6C643" opacity=".9"/>
+  <text x="168" y="84" fill="#1D2939" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Partner</text>
+  <text x="168" y="116" fill="#667085" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Organisation</text>
+</svg>

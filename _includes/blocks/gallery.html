@@ -1,0 +1,13 @@
+<section class="content-block">
+  {% if include.block.title %}
+    <h2>{{ include.block.title }}</h2>
+  {% endif %}
+  <div class="image-gallery">
+    {% for item in include.block.items %}
+      <a class="gallery-item" href="{{ item.url | relative_url }}">
+        <img src="{{ item.image | relative_url }}" alt="">
+        <span>{{ item.title }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="content-block">
+  {% if include.block.title %}
+    <h2>{{ include.block.title }}</h2>
+  {% endif %}
+  {% if include.block.content %}
+    <div class="prose partner-logos-intro">
+      {{ include.block.content | markdownify }}
+    </div>
+  {% endif %}
+  {% assign partner_logo_columns = include.block.columns | default: site.theme_settings.partner_logo_columns | default: 4 %}
+  <div class="partner-logos" style="--partner-logo-columns: {{ partner_logo_columns }};">
+    {% for partner in include.block.partners %}
+      {% if partner.url %}
+        <a class="partner-logo" href="{{ partner.url }}" aria-label="{{ partner.name }}">
+          <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}">
+        </a>
+      {% else %}
+        <div class="partner-logo">
+          <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

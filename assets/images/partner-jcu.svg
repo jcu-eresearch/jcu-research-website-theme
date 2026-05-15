@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title">
+  <title id="title">James Cook University logo placeholder</title>
+  <rect width="520" height="150" rx="10" fill="#ffffff"/>
+  <rect x="28" y="28" width="170" height="94" fill="#005EB8"/>
+  <rect x="28" y="100" width="170" height="22" fill="#F6C643"/>
+  <text x="52" y="88" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">JCU</text>
+  <text x="230" y="72" fill="#005EB8" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">James Cook</text>
+  <text x="230" y="106" fill="#1D2939" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">University</text>
+</svg>

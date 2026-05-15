@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Abstract background information image</title>
+  <rect width="800" height="600" fill="#0B4F8A"/>
+  <rect x="88" y="96" width="624" height="408" rx="20" fill="#ffffff" opacity=".16"/>
+  <path d="M140 180h380M140 250h520M140 320h460M140 390h300" stroke="#ffffff" stroke-width="28" stroke-linecap="round" opacity=".75"/>
+  <rect x="548" y="128" width="108" height="108" rx="12" fill="#F6C643"/>
+  <circle cx="600" cy="380" r="76" fill="#00857A"/>
+</svg>

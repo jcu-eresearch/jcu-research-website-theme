@@ -1,0 +1,19 @@
+<aside class="site-sidebar" aria-label="Primary navigation">
+  <div class="brand">
+    {% if site.theme_settings.logo %}
+      <a href="{{ '/' | relative_url }}" class="brand-logo" aria-label="{{ site.title }} home">
+        <img src="{{ site.theme_settings.logo | relative_url }}" alt="">
+      </a>
+    {% endif %}
+    <a class="brand-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  </div>
+
+  <nav class="site-nav">
+    {% for item in site.data.navigation %}
+      {% assign item_url = item.url | relative_url %}
+      <a href="{{ item_url }}" {% if page.url == item.url or page.url == item_url or page.title == item.title %}aria-current="page"{% endif %}>
+        {{ item.title }}
+      </a>
+    {% endfor %}
+  </nav>
+</aside>

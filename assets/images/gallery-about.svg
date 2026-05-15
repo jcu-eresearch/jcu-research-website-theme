@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Abstract research collaboration image</title>
+  <rect width="800" height="600" fill="#005EB8"/>
+  <circle cx="190" cy="210" r="92" fill="#F6C643"/>
+  <circle cx="520" cy="185" r="72" fill="#00857A"/>
+  <circle cx="610" cy="405" r="118" fill="#ffffff" opacity=".18"/>
+  <path d="M125 390c95-130 205-122 330-42s185 80 250-6v258H125z" fill="#ffffff" opacity=".22"/>
+  <path d="M210 210l310-25 90 220" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" opacity=".55"/>
+</svg>

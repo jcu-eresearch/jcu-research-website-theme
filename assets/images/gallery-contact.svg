@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">Abstract contact image</title>
+  <rect width="800" height="600" fill="#00857A"/>
+  <path d="M120 170h560v310H120z" fill="#ffffff" opacity=".2"/>
+  <path d="M120 170l280 190 280-190" fill="none" stroke="#ffffff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity=".82"/>
+  <circle cx="190" cy="420" r="54" fill="#F6C643"/>
+  <circle cx="620" cy="172" r="84" fill="#005EB8"/>
+</svg>

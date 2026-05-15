@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-labelledby="title">
+  <title id="title">JCU themed logo placeholder</title>
+  <rect width="240" height="120" rx="12" fill="#ffffff"/>
+  <path d="M28 24h184v72H28z" fill="#005EB8"/>
+  <path d="M28 78h184v18H28z" fill="#F6C643"/>
+  <text x="48" y="68" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">JCU</text>
+  <text x="48" y="91" fill="#102A43" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Research project</text>
+</svg>

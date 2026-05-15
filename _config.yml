@@ -1,0 +1,32 @@
+title: "Research Project Website"
+description: "A JCU-themed static website for research project communications."
+url: ""
+baseurl: ""
+
+theme_settings:
+  logo: "/assets/images/jcu-logo.svg"
+  font_family: "Inter, Arial, Helvetica, sans-serif"
+  heading_font_family: "Inter, Arial, Helvetica, sans-serif"
+  primary_color: "#005EB8"
+  secondary_color: "#F6C643"
+  accent_color: "#00857A"
+  text_color: "#1D2939"
+  muted_text_color: "#667085"
+  background_color: "#FFFFFF"
+  surface_color: "#F8FAFC"
+  border_color: "#D0D5DD"
+  partner_logo_max_height: "4rem"
+  partner_logo_columns: 4
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+exclude:
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - README.md

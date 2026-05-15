@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="page">
+  <header class="page-header">
+    <p class="eyebrow">{{ site.title }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.lead %}
+      <p class="page-lead">{{ page.lead }}</p>
+    {% endif %}
+  </header>
+
+  {% if content != blank %}
+    <section class="content-block prose">
+      {{ content }}
+    </section>
+  {% endif %}
+
+  {% for block in page.blocks %}
+    {% case block.type %}
+      {% when 'one-column' %}
+        {% include blocks/one-column.html block=block %}
+      {% when 'two-column' %}
+        {% include blocks/two-column.html block=block %}
+      {% when 'gallery' %}
+        {% include blocks/gallery.html block=block %}
+      {% when 'partner-logos' %}
+        {% include blocks/partner-logos.html block=block %}
+    {% endcase %}
+  {% endfor %}
+</article>

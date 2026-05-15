@@ -1,0 +1,17 @@
+<section class="content-block">
+  {% if include.block.title %}
+    <h2>{{ include.block.title }}</h2>
+  {% endif %}
+  <div class="two-column">
+    {% for column in include.block.columns %}
+      <div class="column-panel">
+        {% if column.title %}
+          <h3>{{ column.title }}</h3>
+        {% endif %}
+        <div class="prose">
+          {{ column.content | markdownify }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

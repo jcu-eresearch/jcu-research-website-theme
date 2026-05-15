@@ -1,0 +1,8 @@
+<section class="content-block content-block--single">
+  {% if include.block.title %}
+    <h2>{{ include.block.title }}</h2>
+  {% endif %}
+  <div class="prose">
+    {{ include.block.content | markdownify }}
+  </div>
+</section>
