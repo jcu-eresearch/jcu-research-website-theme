@@ -1,3 +1,10 @@
+---
+title: Text Formats
+permalink: /sample-content-pages/text-formats/
+order: 1
+image: "/assets/images/card-project-setting.svg"
+summary: "This page shows the various text formats available with this template."
+---
 # Heading 1
 ## Heading 2
 ### Heading 3
@@ -10,20 +17,20 @@
 Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
 
 # Inline text formats
-**bold text**
-*italicized text*
-`code`
-~~strikethrough~~
-I need to highlight these ==very important words==.
-Subscript example:  H~2~0
-Superscript example: X^2^
+**bold text**;
+*italicized text*;
+`code`;
+~~strikethrough~~;
+<mark>very important words</mark>;
+Subscript example:  H<sub>2</sub>0;
+Superscript example: X<sup>2</sup>
 
 # Block quote
-> Once upon a midnight dreary, while I pondered, weak and weary,
-> Over many a quaint and curious volume of forgotten lore,
-> While I nodded, nearly napping, suddenly there came a tapping,
-> As of some one gently rapping, rapping at my chamber door.
-> "'Tis some visitor," I muttered, "tapping at my chamber door-
+> Once upon a midnight dreary, while I pondered, weak and weary,\
+> Over many a quaint and curious volume of forgotten lore,\
+> While I nodded, nearly napping, suddenly there came a tapping,\
+> As of some one gently rapping, rapping at my chamber door.\
+> "'Tis some visitor," I muttered, "tapping at my chamber door-\
 >                  Only this, and nothing more."
 
 # Fenced code block
@@ -44,18 +51,21 @@ Here's a sentence with a footnote. [^1]
 
 ## Ordered list
 1. first item
+	- indented bullet point
 1. second item
+	1. indented numbered item
 1. third item
 
 ## Unordered list
-* top level
-** indented once
-*** indented twice
+* top level item 1
+	* indented once
+		* indented twice
+* top level item 2
 
 ## Unordered list alternate
 - first list item
--- indented item
---- further indent
+	- indented item
+		- further indent
 - second list item
 
 ## Task list
@@ -69,6 +79,7 @@ Here's a sentence with a footnote. [^1]
 # Definition list
 term 1
 : definition 1
+
 term 2
 : definition 2
 
@@ -76,7 +87,7 @@ term 2
 [link title](https://www.example.com)
 
 # Image
-![alt text](my-cat_750x1000.jpg)
+![alt text](/assets/images/my-cat_750x1000.jpeg)
 
 # Emoji
 That is so funny! :joy:

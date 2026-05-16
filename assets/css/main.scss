@@ -7,7 +7,8 @@
   --color-primary: {{ site.theme_settings.primary_color | default: "#005EB8" }};
   --color-secondary: {{ site.theme_settings.secondary_color | default: "#F6C643" }};
   --color-accent: {{ site.theme_settings.accent_color | default: "#00857A" }};
-  --color-text: {{ site.theme_settings.text_color | default: "#1D2939" }};
+  --color-text: {{ site.theme_settings.text_color | default: "#344054" }};
+  --color-heading: {{ site.theme_settings.heading_color | default: site.theme_settings.text_color | default: "#344054" }};
   --color-muted: {{ site.theme_settings.muted_text_color | default: "#667085" }};
   --color-bg: {{ site.theme_settings.background_color | default: "#FFFFFF" }};
   --color-surface: {{ site.theme_settings.surface_color | default: "#F8FAFC" }};
@@ -244,15 +245,21 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
+  color: var(--color-heading);
   line-height: 1.15;
   letter-spacing: 0;
 }
 
-h1 {
+.page-header h1 {
   margin: 0;
   color: var(--color-primary);
   font-size: clamp(2.35rem, 7vw, 4.75rem);
   max-width: 12ch;
+}
+
+.prose h1 {
+  margin: 1.6rem 0 0.9rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
 }
 
 h2 {
@@ -326,6 +333,15 @@ h3 {
 .prose p,
 .prose li {
   color: var(--color-text);
+}
+
+.prose dt {
+  color: var(--color-heading);
+  font-weight: 800;
+}
+
+.prose dd {
+  margin: 0 0 0.8rem 1.25rem;
 }
 
 .image-text {

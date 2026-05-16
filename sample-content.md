@@ -3,7 +3,7 @@ title: Sample Content
 permalink: /sample-content/
 blocks:
   - type: page-cards
-    title: "Background pages"
+    title: "Content samples"
     folder: "sample-content-pages/"
     columns: 3
     link_text: "View sample page"

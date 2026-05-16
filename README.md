@@ -22,6 +22,8 @@ theme_settings:
   primary_color: "#005EB8"
   secondary_color: "#F6C643"
   accent_color: "#00857A"
+  text_color: "#344054"
+  heading_color: "#344054"
   block_separator_style: "line"
 ```
 
