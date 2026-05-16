@@ -5,6 +5,11 @@
         <img src="{{ site.theme_settings.logo | relative_url }}" alt="">
       </a>
     {% endif %}
+    {% if site.theme_settings.project_logo %}
+      <a href="{{ '/' | relative_url }}" class="brand-project-logo" aria-label="{{ site.title }} home">
+        <img src="{{ site.theme_settings.project_logo | relative_url }}" alt="{{ site.theme_settings.project_logo_alt | default: site.title }}">
+      </a>
+    {% endif %}
     <a class="brand-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
   </div>
 

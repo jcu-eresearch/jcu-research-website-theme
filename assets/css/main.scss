@@ -88,9 +88,15 @@ a:hover {
   max-width: 100%;
 }
 
-.brand-logo img {
+.brand-logo img,
+.brand-project-logo img {
   width: 100%;
   height: auto;
+}
+
+.brand-project-logo {
+  width: 7rem;
+  max-width: 100%;
 }
 
 .brand-title {
@@ -495,6 +501,10 @@ a.partner-logo:hover {
 
   .brand-logo {
     width: 4.75rem;
+  }
+
+  .brand-project-logo {
+    width: 4.25rem;
   }
 
   .brand-title {

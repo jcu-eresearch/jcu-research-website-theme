@@ -11,6 +11,8 @@ title: "Research Project Website"
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo.svg"
+  project_logo: "/assets/images/project-logo.svg"
+  project_logo_alt: "Project logo"
   font_family: "Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
   secondary_color: "#F6C643"
