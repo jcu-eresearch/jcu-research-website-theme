@@ -13,8 +13,11 @@ theme_settings:
   logo: "/assets/images/jcu-logo.svg"
   project_logo: "/assets/images/project-logo.svg"
   project_logo_alt: "Project logo"
-  sidebar_logo_tile_background: "#FFFFFF"
-  sidebar_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
+  sidebar_logo_tile_background: "transparent"
+  sidebar_logo_tile_border_color: "transparent"
+  # Optional project-logo-specific overrides:
+  # sidebar_project_logo_tile_background: "#FFFFFF"
+  # sidebar_project_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
   font_family: "Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
   secondary_color: "#F6C643"

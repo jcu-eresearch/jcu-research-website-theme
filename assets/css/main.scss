@@ -14,6 +14,8 @@
   --color-border: {{ site.theme_settings.border_color | default: "#D0D5DD" }};
   --sidebar-logo-tile-bg: {{ site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
   --sidebar-logo-tile-border: {{ site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
+  --sidebar-project-logo-tile-bg: {{ site.theme_settings.sidebar_project_logo_tile_background | default: site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
+  --sidebar-project-logo-tile-border: {{ site.theme_settings.sidebar_project_logo_tile_border_color | default: site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
   --partner-logo-tile-bg: {{ site.theme_settings.partner_logo_tile_background | default: "#FFFFFF" }};
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
   --sidebar-width: 19rem;
@@ -109,6 +111,8 @@ a:hover {
 .brand-project-logo {
   width: 7rem;
   max-width: 100%;
+  background: var(--sidebar-project-logo-tile-bg);
+  border-color: var(--sidebar-project-logo-tile-border);
 }
 
 .brand-title {
