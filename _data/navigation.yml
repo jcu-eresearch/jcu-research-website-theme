@@ -2,9 +2,10 @@
   url: /about/
 - title: Background
   url: /background/
-- title: Research Context
-  url: /background-pages/research-context/
-- title: Project Setting
-  url: /background-pages/project-setting/
+  children:
+    - title: Research Context
+      url: /background/research-context/
+    - title: Project Setting
+      url: /background/project-setting/
 - title: Contact Us
   url: /contact/

@@ -48,6 +48,18 @@ blocks:
   url: /outputs/
 ```
 
+Nested menu items can be added with `children`:
+
+```yml
+- title: Background
+  url: /background/
+  children:
+    - title: Research Context
+      url: /background/research-context/
+    - title: Project Setting
+      url: /background/project-setting/
+```
+
 ## Content block types
 
 ### One column
