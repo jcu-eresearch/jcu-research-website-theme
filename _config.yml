@@ -4,6 +4,7 @@ url: ""
 baseurl: ""
 
 theme_settings:
+  show_breadcrumbs: true
   logo: "/assets/images/jcu-logo.svg"
   font_family: "Inter, Arial, Helvetica, sans-serif"
   heading_font_family: "Inter, Arial, Helvetica, sans-serif"

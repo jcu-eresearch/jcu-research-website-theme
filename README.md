@@ -9,6 +9,7 @@ Edit `_config.yml` to change the site title, logo, fonts, and colours:
 ```yml
 title: "Research Project Website"
 theme_settings:
+  show_breadcrumbs: true
   logo: "/assets/images/jcu-logo.svg"
   font_family: "Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"

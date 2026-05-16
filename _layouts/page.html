@@ -3,6 +3,10 @@ layout: default
 ---
 
 <article class="page">
+  {% unless site.theme_settings.show_breadcrumbs == false %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+
   <header class="page-header">
     <p class="eyebrow">{{ site.title }}</p>
     <h1>{{ page.title }}</h1>
