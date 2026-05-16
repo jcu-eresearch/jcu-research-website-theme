@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<article class="page">
+{% assign block_separator_style = site.theme_settings.block_separator_style | default: "line" %}
+
+<article class="page block-separators block-separators--{{ block_separator_style }}">
   {% unless site.theme_settings.show_breadcrumbs == false %}
     {% include breadcrumbs.html %}
   {% endunless %}

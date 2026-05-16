@@ -276,6 +276,41 @@ h3 {
   margin-top: 2rem;
 }
 
+.block-separators--line .content-block + .content-block {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.block-separators--accent .content-block + .content-block {
+  position: relative;
+  padding-top: 2.25rem;
+}
+
+.block-separators--accent .content-block + .content-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 0.25rem;
+  background: var(--color-secondary);
+  border-radius: 999px;
+}
+
+.block-separators--band .content-block {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.block-separators--band .content-block:nth-of-type(even) {
+  background: var(--color-surface);
+}
+
+.block-separators--none .content-block + .content-block {
+  padding-top: 0;
+  border-top: 0;
+}
+
 .content-block--single {
   max-width: 48rem;
 }

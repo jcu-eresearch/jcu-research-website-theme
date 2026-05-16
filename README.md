@@ -22,7 +22,10 @@ theme_settings:
   primary_color: "#005EB8"
   secondary_color: "#F6C643"
   accent_color: "#00857A"
+  block_separator_style: "line"
 ```
+
+Block separator options are `none`, `line`, `accent`, and `band`.
 
 ## Add a page
 
