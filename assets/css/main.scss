@@ -24,7 +24,7 @@
 body {
   margin: 0;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--color-primary);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.65;
@@ -63,6 +63,7 @@ a:hover {
   min-height: 100vh;
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  background: var(--color-primary);
 }
 
 .site-sidebar {
@@ -125,8 +126,10 @@ a:hover {
 }
 
 .site-main {
+  width: min(100%, calc(var(--content-width) + 10rem));
   min-width: 0;
   padding: 4rem clamp(1.25rem, 5vw, 5rem);
+  background: var(--color-bg);
 }
 
 .page {
@@ -512,6 +515,7 @@ a.partner-logo:hover {
   }
 
   .site-main {
+    width: 100%;
     padding: 2rem 1rem 3rem;
   }
 
