@@ -13,6 +13,8 @@ theme_settings:
   logo: "/assets/images/jcu-logo.svg"
   project_logo: "/assets/images/project-logo.svg"
   project_logo_alt: "Project logo"
+  sidebar_logo_tile_background: "#FFFFFF"
+  sidebar_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
   font_family: "Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
   secondary_color: "#F6C643"
@@ -107,6 +109,7 @@ Set the maximum logo height in `_config.yml`:
 
 ```yml
 theme_settings:
+  partner_logo_tile_background: "#FFFFFF"
   partner_logo_max_height: "4rem"
   partner_logo_columns: 4
 ```

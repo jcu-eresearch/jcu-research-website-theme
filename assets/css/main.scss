@@ -12,6 +12,9 @@
   --color-bg: {{ site.theme_settings.background_color | default: "#FFFFFF" }};
   --color-surface: {{ site.theme_settings.surface_color | default: "#F8FAFC" }};
   --color-border: {{ site.theme_settings.border_color | default: "#D0D5DD" }};
+  --sidebar-logo-tile-bg: {{ site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
+  --sidebar-logo-tile-border: {{ site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
+  --partner-logo-tile-bg: {{ site.theme_settings.partner_logo_tile_background | default: "#FFFFFF" }};
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
   --sidebar-width: 19rem;
   --content-width: 68rem;
@@ -86,6 +89,15 @@ a:hover {
 .brand-logo {
   width: 8.5rem;
   max-width: 100%;
+}
+
+.brand-logo,
+.brand-project-logo {
+  display: block;
+  padding: 0.75rem;
+  background: var(--sidebar-logo-tile-bg);
+  border: 1px solid var(--sidebar-logo-tile-border);
+  border-radius: 0.5rem;
 }
 
 .brand-logo img,
@@ -385,7 +397,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: #fff;
+  background: var(--partner-logo-tile-bg);
   border: 1px solid var(--color-border);
   border-radius: 0.5rem;
 }
