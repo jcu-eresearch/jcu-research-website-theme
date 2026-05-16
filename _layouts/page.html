@@ -25,6 +25,8 @@ layout: default
     {% case block.type %}
       {% when 'one-column' %}
         {% include blocks/one-column.html block=block %}
+      {% when 'image-text' %}
+        {% include blocks/image-text.html block=block %}
       {% when 'two-column' %}
         {% include blocks/two-column.html block=block %}
       {% when 'gallery' %}

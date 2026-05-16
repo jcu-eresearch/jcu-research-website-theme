@@ -66,6 +66,28 @@ blocks:
         Markdown content goes here.
 ```
 
+### Image and text
+
+Use this for one-column content with an optional image:
+
+```yml
+- type: image-text
+  title: "Context with supporting image"
+  image: "/assets/images/card-research-context.svg"
+  image_alt: "Abstract illustration of research context"
+  image_position: "right"
+  image_size: "medium"
+  caption: "Optional image caption."
+  content: |
+    Markdown content goes here.
+```
+
+Options:
+
+- `image_position`: `left` or `right`
+- `image_size`: `small`, `medium`, or `large`
+- omit `image` to display the text at full width
+
 ### Image gallery
 
 ```yml

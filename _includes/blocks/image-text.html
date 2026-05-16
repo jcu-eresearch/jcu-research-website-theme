@@ -1,0 +1,21 @@
+{% assign image_position = include.block.image_position | default: "right" %}
+{% assign image_size = include.block.image_size | default: "medium" %}
+
+<section class="content-block image-text image-text--{{ image_position }} image-text--{{ image_size }}{% unless include.block.image %} image-text--no-image{% endunless %}">
+  <div class="image-text-content">
+    {% if include.block.title %}
+      <h2>{{ include.block.title }}</h2>
+    {% endif %}
+    <div class="prose">
+      {{ include.block.content | markdownify }}
+    </div>
+  </div>
+  {% if include.block.image %}
+    <figure class="image-text-media">
+      <img src="{{ include.block.image | relative_url }}" alt="{{ include.block.image_alt | default: '' }}">
+      {% if include.block.caption %}
+        <figcaption>{{ include.block.caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+</section>
