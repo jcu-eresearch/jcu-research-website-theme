@@ -1,4 +1,7 @@
-<section class="content-block content-block--single">
+{% assign block_background = include.block.background | default: "none" %}
+{% assign block_background_mode = include.block.background_mode | default: "block" %}
+
+<section class="content-block content-block--single content-block--bg-{{ block_background }} content-block--bg-{{ block_background_mode }}">
   {% if include.block.title %}
     <h2>{{ include.block.title }}</h2>
   {% endif %}

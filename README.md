@@ -24,6 +24,8 @@ theme_settings:
   accent_color: "#00857A"
   text_color: "#344054"
   heading_color: "#344054"
+  secondary_background_color: "#DCDAC3"
+  secondary_background_opacity: "0.5"
   block_separator_style: "line"
 ```
 
@@ -101,6 +103,8 @@ Use this for one-column content with an optional image:
   image_alt: "Abstract illustration of research context"
   image_position: "right"
   image_size: "medium"
+  background: "secondary"
+  background_mode: "behind"
   caption: "Optional image caption."
   content: |
     Markdown content goes here.
@@ -111,6 +115,21 @@ Options:
 - `image_position`: `left` or `right`
 - `image_size`: `small`, `medium`, or `large`
 - omit `image` to display the text at full width
+
+### Block backgrounds
+
+Any content block can use the configured secondary background:
+
+```yml
+- type: one-column
+  title: "Section title"
+  background: "secondary"
+  background_mode: "block"
+  content: |
+    Markdown content goes here.
+```
+
+Use `background_mode: "block"` to colour the block itself, or `background_mode: "behind"` to place a larger coloured panel behind the block.
 
 ### Image gallery
 

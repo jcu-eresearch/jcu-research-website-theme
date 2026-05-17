@@ -11,6 +11,8 @@ blocks:
     image_alt: "Abstract illustration of research context"
     image_position: "right"
     image_size: "medium"
+    background: "secondary"
+    background_mode: "behind"
     caption: "Optional captions can be added below the image."
     content: |
       This block combines Markdown text with an optional image. The image can sit on the left or right, and can be set to small, medium, or large.
