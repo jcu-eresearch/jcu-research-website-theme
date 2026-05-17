@@ -12,11 +12,11 @@ summary: "This page shows the various text formats available with this template.
 
 ### Level 3 heading with an ID {#custom-id}
 
-# Paragraph
+## Paragraph
 
 Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
 
-# Inline text formats
+## Inline text formats
 **bold text**;
 *italicized text*;
 `code`;
@@ -25,7 +25,7 @@ Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas int
 Subscript example:  H<sub>2</sub>0;
 Superscript example: X<sup>2</sup>
 
-# Block quote
+## Block quote
 > Once upon a midnight dreary, while I pondered, weak and weary,\
 > Over many a quaint and curious volume of forgotten lore,\
 > While I nodded, nearly napping, suddenly there came a tapping,\
@@ -33,7 +33,7 @@ Superscript example: X<sup>2</sup>
 > "'Tis some visitor," I muttered, "tapping at my chamber door-\
 >                  Only this, and nothing more."
 
-# Fenced code block
+## Fenced code block
 ```
 {
 	"firstName": "John",
@@ -42,57 +42,57 @@ Superscript example: X<sup>2</sup>
 }
 ```
 
-# Footnotes
+## Footnotes
 Here's a sentence with a footnote. [^1]
 
 [^1]: This is the footnote.
 
-# Lists
+## Lists
 
-## Ordered list
+### Ordered list
 1. first item
 	- indented bullet point
 1. second item
 	1. indented numbered item
 1. third item
 
-## Unordered list
+### Unordered list
 * top level item 1
 	* indented once
 		* indented twice
 * top level item 2
 
-## Unordered list alternate
+### Unordered list alternate
 - first list item
 	- indented item
 		- further indent
 - second list item
 
-## Task list
+### Task list
 - [x] item 1
 - [ ] item 2
 - [ ] item 3
 
-# Horizontal rule
+## Horizontal rule
 ---
 
-# Definition list
+## Definition list
 term 1
 : definition 1
 
 term 2
 : definition 2
 
-# Link
+## Link
 [link title](https://www.example.com)
 
-# Image
+## Image
 ![alt text](/assets/images/my-cat_750x1000.jpeg)
 
-# Emoji
+## Emoji
 That is so funny! :joy:
 
-# Table
+## Table
 | Syntax | Description |
 | ----------- | ----------- |
 | Header | Title |
