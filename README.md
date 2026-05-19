@@ -1,15 +1,56 @@
-# JCU-themed research project website
+# JCU research website theme
 
-This repository contains a simple Jekyll website designed for GitHub Pages. Page content is written in Markdown, with reusable block types for one-column content, two-column content, and image galleries.
+A JCU-themed Jekyll theme for research project communications. The theme is designed for GitHub Pages, so research teams can maintain project websites with Markdown content while reusing shared JCU-styled layouts, navigation, content blocks, and assets.
 
-## Configure the theme
+This repository is both:
 
-Edit `_config.yml` to change the site title, logo, fonts, and colours:
+- a reusable remote Jekyll theme, consumed with `remote_theme`
+- a live sample site showing the page types and content blocks available in the theme
+
+## Use as a remote theme
+
+Create a Jekyll/GitHub Pages repository for your research project, then add this to the project site's `_config.yml`:
+
+```yml
+remote_theme: jcu-eresearch/jcu-research-website-theme
+plugins:
+  - jekyll-remote-theme
+```
+
+For production project sites, pin a release once this theme has tagged versions:
+
+```yml
+remote_theme: jcu-eresearch/jcu-research-website-theme@v1.0.0
+plugins:
+  - jekyll-remote-theme
+```
+
+GitHub Pages can load public GitHub-hosted Jekyll themes with `remote_theme`. The theme does not need to be published as a RubyGem.
+
+Before other projects can consume this theme, keep this repository public on GitHub.
+
+For local development in a consuming project, use a Gemfile such as:
+
+```ruby
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
+```
+
+## Minimal project configuration
+
+In the project site's `_config.yml`, set the project identity and theme settings:
 
 ```yml
 title: "Research Project Website"
-url: "https://PaulineLawrey.github.io"
-baseurl: "/jcu-research-website-theme"
+description: "A JCU-themed static website for research project communications."
+url: "https://USERNAME.github.io"
+baseurl: "/REPOSITORY-NAME"
+
+remote_theme: jcu-eresearch/jcu-research-website-theme
+plugins:
+  - jekyll-remote-theme
+
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo.svg"
@@ -17,26 +58,58 @@ theme_settings:
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
-  # Optional project-logo-specific overrides:
-  # sidebar_project_logo_tile_background: "#FFFFFF"
-  # sidebar_project_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
-  font_family: "Inter, Arial, Helvetica, sans-serif"
+  font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
+  heading_font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
   secondary_color: "#F6C643"
   accent_color: "#00857A"
   text_color: "#344054"
   heading_color: "#344054"
+  muted_text_color: "#667085"
+  background_color: "#FFFFFF"
+  surface_color: "#F8FAFC"
   secondary_background_color: "#DCDAC3"
   secondary_background_opacity: "0.5"
-  block_separator_style: "line"
+  border_color: "#D0D5DD"
+  block_separator_style: "none"
+  partner_logo_max_height: "4rem"
+  partner_logo_columns: 4
+  page_card_columns: 3
+  page_card_link_text: "Read more"
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 ```
 
-Block separator options are `none`, `line`, `accent`, and `band`.
+If your site uses the default JCU and project logo assets from this theme, the paths above will work through the remote theme. To use your own logos, add files to the consuming site's `assets/images/` folder and update the paths.
+
+## Navigation
+
+Add `_data/navigation.yml` in the project site:
+
+```yml
+- title: About
+  url: /about/
+- title: Background
+  url: /background/
+  children:
+    - title: Research Context
+      url: /background/research-context/
+    - title: Project Setting
+      url: /background/project-setting/
+- title: Contact
+  url: /contact/
+```
+
+If navigation is omitted, the theme falls back to a single Home link.
 
 ## Add a page
 
-1. Create a new Markdown file, such as `outputs.md`.
-2. Add front matter:
+Create a Markdown file in the project site, such as `outputs.md`:
 
 ```yml
 ---
@@ -50,23 +123,11 @@ blocks:
 ---
 ```
 
-3. Add the page to `_data/navigation.yml`:
+Then add it to `_data/navigation.yml`:
 
 ```yml
 - title: Outputs
   url: /outputs/
-```
-
-Nested menu items can be added with `children`:
-
-```yml
-- title: Background
-  url: /background/
-  children:
-    - title: Research Context
-      url: /background/research-context/
-    - title: Project Setting
-      url: /background/project-setting/
 ```
 
 ## Content block types
@@ -95,8 +156,6 @@ Nested menu items can be added with `children`:
 ```
 
 ### Image and text
-
-Use this for one-column content with an optional image:
 
 ```yml
 - type: image-text
@@ -133,6 +192,8 @@ Any content block can use the configured secondary background:
 
 Use `background_mode: "block"` to colour the block itself, or `background_mode: "behind"` to place a larger coloured panel behind the block.
 
+Block separator options are `none`, `line`, `accent`, and `band`.
+
 ### Image gallery
 
 ```yml
@@ -146,7 +207,7 @@ Use `background_mode: "block"` to colour the block itself, or `background_mode: 
 
 ### Partner logos
 
-Set the maximum logo height in `_config.yml`:
+Set logo defaults in `_config.yml`:
 
 ```yml
 theme_settings:
@@ -173,7 +234,7 @@ Then add a logo block to any page:
 
 ### Page cards
 
-Set the default number of cards per row in `_config.yml`:
+Set card defaults in `_config.yml`:
 
 ```yml
 theme_settings:
@@ -205,7 +266,7 @@ summary: "A short overview of the project setting."
 
 If `columns: 1`, each card uses a wide layout with the image on the left and the summary on the right on desktop screens.
 
-## Run locally
+## Local development
 
 Use Ruby `3.3.4` to match the GitHub Pages build environment, then run:
 
@@ -214,10 +275,21 @@ bundle install
 bundle exec jekyll serve
 ```
 
-The configured GitHub Pages URL for this repository is:
+The configured GitHub Pages URL for this sample repository is:
 
 ```text
-https://PaulineLawrey.github.io/jcu-research-website-theme/
+https://jcu-eresearch.github.io/jcu-research-website-theme/
 ```
 
-GitHub Pages will build the site automatically when the repository is published.
+## Maintaining the theme
+
+Keep reusable presentation files in these folders:
+
+- `_layouts`
+- `_includes`
+- `_data`
+- `assets`
+
+The Markdown pages in this repository are sample content for previewing the theme. Research project sites that use this as a remote theme should create their own content pages and navigation data.
+
+When releasing a stable version, create a Git tag such as `v1.0.0` and tell consuming sites to pin that tag in `remote_theme`.
