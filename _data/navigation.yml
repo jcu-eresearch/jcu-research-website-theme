@@ -11,8 +11,8 @@
   url: /sample-content/
   children:
     - title: Text Formats
-      url: /sample-content-pages/text-formats/
+      url: /sample-content/text-formats/
     - title: Content Blocks
-      url: /sample-content-pages/content-blocks/
+      url: /sample-content/content-blocks/
 - title: Contact Us
   url: /contact/
