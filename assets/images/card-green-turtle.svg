@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Stylised green turtle</title>
+  <rect width="900" height="506" fill="#00857A"/>
+  <circle cx="720" cy="120" r="76" fill="#F6C643"/>
+  <path d="M0 330c118-78 246-96 384-54s232 52 342 16 168-42 174-44v258H0z" fill="#005EB8"/>
+  <ellipse cx="430" cy="260" rx="150" ry="98" fill="#146C43"/>
+  <ellipse cx="430" cy="260" rx="104" ry="70" fill="#22A06B"/>
+  <circle cx="594" cy="246" r="44" fill="#146C43"/>
+  <path d="M298 218c-56-70-112-84-168-42 50 58 106 72 168 42zM298 302c-64 54-122 54-174 0 64-38 122-38 174 0zM516 184c36-68 88-88 156-60-42 66-94 86-156 60zM516 336c54 54 108 58 162 12-56-44-110-48-162-12z" fill="#D1FADF"/>
+</svg>

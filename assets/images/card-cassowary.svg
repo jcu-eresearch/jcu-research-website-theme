@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Stylised southern cassowary</title>
+  <rect width="900" height="506" fill="#0B6F5C"/>
+  <circle cx="720" cy="104" r="72" fill="#F6C643"/>
+  <path d="M0 372c128-92 256-116 384-72s232 58 344-10 156-78 172-80v296H0z" fill="#005EB8" opacity=".75"/>
+  <ellipse cx="392" cy="286" rx="142" ry="166" fill="#1D2939"/>
+  <path d="M340 132c18-46 58-66 116-58-14 40-38 68-72 84z" fill="#F6C643"/>
+  <circle cx="384" cy="162" r="58" fill="#005EB8"/>
+  <path d="M353 178c48 28 88 26 120-8v92c-42 28-82 28-120 0z" fill="#7DD3FC"/>
+  <circle cx="405" cy="146" r="8" fill="#FFFFFF"/>
+  <path d="M418 171l74 20-74 22z" fill="#D92D20"/>
+</svg>

@@ -1,6 +1,6 @@
 ---
 title: Text Formats
-permalink: /sample-content-pages/text-formats/
+permalink: /sample-content/text-formats/
 order: 1
 image: "/assets/images/card-project-setting.svg"
 summary: "This page shows the various text formats available with this template."

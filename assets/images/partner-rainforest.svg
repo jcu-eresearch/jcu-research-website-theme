@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-labelledby="title">
+  <title id="title">Rainforest research partner logo placeholder</title>
+  <rect width="520" height="150" rx="10" fill="#ffffff"/>
+  <circle cx="84" cy="76" r="44" fill="#00857A"/>
+  <path d="M84 28l34 78H50z" fill="#0B6F5C"/>
+  <path d="M84 48l24 58H60z" fill="#D1FADF"/>
+  <text x="160" y="78" fill="#1D2939" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Rainforest</text>
+  <text x="160" y="108" fill="#667085" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Research Partner</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Stylised estuarine crocodile</title>
+  <rect width="900" height="506" fill="#005EB8"/>
+  <path d="M0 280c120-50 220-58 300-24s158 36 236 4 198-58 364-14v260H0z" fill="#7DD3FC" opacity=".55"/>
+  <path d="M92 278c120-84 278-114 474-90l226 28-80 58 92 36-220 42c-190 34-358 12-492-74z" fill="#1F7A4D"/>
+  <path d="M186 276l52-42 44 40 54-46 46 44 54-42 48 40" fill="none" stroke="#D1FADF" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="660" cy="221" r="12" fill="#F6C643"/>
+  <path d="M736 280l60 14-60 14z" fill="#FFFFFF"/>
+</svg>

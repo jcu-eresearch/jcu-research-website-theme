@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
+  <title id="title">Stylised Lumholtz's tree-kangaroo</title>
+  <rect width="900" height="506" fill="#0B4F8A"/>
+  <rect x="0" y="360" width="900" height="146" fill="#00857A"/>
+  <path d="M120 360c80-78 168-112 264-102 126 14 170 106 300 86 72-12 132-54 216-124v286H120z" fill="#0F766E"/>
+  <path d="M170 112h560" stroke="#F6C643" stroke-width="26" stroke-linecap="round"/>
+  <path d="M540 126c-14 86-72 146-170 180" stroke="#F6C643" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <ellipse cx="362" cy="262" rx="98" ry="78" fill="#8B5E3C"/>
+  <circle cx="445" cy="214" r="46" fill="#A77952"/>
+  <circle cx="462" cy="202" r="8" fill="#FFFFFF"/>
+  <path d="M285 292c-50 46-104 52-162 18" stroke="#A77952" stroke-width="24" stroke-linecap="round" fill="none"/>
+</svg>

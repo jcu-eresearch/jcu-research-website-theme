@@ -1,6 +1,6 @@
 ---
 title: Content Blocks
-permalink: /sample-content-pages/content-blocks/
+permalink: /sample-content/content-blocks/
 order: 2
 image: "/assets/images/card-cassowary.svg"
 summary: "Examples of each content block style available with this template."
