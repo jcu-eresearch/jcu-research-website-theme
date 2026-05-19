@@ -1,7 +1,7 @@
 title: "Research Project Website"
 description: "A JCU-themed static website for research project communications."
-url: ""
-baseurl: ""
+url: "https://PaulineLawrey.github.io"
+baseurl: "/jcu-research-website-theme"
 
 theme_settings:
   show_breadcrumbs: true

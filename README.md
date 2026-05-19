@@ -8,6 +8,8 @@ Edit `_config.yml` to change the site title, logo, fonts, and colours:
 
 ```yml
 title: "Research Project Website"
+url: "https://PaulineLawrey.github.io"
+baseurl: "/jcu-research-website-theme"
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo.svg"
@@ -210,6 +212,12 @@ Use Ruby `3.3.4` to match the GitHub Pages build environment, then run:
 ```bash
 bundle install
 bundle exec jekyll serve
+```
+
+The configured GitHub Pages URL for this repository is:
+
+```text
+https://PaulineLawrey.github.io/jcu-research-website-theme/
 ```
 
 GitHub Pages will build the site automatically when the repository is published.
