@@ -132,6 +132,28 @@ Then add it to `_data/navigation.yml`:
 
 ## Content block types
 
+Content blocks can be added in front matter, or simple narrative blocks can be written inline in the Markdown body.
+
+### Inline blocks
+
+Use Markdown blockquote notation with a short class line when you want styled blocks to appear among ordinary page content:
+
+```md
+> ## Section title
+>
+> Markdown content can include **emphasis**, [links](https://www.jcu.edu.au/), and lists.
+{:.jcu-block .jcu-block--secondary}
+```
+
+Inline block options:
+
+- `.jcu-block--secondary`: use the configured secondary background colour
+- `.jcu-block--surface`: use the theme surface colour with a border
+- `.jcu-block--accent`: add the JCU accent line to the left of a block
+- `.jcu-block--full`: allow the block to use the full content width
+
+Place the class line directly underneath the block it should style.
+
 ### One column
 
 ```yml

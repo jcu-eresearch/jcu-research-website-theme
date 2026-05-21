@@ -388,6 +388,54 @@ h3 {
   margin: 0 0 0.8rem 1.25rem;
 }
 
+.jcu-block {
+  display: block;
+  margin-top: 2rem;
+  max-width: 48rem;
+}
+
+.jcu-block--full {
+  max-width: none;
+}
+
+.jcu-block > :first-child {
+  margin-top: 0;
+}
+
+.jcu-block > :last-child {
+  margin-bottom: 0;
+}
+
+.jcu-block--secondary,
+.jcu-block--surface {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.jcu-block--secondary {
+  background: var(--color-secondary-bg);
+}
+
+.jcu-block--surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.jcu-block--accent {
+  padding-left: 1.25rem;
+  border-left: 0.25rem solid var(--color-secondary);
+}
+
+.jcu-block--secondary.jcu-block--accent,
+.jcu-block--surface.jcu-block--accent {
+  padding-left: 1.5rem;
+}
+
+blockquote.jcu-block {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .image-text {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(14rem, 40%);

@@ -16,5 +16,7 @@
       url: /sample-content/text-formats/
     - title: Content Blocks
       url: /sample-content/content-blocks/
+    - title: Inline Content Blocks
+      url: /sample-content/inline-content-blocks/
 - title: Contact Us
   url: /contact/
