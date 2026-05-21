@@ -29,7 +29,7 @@ theme_settings:
   border_color: "#D0D5DD"
   # block_separator_style options: "none", "line", "accent", "band"
   block_separator_style: "none"
-  partner_logo_max_height: "4rem"
+  partner_logo_max_height: "8rem"
   partner_logo_columns: 4
   page_card_columns: 3
   page_card_link_text: "Read more"
