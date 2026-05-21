@@ -22,7 +22,7 @@ blocks:
       Add partner, funder, and collaborator logos here.
     partners:
       - name: "James Cook University"
-        logo: "/assets/images/partner-jcu.svg"
+        logo: "/assets/images/jcu-logo-colour.svg"
         url: "https://www.jcu.edu.au/"
       - name: "Partner organisation"
         logo: "/assets/images/partner-placeholder.svg"

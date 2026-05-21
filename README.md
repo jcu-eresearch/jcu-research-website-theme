@@ -53,7 +53,7 @@ plugins:
 
 theme_settings:
   show_breadcrumbs: true
-  logo: "/assets/images/jcu-logo.svg"
+  logo: "/assets/images/jcu-logo-mono.svg"
   project_logo: "/assets/images/project-logo.svg"
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
@@ -181,7 +181,7 @@ Alert options are `.jcu-alert--note`, `.jcu-alert--tip`, `.jcu-alert--important`
 For inline partner logos, use standard Markdown images and linked images, then add a column class:
 
 ```md
-[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+[![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
 {:.jcu-partner-logos .jcu-partner-logos--3}
@@ -283,7 +283,7 @@ Then add a logo block to any page:
     Optional introductory text.
   partners:
     - name: "James Cook University"
-      logo: "/assets/images/partner-jcu.svg"
+      logo: "/assets/images/jcu-logo-colour.svg"
       url: "https://www.jcu.edu.au/"
     - name: "Partner organisation"
       logo: "/assets/images/partner-placeholder.svg"

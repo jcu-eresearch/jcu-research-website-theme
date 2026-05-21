@@ -75,18 +75,18 @@ The older front matter block system is still available for generated components 
 Use standard Markdown image syntax for unlinked logos, or wrap the image in a standard Markdown link when the logo should link somewhere. Add a class line underneath the group to choose 2, 3, or 4 columns.
 
 ```md
-[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+[![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
 ![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
-{:.jcu-partner-logos .jcu-partner-logos--4}
+{:.jcu-block .jcu-block--secondary .jcu-partner-logos .jcu-partner-logos--4}
 ```
 
-[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+[![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
 ![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
-{:.jcu-partner-logos .jcu-partner-logos--4}
+{:.jcu-block .jcu-block--secondary .jcu-partner-logos .jcu-partner-logos--4}
 
 ## Alert blocks
 

@@ -93,7 +93,7 @@ a:hover {
 }
 
 .brand-logo {
-  width: 8.5rem;
+  width: 12.75rem;
   max-width: 100%;
 }
 
@@ -263,7 +263,10 @@ h3 {
 .prose h1 {
   margin: 0;
   color: var(--color-primary);
-  font-size: clamp(2.35rem, 7vw, 3rem);
+  font-size: clamp(2.35rem, 7vw, 2.75rem);
+}
+
+.prose h1 {
   max-width: 12ch;
 }
 
@@ -273,12 +276,12 @@ h3 {
 
 h2 {
   margin: 0 0 1rem;
-  font-size: clamp(1.65rem, 4vw, 2.4rem);
+  font-size: clamp(1.65rem, 4vw, 2.15rem);
 }
 
 h3 {
   margin: 0 0 0.65rem;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
 }
 
 .page-lead {
@@ -856,7 +859,7 @@ a.partner-logo:hover {
   }
 
   .brand-logo {
-    width: 4.75rem;
+    width: 7.125rem;
   }
 
   .brand-project-logo {
