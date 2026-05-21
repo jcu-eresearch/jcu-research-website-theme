@@ -235,6 +235,11 @@ a:hover {
   border-bottom: 0.25rem solid var(--color-secondary);
 }
 
+.page-header + .breadcrumbs {
+  margin-top: -1.25rem;
+  margin-bottom: 2.5rem;
+}
+
 .eyebrow {
   margin: 0 0 0.7rem;
   color: var(--color-primary);

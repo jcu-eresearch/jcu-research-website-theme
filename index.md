@@ -7,7 +7,7 @@ blocks:
     content: |
       This JCU-themed website is designed for research project communications. Update pages in Markdown, adjust colours and fonts from the site configuration, and publish through GitHub Pages.
   - type: two-column
-    title: "Project snapshot"
+    title: "JCU Research Website Project"
     columns:
       - title: "Purpose"
         content: |
