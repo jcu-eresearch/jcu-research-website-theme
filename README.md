@@ -178,6 +178,17 @@ For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
 
 Alert options are `.jcu-alert--note`, `.jcu-alert--tip`, `.jcu-alert--important`, `.jcu-alert--warning`, and `.jcu-alert--caution`.
 
+For inline partner logos, use standard Markdown images and linked images, then add a column class:
+
+```md
+[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
+![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
+{:.jcu-partner-logos .jcu-partner-logos--3}
+```
+
+Inline partner logo options are `.jcu-partner-logos--2`, `.jcu-partner-logos--3`, and `.jcu-partner-logos--4`.
+
 ### One column
 
 ```yml

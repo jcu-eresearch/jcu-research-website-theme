@@ -417,6 +417,62 @@ h3 {
   border-radius: 0.5rem;
 }
 
+.jcu-partner-logos {
+  --jcu-partner-logo-columns: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--jcu-partner-logo-columns), minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.jcu-partner-logos--2 {
+  --jcu-partner-logo-columns: 2;
+}
+
+.jcu-partner-logos--3 {
+  --jcu-partner-logo-columns: 3;
+}
+
+.jcu-partner-logos--4 {
+  --jcu-partner-logo-columns: 4;
+}
+
+.jcu-partner-logos > a,
+.jcu-partner-logos > img {
+  min-width: 0;
+  min-height: calc(var(--partner-logo-max-height) + 2rem);
+  padding: 1rem;
+  background: var(--partner-logo-tile-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.jcu-partner-logos > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.jcu-partner-logos > a:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0.45rem 1.4rem rgba(29, 41, 57, 0.12);
+  transform: translateY(-0.1rem);
+}
+
+.jcu-partner-logos img {
+  width: auto;
+  max-width: 100%;
+  max-height: var(--partner-logo-max-height);
+  object-fit: contain;
+}
+
+.jcu-partner-logos > img {
+  width: 100%;
+  height: calc(var(--partner-logo-max-height) + 2rem);
+}
+
 .jcu-column + .jcu-column {
   margin-left: 1rem;
 }
@@ -536,6 +592,10 @@ blockquote.jcu-column {
 blockquote.jcu-alert {
   margin-right: 0;
   margin-left: 0;
+}
+
+p.jcu-partner-logos {
+  margin-bottom: 2rem;
 }
 
 .image-text {
@@ -842,6 +902,12 @@ a.partner-logo:hover {
     margin-left: 0;
   }
 
+  .jcu-partner-logos,
+  .jcu-partner-logos--3,
+  .jcu-partner-logos--4 {
+    --jcu-partner-logo-columns: 2;
+  }
+
   .jcu-block--image-left img {
     float: none;
     width: 100%;
@@ -888,6 +954,13 @@ a.partner-logo:hover {
 }
 
 @media (max-width: 520px) {
+  .jcu-partner-logos,
+  .jcu-partner-logos--2,
+  .jcu-partner-logos--3,
+  .jcu-partner-logos--4 {
+    --jcu-partner-logo-columns: 1;
+  }
+
   .partner-logos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;

@@ -70,6 +70,24 @@ The same surface block can include an image floated to the left. Add the image a
 
 The older front matter block system is still available for generated components such as page cards, image galleries, and partner logos.
 
+## Inline partner logos
+
+Use standard Markdown image syntax for unlinked logos, or wrap the image in a standard Markdown link when the logo should link somewhere. Add a class line underneath the group to choose 2, 3, or 4 columns.
+
+```md
+[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
+![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
+![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
+{:.jcu-partner-logos .jcu-partner-logos--4}
+```
+
+[![James Cook University logo]({{ "/assets/images/partner-jcu.svg" | relative_url }})](https://www.jcu.edu.au/)
+![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
+![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
+![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
+{:.jcu-partner-logos .jcu-partner-logos--4}
+
 ## Alert blocks
 
 Use the same blockquote pattern for alert boxes. Add the alert label in bold, then place the alert class line directly underneath the block.
