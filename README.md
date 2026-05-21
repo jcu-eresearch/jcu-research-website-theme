@@ -154,6 +154,19 @@ Inline block options:
 
 Place the class line directly underneath the block it should style.
 
+For a simple two-column section, place two `.jcu-column` blocks next to each other:
+
+```md
+> ### Left column
+>
+> Markdown content goes here.
+{:.jcu-column}
+> ### Right column
+>
+> Markdown content goes here.
+{:.jcu-column}
+```
+
 ### One column
 
 ```yml

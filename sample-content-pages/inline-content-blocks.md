@@ -26,11 +26,26 @@ This page demonstrates content blocks written inline with the rest of the page c
 
 This paragraph sits between two inline blocks, so authors can mix normal page content and styled sections in the order they want readers to encounter them.
 
+> ### Column one
+>
+> Use two consecutive `.jcu-column` blocks for compact comparisons, paired ideas, or short lists.
+>
+> - Research context
+> - Study setting
+> - Key collaborators
+{:.jcu-column}
+> ### Column two
+>
+> Each column is still Markdown, so links and emphasis work as expected.
+>
+> For example, a researcher could link to a [project output](https://www.jcu.edu.au/) or highlight a **priority action**.
+{:.jcu-column}
+
 > ## Surface block with accent
 >
 > This version uses `.jcu-block--surface` and `.jcu-block--accent`. It is useful for a short note, project update, or highlighted takeaway.
 >
-> For example, a researcher could link to a [project output](https://www.jcu.edu.au/) or highlight a **priority action**.
+> Use it for brief notes that should stand apart from the surrounding page content.
 {:.jcu-block .jcu-block--surface .jcu-block--accent}
 
 The older front matter block system is still available for generated components such as page cards, image galleries, and partner logos.
