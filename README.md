@@ -148,9 +148,11 @@ Use Markdown blockquote notation with a short class line when you want styled bl
 Inline block options:
 
 - `.jcu-block--secondary`: use the configured secondary background colour
-- `.jcu-block--surface`: use the theme surface colour with a border
+- `.jcu-block--card`: use the theme card colour with a border
 - `.jcu-block--accent`: add the JCU accent line to the left of a block
 - `.jcu-block--full`: allow the block to use the full content width
+- `.jcu-block--image-left`: float the first image in the block to the left
+- `.jcu-block--image-right`: float the first image in the block to the right
 
 Place the class line directly underneath the block it should style.
 
@@ -188,6 +190,17 @@ For inline partner logos, use standard Markdown images and linked images, then a
 ```
 
 Inline partner logo options are `.jcu-partner-logos--2`, `.jcu-partner-logos--3`, and `.jcu-partner-logos--4`.
+
+For an inline image gallery, use standard Markdown images or linked images, then add a gallery column class:
+
+```md
+[![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
+[![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
+[![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
+{:.jcu-image-gallery .jcu-image-gallery--3}
+```
+
+Inline image gallery options are `.jcu-image-gallery--2`, `.jcu-image-gallery--3`, and `.jcu-image-gallery--4`.
 
 ### One column
 

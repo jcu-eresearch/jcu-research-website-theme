@@ -41,32 +41,64 @@ This paragraph sits between two inline blocks, so authors can mix normal page co
 > For example, a researcher could link to a [project output](https://www.jcu.edu.au/) or highlight a **priority action**.
 {:.jcu-column}
 
-> ## Surface block with accent
+> ## Card block with accent
 >
-> This version uses `.jcu-block--surface` and `.jcu-block--accent`. It is useful for a short note, project update, or highlighted takeaway.
+> This version uses `.jcu-block--card` and `.jcu-block--accent`. It is useful for a short note, project update, or highlighted takeaway.
 >
 > Use it for brief notes that should stand apart from the surrounding page content.
-{:.jcu-block .jcu-block--surface .jcu-block--accent}
+{:.jcu-block .jcu-block--card .jcu-block--accent}
 
-The same surface block can include an image floated to the left. Add the image as the first line inside the block and include `.jcu-block--image-left` in the class line.
+The card style can also be combined with the secondary block style when the section should use the full-width pale secondary background.
+
+```md
+> ## Card block with secondary background
+>
+> This combines `.jcu-block--card` and `.jcu-block--secondary`.
+{:.jcu-block .jcu-block--card .jcu-block--secondary}
+```
+
+> ## Card block with secondary background
+>
+> This combines `.jcu-block--card` and `.jcu-block--secondary`, so the block uses the secondary background treatment while keeping the same spacing as the card block.
+{:.jcu-block .jcu-block--card .jcu-block--secondary}
+
+The same card block can include an image floated to the left. Add the image as the first line inside the block and include `.jcu-block--image-left` in the class line.
 
 ```md
 > ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
 >
-> ## Surface block with accent and image
+> ## Card block with accent and image
 >
 > This block uses a left-aligned image with normal Markdown content beside it.
-{:.jcu-block .jcu-block--surface .jcu-block--accent .jcu-block--image-left}
+{:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-left}
 ```
 
 > ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
 >
-> ## Surface block with accent and image
+> ## Card block with accent and image
 >
 > This block uses a left-aligned image with normal Markdown content beside it. It is useful when a project update, case study, or highlighted method needs a visual cue.
 >
 > The image stacks above the text on smaller screens.
-{:.jcu-block .jcu-block--surface .jcu-block--accent .jcu-block--image-left}
+{:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-left}
+
+Use `.jcu-block--image-right` to place the image on the right instead.
+
+```md
+> ![Abstract research context image]({{ "/assets/images/card-research-context.svg" | relative_url }})
+>
+> ## Card block with right image
+>
+> This version places the image on the right while the text starts on the left.
+{:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-right}
+```
+
+> ![Abstract research context image]({{ "/assets/images/card-research-context.svg" | relative_url }})
+>
+> ## Card block with right image
+>
+> This version places the image on the right while the text starts on the left. It uses the same Markdown structure as the left-image block.
+{:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-right}
 
 The older front matter block system is still available for generated components such as page cards, image galleries, and partner logos.
 
@@ -87,6 +119,24 @@ Use standard Markdown image syntax for unlinked logos, or wrap the image in a st
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
 ![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
 {:.jcu-block .jcu-block--secondary .jcu-partner-logos .jcu-partner-logos--4}
+
+## Inline image gallery
+
+Use standard Markdown images for an inline gallery, or wrap the images in links when they should open another page. Add a class line underneath the group to choose 2, 3, or 4 columns.
+
+```md
+[![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
+[![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
+[![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
+[![Green turtle]({{ "/assets/images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content-pages/animals/green-turtle/" | relative_url }})
+{:.jcu-image-gallery .jcu-image-gallery--4}
+```
+
+[![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
+[![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
+[![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
+[![Green turtle]({{ "/assets/images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content-pages/animals/green-turtle/" | relative_url }})
+{:.jcu-image-gallery .jcu-image-gallery--4}
 
 ## Alert blocks
 
