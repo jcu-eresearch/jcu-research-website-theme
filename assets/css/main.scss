@@ -406,6 +406,17 @@ h3 {
   border-radius: 0.5rem;
 }
 
+.jcu-alert {
+  --jcu-alert-color: var(--color-primary);
+  display: block;
+  margin: 1.25rem 0 0;
+  padding: 1rem 1.25rem;
+  background: color-mix(in srgb, var(--jcu-alert-color) 10%, #fff);
+  border: 1px solid var(--color-border);
+  border-left: 0.25rem solid var(--jcu-alert-color);
+  border-radius: 0.5rem;
+}
+
 .jcu-column + .jcu-column {
   margin-left: 1rem;
 }
@@ -429,6 +440,38 @@ h3 {
   color: var(--color-primary);
 }
 
+.jcu-alert > :first-child {
+  margin-top: 0;
+}
+
+.jcu-alert > :last-child {
+  margin-bottom: 0;
+}
+
+.jcu-alert > p:first-child strong {
+  color: var(--color-heading);
+}
+
+.jcu-alert--note {
+  --jcu-alert-color: var(--color-primary);
+}
+
+.jcu-alert--tip {
+  --jcu-alert-color: var(--color-accent);
+}
+
+.jcu-alert--important {
+  --jcu-alert-color: #7a3db8;
+}
+
+.jcu-alert--warning {
+  --jcu-alert-color: var(--color-secondary);
+}
+
+.jcu-alert--caution {
+  --jcu-alert-color: #c2410c;
+}
+
 .jcu-block--secondary,
 .jcu-block--surface {
   padding: 1.5rem;
@@ -436,12 +479,38 @@ h3 {
 }
 
 .jcu-block--secondary {
+  position: relative;
+  z-index: 0;
+}
+
+.jcu-block--secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: var(--color-secondary-bg);
+  opacity: var(--color-secondary-bg-opacity);
+  border-radius: inherit;
 }
 
 .jcu-block--surface {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+}
+
+.jcu-block--image-left::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.jcu-block--image-left img {
+  float: left;
+  width: min(14rem, 38%);
+  margin: 0 1.25rem 0.75rem 0;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .jcu-block--accent {
@@ -460,6 +529,11 @@ blockquote.jcu-block {
 }
 
 blockquote.jcu-column {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+blockquote.jcu-alert {
   margin-right: 0;
   margin-left: 0;
 }
@@ -766,6 +840,12 @@ a.partner-logo:hover {
 
   .jcu-column + .jcu-column {
     margin-left: 0;
+  }
+
+  .jcu-block--image-left img {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
   }
 
   .partner-logos {

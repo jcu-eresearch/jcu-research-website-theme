@@ -48,4 +48,88 @@ This paragraph sits between two inline blocks, so authors can mix normal page co
 > Use it for brief notes that should stand apart from the surrounding page content.
 {:.jcu-block .jcu-block--surface .jcu-block--accent}
 
+The same surface block can include an image floated to the left. Add the image as the first line inside the block and include `.jcu-block--image-left` in the class line.
+
+```md
+> ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
+>
+> ## Surface block with accent and image
+>
+> This block uses a left-aligned image with normal Markdown content beside it.
+{:.jcu-block .jcu-block--surface .jcu-block--accent .jcu-block--image-left}
+```
+
+> ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
+>
+> ## Surface block with accent and image
+>
+> This block uses a left-aligned image with normal Markdown content beside it. It is useful when a project update, case study, or highlighted method needs a visual cue.
+>
+> The image stacks above the text on smaller screens.
+{:.jcu-block .jcu-block--surface .jcu-block--accent .jcu-block--image-left}
+
 The older front matter block system is still available for generated components such as page cards, image galleries, and partner logos.
+
+## Alert blocks
+
+Use the same blockquote pattern for alert boxes. Add the alert label in bold, then place the alert class line directly underneath the block.
+
+```md
+> **Note**
+>
+> Highlights information that users should take into account, even when skimming.
+{:.jcu-alert .jcu-alert--note}
+```
+
+> **Note**
+>
+> Highlights information that users should take into account, even when skimming.
+{:.jcu-alert .jcu-alert--note}
+
+```md
+> **Tip**
+>
+> Optional information to help a user be more successful.
+{:.jcu-alert .jcu-alert--tip}
+```
+
+> **Tip**
+>
+> Optional information to help a user be more successful.
+{:.jcu-alert .jcu-alert--tip}
+
+```md
+> **Important**
+>
+> Crucial information necessary for users to succeed.
+{:.jcu-alert .jcu-alert--important}
+```
+
+> **Important**
+>
+> Crucial information necessary for users to succeed.
+{:.jcu-alert .jcu-alert--important}
+
+```md
+> **Warning**
+>
+> Critical content demanding immediate user attention due to potential risks.
+{:.jcu-alert .jcu-alert--warning}
+```
+
+> **Warning**
+>
+> Critical content demanding immediate user attention due to potential risks.
+{:.jcu-alert .jcu-alert--warning}
+
+```md
+> **Caution**
+>
+> Negative potential consequences of an action.
+{:.jcu-alert .jcu-alert--caution}
+```
+
+> **Caution**
+>
+> Negative potential consequences of an action.
+{:.jcu-alert .jcu-alert--caution}

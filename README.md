@@ -167,6 +167,17 @@ For a simple two-column section, place two `.jcu-column` blocks next to each oth
 {:.jcu-column}
 ```
 
+For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
+
+```md
+> **Note**
+>
+> Highlights information that users should take into account.
+{:.jcu-alert .jcu-alert--note}
+```
+
+Alert options are `.jcu-alert--note`, `.jcu-alert--tip`, `.jcu-alert--important`, `.jcu-alert--warning`, and `.jcu-alert--caution`.
+
 ### One column
 
 ```yml
