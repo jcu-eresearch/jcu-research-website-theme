@@ -1,5 +1,5 @@
 ---
-title: About
+title: Home
 permalink: /
 blocks:
   - type: one-column
@@ -15,15 +15,17 @@ blocks:
       - title: "Built for maintenance"
         content: |
           Add new pages through `_data/navigation.yml`, then write the page content in Markdown using reusable block types.
-  - type: gallery
-    title: "Featured links"
-    items:
-      - title: "Background"
-        image: "/assets/images/gallery-background.svg"
-        url: "/background/"
-      - title: "Contact the team"
-        image: "/assets/images/gallery-contact.svg"
-        url: "/contact/"
+  - type: partner-logos
+    title: "Project partners"
+    columns: 2
+    content: |
+      Add partner, funder, and collaborator logos here.
+    partners:
+      - name: "James Cook University"
+        logo: "/assets/images/partner-jcu.svg"
+        url: "https://www.jcu.edu.au/"
+      - name: "Partner organisation"
+        logo: "/assets/images/partner-placeholder.svg"
 ---
 
 Welcome to the project website. Replace this text with a short summary of the research project, its partners, and the audiences the website should support.
