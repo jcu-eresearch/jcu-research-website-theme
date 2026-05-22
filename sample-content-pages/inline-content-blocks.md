@@ -8,7 +8,7 @@ summary: "Examples of content blocks written directly in the Markdown page body.
 
 This page demonstrates content blocks written inline with the rest of the page content. The class line after each block keeps the authoring pattern short while still allowing Markdown inside the block.
 
-> ## Inline one-column block
+> ## Background colour ribbon
 >
 > This block uses `.jcu-block` and `.jcu-block--coloured-bkgnd` for a full-width pale secondary background.
 >

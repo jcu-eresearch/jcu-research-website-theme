@@ -13,7 +13,7 @@ layout: default
     {% endif %}
   </header>
 
-  {% unless site.theme_settings.show_breadcrumbs == false %}
+  {% unless site.theme_settings.show_breadcrumbs == false or page.url == "/" %}
     {% include breadcrumbs.html %}
   {% endunless %}
 
