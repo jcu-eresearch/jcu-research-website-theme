@@ -77,12 +77,10 @@ The same card block can include an image and the image can be floated to the lef
 
 > ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
 >
-> ### Card block with accent and image to the left
+> ### Card block with accent and image
 >
-> This block uses a left-aligned image with normal Markdown content beside it. It is useful when a project update, case study, or highlighted method needs a visual cue.
->
-> The image stacks above the text on smaller screens.
-{:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-left}
+> This block includes an image and normal markdown text.
+{:.jcu-block .jcu-block--card .jcu-block--accent}
 
 Use `.jcu-block--image-right` to place the image on the right instead.
 
