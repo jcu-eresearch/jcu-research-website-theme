@@ -156,19 +156,6 @@ Inline block options:
 
 Place the class line directly underneath the block it should style.
 
-For a simple two-column section, place two `.jcu-column` blocks next to each other:
-
-```md
-> ### Left column
->
-> Markdown content goes here.
-{:.jcu-column}
-> ### Right column
->
-> Markdown content goes here.
-{:.jcu-column}
-```
-
 For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
 
 ```md

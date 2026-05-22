@@ -21,21 +21,6 @@ This page demonstrates content blocks written inline with the rest of the page c
 
 This paragraph sits between two inline blocks, so authors can mix normal page content and styled sections in the order they want readers to encounter them.
 
-> ### Column one
->
-> Use two consecutive `.jcu-column` blocks for compact comparisons, paired ideas, or short lists.
->
-> - Research context
-> - Study setting
-> - Key collaborators
-{:.jcu-column}
-> ### Column two
->
-> Each column is still Markdown, so links and emphasis work as expected.
->
-> For example, a researcher could link to a [project output](https://www.jcu.edu.au/) or highlight a **priority action**.
-{:.jcu-column}
-
 > ## Card block with accent
 >
 > This version uses `.jcu-block--card` and `.jcu-block--accent`. It is useful for a short note, project update, or highlighted takeaway.
