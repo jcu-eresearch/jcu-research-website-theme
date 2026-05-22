@@ -395,6 +395,16 @@ h3 {
   margin: 0 0 0.8rem 1.25rem;
 }
 
+.prose > .jcu-block + :not(.jcu-block),
+.prose > .jcu-alert + :not(.jcu-alert),
+.prose > .jcu-partner-logos + :not(.jcu-partner-logos),
+.prose > .jcu-image-gallery + :not(.jcu-image-gallery),
+.prose > .colour-samples + *,
+.prose > .image-gallery + *,
+.prose > .partner-logos + * {
+  margin-top: var(--inline-block-spacing);
+}
+
 .jcu-block {
   display: block;
   margin-top: var(--inline-block-spacing);
