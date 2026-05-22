@@ -1,20 +1,19 @@
 <aside class="site-sidebar" aria-label="Primary navigation">
   {% assign navigation_items = site.data.navigation %}
   <div class="brand">
-    {% if site.theme_settings.logo %}
-      <a href="{{ '/' | relative_url }}" class="brand-logo" aria-label="{{ site.title }} home">
-        <img src="{{ site.theme_settings.logo | relative_url }}" alt="">
-      </a>
-    {% endif %}
     {% if site.theme_settings.project_logo %}
       <a href="{{ '/' | relative_url }}" class="brand-project-logo" aria-label="{{ site.title }} home">
         <img src="{{ site.theme_settings.project_logo | relative_url }}" alt="{{ site.theme_settings.project_logo_alt | default: site.title }}">
       </a>
     {% endif %}
     <a class="brand-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="menu-toggle-icon" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
   </div>
 
-  <nav class="site-nav">
+  <nav class="site-nav" id="site-nav">
     {% if navigation_items %}
       {% for item in navigation_items %}
         {% assign item_url = item.url | relative_url %}
@@ -55,4 +54,12 @@
       </div>
     {% endif %}
   </nav>
+
+  {% if site.theme_settings.logo %}
+    <div class="sidebar-footer">
+      <a href="https://www.jcu.edu.au/" class="sidebar-jcu-logo" aria-label="James Cook University">
+        <img src="{{ site.theme_settings.logo | relative_url }}" alt="{{ site.theme_settings.logo_alt | default: 'James Cook University' }}">
+      </a>
+    </div>
+  {% endif %}
 </aside>

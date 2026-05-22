@@ -66,8 +66,6 @@ Use `.jcu-block--image-right` to place the image on the right instead.
 > This version uses `.jcu-block--image-right` to float the first image to the right while the text starts on the left.
 {:.jcu-block .jcu-block--card .jcu-block--accent .jcu-block--image-right}
 
-The older front matter block system is still available for generated components such as page cards, image galleries, and partner logos.
-
 ## Inline partner logos
 
 This example uses `.jcu-partner-logos` and `.jcu-partner-logos--4`, combined with `.jcu-block--coloured-bkgnd`. Images can be plain Markdown images, or linked Markdown images when a logo should link somewhere.

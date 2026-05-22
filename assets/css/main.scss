@@ -83,6 +83,8 @@ a:hover {
   top: 0;
   align-self: start;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 2rem 1.25rem;
   background: var(--color-primary);
   color: #fff;
@@ -95,31 +97,34 @@ a:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 
-.brand-logo {
+.brand-project-logo {
   width: 12.75rem;
   max-width: 100%;
 }
 
-.brand-logo,
+.sidebar-jcu-logo,
 .brand-project-logo {
   display: block;
   padding: 0.75rem;
-  background: var(--sidebar-logo-tile-bg);
-  border: 1px solid var(--sidebar-logo-tile-border);
   border-radius: 0.5rem;
 }
 
-.brand-logo img,
-.brand-project-logo img {
-  width: 100%;
-  height: auto;
+.sidebar-jcu-logo {
+  width: 12.75rem;
+  max-width: 100%;
+  background: var(--sidebar-logo-tile-bg);
+  border: 1px solid var(--sidebar-logo-tile-border);
 }
 
 .brand-project-logo {
-  width: 7rem;
-  max-width: 100%;
   background: var(--sidebar-project-logo-tile-bg);
-  border-color: var(--sidebar-project-logo-tile-border);
+  border: 1px solid var(--sidebar-project-logo-tile-border);
+}
+
+.sidebar-jcu-logo img,
+.brand-project-logo img {
+  width: 100%;
+  height: auto;
 }
 
 .brand-title {
@@ -131,10 +136,48 @@ a:hover {
   text-decoration: none;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle-icon {
+  position: relative;
+  display: block;
+  width: 1.35rem;
+  height: 0.9rem;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after,
+.menu-toggle-icon {
+  border-top: 2px solid currentColor;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.menu-toggle-icon::before {
+  top: 0.35rem;
+}
+
+.menu-toggle-icon::after {
+  top: 0.75rem;
+}
+
 .site-nav {
   display: grid;
   gap: 0.35rem;
   margin-top: 1.5rem;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
 .site-nav-group {
@@ -1000,34 +1043,80 @@ a.partner-logo:hover {
   }
 
   .brand {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 0.8rem;
     padding-bottom: 1rem;
   }
 
-  .brand-logo {
-    width: 7.125rem;
-  }
-
   .brand-project-logo {
-    width: 4.25rem;
+    width: 7.125rem;
   }
 
   .brand-title {
     font-size: 1.1rem;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.75rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 0.35rem;
+    font: inherit;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+    border-color: transparent;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
+    top: 0.4rem;
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon::after {
+    top: 0.4rem;
+    transform: rotate(-45deg);
+  }
+
   .site-nav {
-    display: flex;
+    display: none;
     gap: 0.4rem;
-    overflow-x: auto;
     margin-top: 1rem;
     padding-bottom: 0.25rem;
   }
 
+  .sidebar-footer {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .site-sidebar.is-menu-open .site-nav,
+  .site-sidebar.is-menu-open .sidebar-footer {
+    display: grid;
+  }
+
+  .sidebar-jcu-logo {
+    width: 7.125rem;
+  }
+
   .site-nav-group {
-    flex: 0 0 auto;
     gap: 0.3rem;
   }
 
