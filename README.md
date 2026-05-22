@@ -142,12 +142,12 @@ Use Markdown blockquote notation with a short class line when you want styled bl
 > ## Section title
 >
 > Markdown content can include **emphasis**, [links](https://www.jcu.edu.au/), and lists.
-{:.jcu-block .jcu-block--secondary}
+{:.jcu-block .jcu-block--2ndary-bkg}
 ```
 
 Inline block options:
 
-- `.jcu-block--secondary`: use the configured secondary background colour
+- `.jcu-block--2ndary-bkg`: use the configured secondary background colour
 - `.jcu-block--card`: use the theme card colour with a border
 - `.jcu-block--accent`: add the JCU accent line to the left of a block
 - `.jcu-block--full`: allow the block to use the full content width

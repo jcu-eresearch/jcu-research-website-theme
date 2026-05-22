@@ -1,6 +1,6 @@
 - title: Home
   url: /
-- title: Sample Content
+- title: Sample Content Styles
   url: /sample-content/
   children:
     - title: Text Formats

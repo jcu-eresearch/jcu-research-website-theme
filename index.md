@@ -8,7 +8,7 @@ Welcome to the project website. Replace this text with a short summary of the re
 > ## Research that is easy to share
 >
 > This JCU-themed website is designed for research project communications. Update pages in Markdown, adjust colours and fonts from the site configuration, and publish through GitHub Pages.
-{:.jcu-block .jcu-block--secondary}
+{:.jcu-block .jcu-block--2ndary-bkg}
 
 > ## JCU Research Website Project
 >

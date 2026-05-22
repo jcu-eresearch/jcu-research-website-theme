@@ -1,5 +1,5 @@
 ---
-title: Sample Content
+title: Sample Content Styles
 permalink: /sample-content/
 blocks:
   - type: page-cards
