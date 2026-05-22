@@ -10,14 +10,14 @@ This page demonstrates content blocks written inline with the rest of the page c
 
 > ## Inline one-column block
 >
-> This block uses `.jcu-block` and `.jcu-block--2ndary-bkg` for a full-width pale secondary background.
+> This block uses `.jcu-block` and `.jcu-block--coloured-bkgnd` for a full-width pale secondary background.
 >
 > The content inside can include **emphasis**, [links](https://www.jcu.edu.au/), and ordinary Markdown lists.
 >
 > - Write the block where it should appear on the page.
 > - Keep using Markdown for the content.
 > - Add the class line directly underneath the block.
-{:.jcu-block .jcu-block--2ndary-bkg}
+{:.jcu-block .jcu-block--coloured-bkgnd}
 
 This paragraph sits between two inline blocks, so authors can mix normal page content and styled sections in the order they want readers to encounter them.
 
@@ -32,8 +32,8 @@ The card style can also be combined with the secondary block style when the sect
 
 > ## Card block with secondary background
 >
-> This combines `.jcu-block--card` and `.jcu-block--2ndary-bkg`, so the block uses the secondary background treatment while keeping the same spacing as the card block.
-{:.jcu-block .jcu-block--card .jcu-block--2ndary-bkg}
+> This combines `.jcu-block--card` and `.jcu-block--coloured-bkgnd`, so the block uses the secondary background treatment while keeping the same spacing as the card block.
+{:.jcu-block .jcu-block--card .jcu-block--coloured-bkgnd}
 
 The same card block can include an image and the image can be floated to the left or right. Add the image as the first line inside the block and include `.jcu-block--image-left` or `.jcu-block--image-right` in the class line.
 
@@ -70,13 +70,13 @@ The older front matter block system is still available for generated components 
 
 ## Inline partner logos
 
-This example uses `.jcu-partner-logos` and `.jcu-partner-logos--4`, combined with `.jcu-block--2ndary-bkg`. Images can be plain Markdown images, or linked Markdown images when a logo should link somewhere.
+This example uses `.jcu-partner-logos` and `.jcu-partner-logos--4`, combined with `.jcu-block--coloured-bkgnd`. Images can be plain Markdown images, or linked Markdown images when a logo should link somewhere.
 
 [![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
 ![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
-{:.jcu-block .jcu-block--2ndary-bkg .jcu-partner-logos .jcu-partner-logos--4}
+{:.jcu-block .jcu-block--coloured-bkgnd .jcu-partner-logos .jcu-partner-logos--4}
 
 ## Inline image gallery
 

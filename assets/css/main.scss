@@ -587,8 +587,7 @@ h3 {
   --jcu-alert-color: #c2410c;
 }
 
-.jcu-block--2ndary-bkg,
-.jcu-block--secondary,
+.jcu-block--coloured-bkgnd,
 .jcu-block--card,
 .jcu-block--surface {
   border-radius: 0.5rem;
@@ -602,18 +601,15 @@ h3 {
   border: 1px solid var(--color-border);
 }
 
-.jcu-block--2ndary-bkg.jcu-block--card,
-.jcu-block--2ndary-bkg.jcu-block--surface,
-.jcu-block--secondary.jcu-block--card,
-.jcu-block--secondary.jcu-block--surface {
+.jcu-block--coloured-bkgnd.jcu-block--card,
+.jcu-block--coloured-bkgnd.jcu-block--surface {
   background: transparent;
   border-color: transparent;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
-.jcu-block--2ndary-bkg,
-.jcu-block--secondary {
+.jcu-block--coloured-bkgnd {
   width: calc(100% + (var(--site-main-inline-padding) * 2));
   max-width: none;
   margin-right: calc(var(--site-main-inline-padding) * -1);
@@ -623,8 +619,7 @@ h3 {
   z-index: 0;
 }
 
-.jcu-block--2ndary-bkg::before,
-.jcu-block--secondary::before {
+.jcu-block--coloured-bkgnd::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -634,10 +629,8 @@ h3 {
   border-radius: inherit;
 }
 
-.jcu-block--2ndary-bkg.jcu-block--card::after,
-.jcu-block--2ndary-bkg.jcu-block--surface::after,
-.jcu-block--secondary.jcu-block--card::after,
-.jcu-block--secondary.jcu-block--surface::after {
+.jcu-block--coloured-bkgnd.jcu-block--card::after,
+.jcu-block--coloured-bkgnd.jcu-block--surface::after {
   content: "";
   position: absolute;
   inset: 1.5rem max(0rem, calc(var(--site-main-inline-padding) - 1.5rem));
@@ -677,8 +670,7 @@ h3 {
   border-left: 0.25rem solid var(--color-accent);
 }
 
-.jcu-block--2ndary-bkg.jcu-block--accent,
-.jcu-block--secondary.jcu-block--accent,
+.jcu-block--coloured-bkgnd.jcu-block--accent,
 .jcu-block--card.jcu-block--accent,
 .jcu-block--surface.jcu-block--accent {
   padding-left: 1.5rem;
@@ -689,8 +681,7 @@ blockquote.jcu-block {
   margin-left: 0;
 }
 
-blockquote.jcu-block--2ndary-bkg,
-blockquote.jcu-block--secondary {
+blockquote.jcu-block--coloured-bkgnd {
   margin-right: calc(var(--site-main-inline-padding) * -1);
   margin-left: calc(var(--site-main-inline-padding) * -1);
 }

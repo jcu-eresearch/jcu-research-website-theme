@@ -42,5 +42,5 @@ This page shows the colour values currently configured in `_config.yml`.
 - **Muted text colour** is used for supporting text, captions, breadcrumbs, and less prominent labels.
 - **Background colour** is used for the main page panel.
 - **Surface colour** is used for card-style panels, column panels, page cards, alert backgrounds, and other quiet UI surfaces.
-- **Secondary background colour** is used for pale highlighted sections such as `.jcu-block--2ndary-bkg`.
+- **Secondary background colour** is used for pale highlighted sections such as `.jcu-block--coloured-bkgnd`.
 - **Border colour** is used for panel borders, card borders, dividers, and subtle structural lines.
