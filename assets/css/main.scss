@@ -789,6 +789,65 @@ p.jcu-image-gallery {
   color: var(--color-primary);
 }
 
+.colour-samples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.colour-sample {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.colour-swatch {
+  min-height: 100%;
+  border-right: 1px solid var(--color-border);
+}
+
+.colour-sample-body {
+  min-width: 0;
+  padding: 1rem;
+}
+
+.colour-sample h2 {
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+  font-size: 1.15rem;
+}
+
+.colour-sample dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 0.85rem;
+}
+
+.colour-sample dt {
+  color: var(--color-muted);
+  font-weight: 800;
+}
+
+.colour-sample dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.colour-sample code {
+  overflow-wrap: anywhere;
+}
+
+.colour-sample p {
+  margin: 0;
+  font-weight: 800;
+}
+
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1007,6 +1066,7 @@ a.partner-logo:hover {
   }
 
   .two-column,
+  .colour-samples,
   .image-gallery {
     grid-template-columns: 1fr;
   }
@@ -1079,6 +1139,16 @@ a.partner-logo:hover {
 }
 
 @media (max-width: 520px) {
+  .colour-sample {
+    grid-template-columns: 1fr;
+  }
+
+  .colour-swatch {
+    min-height: 5rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
   .jcu-partner-logos,
   .jcu-partner-logos--2,
   .jcu-partner-logos--3,
