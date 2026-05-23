@@ -330,6 +330,33 @@ h3 {
   font-size: 0.95rem;
 }
 
+.prose h1[id],
+.prose h2[id],
+.prose h3[id],
+.prose h4[id],
+.prose h5[id],
+.prose h6[id] {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.heading-anchor {
+  color: var(--color-secondary);
+  font-size: 0.9em;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0.76;
+}
+
+.heading-anchor:hover,
+.heading-anchor:focus-visible {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
 .page-lead {
   max-width: 42rem;
   margin: 1rem 0 0;
@@ -436,6 +463,49 @@ h3 {
 
 .prose dd {
   margin: 0 0 0.8rem 1.25rem;
+}
+
+.prose table {
+  --table-line-color: color-mix(in srgb, var(--color-secondary) 34%, #fff);
+  --table-banded-row-bg: {% if site.theme_settings.table_banded_rows == false %}transparent{% else %}color-mix(in srgb, var(--color-secondary) 5%, #fff){% endif %};
+  width: 100%;
+  margin-top: var(--inline-block-spacing);
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose thead th {
+  color: #fff;
+  background: var(--color-secondary);
+  font-weight: 800;
+}
+
+.prose thead th:first-child {
+  border-top-left-radius: 0.35rem;
+}
+
+.prose thead th:last-child {
+  border-top-right-radius: 0.35rem;
+}
+
+.prose tbody tr {
+  border-top: 1px solid var(--table-line-color);
+}
+
+.prose tbody tr:nth-child(even) {
+  background: var(--table-banded-row-bg);
+}
+
+.prose th + th,
+.prose td + td {
+  border-left: 1px solid var(--table-line-color);
 }
 
 .prose > .jcu-block + :not(.jcu-block),

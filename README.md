@@ -71,6 +71,7 @@ theme_settings:
   secondary_background_color: "#DCDAC3"
   secondary_background_opacity: "0.5"
   border_color: "#D0D5DD"
+  table_banded_rows: true
   block_separator_style: "none"
   partner_logo_max_height: "4rem"
   partner_logo_columns: 4

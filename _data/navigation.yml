@@ -3,7 +3,7 @@
 - title: Sample Content Styles
   url: /sample-content/
   children:
-    - title: Text Formats
+    - title: Markdown formatting
       url: /sample-content/text-formats/
     - title: Content Blocks
       url: /sample-content/content-blocks/

@@ -3,6 +3,10 @@ description: "A JCU-themed static website for research project communications."
 url: "https://PaulineLawrey.github.io"
 baseurl: "/jcu-research-website-theme"
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo-mono.svg"
@@ -27,6 +31,7 @@ theme_settings:
   secondary_background_color: "#DCDAC3"
   secondary_background_opacity: "0.5"
   border_color: "#D0D5DD"
+  table_banded_rows: true
   # block_separator_style options: "none", "line", "accent", "band"
   block_separator_style: "none"
   partner_logo_tile_background: "transparent"

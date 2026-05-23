@@ -1,16 +1,16 @@
 ---
-title: Text Formats
+title: Markdown formatting
 permalink: /sample-content/text-formats/
 order: 1
 image: "/assets/images/card-project-setting.svg"
-summary: "This page shows the various text formats available with this template."
+summary: "This page shows the Markdown formatting available with this template."
 ---
 # Heading 1
 ## Heading 2
 ### Heading 3
 #### Heading 4
 
-### Level 3 heading with an ID {#custom-id}
+## Heading with an ID {#custom-id}
 
 ## Paragraph
 
@@ -22,7 +22,7 @@ Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas int
 `code`;
 ~~strikethrough~~;
 <mark>very important words</mark>;
-Subscript example:  H<sub>2</sub>0;
+Subscript example: H<sub>2</sub>O;
 Superscript example: X<sup>2</sup>
 
 ## Block quote
@@ -34,11 +34,11 @@ Superscript example: X<sup>2</sup>
 >                  Only this, and nothing more."
 
 ## Fenced code block
-```
+```json
 {
-	"firstName": "John",
-	"lastName": "Smith",
-	"age": 25
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
 }
 ```
 
@@ -51,21 +51,21 @@ Here's a sentence with a footnote. [^1]
 
 ### Ordered list
 1. first item
-	- indented bullet point
-1. second item
-	1. indented numbered item
-1. third item
+   - indented bullet point
+2. second item
+   1. indented numbered item
+3. third item
 
 ### Unordered list
 * top level item 1
-	* indented once
-		* indented twice
+  * indented once
+    * indented twice
 * top level item 2
 
 ### Unordered list alternate
 - first list item
-	- indented item
-		- further indent
+  - indented item
+    - further indent
 - second list item
 
 ### Task list
@@ -87,14 +87,11 @@ term 2
 [link title](https://www.example.com)
 
 ## Image
-![alt text](/assets/images/my-cat_750x1000.jpeg)
-
-## Emoji
-That is so funny! :joy:
+![Biscuit]({{ "/assets/images/my-cat_750x1000.jpeg" | relative_url }})
 
 ## Table
+
 | Syntax | Description |
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |
-

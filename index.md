@@ -12,7 +12,7 @@ permalink: /
 
 ### Purpose
 
-Share project aims, context, updates, outputs, and contact details in a format that is clear for partners, participants, and collaborators.
+Making it easier for researchers to share project aims, context, updates, outputs, and contact details in a format that is clear for partners, participants, and collaborators.
 
 ### Easy to use
 
