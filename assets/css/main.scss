@@ -21,6 +21,8 @@
   --sidebar-project-logo-tile-border: {{ site.theme_settings.sidebar_project_logo_tile_border_color | default: site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
   --partner-logo-tile-bg: {{ site.theme_settings.partner_logo_tile_background | default: "#FFFFFF" }};
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
+  --partner-logo-max-items-per-row: {{ site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 }};
+  --image-gallery-max-items-per-row: {{ site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 }};
   --sidebar-width: 19rem;
   --content-width: 68rem;
   --site-main-inline-padding: clamp(1.25rem, 5vw, 5rem);
@@ -536,24 +538,13 @@ h3 {
 }
 
 .jcu-partner-logos {
-  --jcu-partner-logo-columns: 3;
+  --partner-logo-grid-min: 12rem;
+  --partner-logo-grid-item-width: calc((100% - ((var(--partner-logo-max-items-per-row) - 1) * 1rem)) / var(--partner-logo-max-items-per-row));
   display: grid;
-  grid-template-columns: repeat(var(--jcu-partner-logo-columns), minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--partner-logo-grid-min), var(--partner-logo-grid-item-width))), 1fr));
   gap: 1rem;
   align-items: stretch;
   margin-top: var(--inline-block-spacing);
-}
-
-.jcu-partner-logos--2 {
-  --jcu-partner-logo-columns: 2;
-}
-
-.jcu-partner-logos--3 {
-  --jcu-partner-logo-columns: 3;
-}
-
-.jcu-partner-logos--4 {
-  --jcu-partner-logo-columns: 4;
 }
 
 .jcu-partner-logos > a,
@@ -590,24 +581,13 @@ h3 {
 }
 
 .jcu-image-gallery {
-  --jcu-image-gallery-columns: 3;
+  --image-gallery-grid-min: 12rem;
+  --image-gallery-grid-item-width: calc((100% - ((var(--image-gallery-max-items-per-row) - 1) * 1rem)) / var(--image-gallery-max-items-per-row));
   display: grid;
-  grid-template-columns: repeat(var(--jcu-image-gallery-columns), minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--image-gallery-grid-min), var(--image-gallery-grid-item-width))), 1fr));
   gap: 1rem;
   align-items: stretch;
   margin-top: var(--inline-block-spacing);
-}
-
-.jcu-image-gallery--2 {
-  --jcu-image-gallery-columns: 2;
-}
-
-.jcu-image-gallery--3 {
-  --jcu-image-gallery-columns: 3;
-}
-
-.jcu-image-gallery--4 {
-  --jcu-image-gallery-columns: 4;
 }
 
 .jcu-image-gallery > a,
@@ -947,8 +927,10 @@ p.jcu-image-gallery {
 }
 
 .image-gallery {
+  --image-gallery-grid-min: 12rem;
+  --image-gallery-grid-item-width: calc((100% - ((var(--image-gallery-max-items-per-row) - 1) * 1rem)) / var(--image-gallery-max-items-per-row));
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--image-gallery-grid-min), var(--image-gallery-grid-item-width))), 1fr));
   gap: 1rem;
 }
 
@@ -991,8 +973,10 @@ p.jcu-image-gallery {
 }
 
 .partner-logos {
+  --partner-logo-grid-min: 12rem;
+  --partner-logo-grid-item-width: calc((100% - ((var(--partner-logo-max-items-per-row) - 1) * 1rem)) / var(--partner-logo-max-items-per-row));
   display: grid;
-  grid-template-columns: repeat(var(--partner-logo-columns), minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(var(--partner-logo-grid-min), var(--partner-logo-grid-item-width))), 1fr));
   gap: 1rem;
   align-items: stretch;
 }
@@ -1210,21 +1194,8 @@ a.partner-logo:hover {
   }
 
   .two-column,
-  .colour-samples,
-  .image-gallery {
+  .colour-samples {
     grid-template-columns: 1fr;
-  }
-
-  .jcu-partner-logos,
-  .jcu-partner-logos--3,
-  .jcu-partner-logos--4 {
-    --jcu-partner-logo-columns: 2;
-  }
-
-  .jcu-image-gallery,
-  .jcu-image-gallery--3,
-  .jcu-image-gallery--4 {
-    --jcu-image-gallery-columns: 2;
   }
 
   .jcu-block--image-left img,
@@ -1232,10 +1203,6 @@ a.partner-logo:hover {
     float: none;
     width: 100%;
     margin: 0 0 1rem;
-  }
-
-  .partner-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .page-cards {
@@ -1285,22 +1252,27 @@ a.partner-logo:hover {
   }
 
   .jcu-partner-logos,
-  .jcu-partner-logos--2,
-  .jcu-partner-logos--3,
-  .jcu-partner-logos--4 {
-    --jcu-partner-logo-columns: 1;
+  .partner-logos {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
   .jcu-image-gallery,
-  .jcu-image-gallery--2,
-  .jcu-image-gallery--3,
-  .jcu-image-gallery--4 {
-    --jcu-image-gallery-columns: 1;
+  .image-gallery {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 
-  .partner-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+  .jcu-partner-logos > a,
+  .jcu-partner-logos > img,
+  .partner-logo {
+    width: min(100%, 24rem);
+  }
+
+  .jcu-image-gallery > a,
+  .jcu-image-gallery > img,
+  .gallery-item {
+    width: min(100%, 24rem);
   }
 
   .partner-logo {

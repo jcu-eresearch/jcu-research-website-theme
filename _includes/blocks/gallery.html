@@ -5,7 +5,8 @@
   {% if include.block.title %}
     <h2>{{ include.block.title }}</h2>
   {% endif %}
-  <div class="image-gallery">
+  {% assign image_gallery_max_items_per_row = include.block.columns | default: site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 %}
+  <div class="image-gallery" style="--image-gallery-max-items-per-row: {{ image_gallery_max_items_per_row }};">
     {% for item in include.block.items %}
       <a class="gallery-item" href="{{ item.url | relative_url }}">
         <img src="{{ item.image | relative_url }}" alt="">

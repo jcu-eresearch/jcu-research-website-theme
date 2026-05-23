@@ -37,6 +37,7 @@ blocks:
       Lumholtz's tree-kangaroo is an arboreal marsupial of the Wet Tropics. It moves through the forest canopy and is vulnerable to habitat fragmentation.
   - type: gallery
     title: "Image gallery block"
+    columns: 4
     items:
       - title: "Southern cassowary"
         image: "/assets/images/card-cassowary.svg"
@@ -54,7 +55,7 @@ blocks:
     title: "Partner logo block"
     columns: 4
     content: |
-      The partner logo block can display logos in a configurable number of columns, with optional links from each logo.
+      The partner logo block can use a `columns` override in front matter as the maximum number of logos per row, with optional links from each logo. If `columns` is omitted, it uses `partner_logo_max_items_per_row` from `_config.yml`.
     partners:
       - name: "James Cook University"
         logo: "/assets/images/jcu-logo-colour.svg"

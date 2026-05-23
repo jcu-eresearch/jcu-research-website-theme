@@ -82,7 +82,8 @@ theme_settings:
   block_separator_style: "none"
   partner_logo_tile_background: "transparent"
   partner_logo_max_height: "6rem"
-  partner_logo_columns: 3
+  partner_logo_max_items_per_row: 3
+  image_gallery_max_items_per_row: 3
   page_card_columns: 3
   page_card_link_text: "Read more"
 
@@ -182,27 +183,23 @@ For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
 
 Alert options are `.jcu-alert--note`, `.jcu-alert--tip`, `.jcu-alert--important`, `.jcu-alert--warning`, and `.jcu-alert--caution`.
 
-For inline partner logos, use standard Markdown images and linked images, then add a column class:
+For inline partner logos, use standard Markdown images and linked images, then add the `.jcu-partner-logos` class. The maximum number of tiles in each row is set by `theme_settings.partner_logo_max_items_per_row`.
 
 ```md
 [![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
-{:.jcu-partner-logos .jcu-partner-logos--3}
+{:.jcu-partner-logos}
 ```
 
-Inline partner logo options are `.jcu-partner-logos--2`, `.jcu-partner-logos--3`, and `.jcu-partner-logos--4`.
-
-For an inline image gallery, use standard Markdown images or linked images, then add a gallery column class:
+For an inline image gallery, use standard Markdown images or linked images, then add the `.jcu-image-gallery` class. The maximum number of tiles in each row is set by `theme_settings.image_gallery_max_items_per_row`.
 
 ```md
 [![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
 [![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
 [![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
-{:.jcu-image-gallery .jcu-image-gallery--3}
+{:.jcu-image-gallery}
 ```
-
-Inline image gallery options are `.jcu-image-gallery--2`, `.jcu-image-gallery--3`, and `.jcu-image-gallery--4`.
 
 ### One column
 
@@ -291,11 +288,14 @@ theme_settings:
 ```yml
 - type: gallery
   title: "Featured links"
+  columns: 3
   items:
     - title: "Project context"
       image: "/assets/images/gallery-background.svg"
       url: "/project/research-context/"
 ```
+
+For front matter gallery blocks, `columns` overrides `theme_settings.image_gallery_max_items_per_row`. Inline `.jcu-image-gallery` blocks use only the value from `_config.yml`. Both gallery styles treat the configured value as a maximum and step down to fewer tiles per row as the screen narrows.
 
 ### Partner logos
 
@@ -305,7 +305,7 @@ Set logo defaults in `_config.yml`:
 theme_settings:
   partner_logo_tile_background: "transparent"
   partner_logo_max_height: "6rem"
-  partner_logo_columns: 3
+  partner_logo_max_items_per_row: 3
 ```
 
 Then add a logo block to any page:
@@ -323,6 +323,8 @@ Then add a logo block to any page:
     - name: "Partner organisation"
       logo: "/assets/images/partner-placeholder.svg"
 ```
+
+For front matter partner-logo blocks, `columns` overrides `theme_settings.partner_logo_max_items_per_row`. Inline `.jcu-partner-logos` blocks use only the value from `_config.yml`. Both partner logo styles treat the configured value as a maximum and step down to fewer logos per row as the screen narrows.
 
 ### Page cards
 
