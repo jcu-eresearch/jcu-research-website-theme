@@ -55,10 +55,11 @@
     {% endif %}
   </nav>
 
-  {% if site.theme_settings.logo %}
+  {% assign jcu_logo = site.theme_settings.logo | default: "/assets/images/jcu-logo-mono.svg" %}
+  {% if jcu_logo %}
     <div class="sidebar-footer">
       <a href="https://www.jcu.edu.au/" class="sidebar-jcu-logo" aria-label="James Cook University">
-        <img src="{{ site.theme_settings.logo | relative_url }}" alt="{{ site.theme_settings.logo_alt | default: 'James Cook University' }}">
+        <img src="{{ jcu_logo | relative_url }}" alt="{{ site.theme_settings.logo_alt | default: 'James Cook University' }}">
       </a>
     </div>
   {% endif %}
