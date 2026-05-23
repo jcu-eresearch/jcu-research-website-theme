@@ -34,13 +34,13 @@ This page shows the colour values currently configured in `_config.yml`.
 
 ## How these colours are used
 
-- **Primary colour** is used for the sidebar background, page titles, key links, and prominent navigation styling.
-- **Secondary colour** is used for link hover states and the Tip alert style.
-- **Accent colour** is used for page title underline rules, active navigation markers, accent separators, Warning alerts, and `.jcu-block--accent` lines.
-- **Text colour** is used for standard body text.
-- **Heading colour** is used for most section headings and card headings.
-- **Muted text colour** is used for supporting text, captions, breadcrumbs, and less prominent labels.
-- **Background colour** is used for the main page panel.
-- **Surface colour** is used for card-style panels, column panels, page cards, alert backgrounds, and other quiet UI surfaces.
-- **Secondary background colour** is used for pale highlighted sections such as `.jcu-block--coloured-bkgnd`.
-- **Border colour** is used for panel borders, card borders, dividers, and subtle structural lines.
+- **Primary colour** is used for the sidebar background, page titles, standard links, breadcrumb links, page-card headings, Note alerts, and the hover state for heading permalink icons.
+- **Secondary colour** is used for link hover states, heading permalink icons, Tip alerts, Markdown table header backgrounds, and the muted internal lines and banded rows in Markdown tables.
+- **Accent colour** is used for page title underline rules, active navigation markers, accent block separators, Warning alerts, and `.jcu-block--accent` lines.
+- **Text colour** is used for standard body text, list text, and skip-link backgrounds.
+- **Heading colour** is used for most headings, definition-list terms, alert labels, and card or panel headings.
+- **Muted text colour** is used for breadcrumbs, supporting text, captions, card summaries, and less prominent labels.
+- **Background colour** is used for the main page panel and skip-link text.
+- **Surface colour** is used for card-style blocks, page cards, colour sample cards, column panels, generated gallery tiles, and other quiet UI surfaces.
+- **Secondary background colour** is used for pale highlighted sections such as `.jcu-block--coloured-bkgnd`, secondary front matter content blocks, and the band block separator style.
+- **Border colour** is used for panel borders, card borders, content block separators, colour sample dividers, and subtle structural lines.

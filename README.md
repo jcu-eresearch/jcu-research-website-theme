@@ -51,6 +51,10 @@ remote_theme: jcu-eresearch/jcu-research-website-theme
 plugins:
   - jekyll-remote-theme
 
+markdown: kramdown
+kramdown:
+  input: GFM
+
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo-mono.svg"
@@ -58,6 +62,9 @@ theme_settings:
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
+  # Optional project-logo-specific overrides. Leave commented to use the sidebar logo tile settings above.
+  #sidebar_project_logo_tile_background: "#FFFFFF"
+  #sidebar_project_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
   font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
   heading_font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
@@ -73,8 +80,9 @@ theme_settings:
   border_color: "#D0D5DD"
   table_banded_rows: true
   block_separator_style: "none"
-  partner_logo_max_height: "4rem"
-  partner_logo_columns: 4
+  partner_logo_tile_background: "transparent"
+  partner_logo_max_height: "6rem"
+  partner_logo_columns: 3
   page_card_columns: 3
   page_card_link_text: "Read more"
 
@@ -88,20 +96,24 @@ defaults:
 
 If your site uses the default JCU and project logo assets from this theme, the paths above will work through the remote theme. To use your own logos, add files to the consuming site's `assets/images/` folder and update the paths.
 
+The optional `project_logo` appears at the top of the sidebar. The JCU logo from `logo` appears at the bottom of the desktop sidebar and inside the small-screen burger menu.
+
+The `markdown` and `kramdown` settings enable GitHub-flavoured Markdown features such as pipe tables and task lists.
+
 ## Navigation
 
 Add `_data/navigation.yml` in the project site:
 
 ```yml
-- title: About
-  url: /about/
-- title: Background
-  url: /background/
+- title: Home
+  url: /
+- title: Project
+  url: /project/
   children:
-    - title: Research Context
-      url: /background/research-context/
-    - title: Project Setting
-      url: /background/project-setting/
+    - title: Research context
+      url: /project/research-context/
+    - title: Project setting
+      url: /project/project-setting/
 - title: Contact
   url: /contact/
 ```
@@ -148,7 +160,7 @@ Use Markdown blockquote notation with a short class line when you want styled bl
 
 Inline block options:
 
-- `.jcu-block--coloured-bkgnd`: use the configured secondary background colour
+- `.jcu-block--coloured-bkgnd`: use the configured secondary background colour across the full content panel
 - `.jcu-block--card`: use the theme card colour with a border
 - `.jcu-block--accent`: add the JCU accent line to the left of a block
 - `.jcu-block--full`: allow the block to use the full content width
@@ -156,6 +168,8 @@ Inline block options:
 - `.jcu-block--image-right`: float the first image in the block to the right
 
 Place the class line directly underneath the block it should style.
+
+When normal Markdown content follows an inline block, the theme adds extra spacing automatically.
 
 For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
 
@@ -252,15 +266,35 @@ Use `background_mode: "block"` to colour the block itself, or `background_mode: 
 
 Block separator options are `none`, `line`, `accent`, and `band`.
 
+The landing page does not show breadcrumbs. Other pages show breadcrumbs unless `theme_settings.show_breadcrumbs` is set to `false`.
+
+### Markdown tables
+
+Markdown pipe tables use the configured secondary colour for the header row. Internal table lines use a muted version of the secondary colour, with no lines on the outer edges.
+
+```md
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+```
+
+Set alternating table row backgrounds in `_config.yml`:
+
+```yml
+theme_settings:
+  table_banded_rows: true
+```
+
 ### Image gallery
 
 ```yml
 - type: gallery
   title: "Featured links"
   items:
-    - title: "Background"
+    - title: "Project context"
       image: "/assets/images/gallery-background.svg"
-      url: "/background/"
+      url: "/project/research-context/"
 ```
 
 ### Partner logos
@@ -269,9 +303,9 @@ Set logo defaults in `_config.yml`:
 
 ```yml
 theme_settings:
-  partner_logo_tile_background: "#FFFFFF"
-  partner_logo_max_height: "4rem"
-  partner_logo_columns: 4
+  partner_logo_tile_background: "transparent"
+  partner_logo_max_height: "6rem"
+  partner_logo_columns: 3
 ```
 
 Then add a logo block to any page:
@@ -297,15 +331,15 @@ Set card defaults in `_config.yml`:
 ```yml
 theme_settings:
   page_card_columns: 3
-  page_card_link_text: "View page"
+  page_card_link_text: "Read more"
 ```
 
 Then add a card block to any page. The `folder` value matches Markdown pages in that folder:
 
 ```yml
 - type: page-cards
-  title: "Background pages"
-  folder: "background-pages/"
+  title: "Project pages"
+  folder: "project-pages/"
   columns: 2
   link_text: "Read more"
 ```
@@ -314,8 +348,8 @@ Each page in the folder can provide card metadata:
 
 ```yml
 ---
-title: Research Context
-permalink: /background/research-context/
+title: Research context
+permalink: /project/research-context/
 order: 1
 image: "/assets/images/card-research-context.svg"
 summary: "A short overview of the project setting."
@@ -336,7 +370,7 @@ bundle exec jekyll serve
 The configured GitHub Pages URL for this sample repository is:
 
 ```text
-https://jcu-eresearch.github.io/jcu-research-website-theme/
+https://PaulineLawrey.github.io/jcu-research-website-theme/
 ```
 
 ## Maintaining the theme
