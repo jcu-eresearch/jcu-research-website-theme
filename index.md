@@ -22,5 +22,5 @@ Add new pages through `_data/navigation.yml`, then write the page content in Mar
 {:.jcu-block .jcu-block--card .jcu-block--accent}
 
 [![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
-![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
+![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
 {:.jcu-partner-logos}

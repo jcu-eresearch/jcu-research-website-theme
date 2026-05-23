@@ -42,7 +42,7 @@ gem "github-pages", group: :jekyll_plugins
 In the project site's `_config.yml`, set the project identity and theme settings:
 
 ```yml
-title: "Research Project Website"
+title: "Research project website"
 description: "A JCU-themed static website for research project communications."
 url: "https://USERNAME.github.io"
 baseurl: "/REPOSITORY-NAME"
@@ -58,7 +58,7 @@ kramdown:
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo-mono.svg"
-  project_logo: "/assets/images/project-logo.svg"
+  project_logo: "/assets/sample-images/project-logo.svg"
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
@@ -187,17 +187,17 @@ For inline partner logos, use standard Markdown images and linked images, then a
 
 ```md
 [![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
-![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
-![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
+![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
+![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
 {:.jcu-partner-logos}
 ```
 
 For an inline image gallery, use standard Markdown images or linked images, then add the `.jcu-image-gallery` class. The maximum number of tiles in each row is set by `theme_settings.image_gallery_max_items_per_row`.
 
 ```md
-[![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
-[![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
-[![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
+[![Southern cassowary]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
+[![Lumholtz's tree-kangaroo]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content/content-blocks/lumholtzs-tree-kangaroo/" | relative_url }})
+[![Estuarine crocodile]({{ "/assets/sample-images/card-crocodile.svg" | relative_url }})]({{ "/sample-content/content-blocks/estuarine-crocodile/" | relative_url }})
 {:.jcu-image-gallery}
 ```
 
@@ -229,7 +229,7 @@ For an inline image gallery, use standard Markdown images or linked images, then
 ```yml
 - type: image-text
   title: "Context with supporting image"
-  image: "/assets/images/card-research-context.svg"
+  image: "/assets/sample-images/card-research-context.svg"
   image_alt: "Abstract illustration of research context"
   image_position: "right"
   image_size: "medium"
@@ -291,7 +291,7 @@ theme_settings:
   columns: 3
   items:
     - title: "Project context"
-      image: "/assets/images/gallery-background.svg"
+      image: "/assets/sample-images/gallery-background.svg"
       url: "/project/research-context/"
 ```
 
@@ -321,7 +321,7 @@ Then add a logo block to any page:
       logo: "/assets/images/jcu-logo-colour.svg"
       url: "https://www.jcu.edu.au/"
     - name: "Partner organisation"
-      logo: "/assets/images/partner-placeholder.svg"
+      logo: "/assets/sample-images/partner-placeholder.svg"
 ```
 
 For front matter partner-logo blocks, `columns` overrides `theme_settings.partner_logo_max_items_per_row`. Inline `.jcu-partner-logos` blocks use only the value from `_config.yml`. Both partner logo styles treat the configured value as a maximum and step down to fewer logos per row as the screen narrows.
@@ -353,7 +353,7 @@ Each page in the folder can provide card metadata:
 title: Research context
 permalink: /project/research-context/
 order: 1
-image: "/assets/images/card-research-context.svg"
+image: "/assets/sample-images/card-research-context.svg"
 summary: "A short overview of the project setting."
 ---
 ```
@@ -384,6 +384,8 @@ Keep reusable presentation files in these folders:
 - `_data`
 - `assets`
 
-The Markdown pages in this repository are sample content for previewing the theme. Research project sites that use this as a remote theme should create their own content pages and navigation data.
+Sample content for previewing the theme is grouped under `sample-content/`. Sample-only media is grouped under `assets/sample-images/`, while the reusable JCU logo assets remain in `assets/images/`.
+
+Research project sites that use this as a remote theme should create their own content pages and navigation data.
 
 When releasing a stable version, create a Git tag such as `v1.0.0` and tell consuming sites to pin that tag in `remote_theme`.

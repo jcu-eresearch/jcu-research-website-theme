@@ -1,8 +1,8 @@
 ---
-title: Configured Colours
+title: Configured colours
 permalink: /sample-content/configured-colours/
 order: 4
-image: "/assets/images/card-green-turtle.svg"
+image: "/assets/sample-images/card-green-turtle.svg"
 summary: "A visual reference for the colour settings configured in this theme."
 ---
 

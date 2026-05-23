@@ -1,8 +1,8 @@
 ---
-title: Content Blocks
+title: Content blocks
 permalink: /sample-content/content-blocks/
 order: 2
-image: "/assets/images/card-cassowary.svg"
+image: "/assets/sample-images/card-cassowary.svg"
 summary: "Examples of each content block style available with this template."
 blocks:
   - type: one-column
@@ -24,7 +24,7 @@ blocks:
           Estuarine crocodiles and green turtles connect freshwater, coastal, and reef systems. Their life cycles are shaped by water quality, nesting habitat, and climate.
   - type: image-text
     title: "Image and text block"
-    image: "/assets/images/card-tree-kangaroo.svg"
+    image: "/assets/sample-images/card-tree-kangaroo.svg"
     image_alt: "Stylised Lumholtz's tree-kangaroo in rainforest"
     image_position: "left"
     image_size: "small"
@@ -40,17 +40,17 @@ blocks:
     columns: 4
     items:
       - title: "Southern cassowary"
-        image: "/assets/images/card-cassowary.svg"
-        url: "/sample-content-pages/animals/southern-cassowary/"
+        image: "/assets/sample-images/card-cassowary.svg"
+        url: "/sample-content/content-blocks/southern-cassowary/"
       - title: "Lumholtz's tree-kangaroo"
-        image: "/assets/images/card-tree-kangaroo.svg"
-        url: "/sample-content-pages/animals/lumholtzs-tree-kangaroo/"
+        image: "/assets/sample-images/card-tree-kangaroo.svg"
+        url: "/sample-content/content-blocks/lumholtzs-tree-kangaroo/"
       - title: "Estuarine crocodile"
-        image: "/assets/images/card-crocodile.svg"
-        url: "/sample-content-pages/animals/estuarine-crocodile/"
+        image: "/assets/sample-images/card-crocodile.svg"
+        url: "/sample-content/content-blocks/estuarine-crocodile/"
       - title: "Green turtle"
-        image: "/assets/images/card-green-turtle.svg"
-        url: "/sample-content-pages/animals/green-turtle/"
+        image: "/assets/sample-images/card-green-turtle.svg"
+        url: "/sample-content/content-blocks/green-turtle/"
   - type: partner-logos
     title: "Partner logo block"
     columns: 4
@@ -61,21 +61,21 @@ blocks:
         logo: "/assets/images/jcu-logo-colour.svg"
         url: "https://www.jcu.edu.au/"
       - name: "Partner organisation"
-        logo: "/assets/images/partner-placeholder.svg"
+        logo: "/assets/sample-images/partner-placeholder.svg"
       - name: "Rainforest research partner"
-        logo: "/assets/images/partner-rainforest.svg"
+        logo: "/assets/sample-images/partner-rainforest.svg"
       - name: "Reef research partner"
-        logo: "/assets/images/partner-reef.svg"
+        logo: "/assets/sample-images/partner-reef.svg"
   - type: page-cards
     title: "Page cards block, four per row"
-    folder: "sample-content-pages/animals/"
+    folder: "sample-content/animals/"
     columns: 4
     link_text: "Read species profile"
     content: |
       This card block uses `columns: 4`. Each card is generated from a Markdown page in the animals folder.
   - type: page-cards
     title: "Page cards block, one per row"
-    folder: "sample-content-pages/animals/"
+    folder: "sample-content/animals/"
     columns: 1
     link_text: "Open full profile"
     content: |

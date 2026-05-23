@@ -1,15 +1,15 @@
 - title: Home
   url: /
-- title: Sample Content Styles
+- title: Sample content styles
   url: /sample-content/
   children:
     - title: Markdown formatting
-      url: /sample-content/text-formats/
-    - title: Content Blocks
+      url: /sample-content/markdown-formats/
+    - title: Content blocks
       url: /sample-content/content-blocks/
-    - title: Inline Content Blocks
+    - title: Inline content blocks
       url: /sample-content/inline-content-blocks/
-    - title: Configured Colours
+    - title: Configured colours
       url: /sample-content/configured-colours/
-- title: Contact Us
+- title: Contact us
   url: /contact/

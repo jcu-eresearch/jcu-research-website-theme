@@ -1,5 +1,5 @@
 ---
-title: Contact Us
+title: Contact us
 permalink: /contact/
 blocks:
   - type: two-column

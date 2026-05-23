@@ -1,13 +1,13 @@
 ---
-title: "Lumholtz's Tree-kangaroo"
-permalink: /sample-content-pages/animals/lumholtzs-tree-kangaroo/
+title: "Lumholtz's tree-kangaroo"
+permalink: /sample-content/content-blocks/lumholtzs-tree-kangaroo/
 order: 2
-image: "/assets/images/card-tree-kangaroo.svg"
+image: "/assets/sample-images/card-tree-kangaroo.svg"
 summary: "An arboreal marsupial of the Wet Tropics rainforest canopy."
 blocks:
   - type: image-text
     title: "Life in the canopy"
-    image: "/assets/images/card-tree-kangaroo.svg"
+    image: "/assets/sample-images/card-tree-kangaroo.svg"
     image_alt: "Stylised Lumholtz's tree-kangaroo"
     image_position: "left"
     image_size: "medium"

@@ -1,8 +1,8 @@
 ---
-title: Inline Content Blocks
+title: Inline content blocks
 permalink: /sample-content/inline-content-blocks/
 order: 3
-image: "/assets/images/card-project-setting.svg"
+image: "/assets/sample-images/card-project-setting.svg"
 summary: "Examples of content blocks written directly in the Markdown page body."
 ---
 
@@ -39,7 +39,7 @@ The same card block can include an image and the image can be floated to the lef
 
 ## Card blocks with accent and image
 
-> ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
+> ![Abstract project setting image]({{ "/assets/sample-images/card-project-setting.svg" | relative_url }})
 >
 > ### Card block with accent and image
 >
@@ -48,7 +48,7 @@ The same card block can include an image and the image can be floated to the lef
 
 Use `.jcu-block--image-left` to place the image on the left.
 
-> ![Abstract project setting image]({{ "/assets/images/card-project-setting.svg" | relative_url }})
+> ![Abstract project setting image]({{ "/assets/sample-images/card-project-setting.svg" | relative_url }})
 >
 > ### Card block with accent and image to the left
 >
@@ -59,7 +59,7 @@ Use `.jcu-block--image-left` to place the image on the left.
 
 Use `.jcu-block--image-right` to place the image on the right instead.
 
-> ![Abstract research context image]({{ "/assets/images/card-research-context.svg" | relative_url }})
+> ![Abstract research context image]({{ "/assets/sample-images/card-research-context.svg" | relative_url }})
 >
 > ### Card block with accent and image to the right
 >
@@ -71,19 +71,19 @@ Use `.jcu-block--image-right` to place the image on the right instead.
 This example uses `.jcu-partner-logos`, combined with `.jcu-block--coloured-bkgnd`. The maximum number of logo tiles in each row is set in `_config.yml` with `partner_logo_max_items_per_row`.
 
 [![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
-![Partner organisation logo]({{ "/assets/images/partner-placeholder.svg" | relative_url }})
-![Rainforest research partner logo]({{ "/assets/images/partner-rainforest.svg" | relative_url }})
-![Reef research partner logo]({{ "/assets/images/partner-reef.svg" | relative_url }})
+![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
+![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
+![Reef research partner logo]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
 {:.jcu-block .jcu-block--coloured-bkgnd .jcu-partner-logos}
 
 ## Inline image gallery
 
 This example uses `.jcu-image-gallery`. The maximum number of image tiles in each row is set in `_config.yml` with `image_gallery_max_items_per_row`, and the layout steps down to fewer items per row as the screen narrows.
 
-[![Southern cassowary]({{ "/assets/images/card-cassowary.svg" | relative_url }})]({{ "/sample-content-pages/animals/southern-cassowary/" | relative_url }})
-[![Lumholtz's tree-kangaroo]({{ "/assets/images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content-pages/animals/lumholtzs-tree-kangaroo/" | relative_url }})
-[![Estuarine crocodile]({{ "/assets/images/card-crocodile.svg" | relative_url }})]({{ "/sample-content-pages/animals/estuarine-crocodile/" | relative_url }})
-[![Green turtle]({{ "/assets/images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content-pages/animals/green-turtle/" | relative_url }})
+[![Southern cassowary]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
+[![Lumholtz's tree-kangaroo]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content/content-blocks/lumholtzs-tree-kangaroo/" | relative_url }})
+[![Estuarine crocodile]({{ "/assets/sample-images/card-crocodile.svg" | relative_url }})]({{ "/sample-content/content-blocks/estuarine-crocodile/" | relative_url }})
+[![Green turtle]({{ "/assets/sample-images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content/content-blocks/green-turtle/" | relative_url }})
 {:.jcu-image-gallery}
 
 ## Alert blocks
