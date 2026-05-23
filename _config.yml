@@ -15,9 +15,8 @@ theme_settings:
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
   # Optional project-logo-specific overrides. Leave commented to use the sidebar logo tile settings above.
-  #sidebar_project_logo_tile_background: "#FFFFFF"
-  #sidebar_project_logo_tile_border_color: "rgba(255, 255, 255, 0.45)"
-  #partner_logo_tile_background: "#FFFFFF"
+  sidebar_project_logo_tile_background: "#transparent"
+  sidebar_project_logo_tile_border_color: "transparent"
   font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
   heading_font_family: "Lato, Inter, Arial, Helvetica, sans-serif"
   primary_color: "#005EB8"
