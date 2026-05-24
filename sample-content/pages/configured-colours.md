@@ -8,16 +8,22 @@ summary: "A visual reference for the colour settings configured in this theme."
 
 This page shows the colour values currently configured in `_config.yml`.
 
-{% assign colours = "primary_color:Primary colour,secondary_color:Secondary colour,accent_color:Accent colour,text_color:Text colour,heading_color:Heading colour,muted_text_color:Muted text colour,background_color:Background colour,surface_color:Surface colour,secondary_background_color:Secondary background colour,border_color:Border colour" | split: "," %}
+{% assign colours = "primary_color:Primary colour:#005EB8,secondary_color:Secondary colour:#00857A,accent_color:Accent colour:#F6C643,text_color:Text colour:#344054,heading_color:Heading colour:#344054,muted_text_color:Muted text colour:#667085,background_color:Background colour:#FFFFFF,surface_color:Surface colour:#F8FAFC,secondary_background_color:Secondary background colour:#DCDAC3,border_color:Border colour:#D0D5DD" | split: "," %}
 
 <div class="colour-samples">
   {% for colour_item in colours %}
     {% assign colour_parts = colour_item | split: ":" %}
     {% assign colour_key = colour_parts[0] %}
     {% assign colour_label = colour_parts[1] %}
-    {% assign colour_value = site.theme_settings[colour_key] %}
+    {% assign colour_default = colour_parts[2] %}
+    {% assign colour_value = site.theme_settings[colour_key] | default: colour_default %}
+    {% assign swatch_style = "background-color: " | append: colour_value | append: ";" %}
+    {% if colour_key == "secondary_background_color" %}
+      {% assign secondary_background_opacity = site.theme_settings.secondary_background_opacity | default: "0.5" %}
+      {% assign swatch_style = swatch_style | append: " opacity: " | append: secondary_background_opacity | append: ";" %}
+    {% endif %}
     <article class="colour-sample">
-      <div class="colour-swatch" style="background-color: {{ colour_value }};"></div>
+      <div class="colour-swatch" style="{{ swatch_style }}"></div>
       <div class="colour-sample-body">
         <h2>{{ colour_label }}</h2>
         <dl>
@@ -25,6 +31,10 @@ This page shows the colour values currently configured in `_config.yml`.
           <dd><code>{{ colour_key }}</code></dd>
           <dt>Value</dt>
           <dd><code>{{ colour_value }}</code></dd>
+          {% if colour_key == "secondary_background_color" %}
+            <dt>Opacity setting</dt>
+            <dd><code>secondary_background_opacity: {{ secondary_background_opacity }}</code></dd>
+          {% endif %}
         </dl>
         <p style="color: {{ colour_value }};">Example text using {{ colour_label | downcase }}.</p>
       </div>

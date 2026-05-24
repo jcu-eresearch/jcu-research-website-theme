@@ -680,7 +680,6 @@ h3 {
   --jcu-alert-color: #c2410c;
 }
 
-.jcu-block--coloured-bkgnd,
 .jcu-block--card,
 .jcu-block--surface {
   border-radius: 0.5rem;
@@ -710,6 +709,7 @@ h3 {
   padding: 1.5rem var(--site-main-inline-padding);
   position: relative;
   z-index: 0;
+  border-radius: 0;
 }
 
 .jcu-block--coloured-bkgnd::before {
@@ -719,7 +719,7 @@ h3 {
   z-index: -2;
   background: var(--color-secondary-bg);
   opacity: var(--color-secondary-bg-opacity);
-  border-radius: inherit;
+  border-radius: 0;
 }
 
 .jcu-block--coloured-bkgnd.jcu-block--card::after,
@@ -730,7 +730,7 @@ h3 {
   z-index: -1;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: inherit;
+  border-radius: 0.5rem;
 }
 
 .jcu-block--image-left::after,
