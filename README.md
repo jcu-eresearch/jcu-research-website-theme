@@ -58,6 +58,7 @@ kramdown:
 theme_settings:
   show_breadcrumbs: true
   logo: "/assets/images/jcu-logo-mono.svg"
+  favicon: "/assets/images/favicon.svg"
   project_logo: "/assets/sample-images/project-logo.svg"
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
@@ -95,9 +96,11 @@ defaults:
       layout: "page"
 ```
 
-If your site uses the default JCU and project logo assets from this theme, the paths above will work through the remote theme. To use your own logos, add files to the consuming site's `assets/images/` folder and update the paths.
+If your site uses the default JCU logo and favicon assets from this theme, the paths above will work through the remote theme. To use your own logos or favicon, add files to the consuming site's `assets/images/` folder and update the paths.
 
 The optional `project_logo` appears at the top of the sidebar. The JCU logo from `logo` appears at the bottom of the desktop sidebar and inside the small-screen burger menu.
+
+The optional `favicon` appears in the browser tab. Set `favicon: false` to omit the favicon link.
 
 The `markdown` and `kramdown` settings enable GitHub-flavoured Markdown features such as pipe tables and task lists.
 
