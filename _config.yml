@@ -34,6 +34,7 @@ theme_settings:
   table_banded_rows: true
   # block_separator_style options: "none", "line", "accent", "band"
   block_separator_style: "none"
+  landing_block_separators: false
   partner_logo_tile_background: "transparent"
   partner_logo_max_height: "6rem"
   partner_logo_max_items_per_row: 3
@@ -52,4 +53,5 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
+  - LANDING_PAGE_STYLES.md
   - README.md
