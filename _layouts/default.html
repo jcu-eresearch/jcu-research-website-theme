@@ -28,7 +28,7 @@
   {% unless content_alignment == "center" %}
     {% assign content_alignment = "left" %}
   {% endunless %}
-  <body class="layout-{{ page.layout | default: 'page' }} content-align-{{ content_alignment }}">
+  <body class="layout-{{ page.layout | default: 'page' }} content-align-{{ content_alignment }}{% if page.layout == 'jcudl-catalog' and page.catalog_full_width == true %} catalog-full-width{% endif %}">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       {% include header.html %}

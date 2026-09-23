@@ -174,7 +174,19 @@ permalink: /catalog/
 ---
 ```
 
-The layout loads the Material Symbols stylesheet, the catalogue stylesheet, and the catalogue script, and renders the required `<div id="jcudlc">` element. The local asset locations can be overridden when needed:
+The layout loads the Material Symbols stylesheet, the catalogue stylesheet, and the catalogue script, and renders the required `<div id="jcudlc">` element.
+
+To let the catalogue fill the available width below the header, set `catalog_full_width: true` in the page front matter. By default, the catalogue stays within the normal page margins.
+
+```yml
+---
+layout: jcudl-catalog
+title: Project catalogue
+catalog_full_width: true
+---
+```
+
+The local asset locations can be overridden when needed:
 
 ```yml
 jcudl_stylesheet: /catalog/jcudl-style.css
