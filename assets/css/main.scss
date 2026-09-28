@@ -1128,6 +1128,22 @@ a.partner-logo:hover {
   line-height: 1.55;
 }
 
+.landing-hero-lead > :first-child,
+.landing-section-lead > :first-child,
+.landing-card-text > :first-child,
+.landing-achievement-text > :first-child,
+.landing-carousel-slide figcaption > :first-child {
+  margin-top: 0;
+}
+
+.landing-hero-lead > :last-child,
+.landing-section-lead > :last-child,
+.landing-card-text > :last-child,
+.landing-achievement-text > :last-child,
+.landing-carousel-slide figcaption > :last-child {
+  margin-bottom: 0;
+}
+
 .landing-block--separator {
   padding-bottom: clamp(2rem, 5vw, 3rem);
   border-bottom: 0.25rem solid var(--color-accent);
@@ -1215,7 +1231,7 @@ a.partner-logo:hover {
   margin-bottom: 1.25rem;
 }
 
-.landing-section-header > p:not(.eyebrow) {
+.landing-section-lead {
   margin: 0;
   color: var(--color-muted);
   font-size: 1.08rem;
@@ -1393,7 +1409,7 @@ a.partner-logo:hover {
   margin: 0;
 }
 
-.landing-card a {
+.landing-card-body > a {
   display: inline-flex;
   margin-top: 1rem;
   font-weight: 800;
@@ -1422,7 +1438,7 @@ a.partner-logo:hover {
   object-fit: cover;
 }
 
-.landing-achievement strong {
+.landing-achievement > strong {
   color: var(--color-primary);
   font-size: 2rem;
   line-height: 1;

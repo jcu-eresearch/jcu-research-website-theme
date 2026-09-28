@@ -14,7 +14,7 @@
     <p class="eyebrow">{{ block.eyebrow | default: "Achievements" }}</p>
     <h2 id="{{ block_id }}">{{ block.title | default: "Achievements" }}</h2>
     {% if block.lead %}
-      <p>{{ block.lead }}</p>
+      <div class="landing-section-lead">{{ block.lead | markdownify }}</div>
     {% endif %}
   </div>
   <div class="landing-achievement-grid">
@@ -30,7 +30,7 @@
         {% endif %}
         <h3>{{ item.label }}</h3>
         {% if item.text %}
-          <p>{{ item.text }}</p>
+          <div class="landing-achievement-text">{{ item.text | markdownify }}</div>
         {% endif %}
       </article>
     {% endfor %}

@@ -44,7 +44,7 @@
           <div class="landing-card-body">
             <h3>{{ card.title }}</h3>
             {% if card.text %}
-              <p>{{ card.text }}</p>
+              <div class="landing-card-text">{{ card.text | markdownify }}</div>
             {% endif %}
             {% if card.url and card.link_text %}
               <a href="{{ card.url | relative_url }}">{{ card.link_text }}</a>

@@ -18,7 +18,7 @@
       <h2 id="{{ block_id }}">{{ block.title }}</h2>
     {% endif %}
     {% if block.lead %}
-      <p>{{ block.lead }}</p>
+      <div class="landing-section-lead">{{ block.lead | markdownify }}</div>
     {% endif %}
   </div>
   <div class="landing-carousel-frame" data-carousel>
@@ -27,7 +27,7 @@
         <figure class="landing-carousel-slide{% if forloop.first %} is-active{% endif %}">
           <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: '' }}">
           {% if item.caption %}
-            <figcaption>{{ item.caption }}</figcaption>
+            <figcaption>{{ item.caption | markdownify }}</figcaption>
           {% endif %}
         </figure>
       {% endfor %}

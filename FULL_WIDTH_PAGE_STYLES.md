@@ -63,6 +63,8 @@ Recommended sections for research project sites are:
 
 Sections can contain text, an image, a text link, up to two action buttons, or a set of cards.
 
+Markdown is supported in section `content`, hero and block `lead`, card and achievement `text`, carousel `caption`, and partner `content`. Use YAML's `|` syntax for multiple paragraphs or lists. Titles, labels, button text, and image alt text remain plain text.
+
 ```yml
 blocks:
   - type: "feature"
@@ -137,7 +139,7 @@ blocks:
     eyebrow: "Updates"
     cards:
       - title: "Project milestone"
-        text: "A short update about recent progress."
+        text: "A short update with **recent progress** and a [project link](/projects/)."
         link_text: "Read more"
         url: "/news/project-milestone/"
 ```
