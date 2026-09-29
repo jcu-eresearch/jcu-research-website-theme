@@ -42,7 +42,7 @@ The hero follows `theme_settings.landing_block_separators` unless `hero.separato
 There are two hero types:
 
 - `type: "split"` (the default) places a separate image beside the lead and actions. Supply `image` and `image_alt`. Its eyebrow and title span the hero above the lead, actions, and image. An optional `background_color` fills the hero behind them.
-- `type: "background"` places the content on a background colour. `background_image` is optional; when present, the background colour also forms a subtle overlay on the image. Background images are decorative, so they do not use `image_alt`. Use this type when no image is needed.
+- `type: "background"` places the content on a background colour that spans the full browser width. `background_image` is optional; when present, it also spans the full browser width and the background colour forms a subtle overlay. The text stays within the normal content width. Background images are decorative, so they do not use `image_alt`. Use this type when no image is needed.
 
 Both types accept `title_alignment: "left"`, `"center"`, or `"right"`; the default is left. This aligns the eyebrow and title together across the hero, while the lead and buttons keep their own layout. `text_color` optionally overrides the eyebrow, title, and lead colours. Set it when a dark background or image makes the normal colours difficult to read; buttons retain their own contrast colours.
 
