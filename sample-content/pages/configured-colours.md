@@ -8,7 +8,7 @@ summary: "A visual reference for the colour settings configured in this theme."
 
 This page shows the colour values currently configured in `_config.yml`.
 
-{% assign colours = "primary_color:Primary colour:#354F52,secondary_color:Secondary colour:#C3D5C7,accent_color:Accent colour:#86466E,text_color:Text colour:#344054,heading_color:Heading colour:#344054,muted_text_color:Muted text colour:#667085,background_color:Background colour:#F4F6F3,surface_color:Surface colour:#F1E4EC,border_color:Border colour:#D0D5DD" | split: "," %}
+{% assign colours = "primary_color:Primary colour:#354F52,secondary_color:Secondary colour:#C3D5C7,accent_color:Accent colour:#86466E,text_color:Text colour:#344054,heading_color:Heading colour:#344054,background_color:Background colour:#F4F6F3,surface_color:Surface colour:#F1E4EC,border_color:Border colour:#D0D5DD" | split: "," %}
 
 <div class="colour-samples">
   {% for colour_item in colours %}
@@ -39,9 +39,8 @@ This page shows the colour values currently configured in `_config.yml`.
 - **Primary colour** is used for the shared header background, page titles, standard links, breadcrumb links, page-card headings, Note alerts, and the hover state for heading permalink icons.
 - **Secondary colour** is used for feature bands, coloured content-block backgrounds, link hover states, heading permalink icons, Markdown table header backgrounds, and the muted internal lines and banded rows in Markdown tables.
 - **Accent colour** is used for page title underline rules, active navigation markers, accent block separators, Warning alerts, and `.jcu-block--accent` lines.
-- **Text colour** is used for standard body text, list text, and skip-link backgrounds.
+- **Text colour** is used for body text, breadcrumbs, page leads, captions, supporting labels, and skip-link backgrounds.
 - **Heading colour** is used for most headings, definition-list terms, alert labels, and card or panel headings.
-- **Muted text colour** is used for breadcrumbs, supporting text, captions, card summaries, and less prominent labels.
 - **Background colour** is used for the main page panel and skip-link text.
 - **Surface colour** is used for card-style blocks, page cards, colour sample cards, column panels, generated gallery tiles, and other quiet UI surfaces.
 - **Border colour** is used for panel borders, card borders, content block separators, colour sample dividers, and subtle structural lines.

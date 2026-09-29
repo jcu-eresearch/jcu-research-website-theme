@@ -10,16 +10,27 @@ layout: default
 <article class="landing-page">
   {% assign hero = page.hero %}
   {% if hero %}
+    {% assign hero_type = hero.type | default: 'split' %}
+    {% assign hero_title_alignment = hero.title_alignment | default: 'left' %}
+    {% assign hero_has_background_image = false %}
+    {% if hero_type == 'background' and hero.background_image %}
+      {% assign hero_has_background_image = true %}
+    {% endif %}
     {% assign hero_separator = landing_block_separators %}
     {% unless hero.separator == nil %}
       {% assign hero_separator = hero.separator %}
     {% endunless %}
-    <header class="landing-hero{% if hero_separator %} landing-block--separator{% endif %}">
-      <div class="landing-hero-content">
+    <header class="landing-hero landing-hero--{{ hero_type }}{% if hero_has_background_image %} landing-hero--with-background-image{% endif %}{% if hero_separator %} landing-block--separator{% endif %}"
+      {% if hero.background_color or hero.text_color or hero.overlay_opacity or hero_has_background_image %}
+        style="{% if hero.background_color %}--hero-background-color: {{ hero.background_color }};{% endif %}{% if hero.text_color %} --hero-text-color: {{ hero.text_color }};{% endif %}{% if hero.overlay_opacity %} --hero-overlay-opacity: {{ hero.overlay_opacity }};{% endif %}{% if hero_has_background_image %} --hero-background-image: url('{{ hero.background_image | relative_url }}');{% endif %}"
+      {% endif %}>
+      <div class="landing-hero-heading landing-hero-heading--{{ hero_title_alignment }}">
         {% if hero.eyebrow %}
           <p class="eyebrow">{{ hero.eyebrow }}</p>
         {% endif %}
         <h1>{{ hero.title | default: page.title }}</h1>
+      </div>
+      <div class="landing-hero-content">
         {% if hero.lead %}
           <div class="landing-hero-lead">{{ hero.lead | markdownify }}</div>
         {% endif %}
@@ -31,7 +42,7 @@ layout: default
           </div>
         {% endif %}
       </div>
-      {% if hero.image %}
+      {% if hero_type == 'split' and hero.image %}
         <figure class="landing-hero-media">
           <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt | default: '' }}">
         </figure>

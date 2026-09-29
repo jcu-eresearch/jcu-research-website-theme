@@ -7,11 +7,14 @@ image: "/assets/sample-images/gallery-background.svg"
 summary: "Examples of each block and style available in the full-width page layout."
 content_separator: true
 hero:
+  type: "background"
   eyebrow: "Full-width layout sample"
   title: "Landing page blocks"
+  title_alignment: "center"
   lead: "Use this page to see each landing page section style and understand which front matter fields are optional."
-  image: "/assets/sample-images/gallery-background.svg"
-  image_alt: "Abstract image showing a research landscape"
+  background_color: "#102A20"
+  background_image: "/assets/sample-images/rainforest-canopy-hero.jpg"
+  text_color: "#FFFFFF"
   separator: true
   actions:
     - label: "View sections"

@@ -22,11 +22,10 @@ theme_settings:
   primary_color: "#354F52"
   secondary_color: "#C3D5C7"
   accent_color: "#86466E"
-  text_color: "#344054"
+  text_color: "#354f52"
   heading_color: "#344054"
-  muted_text_color: "#667085"
   background_color: "#F4F6F3"
-  surface_color: "#F1E4EC"
+  surface_color: "#dcd8d5"
   border_color: "#D0D5DD"
   # content_alignment options: "left", "center"
   content_alignment: "left"
@@ -51,5 +50,5 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
-  - FULL_WIDTH_PAGE_STYLES.md
+  - full_width_page_styles.md
   - README.md

@@ -15,7 +15,6 @@ $theme-on-secondary-color: if(lightness($theme-secondary-color) > 55%, $theme-te
   --color-accent: {{ site.theme_settings.accent_color | default: "#86466E" }};
   --color-text: {{ site.theme_settings.text_color | default: "#344054" }};
   --color-heading: {{ site.theme_settings.heading_color | default: site.theme_settings.text_color | default: "#344054" }};
-  --color-muted: {{ site.theme_settings.muted_text_color | default: "#667085" }};
   --color-bg: {{ site.theme_settings.background_color | default: "#F4F6F3" }};
   --color-surface: {{ site.theme_settings.surface_color | default: "#F1E4EC" }};
   --color-border: {{ site.theme_settings.border_color | default: "#D0D5DD" }};
@@ -224,7 +223,7 @@ a:hover {
 
 .breadcrumbs {
   margin-bottom: 1.25rem;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -252,7 +251,7 @@ a:hover {
 }
 
 .breadcrumbs a {
-  color: var(--color-muted);
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -349,7 +348,7 @@ h3 {
 .page-lead {
   max-width: 42rem;
   margin: 1rem 0 0;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 1.2rem;
 }
 
@@ -820,7 +819,7 @@ p.jcu-image-gallery {
 
 .image-text-media figcaption {
   margin-top: 0.55rem;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 0.9rem;
 }
 
@@ -883,7 +882,7 @@ p.jcu-image-gallery {
 }
 
 .colour-sample dt {
-  color: var(--color-muted);
+  color: var(--color-text);
   font-weight: 800;
 }
 
@@ -1076,6 +1075,8 @@ a.partner-logo:hover {
 }
 
 .landing-hero {
+  --hero-background-color: transparent;
+  --hero-overlay-opacity: 20%;
   width: min(100%, calc(var(--content-width) + 12rem));
   margin: 0 auto;
   display: grid;
@@ -1084,7 +1085,23 @@ a.partner-logo:hover {
   align-items: stretch;
   min-height: min(36rem, calc(100vh - 8rem));
   padding: clamp(3rem, 7vw, 5rem) var(--landing-inline-padding) 2rem;
-  padding-bottom: 2rem;
+  background-color: var(--hero-background-color);
+  color: var(--hero-text-color, var(--color-text));
+}
+
+.landing-hero--background {
+  --hero-background-color: var(--color-bg);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.landing-hero--with-background-image {
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--hero-background-color) var(--hero-overlay-opacity), transparent),
+    color-mix(in srgb, var(--hero-background-color) var(--hero-overlay-opacity), transparent)
+  ), var(--hero-background-image);
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .landing-hero--simple {
@@ -1092,22 +1109,47 @@ a.partner-logo:hover {
   min-height: 0;
 }
 
+.landing-hero-heading {
+  grid-column: 1 / -1;
+  align-self: end;
+}
+
+.landing-hero-heading--center {
+  text-align: center;
+}
+
+.landing-hero-heading--right {
+  text-align: right;
+}
+
 .landing-hero-content {
   align-self: center;
 }
 
 .landing-hero h1 {
-  max-width: 13ch;
+  max-width: 30ch;
   margin: 0;
-  color: var(--color-primary);
+  color: var(--hero-text-color, var(--color-primary));
   font-size: clamp(2rem, 4.5vw, 2.65rem);
   line-height: 1.1;
+}
+
+.landing-hero-heading--center h1 {
+  margin-inline: auto;
+}
+
+.landing-hero-heading--right h1 {
+  margin-left: auto;
+}
+
+.landing-hero .eyebrow {
+  color: var(--hero-text-color, var(--color-primary));
 }
 
 .landing-hero-lead {
   max-width: 42rem;
   margin: 1.25rem 0 0;
-  color: var(--color-text);
+  color: var(--hero-text-color, var(--color-text));
   font-size: clamp(1.12rem, 2.4vw, 1.35rem);
   line-height: 1.55;
 }
@@ -1134,6 +1176,8 @@ a.partner-logo:hover {
 }
 
 .landing-hero-media {
+  grid-column: 2;
+  grid-row: 2;
   min-width: 0;
   margin: 0;
   overflow: hidden;
@@ -1217,7 +1261,7 @@ a.partner-logo:hover {
 
 .landing-section-lead {
   margin: 0;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-size: 1.08rem;
 }
 
@@ -1461,7 +1505,7 @@ a.partner-logo:hover {
 
 .landing-carousel-slide figcaption {
   padding: 1rem;
-  color: var(--color-muted);
+  color: var(--color-text);
   font-weight: 700;
 }
 
@@ -1652,6 +1696,11 @@ a.partner-logo:hover {
 
   .landing-hero-media img {
     min-height: 16rem;
+  }
+
+  .landing-hero-media {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .landing-section--image-left .landing-section-body,

@@ -21,11 +21,13 @@ layout: full-width
 title: Home
 permalink: /
 hero:
+  type: "split"
   eyebrow: "JCU research project"
   title: "Research with purpose, shared with clarity"
   lead: "A short plain-language description of the project."
   image: "/assets/sample-images/gallery-background.svg"
   image_alt: "Description of the hero image"
+  title_alignment: "left"
   separator: true
   actions:
     - label: "Explore our research"
@@ -36,6 +38,28 @@ hero:
 ```
 
 The hero follows `theme_settings.landing_block_separators` unless `hero.separator` is set.
+
+There are two hero types:
+
+- `type: "split"` (the default) places a separate image beside the lead and actions. Supply `image` and `image_alt`. Its eyebrow and title span the hero above the lead, actions, and image. An optional `background_color` fills the hero behind them.
+- `type: "background"` places the content on a background colour. `background_image` is optional; when present, the background colour also forms a subtle overlay on the image. Background images are decorative, so they do not use `image_alt`. Use this type when no image is needed.
+
+Both types accept `title_alignment: "left"`, `"center"`, or `"right"`; the default is left. This aligns the eyebrow and title together across the hero, while the lead and buttons keep their own layout. `text_color` optionally overrides the eyebrow, title, and lead colours. Set it when a dark background or image makes the normal colours difficult to read; buttons retain their own contrast colours.
+
+Background images fill the hero without distortion. They keep their aspect ratio and are cropped from the centre when the hero's proportions differ from the image. `overlay_opacity` accepts a percentage such as `20%` (the default). Choose a background colour, text colour, and image that keep the words readable; increase the opacity if the image is busy.
+
+```yml
+hero:
+  type: "background"
+  eyebrow: "JCU research project"
+  title: "Research with purpose"
+  title_alignment: "center"
+  lead: "A short introduction to the project."
+  background_color: "#0B4F8A"
+  background_image: "/assets/sample-images/gallery-background.svg"
+  text_color: "#FFFFFF"
+  overlay_opacity: "20%"
+```
 
 ## Main sections
 
@@ -189,6 +213,9 @@ The layout generates these main classes:
 - `.header-nav`
 - `.header-submenu`
 - `.landing-hero`
+- `.landing-hero--split`
+- `.landing-hero--background`
+- `.landing-hero-heading`
 - `.landing-hero-content`
 - `.landing-hero-media`
 - `.landing-actions`
