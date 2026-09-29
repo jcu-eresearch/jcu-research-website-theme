@@ -4,7 +4,7 @@ title: Home
 permalink: /
 hero:
   title: "A clearer way to publish research project websites"
-  lead: "A JCU-themed Jekyll theme for research teams who need attractive, maintainable, GitHub Pages-ready project websites edited in Markdown."
+  lead: "A configurable Jekyll theme for research teams who need attractive, maintainable, GitHub Pages-ready project websites edited in Markdown."
   image: "/assets/sample-images/gallery-background.svg"
   image_alt: "Abstract image representing a research website"
   actions:
@@ -22,8 +22,8 @@ blocks:
         label: "Markdown-first"
         text: "Pages, cards, galleries, alerts, and blocks can be maintained through Markdown and simple front matter."
       - value: "2"
-        label: "JCU styled"
-        text: "Colours, logos, navigation, typography, and reusable layouts are centralised in the theme."
+        label: "Customisable design"
+        text: "Colours, optional project logos, navigation, typography, and reusable layouts are centralised in the theme."
       - value: "3"
         label: "GitHub Pages ready"
         text: "Project sites can use the theme remotely and publish as static websites."
@@ -107,12 +107,17 @@ blocks:
       - label: "View starter repository"
         url: "https://github.com/jcu-eresearch/jcu-research-website-starter"
   - type: "partner-logos"
-    eyebrow: "Institution"
+    eyebrow: "Partners"
     title: "Partner organisations"
     content: |
-      The theme includes JCU logo assets and partner-logo patterns for project collaborators, funders, and participating organisations.
+      Add logos supplied by your project partners, funders, and participating organisations. These transparent placeholders show how different logo proportions fit together.
     items:
-      - name: "James Cook University"
-        logo: "/assets/images/jcu-logo-colour.svg"
-        url: "https://www.jcu.edu.au/"
+      - name: "Example partner"
+        logo: "/assets/sample-images/partner-placeholder.svg"
+      - name: "Example research partner"
+        logo: "/assets/sample-images/partner-rainforest.svg"
+      - name: "Example community partner"
+        logo: "/assets/sample-images/partner-reef.svg"
+      - name: "Example funding partner"
+        logo: "/assets/sample-images/partner-mosaic.svg"
 ---

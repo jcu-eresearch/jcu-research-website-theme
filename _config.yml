@@ -1,5 +1,5 @@
 title: "Research project website"
-description: "A JCU-themed static website for research project communications."
+description: "A configurable static website for research project communications."
 url: "https://PaulineLawrey.github.io"
 baseurl: "/jcu-research-website-theme"
 
@@ -9,7 +9,6 @@ kramdown:
 
 theme_settings:
   show_breadcrumbs: true
-  logo: "/assets/images/jcu-logo-mono.svg"
   favicon: "/assets/images/favicon.svg"
   project_logo: "/assets/sample-images/project-logo.svg"
   project_logo_alt: "Project logo"

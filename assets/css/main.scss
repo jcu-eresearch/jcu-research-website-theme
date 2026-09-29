@@ -19,8 +19,6 @@ $theme-on-secondary-color: if(lightness($theme-secondary-color) > 55%, $theme-te
   --color-bg: {{ site.theme_settings.background_color | default: "#F4F6F3" }};
   --color-surface: {{ site.theme_settings.surface_color | default: "#F1E4EC" }};
   --color-border: {{ site.theme_settings.border_color | default: "#D0D5DD" }};
-  --sidebar-logo-tile-bg: {{ site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
-  --sidebar-logo-tile-border: {{ site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
   --sidebar-project-logo-tile-bg: {{ site.theme_settings.sidebar_project_logo_tile_background | default: site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
   --sidebar-project-logo-tile-border: {{ site.theme_settings.sidebar_project_logo_tile_border_color | default: site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
@@ -107,18 +105,10 @@ a:hover {
   max-width: 100%;
 }
 
-.sidebar-jcu-logo,
 .brand-project-logo {
   display: block;
   padding: 0.75rem;
   border-radius: 0.5rem;
-}
-
-.sidebar-jcu-logo {
-  width: 12.75rem;
-  max-width: 100%;
-  background: var(--sidebar-logo-tile-bg);
-  border: 1px solid var(--sidebar-logo-tile-border);
 }
 
 .brand-project-logo {
@@ -126,7 +116,6 @@ a:hover {
   border: 1px solid var(--sidebar-project-logo-tile-border);
 }
 
-.sidebar-jcu-logo img,
 .brand-project-logo img {
   width: 100%;
   height: auto;
@@ -178,11 +167,6 @@ a:hover {
   display: grid;
   gap: 0.35rem;
   margin-top: 1.5rem;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: 2rem;
 }
 
 .site-nav-group {
@@ -1596,20 +1580,8 @@ a.partner-logo:hover {
     padding-bottom: 0.25rem;
   }
 
-  .sidebar-footer {
-    display: none;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.28);
-  }
-
-  .site-sidebar.is-menu-open .site-nav,
-  .site-sidebar.is-menu-open .sidebar-footer {
+  .site-sidebar.is-menu-open .site-nav {
     display: grid;
-  }
-
-  .sidebar-jcu-logo {
-    width: 7.125rem;
   }
 
   .site-nav-group {

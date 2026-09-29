@@ -151,15 +151,14 @@ blocks:
     content: |
       Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. The title is optional, and this example leaves it blank. Place the block wherever it belongs in `blocks`.
     items:
-      - name: "James Cook University"
-        logo: "/assets/images/jcu-logo-colour.svg"
-        url: "https://www.jcu.edu.au/"
       - name: "Partner organisation"
         logo: "/assets/sample-images/partner-placeholder.svg"
       - name: "Rainforest research partner"
         logo: "/assets/sample-images/partner-rainforest.svg"
       - name: "Reef research partner"
         logo: "/assets/sample-images/partner-reef.svg"
+      - name: "Funding partner"
+        logo: "/assets/sample-images/partner-mosaic.svg"
 ---
 
 ## How to use landing page blocks

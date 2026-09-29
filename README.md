@@ -1,6 +1,6 @@
 # JCU research website theme
 
-A JCU-themed Jekyll theme for research project communications. The theme is designed for GitHub Pages, so research teams can maintain project websites with Markdown content while reusing shared JCU-styled layouts, navigation, content blocks, and assets.
+A configurable Jekyll theme for research project communications. The theme is designed for GitHub Pages, so research teams can maintain project websites with Markdown content while reusing shared layouts, navigation, content blocks, and sample assets.
 
 This repository is both:
 
@@ -43,7 +43,7 @@ In the project site's `_config.yml`, set the project identity and theme settings
 
 ```yml
 title: "Research project website"
-description: "A JCU-themed static website for research project communications."
+description: "A configurable static website for research project communications."
 url: "https://USERNAME.github.io"
 baseurl: "/REPOSITORY-NAME"
 
@@ -57,7 +57,6 @@ kramdown:
 
 theme_settings:
   show_breadcrumbs: true
-  logo: "/assets/images/jcu-logo-mono.svg"
   favicon: "/assets/images/favicon.svg"
   project_logo: "/assets/sample-images/project-logo.svg"
   project_logo_alt: "Project logo"
@@ -95,7 +94,7 @@ defaults:
       layout: "page"
 ```
 
-If your site uses the default JCU logo and favicon assets from this theme, the paths above will work through the remote theme. To use your own logos or favicon, add files to the consuming site's `assets/images/` folder and update the paths.
+The theme does not include an institutional logo. The sample `project_logo` above is a placeholder; remove that setting to show only the project title, or add your own image to the consuming site's `assets/images/` folder and set its path and alt text. The generic favicon can also be replaced with your own file.
 
 The optional `project_logo` appears at the left of the shared site header. The header navigation is used on every page and changes to a burger menu on smaller screens.
 
@@ -235,9 +234,10 @@ Alert options are `.jcu-alert--note`, `.jcu-alert--important`, `.jcu-alert--warn
 For inline partner logos, use standard Markdown images and linked images, then add the `.jcu-partner-logos` class. The maximum number of tiles in each row is set by `theme_settings.partner_logo_max_items_per_row`.
 
 ```md
-[![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
+![Reef research partner logo]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
+![Funding partner logo]({{ "/assets/sample-images/partner-mosaic.svg" | relative_url }})
 {:.jcu-partner-logos}
 ```
 
@@ -365,11 +365,14 @@ Then add a logo block to any page:
   content: |
     Optional introductory text.
   partners:
-    - name: "James Cook University"
-      logo: "/assets/images/jcu-logo-colour.svg"
-      url: "https://www.jcu.edu.au/"
     - name: "Partner organisation"
       logo: "/assets/sample-images/partner-placeholder.svg"
+    - name: "Rainforest research partner"
+      logo: "/assets/sample-images/partner-rainforest.svg"
+    - name: "Reef research partner"
+      logo: "/assets/sample-images/partner-reef.svg"
+    - name: "Funding partner"
+      logo: "/assets/sample-images/partner-mosaic.svg"
 ```
 
 For front matter partner-logo blocks, `columns` overrides `theme_settings.partner_logo_max_items_per_row`. Inline `.jcu-partner-logos` blocks use only the value from `_config.yml`. Both partner logo styles treat the configured value as a maximum and step down to fewer logos per row as the screen narrows.
@@ -432,7 +435,7 @@ Keep reusable presentation files in these folders:
 - `_data`
 - `assets`
 
-Sample content for previewing the theme is grouped under `sample-content/`. Sample-only media is grouped under `assets/sample-images/`, while the reusable JCU logo assets remain in `assets/images/`.
+Sample content for previewing the theme is grouped under `sample-content/`. Sample-only media, including transparent partner logo placeholders in different proportions, is grouped under `assets/sample-images/`. Replace the placeholders with logos supplied by your own partners.
 
 Research project sites that use this as a remote theme should create their own content pages and navigation data.
 

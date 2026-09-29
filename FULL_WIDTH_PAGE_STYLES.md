@@ -158,9 +158,10 @@ blocks:
     content: |
       Recognise the organisations that make the project possible.
     items:
-      - name: "James Cook University"
-        logo: "/assets/images/jcu-logo-colour.svg"
-        url: "https://www.jcu.edu.au/"
+      - name: "Example partner"
+        logo: "/assets/sample-images/partner-placeholder.svg"
+      - name: "Example funding partner"
+        logo: "/assets/sample-images/partner-mosaic.svg"
 ```
 
 ## Style options

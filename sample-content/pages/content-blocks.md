@@ -57,15 +57,14 @@ blocks:
     content: |
       The partner logo block can use a `columns` override in front matter as the maximum number of logos per row, with optional links from each logo. If `columns` is omitted, it uses `partner_logo_max_items_per_row` from `_config.yml`.
     partners:
-      - name: "James Cook University"
-        logo: "/assets/images/jcu-logo-colour.svg"
-        url: "https://www.jcu.edu.au/"
       - name: "Partner organisation"
         logo: "/assets/sample-images/partner-placeholder.svg"
       - name: "Rainforest research partner"
         logo: "/assets/sample-images/partner-rainforest.svg"
       - name: "Reef research partner"
         logo: "/assets/sample-images/partner-reef.svg"
+      - name: "Funding partner"
+        logo: "/assets/sample-images/partner-mosaic.svg"
   - type: page-cards
     title: "Page cards block, four per row"
     folder: "sample-content/animals/"

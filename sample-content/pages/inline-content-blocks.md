@@ -72,10 +72,10 @@ The same card block can include an image and the image can be floated to the lef
 
 This example uses `.jcu-partner-logos`, combined with `.jcu-block--coloured-bkgnd`. The maximum number of logo tiles in each row is set in `_config.yml` with `partner_logo_max_items_per_row`.
 
-[![James Cook University logo]({{ "/assets/images/jcu-logo-colour.svg" | relative_url }})](https://www.jcu.edu.au/)
 ![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
 ![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
 ![Reef research partner logo]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
+![Funding partner logo]({{ "/assets/sample-images/partner-mosaic.svg" | relative_url }})
 {:.jcu-block .jcu-block--coloured-bkgnd .jcu-partner-logos}
 
 ## Inline image gallery
