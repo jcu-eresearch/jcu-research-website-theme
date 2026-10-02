@@ -191,18 +191,17 @@ a:hover {
   border-radius: 0.35rem;
 }
 
-.site-nav-link:hover,
-.site-nav-link[aria-current="page"] {
+.site-nav-link:hover {
   color: var(--color-primary-link);
   background: rgba(255, 255, 255, 0.16);
+  text-decoration: underline;
 }
 
-.site-nav-link[aria-current="page"] {
-  box-shadow: inset 0.25rem 0 0 var(--color-primary-link);
-}
-
-.site-nav-group.is-active > .site-nav-link:not([aria-current="page"]) {
-  background: rgba(255, 255, 255, 0.08);
+.site-nav-link[aria-current="page"],
+.site-nav-group.is-active > .site-nav-link {
+  color: var(--color-surface-link);
+  background: var(--color-surface);
+  border: 0;
 }
 
 .site-nav-children {
@@ -1986,16 +1985,17 @@ a.partner-logo:hover {
   border-radius: 0.35rem 0 0 0.35rem;
 }
 
-.header-nav-link:hover,
-.header-nav-link[aria-current="page"],
-.header-nav-group.is-active > .header-nav-parent .header-nav-link {
-  color: var(--header-link-color);
-  background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+.header-nav-link:hover {
+  color: var(--color-surface-link);
+  background: var(--color-surface);
+  text-decoration: underline;
 }
 
 .header-nav-link[aria-current="page"],
-.header-submenu a[aria-current="page"] {
-  box-shadow: inset 0 -0.2rem 0 currentColor;
+.header-nav-group.is-active > .header-nav-parent .header-nav-link {
+  color: var(--color-surface-link);
+  background: var(--color-surface);
+  border: 0;
 }
 
 .header-submenu-toggle {
@@ -2021,22 +2021,26 @@ a.partner-logo:hover {
 }
 
 .header-submenu-toggle:hover,
-.header-submenu-toggle:focus-visible,
+.header-submenu-toggle:focus-visible {
+  color: var(--color-surface-text);
+  background: var(--color-surface);
+}
+
 .header-nav-group.is-active > .header-nav-parent .header-submenu-toggle {
-  color: var(--header-text-color);
-  background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+  color: var(--color-surface-text);
+  background: var(--color-surface);
 }
 
 .header-submenu {
-  --color-text: var(--color-background-text);
-  --color-link: var(--color-background-link);
+  --color-text: var(--color-primary-text);
+  --color-link: var(--color-primary-link);
   position: absolute;
-  top: calc(100% + 0.4rem);
+  top: 100%;
   right: 0;
   min-width: 14rem;
   display: none;
   padding: 0.4rem;
-  background: var(--color-bg);
+  background: var(--color-primary);
   border: 1px solid var(--color-border);
   border-radius: 0.35rem;
   box-shadow: 0 0.8rem 2rem rgba(16, 24, 40, 0.14);
@@ -2045,7 +2049,7 @@ a.partner-logo:hover {
 .header-submenu a {
   display: block;
   padding: 0.65rem 0.75rem;
-  color: var(--color-background-link);
+  color: var(--header-link-color);
   border-radius: 0.25rem;
   font-size: 0.9rem;
 }
@@ -2054,6 +2058,11 @@ a.partner-logo:hover {
 .header-submenu a[aria-current="page"] {
   color: var(--color-surface-link);
   background: var(--color-surface);
+  border: 0;
+}
+
+.header-submenu a:hover {
+  text-decoration: underline;
 }
 
 .header-nav-group:hover > .header-submenu,
@@ -2118,8 +2127,8 @@ a.partner-logo:hover {
     min-height: 2.75rem;
     padding: 0.6rem 0.75rem;
     color: var(--header-text-color);
-    background: color-mix(in srgb, var(--color-surface) 55%, transparent);
-    border: 1px solid color-mix(in srgb, var(--header-text-color) 30%, transparent);
+    background: var(--color-primary);
+    border: 0;
     border-radius: 0.35rem;
     font: inherit;
     font-weight: 800;
@@ -2128,6 +2137,10 @@ a.partner-logo:hover {
 
   .header-menu-toggle[aria-expanded="true"] .menu-toggle-icon {
     border-color: transparent;
+  }
+
+  .header-menu-toggle:hover .header-menu-label {
+    text-decoration: underline;
   }
 
   .header-menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
@@ -2175,10 +2188,6 @@ a.partner-logo:hover {
     border-left: 2px solid color-mix(in srgb, var(--header-text-color) 35%, transparent);
     border-radius: 0;
     box-shadow: none;
-  }
-
-  .header-nav-group:hover > .header-submenu {
-    display: none;
   }
 
   .header-nav-group.is-submenu-open > .header-submenu,
