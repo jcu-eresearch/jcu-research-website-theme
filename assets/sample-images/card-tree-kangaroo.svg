@@ -1,12 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-labelledby="title">
-  <title id="title">Stylised Lumholtz's tree-kangaroo</title>
-  <rect width="900" height="506" fill="#0B4F8A"/>
-  <rect x="0" y="360" width="900" height="146" fill="#00857A"/>
-  <path d="M120 360c80-78 168-112 264-102 126 14 170 106 300 86 72-12 132-54 216-124v286H120z" fill="#0F766E"/>
-  <path d="M170 112h560" stroke="#F6C643" stroke-width="26" stroke-linecap="round"/>
-  <path d="M540 126c-14 86-72 146-170 180" stroke="#F6C643" stroke-width="22" stroke-linecap="round" fill="none"/>
-  <ellipse cx="362" cy="262" rx="98" ry="78" fill="#8B5E3C"/>
-  <circle cx="445" cy="214" r="46" fill="#A77952"/>
-  <circle cx="462" cy="202" r="8" fill="#FFFFFF"/>
-  <path d="M285 292c-50 46-104 52-162 18" stroke="#A77952" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <title id="title">Stylised Lumholtz's tree-kangaroo crouching on a branch</title>
+  <rect width="900" height="506" fill="#326B52"/>
+  <circle cx="748" cy="92" r="62" fill="#F2BC45"/>
+  <path d="M0 382c110-80 230-104 360-68s228 48 334 2 164-58 206-44v234H0z" fill="#4F8269"/>
+  <path d="M748 320c18-48 48-82 92-102M772 298c42 8 72 30 92 66" fill="none" stroke="#77A886" stroke-width="18" stroke-linecap="round"/>
+  <ellipse cx="836" cy="214" rx="42" ry="18" transform="rotate(-24 836 214)" fill="#77A886"/>
+  <ellipse cx="864" cy="362" rx="42" ry="18" transform="rotate(26 864 362)" fill="#77A886"/>
+  <path d="M476 324c8 58 10 118 6 182" fill="none" stroke="#3C3530" stroke-width="30" stroke-linecap="round"/>
+  <ellipse cx="464" cy="236" rx="154" ry="146" fill="#8F5C39"/>
+  <path d="M500 104c86 34 126 104 116 210-28 22-64 34-108 36 38-74 36-156-8-246z" fill="#6F4935" opacity=".72"/>
+  <ellipse cx="430" cy="254" rx="92" ry="104" fill="#C08455"/>
+  <path d="M86 350c198-16 434-16 728 2" fill="none" stroke="#8A623D" stroke-width="72" stroke-linecap="round"/>
+  <path d="M124 344c184-10 398-10 650 2" fill="none" stroke="#A8794C" stroke-width="12" stroke-linecap="round" opacity=".72"/>
+  <ellipse cx="376" cy="149" rx="58" ry="62" fill="#A56B3D"/>
+  <ellipse cx="334" cy="103" rx="18" ry="23" transform="rotate(-18 334 103)" fill="#8F5C39"/>
+  <ellipse cx="419" cy="101" rx="18" ry="23" transform="rotate(16 419 101)" fill="#8F5C39"/>
+  <ellipse cx="335" cy="104" rx="9" ry="13" transform="rotate(-18 335 104)" fill="#D29662"/>
+  <ellipse cx="418" cy="102" rx="9" ry="13" transform="rotate(16 418 102)" fill="#D29662"/>
+  <path d="M338 130c18-26 58-28 77 0l-12 66c-18 20-44 22-64 2z" fill="#D29662"/>
+  <ellipse cx="376" cy="179" rx="30" ry="25" fill="#5A4338"/>
+  <ellipse cx="376" cy="169" rx="18" ry="13" fill="#C58A61"/>
+  <circle cx="376" cy="183" r="7" fill="#1D2939"/>
+  <circle cx="352" cy="144" r="6" fill="#1D2939"/>
+  <circle cx="400" cy="144" r="6" fill="#1D2939"/>
+  <circle cx="350" cy="142" r="2.5" fill="#FFFFFF"/>
+  <circle cx="398" cy="142" r="2.5" fill="#FFFFFF"/>
+  <path d="M348 228c-30 30-42 68-38 114" fill="none" stroke="#4A3932" stroke-width="30" stroke-linecap="round"/>
+  <path d="M448 228c18 34 20 72 8 116" fill="none" stroke="#4A3932" stroke-width="30" stroke-linecap="round"/>
+  <ellipse cx="307" cy="346" rx="31" ry="20" transform="rotate(-8 307 346)" fill="#3C3530"/>
+  <ellipse cx="458" cy="347" rx="31" ry="20" transform="rotate(8 458 347)" fill="#3C3530"/>
+  <ellipse cx="532" cy="326" rx="48" ry="34" transform="rotate(10 532 326)" fill="#6F4935"/>
+  <ellipse cx="559" cy="351" rx="36" ry="20" transform="rotate(8 559 351)" fill="#3C3530"/>
+  <ellipse cx="386" cy="326" rx="46" ry="34" transform="rotate(-8 386 326)" fill="#6F4935"/>
+  <ellipse cx="366" cy="350" rx="36" ry="20" transform="rotate(-8 366 350)" fill="#3C3530"/>
 </svg>
