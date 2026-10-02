@@ -333,6 +333,29 @@ body; they should not be embedded inside YAML content fields.
 See `sample-content/pages/markdown-syntax-content-blocks.md` for complete
 examples of each structure. The older inline block classes have been replaced.
 
+### HTML wrappers with Markdown
+
+As an alternative to nested blockquotes, use HTML wrappers with the same classes
+and `markdown="1"` to enable Markdown inside each wrapper:
+
+```html
+<section class="jcu-block jcu-bg-secondary" markdown="1">
+
+## Section title
+
+Content with **bold**, lists, and links.
+
+</section>
+```
+
+Use nested `div` elements for columns, image/text groups, and card bodies, and
+`article` elements for individual cards. Gallery, logo, and card-link paragraphs
+can use `<p class="…" markdown="1">`. Keep blank lines around block content and
+close every wrapper. Automatic page cards use the same Liquid include shown above.
+
+See `sample-content/pages/html-markdown-content-blocks.md` for the same complete
+examples as the YAML and Markdown sample pages.
+
 ### Alert blocks
 
 Use `type: alert` in the page layout. It shares its colours and appearance with

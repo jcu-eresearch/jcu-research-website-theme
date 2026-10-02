@@ -9,6 +9,8 @@
       url: /sample-content/content-blocks/
     - title: Markdown syntax content blocks
       url: /sample-content/inline-content-blocks/
+    - title: HTML wrappers and Markdown content blocks
+      url: /sample-content/html-markdown-content-blocks/
     - title: Configured colours
       url: /sample-content/configured-colours/
     - title: Landing page blocks
