@@ -21,8 +21,8 @@ layout: default
       {% assign hero_separator = hero.separator %}
     {% endunless %}
     <header class="landing-hero landing-hero--{{ hero_type }}{% if hero_has_background_image %} landing-hero--with-background-image{% endif %}{% if hero_separator %} landing-block--separator{% endif %}"
-      {% if hero.background_color or hero.text_color or hero.overlay_opacity or hero_has_background_image %}
-        style="{% if hero.background_color %}--hero-background-color: {{ hero.background_color }};{% endif %}{% if hero.text_color %} --hero-text-color: {{ hero.text_color }};{% endif %}{% if hero.overlay_opacity %} --hero-overlay-opacity: {{ hero.overlay_opacity }};{% endif %}{% if hero_has_background_image %} --hero-background-image: url('{{ hero.background_image | relative_url }}');{% endif %}"
+      {% if hero.background_color or hero.text_color or hero.link_color or hero.overlay_opacity or hero_has_background_image %}
+        style="{% if hero.background_color %}--hero-background-color: {{ hero.background_color }};{% endif %}{% if hero.text_color %} --hero-text-color: {{ hero.text_color }};{% endif %}{% if hero.link_color %} --hero-link-color: {{ hero.link_color }};{% endif %}{% if hero.overlay_opacity %} --hero-overlay-opacity: {{ hero.overlay_opacity }};{% endif %}{% if hero_has_background_image %} --hero-background-image: url('{{ hero.background_image | relative_url }}');{% endif %}"
       {% endif %}>
       <div class="landing-hero-heading landing-hero-heading--{{ hero_title_alignment }}">
         {% if hero.eyebrow %}

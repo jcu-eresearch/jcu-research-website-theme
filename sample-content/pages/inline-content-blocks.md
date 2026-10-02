@@ -26,9 +26,9 @@ This page demonstrates content blocks written inline with the rest of the page c
 
 This paragraph sits between two inline blocks, so authors can mix normal page content and styled sections in the order they want readers to encounter them.
 
-> ## Card block with accent
+> ## Card block with a primary-colour line
 >
-> This version uses `.jcu-block--card` and `.jcu-block--accent`. It is useful for a short note, project update, or highlighted takeaway.
+> This version uses `.jcu-block--card` and `.jcu-block--accent` to add a primary-colour line. It is useful for a short note, project update, or highlighted takeaway.
 >
 > Use it for brief notes that should stand apart from the surrounding page content.
 {:.jcu-block .jcu-block--card .jcu-block--accent}

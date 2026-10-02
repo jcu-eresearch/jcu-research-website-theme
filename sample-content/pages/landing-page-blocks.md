@@ -15,6 +15,7 @@ hero:
   background_color: "#102A20"
   background_image: "/assets/sample-images/rainforest-canopy-hero.jpg"
   text_color: "#FFFFFF"
+  link_color: "#FFFFFF"
   separator: true
   actions:
     - label: "View sections"

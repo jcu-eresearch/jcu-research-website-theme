@@ -68,12 +68,22 @@ theme_settings:
   font_family: "Lato, Arial, Helvetica, sans-serif"
   heading_font_family: "Lora, Georgia, serif"
   primary_color: "#354F52"
+  primary_text_color: "#FFFFFF"
+  primary_link_color: "#FFFFFF"
   secondary_color: "#C3D5C7"
-  accent_color: "#86466E"
+  secondary_text_color: "#354F52"
+  secondary_link_color: "#354F52"
   text_color: "#344054"
   heading_color: "#344054"
   background_color: "#F4F6F3"
-  surface_color: "#F1E4EC"
+  background_text_color: "#344054"
+  background_link_color: "#354F52"
+  surface_color: "#FFFFFF"
+  surface_text_color: "#344054"
+  surface_link_color: "#354F52"
+  warning_color: "#86466E"
+  warning_text_color: "#344054"
+  warning_link_color: "#354F52"
   border_color: "#D0D5DD"
   # content_alignment options: "left", "center"
   content_alignment: "left"
@@ -94,6 +104,8 @@ defaults:
 ```
 
 The theme does not include an institutional logo. The sample `project_logo` above is a placeholder; remove that setting to show only the project title, or add your own image to the consuming site's `assets/images/` folder and set its path and alt text. The generic favicon can also be replaced with your own file.
+
+Each background colour has a matching `*_text_color` and `*_link_color`. Set both to colours with enough contrast against that background. `text_color` remains a fallback for older configurations when `background_text_color` is omitted. The white `surface_color` is used for cards and other raised panels. `warning_color` colours Warning alerts.
 
 The optional `project_logo` appears at the left of the shared site header. The header navigation is used on every page and changes to a burger menu on smaller screens.
 
@@ -210,7 +222,7 @@ Inline block options:
 
 - `.jcu-block--coloured-bkgnd`: use the configured secondary colour across the full content panel
 - `.jcu-block--card`: use the theme card colour with a border
-- `.jcu-block--accent`: add the JCU accent line to the left of a block
+- `.jcu-block--accent`: add a primary-colour line to the left of a block
 - `.jcu-block--full`: allow the block to use the full content width
 - `.jcu-block--image-left`: float the first image in the block to the left
 - `.jcu-block--image-right`: float the first image in the block to the right
@@ -309,7 +321,7 @@ Any content block can use the configured secondary colour as its background:
 
 Use `background_mode: "block"` to colour the block itself, or `background_mode: "behind"` to place a larger coloured panel behind the block.
 
-Block separator options are `none`, `line`, `accent`, and `band`.
+Block separator options are `none`, `line`, `accent`, and `band`. The `accent` style uses `primary_color`.
 
 The full-width layout does not show breadcrumbs. Other pages show breadcrumbs unless `theme_settings.show_breadcrumbs` is set to `false`.
 

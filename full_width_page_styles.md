@@ -44,7 +44,7 @@ There are two hero types:
 - `type: "split"` (the default) places a separate image beside the lead and actions. Supply `image` and `image_alt`. Its eyebrow and title span the hero above the lead, actions, and image. An optional `background_color` fills the hero behind them.
 - `type: "background"` places the content on a background colour that spans the full browser width. `background_image` is optional; when present, it also spans the full browser width and the background colour forms a subtle overlay. The text stays within the normal content width. Background images are decorative, so they do not use `image_alt`. Use this type when no image is needed.
 
-Both types accept `title_alignment: "left"`, `"center"`, or `"right"`; the default is left. This aligns the eyebrow and title together across the hero, while the lead and buttons keep their own layout. `text_color` optionally overrides the eyebrow, title, and lead colours. Set it when a dark background or image makes the normal colours difficult to read; buttons retain their own contrast colours.
+Both types accept `title_alignment: "left"`, `"center"`, or `"right"`; the default is left. This aligns the eyebrow and title together across the hero, while the lead and buttons keep their own layout. `text_color` optionally overrides the eyebrow, title, and lead colours, while `link_color` overrides links in the lead. Set them when a custom background or image makes the theme colours difficult to read; buttons use the text or link colour paired with their own background.
 
 Background images fill the hero without distortion. They keep their aspect ratio and are cropped from the centre when the hero's proportions differ from the image. `overlay_opacity` accepts a percentage such as `20%` (the default). Choose a background colour, text colour, and image that keep the words readable; increase the opacity if the image is busy.
 
@@ -58,6 +58,7 @@ hero:
   background_color: "#0B4F8A"
   background_image: "/assets/sample-images/gallery-background.svg"
   text_color: "#FFFFFF"
+  link_color: "#FFFFFF"
   overlay_opacity: "20%"
 ```
 
@@ -108,7 +109,7 @@ blocks:
 
 The optional `actions` list supports up to two buttons. The first uses the primary colour and the second uses the secondary colour. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
 
-Set `separator: true` on any block to add an accent separator bar after it.
+Set `separator: true` on any block to add a primary-colour separator bar after it.
 
 ## Achievements
 
@@ -172,7 +173,7 @@ blocks:
 
 Use `type: "partner-logos"` for funders, collaborators, and institutions. Its position in `blocks` determines where it is displayed.
 
-The `title` is optional. Omit it or set it to an empty string to hide the visible heading; the theme retains an accessible label for the section. Set `background: "primary"` to place the block on a full-width primary-colour band with automatically contrasting text. Logo images have no tile background, allowing transparent monochrome logos to sit directly on the band.
+The `title` is optional. Omit it or set it to an empty string to hide the visible heading; the theme retains an accessible label for the section. Set `background: "primary"` to place the block on a full-width primary-colour band using `primary_text_color` and `primary_link_color`. Logo images have no tile background, allowing transparent monochrome logos to sit directly on the band.
 
 ```yml
 blocks:
@@ -192,16 +193,17 @@ blocks:
 
 The layout uses the existing theme colours:
 
-- `primary_color` for hero headings, primary buttons, links, highlight sections, and achievement icons
-- `secondary_color` for feature bands, coloured content-block backgrounds, secondary buttons, and supporting emphasis
-- `accent_color` for structural emphasis
-- `surface_color` and `border_color` for cards and callouts
+- `primary_color` for hero headings, primary buttons, highlight sections, and structural emphasis; pair it with `primary_text_color` and `primary_link_color`
+- `secondary_color` for feature bands, coloured content-block backgrounds, and secondary buttons; pair it with `secondary_text_color` and `secondary_link_color`
+- `background_color` for the normal page background; pair it with `background_text_color` and `background_link_color`
+- `surface_color` for cards and callouts; pair it with `surface_text_color` and `surface_link_color`
+- `warning_color` for Warning alerts; pair it with `warning_text_color` and `warning_link_color`
+- `border_color` for structural borders
 
 Useful optional future settings would be:
 
 - `hero_overlay_color` if using photographic hero images that need consistent text contrast
 - `landing_card_background_color` if cards need to differ from other surfaces
-- `landing_highlight_text_color` if a site uses a very light primary colour
 - `landing_section_spacing` if a site needs denser or more spacious landing pages
 
 ## CSS classes
