@@ -1,0 +1,36 @@
+{% assign block_background = include.block.background | default: "none" %}
+{% assign block_background_mode = include.block.background_mode | default: "block" %}
+{% assign card_columns = include.block.columns | default: site.theme_settings.page_card_columns | default: 3 | plus: 0 | at_least: 1 %}
+
+<section class="content-block content-block--bg-{{ block_background }} content-block--bg-{{ block_background_mode }}">
+  {% if include.block.title %}
+    <h2>{{ include.block.title | escape }}</h2>
+  {% endif %}
+  {% if include.block.content %}
+    <div class="prose page-cards-intro">{{ include.block.content | markdownify }}</div>
+  {% endif %}
+  <div class="page-cards{% if card_columns == 1 %} page-cards--single{% endif %}" style="--page-card-columns: {{ card_columns }};">
+    {% for card in include.block.cards %}
+      <article class="page-card{% unless card.image %} page-card--no-image{% endunless %}">
+        {% if card.image %}
+          {% if card.url %}
+            <a class="page-card-image" href="{{ card.url | relative_url }}" aria-label="View {{ card.title | escape }}">
+              <img src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
+            </a>
+          {% else %}
+            <div class="page-card-image">
+              <img src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
+            </div>
+          {% endif %}
+        {% endif %}
+        <div class="page-card-body">
+          {% if card.title %}<h3>{{ card.title | escape }}</h3>{% endif %}
+          {% if card.text %}<div class="page-card-text">{{ card.text | markdownify }}</div>{% endif %}
+          {% if card.url and card.link_text %}
+            <a class="page-card-link" href="{{ card.url | relative_url }}">{{ card.link_text | escape }}</a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

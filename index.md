@@ -1,5 +1,5 @@
 ---
-layout: full-width
+layout: landing-page
 title: Home
 permalink: /
 hero:
@@ -84,7 +84,7 @@ blocks:
         text: "Use normal theme pages for project background, outputs, methods, people, and contact information."
         link_text: "View content samples"
         url: "/sample-content/"
-      - title: "Content blocks"
+      - title: "YAML syntax content blocks"
         image: "/assets/sample-images/card-cassowary.svg"
         image_alt: "Abstract content block image"
         text: "Mix ordinary Markdown with reusable blocks for research context, methods, updates, outputs, and people."

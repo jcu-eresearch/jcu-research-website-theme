@@ -1,0 +1,17 @@
+{% assign alert_type = include.block.alert_type | default: "note" %}
+{% assign alert_types = "note,important,warning,caution" | split: "," %}
+{% unless alert_types contains alert_type %}
+  {% assign alert_type = "note" %}
+{% endunless %}
+{% assign alert_title = alert_type | capitalize %}
+{% assign alert_title = include.block.title | default: alert_title %}
+{% capture alert_id %}yaml-alert-{{ include.index }}{% endcapture %}
+
+<section class="content-block">
+  <aside class="jcu-alert jcu-alert--{{ alert_type }}" aria-labelledby="{{ alert_id }}">
+    <h2 class="jcu-alert-title" id="{{ alert_id }}">{{ alert_title | escape }}</h2>
+    {% if include.block.content %}
+      <div class="prose">{{ include.block.content | markdownify }}</div>
+    {% endif %}
+  </aside>
+</section>

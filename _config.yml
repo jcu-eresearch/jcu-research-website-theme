@@ -43,9 +43,26 @@ theme_settings:
   surface_text_color: "#354F52"
   surface_link_color: "#354F52"
 
-  warning_color: "#86466E"
+  # Alert colours: left border, background, text and links.
+  note_color: "#354F52"
+  note_background_color: "#EDF2EF"
+  note_text_color: "#354F52"
+  note_link_color: "#354F52"
+
+  important_color: "#527C66"
+  important_background_color: "#E7F0EA"
+  important_text_color: "#354F52"
+  important_link_color: "#354F52"
+
+  warning_color: "#C83B35"
+  warning_background_color: "#FBECEB"
   warning_text_color: "#354F52"
-  warning_link_color: "#354F52"
+  warning_link_color: "#922C27"
+
+  caution_color: "#A86A2B"
+  caution_background_color: "#FFF3E0"
+  caution_text_color: "#354F52"
+  caution_link_color: "#75471A"
 
   border_color: "#D0D5DD"
 
@@ -78,5 +95,5 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
-  - full_width_page_styles.md
+  - landing_page_styles.md
   - README.md

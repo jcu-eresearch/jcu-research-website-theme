@@ -6,9 +6,11 @@ image: "/assets/sample-images/card-green-turtle.svg"
 summary: "A visual reference for the colour settings configured in this theme."
 ---
 
-This page shows the background colours and their matching text and link colours from `_config.yml`. Warning alerts use a light tint of `warning_color`, shown below.
+This page shows the background colours and their matching text and link colours from `_config.yml`. Alert types have separate border, background, text, and link settings, shown below.
 
-{% assign colour_pairs = "primary:Primary:#354F52:#FFFFFF:#FFFFFF,secondary:Secondary:#C3D5C7:#354F52:#354F52,background:Background:#F4F6F3:#354F52:#354F52,surface:Surface:#FFFFFF:#354F52:#354F52,warning:Warning:#86466E:#354F52:#354F52" | split: "," %}
+{% assign colour_pairs = "primary:Primary:#354F52:#FFFFFF:#FFFFFF,secondary:Secondary:#C3D5C7:#354F52:#354F52,background:Background:#F4F6F3:#354F52:#354F52,surface:Surface:#FFFFFF:#354F52:#354F52,note:Note:#354F52:#354F52:#354F52,important:Important:#527C66:#354F52:#354F52,warning:Warning:#C83B35:#354F52:#922C27,caution:Caution:#A86A2B:#354F52:#75471A" | split: "," %}
+
+{% assign alert_types = "note,important,warning,caution" | split: "," %}
 
 <div class="colour-samples">
   {% for colour_pair in colour_pairs %}
@@ -20,8 +22,15 @@ This page shows the background colours and their matching text and link colours 
     {% assign colour_value = site.theme_settings[colour_key] | default: parts[2] %}
     {% assign text_value = site.theme_settings[text_key] | default: parts[3] %}
     {% assign link_value = site.theme_settings[link_key] | default: parts[4] %}
+    {% assign display_colour_key = colour_key %}
+    {% assign display_colour_value = colour_value %}
+    {% if alert_types contains prefix %}
+      {% assign display_colour_key = prefix | append: "_background_color" %}
+      {% assign configured_background = site.theme_settings[display_colour_key] %}
+      {% capture display_colour_value %}{% if configured_background %}{{ configured_background }}{% else %}color-mix(in srgb, {{ colour_value }} 10%, #fff){% endif %}{% endcapture %}
+    {% endif %}
     <article class="colour-sample colour-sample--pair" id="colour-{{ prefix }}">
-      <div class="colour-swatch colour-swatch--pair" style="background-color: {% if prefix == 'warning' %}color-mix(in srgb, {{ colour_value }} 10%, #fff){% else %}{{ colour_value }}{% endif %}; color: {{ text_value }};">
+      <div class="colour-swatch colour-swatch--pair" style="background-color: {{ display_colour_value }}; color: {{ text_value }};">
         <span>Sample text</span>
         <a href="#colour-{{ prefix }}" style="color: {{ link_value }};">Sample link</a>
       </div>
@@ -29,9 +38,13 @@ This page shows the background colours and their matching text and link colours 
         <h2>{{ parts[1] }} colours</h2>
         <dl>
           <dt>Background</dt>
-          <dd><code>{{ colour_key }}</code></dd>
+          <dd><code>{{ display_colour_key }}</code></dd>
           <dt>Value</dt>
-          <dd><code>{{ colour_value }}</code></dd>
+          <dd><code>{{ display_colour_value }}</code></dd>
+          {% if alert_types contains prefix %}
+            <dt>Left border</dt>
+            <dd><code>{{ colour_key }}: {{ colour_value }}</code></dd>
+          {% endif %}
           <dt>Text</dt>
           <dd><code>{{ text_key }}: {{ text_value }}</code></dd>
           <dt>Link</dt>
@@ -45,9 +58,9 @@ This page shows the background colours and their matching text and link colours 
 ## How these colours are used
 
 - **Primary** is used for the shared header, highlight bands, primary buttons, and structural rules.
-- **Secondary** is used for feature bands, coloured content blocks, secondary buttons, and table headers.
+- **Secondary** is used for feature bands, coloured content blocks, and table headers.
 - **Background** is used for the main page and open content areas.
 - **Surface** is used for cards, panels, menus, and neutral buttons.
-- **Warning** is used for the left border and tinted background of Warning alerts.
+- **Note, Important, Warning, and Caution** each have a configured background, left-border colour, and matching text and link colours. These settings are shared by YAML and Markdown alert blocks.
 
 `heading_color` controls headings on the normal page background, and `border_color` controls subtle borders. The older `text_color` setting remains a fallback for `background_text_color` in existing site configurations.

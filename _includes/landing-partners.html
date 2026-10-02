@@ -14,12 +14,9 @@
   {% assign has_title = true %}
 {% endif %}
 
-{% assign has_primary_background = false %}
-{% if block.background == "primary" %}
-  {% assign has_primary_background = true %}
-{% endif %}
+{% assign partner_logo_max_items_per_row = block.columns | default: site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 | plus: 0 | at_least: 1 %}
 
-<section class="landing-section landing-partners{% if has_primary_background %} landing-section--highlight{% endif %}{% if block_separator %} landing-block--separator{% endif %}"{% if has_title %} aria-labelledby="{{ block_id }}"{% else %} aria-label="Partner organisations"{% endif %}>
+<section class="landing-section landing-partners{% if block.background == "primary" %} landing-section--highlight{% elsif block.background == "secondary" %} landing-section--feature{% endif %}{% if block_separator %} landing-block--separator{% endif %}"{% if has_title %} aria-labelledby="{{ block_id }}"{% else %} aria-label="Partner organisations"{% endif %}>
   <div class="landing-section-body">
     <div class="landing-section-header">
       <p class="eyebrow">{{ block.eyebrow | default: "Partners" }}</p>
@@ -32,7 +29,7 @@
         </div>
       {% endif %}
     </div>
-    <div class="partner-logos">
+    <div class="partner-logos" style="--partner-logo-max-items-per-row: {{ partner_logo_max_items_per_row }};">
       {% for partner in block.items %}
         {% if partner.url %}
           <a class="partner-logo" href="{{ partner.url }}" aria-label="{{ partner.name }}">

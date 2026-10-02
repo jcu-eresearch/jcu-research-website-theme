@@ -24,9 +24,7 @@ layout: default
 
   {% for block in page.blocks %}
     {% case block.type %}
-      {% when 'one-column' %}
-        {% include blocks/one-column.html block=block %}
-      {% when 'image-text' %}
+      {% when 'image-text', 'one-column' %}
         {% include blocks/image-text.html block=block %}
       {% when 'two-column' %}
         {% include blocks/two-column.html block=block %}
@@ -36,6 +34,10 @@ layout: default
         {% include blocks/partner-logos.html block=block %}
       {% when 'page-cards' %}
         {% include blocks/page-cards.html block=block %}
+      {% when 'alert' %}
+        {% include blocks/alert.html block=block index=forloop.index %}
+      {% when 'cards' %}
+        {% include blocks/cards.html block=block %}
     {% endcase %}
   {% endfor %}
 </article>

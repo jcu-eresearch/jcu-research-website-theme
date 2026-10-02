@@ -1,10 +1,10 @@
 ---
-layout: full-width
+layout: landing-page
 title: Landing page blocks
 permalink: /sample-content/landing-page-blocks/
 order: 5
 image: "/assets/sample-images/gallery-background.svg"
-summary: "Examples of each block and style available in the full-width page layout."
+summary: "Examples of each block and style available in the landing-page layout."
 content_separator: true
 hero:
   type: "background"
@@ -150,10 +150,29 @@ blocks:
         url: "/sample-content/"
   - type: "partner-logos"
     background: "primary"
+    columns: 2
     eyebrow: "Partners"
-    title: ""
+    title: "Partner logos with background: primary"
     content: |
+      White reverse mono logos have transparent backgrounds, so the primary colour shows through their negative spaces.
+
       Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. The title is optional, and this example leaves it blank. Place the block wherever it belongs in `blocks`.
+    items:
+      - name: "Partner organisation"
+        logo: "/assets/sample-images/partner-placeholder-reverse-mono.svg"
+      - name: "Rainforest research partner"
+        logo: "/assets/sample-images/partner-rainforest-reverse-mono.svg"
+      - name: "Reef research partner"
+        logo: "/assets/sample-images/partner-reef-reverse-mono.svg"
+      - name: "Funding partner"
+        logo: "/assets/sample-images/partner-mosaic-reverse-mono.svg"
+  - type: "partner-logos"
+    background: "secondary"
+    columns: 3
+    eyebrow: "Partners"
+    title: "Partners on a secondary background"
+    content: |
+      Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. This example displays a heading and uses a secondary background with up to three logos per row. Place the block wherever it belongs in `blocks`.
     items:
       - name: "Partner organisation"
         logo: "/assets/sample-images/partner-placeholder.svg"
@@ -167,7 +186,7 @@ blocks:
 
 ## How to use landing page blocks
 
-Create a page with `layout: full-width`, then add a `hero` and the ordered `blocks` the page needs.
+Create a page with `layout: landing-page`, then add a `hero` and the ordered `blocks` the page needs.
 
 Each item in `blocks` needs a `type`: `achievements`, `carousel`, `standard`, `feature`, `highlight`, or `partner-logos`. The blocks render in list order.
 

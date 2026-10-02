@@ -5,9 +5,9 @@
   children:
     - title: Markdown formatting
       url: /sample-content/markdown-formats/
-    - title: Content blocks
+    - title: YAML syntax content blocks
       url: /sample-content/content-blocks/
-    - title: Inline content blocks
+    - title: Markdown syntax content blocks
       url: /sample-content/inline-content-blocks/
     - title: Configured colours
       url: /sample-content/configured-colours/

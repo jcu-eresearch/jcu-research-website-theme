@@ -1,8 +1,8 @@
-# Full-width page styles
+# Landing-page styles
 
-The `full-width` layout is designed for research project websites that need a polished page without requiring the author to make design decisions. Most content is edited in page front matter.
+The `landing-page` layout is designed for research project websites that need a polished page without requiring the author to make design decisions. Most content is edited in page front matter.
 
-Landing pages are full-width pages and use the same shared header navigation as every other page. The menu uses `_data/navigation.yml`, which is useful when a page exists in the site but is not represented as a section on the landing page.
+Landing pages use the same shared header navigation as every other page. The menu uses `_data/navigation.yml`, which is useful when a page exists in the site but is not represented as a section on the landing page.
 
 Set the default separator behaviour in `_config.yml`:
 
@@ -22,7 +22,7 @@ buttons share this setting with menu and carousel controls throughout the site.
 
 ```yml
 ---
-layout: full-width
+layout: landing-page
 title: Home
 permalink: /
 hero:
@@ -180,20 +180,21 @@ blocks:
 
 Use `type: "partner-logos"` for funders, collaborators, and institutions. Its position in `blocks` determines where it is displayed.
 
-The `title` is optional. Omit it or set it to an empty string to hide the visible heading; the theme retains an accessible label for the section. Set `background: "primary"` to place the block on a full-width primary-colour band using `primary_text_color` and `primary_link_color`. Logo images have no tile background, allowing transparent monochrome logos to sit directly on the band.
+The `title` is optional. Omit it or set it to an empty string to hide the visible heading; the theme retains an accessible label for the section. Set `background: "primary"` or `"secondary"` to place the block on a full-width band using that colour’s matching text and link settings. Omit `background` for the normal page background. `background_mode` is unnecessary and does not change this treatment. Set `columns` to the maximum number of logos per row; it overrides `partner_logo_max_items_per_row`, and fewer columns are used on narrower screens. Logo images have no tile background, allowing transparent monochrome logos to sit directly on the band.
 
 ```yml
 blocks:
   - type: "partner-logos"
     background: "primary"
+    columns: 2
     title: ""
     content: |
       Recognise the organisations that make the project possible.
     items:
       - name: "Example partner"
-        logo: "/assets/sample-images/partner-placeholder.svg"
+        logo: "/assets/sample-images/partner-placeholder-reverse-mono.svg"
       - name: "Example funding partner"
-        logo: "/assets/sample-images/partner-mosaic.svg"
+        logo: "/assets/sample-images/partner-mosaic-reverse-mono.svg"
 ```
 
 ## Style options

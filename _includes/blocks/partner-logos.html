@@ -1,7 +1,9 @@
 {% assign block_background = include.block.background | default: "none" %}
-{% assign block_background_mode = include.block.background_mode | default: "block" %}
+{% unless block_background == "primary" or block_background == "secondary" %}
+  {% assign block_background = "none" %}
+{% endunless %}
 
-<section class="content-block content-block--bg-{{ block_background }} content-block--bg-{{ block_background_mode }}">
+<section class="content-block partner-logos-block content-block--bg-{{ block_background }} content-block--bg-block">
   {% if include.block.title %}
     <h2>{{ include.block.title }}</h2>
   {% endif %}
@@ -10,7 +12,7 @@
       {{ include.block.content | markdownify }}
     </div>
   {% endif %}
-  {% assign partner_logo_max_items_per_row = include.block.columns | default: site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 %}
+  {% assign partner_logo_max_items_per_row = include.block.columns | default: site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 | plus: 0 | at_least: 1 %}
   <div class="partner-logos" style="--partner-logo-max-items-per-row: {{ partner_logo_max_items_per_row }};">
     {% for partner in include.block.partners %}
       {% if partner.url %}
