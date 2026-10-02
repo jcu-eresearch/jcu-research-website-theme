@@ -37,7 +37,7 @@ layout: default
         {% if hero.actions %}
           <div class="landing-actions">
             {% for action in hero.actions %}
-              <a class="landing-button{% if forloop.first %} landing-button--primary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
+              <a class="landing-button{% if forloop.first %} landing-button--primary{% else %} landing-button--secondary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
             {% endfor %}
           </div>
         {% endif %}

@@ -44,14 +44,14 @@ document.querySelectorAll(".prose h1[id], .prose h2[id], .prose h3[id], .prose h
 const siteHeader = document.querySelector(".site-header");
 const headerMenuToggle = document.querySelector(".header-menu-toggle");
 const headerNav = document.querySelector("#header-nav");
-const submenuToggles = Array.from(document.querySelectorAll(".header-submenu-toggle"));
+const submenuToggles = Array.from(document.querySelectorAll(".header-submenu-trigger"));
 
 if (siteHeader && headerMenuToggle && headerNav) {
   const closeSubmenus = (exceptGroup = null) => {
     document.querySelectorAll(".header-nav-group.is-submenu-open").forEach((group) => {
       if (group !== exceptGroup) {
         group.classList.remove("is-submenu-open");
-        group.querySelector(".header-submenu-toggle")?.setAttribute("aria-expanded", "false");
+        group.querySelector(".header-submenu-trigger")?.setAttribute("aria-expanded", "false");
       }
     });
   };
@@ -72,13 +72,49 @@ if (siteHeader && headerMenuToggle && headerNav) {
   });
 
   submenuToggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const group = toggle.closest(".header-nav-group");
-      const isOpen = group.classList.contains("is-submenu-open");
+    const group = toggle.closest(".header-nav-group");
+    let openedByHover = false;
+    let pointerInside = false;
 
+    const openSubmenu = () => {
       closeSubmenus(group);
-      group.classList.toggle("is-submenu-open", !isOpen);
-      toggle.setAttribute("aria-expanded", String(!isOpen));
+      group.classList.add("is-submenu-open");
+      toggle.setAttribute("aria-expanded", "true");
+    };
+    const closeSubmenu = () => {
+      group.classList.remove("is-submenu-open");
+      toggle.setAttribute("aria-expanded", "false");
+      openedByHover = false;
+    };
+
+    group.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "touch") return;
+      pointerInside = true;
+      openedByHover = !group.classList.contains("is-submenu-open");
+      openSubmenu();
+    });
+    group.addEventListener("pointerleave", () => {
+      pointerInside = false;
+      if (!group.contains(document.activeElement)) closeSubmenu();
+    });
+    group.addEventListener("focusout", (event) => {
+      if (!pointerInside && !group.contains(event.relatedTarget)) closeSubmenu();
+    });
+    toggle.addEventListener("click", () => {
+      // The first click on a hover-opened submenu keeps it open.
+      if (group.classList.contains("is-submenu-open") && !openedByHover) {
+        closeSubmenu();
+      } else {
+        openSubmenu();
+      }
+      openedByHover = false;
+    });
+    toggle.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        openSubmenu();
+        group.querySelector(".header-submenu a")?.focus();
+      }
     });
   });
 
@@ -96,9 +132,16 @@ if (siteHeader && headerMenuToggle && headerNav) {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      closeSubmenus();
-      setMenuOpen(false);
-      headerMenuToggle.focus();
+      const activeGroup = document.activeElement?.closest(".header-nav-group.is-submenu-open");
+      if (activeGroup) {
+        closeSubmenus();
+        activeGroup.querySelector(".header-submenu-trigger")?.focus();
+      } else if (siteHeader.classList.contains("is-menu-open")) {
+        setMenuOpen(false);
+        headerMenuToggle.focus();
+      } else {
+        closeSubmenus();
+      }
     }
   });
 }

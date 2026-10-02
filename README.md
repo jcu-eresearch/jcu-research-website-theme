@@ -87,6 +87,7 @@ theme_settings:
   border_color: "#D0D5DD"
   # content_alignment options: "left", "center"
   content_alignment: "left"
+  button_shape: "rectangular"
   table_banded_rows: true
   block_separator_style: "none"
   partner_logo_max_height: "6rem"
@@ -117,6 +118,16 @@ Set `theme_settings.content_alignment` to `left` or `center` to control how
 content is aligned within page, block, card, and full-width section containers.
 The default is `left`.
 
+Set `theme_settings.button_shape` to `rectangular` (the default) for straight
+edges with slightly rounded corners, or `lozenge` for fully rounded ends. This
+site-wide setting applies to hero and content action buttons, menu controls and
+navigation highlights, and carousel controls. Action buttons use `primary_color` and `primary_link_color` for the first button,
+and `surface_color` and `surface_link_color` for the second, with `border_color`
+for its border. These colours are consistent across heroes and content sections.
+Small carousel indicators become
+rounded squares or circles respectively. Missing or unrecognised values use
+`rectangular`.
+
 ## Navigation
 
 Add `_data/navigation.yml` in the project site:
@@ -137,7 +148,11 @@ Add `_data/navigation.yml` in the project site:
 
 If navigation is omitted, the theme falls back to a single Home link.
 Navigation supports two levels. Top-level items appear in the header and any
-`children` appear in a dropdown menu.
+`children` appear in a dropdown menu. A parent with children becomes a single
+submenu button styled like a navigation link. It opens on hover, click, or tap;
+keyboard users can use Enter, Space, or Arrow Down. The first submenu link,
+Overview, leads to the parent's URL. Escape closes the submenu and returns focus
+to its button.
 
 ## Add a page
 

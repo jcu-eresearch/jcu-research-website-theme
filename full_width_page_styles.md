@@ -9,9 +9,14 @@ Set the default separator behaviour in `_config.yml`:
 ```yml
 theme_settings:
   landing_block_separators: false
+  button_shape: "rectangular"
 ```
 
 When `landing_block_separators` is `true`, landing blocks show separator bars unless a block sets `separator: false`. When it is `false`, blocks hide separator bars unless a block sets `separator: true`.
+
+Set `theme_settings.button_shape` to `rectangular` (the default, with slightly
+rounded corners) or `lozenge` (fully rounded ends). Hero and section action
+buttons share this setting with menu and carousel controls throughout the site.
 
 ## Use the layout
 
@@ -107,7 +112,7 @@ blocks:
     separator: true
 ```
 
-The optional `actions` list supports up to two buttons. The first uses the primary colour and the second uses the secondary colour. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
+The optional `actions` list supports up to two buttons. The first uses `primary_color` with `primary_link_color`; the second uses `surface_color` with `surface_link_color` and the standard `border_color`. Hero and section buttons use the same colours and underline on hover. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
 
 Set `separator: true` on any block to add a primary-colour separator bar after it.
 
@@ -194,7 +199,7 @@ blocks:
 The layout uses the existing theme colours:
 
 - `primary_color` for hero headings, primary buttons, highlight sections, and structural emphasis; pair it with `primary_text_color` and `primary_link_color`
-- `secondary_color` for feature bands, coloured content-block backgrounds, and secondary buttons; pair it with `secondary_text_color` and `secondary_link_color`
+- `secondary_color` for feature bands and coloured content-block backgrounds; pair it with `secondary_text_color` and `secondary_link_color`
 - `background_color` for the normal page background; pair it with `background_text_color` and `background_link_color`
 - `surface_color` for cards and callouts; pair it with `surface_text_color` and `surface_link_color`
 - `warning_color` for Warning alerts; pair it with `warning_text_color` and `warning_link_color`

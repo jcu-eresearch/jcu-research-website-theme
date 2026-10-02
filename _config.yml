@@ -12,11 +12,13 @@ theme_settings:
   favicon: "/assets/images/favicon.svg"
   project_logo: "/assets/sample-images/project-logo.svg"
   project_logo_alt: "Project logo"
+
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
   # Optional project-logo-specific overrides. Leave commented to use the sidebar logo tile settings above.
   sidebar_project_logo_tile_background: "#transparent"
   sidebar_project_logo_tile_border_color: "transparent"
+
   font_family: "Lato, Arial, Helvetica, sans-serif"
   heading_font_family: "Lora, Georgia, serif"
 
@@ -47,6 +49,8 @@ theme_settings:
 
   # content_alignment options: "left", "center"
   content_alignment: "left"
+  # button_shape options: "rectangular", "lozenge"
+  button_shape: "rectangular"
   table_banded_rows: true
 
   # block_separator_style options: "none", "line", "accent", "band"

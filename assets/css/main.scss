@@ -28,6 +28,7 @@
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
   --partner-logo-max-items-per-row: {{ site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 }};
   --image-gallery-max-items-per-row: {{ site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 }};
+  --button-radius: {% if site.theme_settings.button_shape == "lozenge" %}999px{% else %}0.35rem{% endif %};
   --sidebar-width: 19rem;
   --content-width: 68rem;
   --site-main-inline-padding: clamp(1.25rem, 5vw, 5rem);
@@ -38,6 +39,13 @@
 
 * {
   box-sizing: border-box;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  border-radius: var(--button-radius);
 }
 
 body {
@@ -188,7 +196,7 @@ a:hover {
   text-decoration: none;
   font-weight: 700;
   padding: 0.7rem 0.8rem;
-  border-radius: 0.35rem;
+  border-radius: var(--button-radius);
 }
 
 .site-nav-link:hover {
@@ -1305,14 +1313,15 @@ a.partner-logo:hover {
   color: var(--color-surface-link);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 0.35rem;
+  border-radius: var(--button-radius);
   font-weight: 800;
   text-decoration: none;
 }
 
 .landing-button:hover {
   color: var(--color-surface-link);
-  border-color: color-mix(in srgb, var(--color-primary) 42%, var(--color-border));
+  border-color: var(--color-border);
+  text-decoration: underline;
 }
 
 .landing-button--primary {
@@ -1324,19 +1333,20 @@ a.partner-logo:hover {
 .landing-button--primary:hover {
   color: var(--color-primary-link);
   background: var(--color-primary);
+  border-color: var(--color-primary);
   text-decoration: underline;
 }
 
 .landing-button--secondary {
-  color: var(--color-secondary-link);
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
+  color: var(--color-surface-link);
+  background: var(--color-surface);
+  border-color: var(--color-border);
 }
 
 .landing-button--secondary:hover {
-  color: var(--color-secondary-link);
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
+  color: var(--color-surface-link);
+  background: var(--color-surface);
+  border-color: var(--color-border);
   text-decoration: underline;
 }
 
@@ -1496,11 +1506,6 @@ a.partner-logo:hover {
 
 .landing-section-actions .landing-button {
   min-width: 9rem;
-  border-radius: 999px;
-}
-
-.landing-section--highlight .landing-section-actions .landing-button {
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-surface) 70%, transparent);
 }
 
 .landing-card-grid,
@@ -1634,7 +1639,7 @@ a.partner-logo:hover {
   color: var(--color-surface-text);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 0.35rem;
+  border-radius: var(--button-radius);
   font: inherit;
   font-weight: 900;
   cursor: pointer;
@@ -1656,7 +1661,7 @@ a.partner-logo:hover {
   min-width: 0.85rem;
   min-height: 0.85rem;
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--button-radius);
 }
 
 @media (max-width: 900px) {
@@ -1699,7 +1704,7 @@ a.partner-logo:hover {
     color: var(--color-primary-text);
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.34);
-    border-radius: 0.35rem;
+    border-radius: var(--button-radius);
     font: inherit;
     font-weight: 800;
     line-height: 1;
@@ -1976,13 +1981,16 @@ a.partner-logo:hover {
   align-items: center;
   min-height: 2.75rem;
   padding: 0.55rem 0.7rem;
-  border-radius: 0.35rem;
+  border-radius: var(--button-radius);
   font-size: 0.92rem;
 }
 
-.header-nav-group.has-children .header-nav-link {
-  padding-right: 0.4rem;
-  border-radius: 0.35rem 0 0 0.35rem;
+.header-submenu-trigger {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .header-nav-link:hover {
@@ -1996,39 +2004,6 @@ a.partner-logo:hover {
   color: var(--color-surface-link);
   background: var(--color-surface);
   border: 0;
-}
-
-.header-submenu-toggle {
-  width: 2rem;
-  min-height: 2.75rem;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  color: var(--header-text-color);
-  background: transparent;
-  border: 0;
-  border-radius: 0 0.35rem 0.35rem 0;
-  cursor: pointer;
-}
-
-.header-submenu-toggle span {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-right: 0.12rem solid currentColor;
-  border-bottom: 0.12rem solid currentColor;
-  transform: translateY(-0.15rem) rotate(45deg);
-  transition: transform 160ms ease;
-}
-
-.header-submenu-toggle:hover,
-.header-submenu-toggle:focus-visible {
-  color: var(--color-surface-text);
-  background: var(--color-surface);
-}
-
-.header-nav-group.is-active > .header-nav-parent .header-submenu-toggle {
-  color: var(--color-surface-text);
-  background: var(--color-surface);
 }
 
 .header-submenu {
@@ -2050,7 +2025,7 @@ a.partner-logo:hover {
   display: block;
   padding: 0.65rem 0.75rem;
   color: var(--header-link-color);
-  border-radius: 0.25rem;
+  border-radius: var(--button-radius);
   font-size: 0.9rem;
 }
 
@@ -2065,14 +2040,8 @@ a.partner-logo:hover {
   text-decoration: underline;
 }
 
-.header-nav-group:hover > .header-submenu,
-.header-nav-group:focus-within > .header-submenu,
 .header-nav-group.is-submenu-open > .header-submenu {
   display: block;
-}
-
-.header-nav-group.is-submenu-open .header-submenu-toggle span {
-  transform: translateY(0.15rem) rotate(225deg);
 }
 
 .site-main,
@@ -2129,7 +2098,7 @@ a.partner-logo:hover {
     color: var(--header-text-color);
     background: var(--color-primary);
     border: 0;
-    border-radius: 0.35rem;
+    border-radius: var(--button-radius);
     font: inherit;
     font-weight: 800;
     cursor: pointer;
@@ -2174,10 +2143,6 @@ a.partner-logo:hover {
     flex: 1;
   }
 
-  .header-submenu-toggle {
-    width: 2.75rem;
-  }
-
   .header-submenu {
     position: static;
     min-width: 0;
@@ -2190,10 +2155,6 @@ a.partner-logo:hover {
     box-shadow: none;
   }
 
-  .header-nav-group.is-submenu-open > .header-submenu,
-  .header-nav-group:focus-within > .header-submenu {
-    display: block;
-  }
 }
 
 @media (max-width: 520px) {

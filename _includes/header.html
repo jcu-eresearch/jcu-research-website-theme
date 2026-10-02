@@ -32,17 +32,19 @@
 
           <div class="header-nav-group{% if parent_active %} is-active{% endif %}{% if item.children %} has-children{% endif %}">
             <div class="header-nav-parent">
-              <a class="header-nav-link" href="{{ item_url }}"{% if page.url == item.url or page.url == item_url or page.title == item.title %} aria-current="page"{% endif %}>
-                {{ item.title }}
-              </a>
               {% if item.children %}
-                <button class="header-submenu-toggle" type="button" aria-expanded="false" aria-label="Show {{ item.title }} submenu">
-                  <span aria-hidden="true"></span>
+                <button class="header-nav-link header-submenu-trigger" type="button" aria-expanded="false" aria-controls="header-submenu-{{ forloop.index }}">
+                  {{ item.title }}
                 </button>
+              {% else %}
+                <a class="header-nav-link" href="{{ item_url }}"{% if parent_active %} aria-current="page"{% endif %}>
+                  {{ item.title }}
+                </a>
               {% endif %}
             </div>
             {% if item.children %}
-              <div class="header-submenu">
+              <div class="header-submenu" id="header-submenu-{{ forloop.index }}">
+                <a href="{{ item_url }}"{% if page.url == item.url or page.url == item_url or page.title == item.title %} aria-current="page"{% endif %}>Overview</a>
                 {% for child in item.children %}
                   {% assign child_url = child.url | relative_url %}
                   <a href="{{ child_url }}"{% if page.url == child.url or page.url == child_url or page.title == child.title %} aria-current="page"{% endif %}>
