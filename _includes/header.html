@@ -1,9 +1,10 @@
 {% assign navigation_items = site.data.navigation %}
+{% assign header_logo = site.theme_settings.header_logo | default: site.theme_settings.project_logo %}
 <header class="site-header">
   <div class="site-header-inner">
     <a class="site-header-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-      {% if site.theme_settings.project_logo %}
-        <img src="{{ site.theme_settings.project_logo | relative_url }}" alt="{{ site.theme_settings.project_logo_alt | default: site.title }}">
+      {% if header_logo %}
+        <img src="{{ header_logo | relative_url }}" alt="{{ site.theme_settings.project_logo_alt | default: site.title }}">
       {% endif %}
       <span>{{ site.title }}</span>
     </a>

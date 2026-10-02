@@ -1224,7 +1224,6 @@ a.partner-logo:hover {
 }
 
 .landing-hero h1 {
-  max-width: 30ch;
   margin: 0;
   color: var(--hero-text-color, var(--color-primary));
   font-size: clamp(2rem, 4.5vw, 2.65rem);
@@ -1295,6 +1294,18 @@ a.partner-logo:hover {
   height: 100%;
   min-height: 24rem;
   object-fit: cover;
+}
+
+.landing-hero-media--contain {
+  align-self: center;
+  background: transparent;
+  border-radius: 0;
+}
+
+.landing-hero-media--contain img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
 }
 
 .landing-actions {
@@ -1801,10 +1812,6 @@ a.partner-logo:hover {
 
   .landing-hero {
     min-height: 0;
-  }
-
-  .landing-hero h1 {
-    max-width: 100%;
   }
 
   .landing-hero-media img {

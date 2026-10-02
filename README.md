@@ -1,4 +1,4 @@
-# JCU research website theme
+# Research Project Website Theme
 
 A configurable Jekyll theme for research project communications. The theme is designed for GitHub Pages, so research teams can maintain project websites with Markdown content while reusing shared layouts, navigation, content blocks, and sample assets.
 
@@ -42,7 +42,7 @@ gem "github-pages", group: :jekyll_plugins
 In the project site's `_config.yml`, set the project identity and theme settings:
 
 ```yml
-title: "Research project website"
+title: "Research Project Website Theme"
 description: "A configurable static website for research project communications."
 url: "https://USERNAME.github.io"
 baseurl: "/REPOSITORY-NAME"
@@ -57,8 +57,10 @@ kramdown:
 
 theme_settings:
   show_breadcrumbs: true
-  favicon: "/assets/images/favicon.svg"
-  project_logo: "/assets/sample-images/project-logo.svg"
+  favicon: "/assets/images/rwt/favicon-colour-transparent.png"
+  app_icon: "/assets/images/rwt/app-colour-transparent.png"
+  project_logo: "/assets/images/rwt/app-colour-transparent.png"
+  header_logo: "/assets/images/rwt/app-reverse-mono-transparent.png"
   project_logo_alt: "Project logo"
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"
@@ -104,11 +106,11 @@ defaults:
       layout: "page"
 ```
 
-The theme does not include an institutional logo. The sample `project_logo` above is a placeholder; remove that setting to show only the project title, or add your own image to the consuming site's `assets/images/` folder and set its path and alt text. The generic favicon can also be replaced with your own file.
+The theme does not include an institutional logo. The sample `project_logo` above is the RWT tropical leaf mark; remove that setting to show only the project title, or add your own image to the consuming site's `assets/images/` folder and set its path and alt text. The generic favicon can also be replaced with your own file.
 
 Each background colour has a matching `*_text_color` and `*_link_color`. Set both to colours with enough contrast against that background. `text_color` remains a fallback for older configurations when `background_text_color` is omitted. The white `surface_color` is used for cards and other raised panels. `warning_color` colours Warning alerts.
 
-The optional `project_logo` appears at the left of the shared site header. The header navigation is used on every page and changes to a burger menu on smaller screens.
+The optional `header_logo` appears at the left of the shared site header, falling back to `project_logo` when omitted. The sample uses the transparent white reverse mono mark on the dark title bar. `project_logo` and `app_icon` use the coloured transparent mark; `app_icon` supplies the Apple touch icon. The header navigation is used on every page and changes to a burger menu on smaller screens.
 
 The optional `favicon` appears in the browser tab. Set `favicon: false` to omit the favicon link.
 

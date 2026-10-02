@@ -6,7 +6,7 @@
   <ellipse cx="392" cy="286" rx="142" ry="166" fill="#1D2939"/>
   <path d="M340 132c18-46 58-66 116-58-14 40-38 68-72 84z" fill="#E4A72F"/>
   <circle cx="384" cy="162" r="58" fill="#3287A8"/>
-  <path d="M353 178c48 28 88 26 120-8v92c-42 28-82 28-120 0z" fill="#52B2C2"/>
+  <path d="M355 228c20 12 38 12 58 0v42c-20 12-38 12-58 0z" fill="#52B2C2"/>
   <circle cx="405" cy="146" r="8" fill="#FFFFFF"/>
   <path d="M418 171l74 20-74 22z" fill="#C95F6F"/>
 </svg>

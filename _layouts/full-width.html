@@ -43,7 +43,7 @@ layout: default
         {% endif %}
       </div>
       {% if hero_type == 'split' and hero.image %}
-        <figure class="landing-hero-media">
+        <figure class="landing-hero-media{% if hero.image_fit == 'contain' %} landing-hero-media--contain{% endif %}">
           <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt | default: '' }}">
         </figure>
       {% endif %}

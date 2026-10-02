@@ -1,4 +1,4 @@
-title: "Research project website"
+title: "Research Project Website Theme"
 description: "A configurable static website for research project communications."
 url: "https://PaulineLawrey.github.io"
 baseurl: "/jcu-research-website-theme"
@@ -9,9 +9,11 @@ kramdown:
 
 theme_settings:
   show_breadcrumbs: true
-  favicon: "/assets/images/favicon.svg"
-  project_logo: "/assets/sample-images/project-logo.svg"
-  project_logo_alt: "Project logo"
+  favicon: "/assets/images/rwt/favicon-colour-transparent.png"
+  app_icon: "/assets/images/rwt/app-colour-transparent.png"
+  project_logo: "/assets/images/rwt/app-colour-transparent.png"
+  header_logo: "/assets/images/rwt/app-reverse-mono-transparent.png"
+  project_logo_alt: "RWT tropical leaf logo"
 
   sidebar_logo_tile_background: "transparent"
   sidebar_logo_tile_border_color: "transparent"

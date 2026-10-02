@@ -3,10 +3,11 @@ layout: full-width
 title: Home
 permalink: /
 hero:
-  title: "A clearer way to publish research project websites"
+  title: "A simple, free way to create and publish research project websites"
   lead: "A configurable Jekyll theme for research teams who need attractive, maintainable, GitHub Pages-ready project websites edited in Markdown."
-  image: "/assets/sample-images/gallery-background.svg"
-  image_alt: "Abstract image representing a research website"
+  image: "/assets/images/rwt/hero-colour-transparent.png"
+  image_fit: "contain"
+  image_alt: "RWT tropical leaves in green, sage and quandong red"
   actions:
     - label: "View sample content"
       url: "/sample-content/"
