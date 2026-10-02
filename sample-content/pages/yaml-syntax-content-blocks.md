@@ -40,7 +40,18 @@ blocks:
 
           [View the sample pages](../).
   - type: image-text
-    title: "Image and text block, image left"
+    title: "Image and text block, image left, without background"
+    image: "/assets/sample-images/card-cassowary.svg"
+    image_alt: "Stylised southern cassowary in rainforest"
+    image_position: "left"
+    image_size: "small"
+    caption: "Omit background to use the normal page background."
+    content: |
+      This example uses `image_position: "left"` and omits `background`. The image and text sit directly on the page, with a gap between them and no outer panel padding.
+
+      Southern cassowaries disperse the seeds of many rainforest plants. Their movement through connected forest helps maintain the diversity of the Wet Tropics.
+  - type: image-text
+    title: "Image and text block, image left, with background"
     image: "/assets/sample-images/card-tree-kangaroo.svg"
     image_alt: "Stylised Lumholtz's tree-kangaroo in rainforest"
     image_position: "left"
@@ -53,7 +64,7 @@ blocks:
 
       Lumholtz's tree-kangaroo is an arboreal marsupial of the Wet Tropics. It moves through the forest canopy and is vulnerable to habitat fragmentation.
   - type: image-text
-    title: "Image and text block, image right"
+    title: "Image and text block, image right, with background"
     image: "/assets/sample-images/card-green-turtle.svg"
     image_alt: "Stylised green turtle in coastal waters"
     image_position: "right"
@@ -64,17 +75,7 @@ blocks:
       Use `image_position: "right"` to place the image beside the text on the right. The background stays within the content panel, and the image has no padding on its outer side.
 
       Green turtles connect reef and seagrass habitats with coastal nesting beaches. Protecting these linked environments supports their life cycle.
-  - type: image-text
-    title: "Image and text block, image left without background"
-    image: "/assets/sample-images/card-cassowary.svg"
-    image_alt: "Stylised southern cassowary in rainforest"
-    image_position: "left"
-    image_size: "small"
-    caption: "Omit background to use the normal page background."
-    content: |
-      This example uses `image_position: "left"` and omits `background`. The image and text sit directly on the page, with a gap between them and no outer panel padding.
 
-      Southern cassowaries disperse the seeds of many rainforest plants. Their movement through connected forest helps maintain the diversity of the Wet Tropics.
   - type: gallery
     title: "Image gallery block"
     columns: 4

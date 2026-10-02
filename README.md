@@ -242,59 +242,96 @@ jcudl_script: /catalog/jcudl.js
 
 Content blocks can be added in front matter, or simple narrative blocks can be written inline in the Markdown body.
 
-### Inline blocks
+### Markdown blocks
 
-Use Markdown blockquote notation with a short class line when you want styled blocks to appear among ordinary page content:
+The Markdown and YAML sample pages show the same blocks in the same order.
+Markdown uses blockquotes with class lines to group and style content:
 
 ```md
 > ## Section title
 >
-> Markdown content can include **emphasis**, [links](https://www.jcu.edu.au/), and lists.
-{:.jcu-block .jcu-block--coloured-bkgnd}
+> Markdown content can include **emphasis**, links, and lists.
+{:.jcu-block .jcu-bg-secondary}
 ```
 
-Inline block options:
-
-- `.jcu-block--coloured-bkgnd`: use the configured secondary colour across the full content panel
-- `.jcu-block--card`: use the theme card colour with a border
-- `.jcu-block--accent`: add a primary-colour line to the left of a block
-- `.jcu-block--full`: allow the block to use the full content width
-- `.jcu-block--image-left`: float the first image in the block to the left
-- `.jcu-block--image-right`: float the first image in the block to the right
-
-Place the class line directly underneath the block it should style.
-
-When normal Markdown content follows an inline block, the theme adds extra spacing automatically.
-
-For GitHub-style alerts, use a labelled blockquote with a JCU alert class:
+Place a class line **outside the quote it styles**, immediately below it. For
+nested blocks, the class line belongs to the containing quote level:
 
 ```md
-> **Note**
+> ## Two columns
 >
-> Highlights information that users should take into account.
+> > ### First column
+> > First column content.
+> {:.jcu-column}
+>
+> > ### Second column
+> > Second column content.
+> {:.jcu-column}
+{:.jcu-block .jcu-two-column .jcu-bg-primary}
+```
+
+| Class | Purpose |
+| --- | --- |
+| `jcu-block` | Full content-panel width and standard block spacing |
+| `jcu-bg-primary`, `jcu-bg-secondary` | Contained coloured panel with matching text and link colours |
+| `jcu-two-column` / `jcu-column` | Two-column container / individual surface-coloured panel |
+| `jcu-image-text` | Image and text grid containing `jcu-text` and `jcu-media` nested quotes |
+| `jcu-image-left`, `jcu-image-right` | Image position (right is the default) |
+| `jcu-image-small`, `jcu-image-large` | Image width (medium is the default) |
+| `jcu-cards` / `jcu-card` | Card grid / individual surface-coloured card |
+| `jcu-card-body`, `jcu-card-image`, `jcu-card-link` | Card text group, optional image group, and optional link paragraph |
+| `jcu-gallery` | A paragraph of linked images with bold labels inside their links |
+| `jcu-partner-logos` | A paragraph of ordinary or linked logo images |
+| `jcu-columns-1` through `jcu-columns-6` | Column count for cards, galleries, and partner logos |
+
+For an image-text block, put the title and paragraphs in a nested quote marked
+`jcu-text`; put its image and optional caption in a second quote marked
+`jcu-media`. Apply the image layout and background classes to the outer
+`jcu-block`. Images sit flush against the coloured panel's outer side and stack
+with the text on small screens, matching the YAML version.
+
+For cards, mark the outer quote `jcu-block jcu-cards jcu-columns-3`. Each nested
+`jcu-card` contains a `jcu-card-body` quote and, optionally, a `jcu-card-image`
+quote. Text-only cards need no extra modifier. With `jcu-columns-1`, image cards
+use wide rows on desktop, while text-only cards fill the row.
+
+For galleries, write each item as `[![alt text](image-url) **Label**](page-url)`.
+Put the images on consecutive lines and add `{:.jcu-gallery .jcu-columns-4}`
+below the paragraph. Logo paragraphs use `{:.jcu-partner-logos .jcu-columns-4}`.
+Wrap either in `jcu-block` when adding a heading or background. Omitted column
+classes use the configured gallery, partner-logo, or page-card default.
+
+Alerts use the existing type classes and the same colours as YAML alerts:
+
+```md
+> ## Note
+>
+> Supporting information.
 {:.jcu-alert .jcu-alert--note}
 ```
 
-Alert options are `.jcu-alert--note`, `.jcu-alert--important`, `.jcu-alert--warning`, and `.jcu-alert--caution`.
+Alert types are `note`, `important`, `warning`, and `caution`.
 
-For inline partner logos, use standard Markdown images and linked images, then add the `.jcu-partner-logos` class. The maximum number of tiles in each row is set by `theme_settings.partner_logo_max_items_per_row`.
+Automatic page cards are the one Liquid exception, because a CSS class cannot
+collect pages from a folder. The short include reuses the YAML page-card
+renderer:
 
-```md
-![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
-![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
-![Reef research partner logo]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
-![Funding partner logo]({{ "/assets/sample-images/partner-mosaic.svg" | relative_url }})
-{:.jcu-partner-logos}
+```liquid
+{% include page-cards.html
+  title="Project pages"
+  folder="project-pages/"
+  columns=3
+  link_text="Read more"
+%}
 ```
 
-For an inline image gallery, use standard Markdown images or linked images, then add the `.jcu-image-gallery` class. The maximum number of tiles in each row is set by `theme_settings.image_gallery_max_items_per_row`.
+The include also accepts `content`, `background`, and `background_mode`.
+Markdown content is supported in `content`. Liquid URLs such as
+`{{ "/assets/images/example.svg" | relative_url }}` work in the Markdown page
+body; they should not be embedded inside YAML content fields.
 
-```md
-[![Southern cassowary]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
-[![Lumholtz's tree-kangaroo]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content/content-blocks/lumholtzs-tree-kangaroo/" | relative_url }})
-[![Estuarine crocodile]({{ "/assets/sample-images/card-crocodile.svg" | relative_url }})]({{ "/sample-content/content-blocks/estuarine-crocodile/" | relative_url }})
-{:.jcu-image-gallery}
-```
+See `sample-content/pages/markdown-syntax-content-blocks.md` for complete
+examples of each structure. The older inline block classes have been replaced.
 
 ### Alert blocks
 

@@ -6,109 +6,212 @@ image: "/assets/sample-images/card-project-setting.svg"
 summary: "Examples of content blocks written directly in the Markdown page body."
 ---
 
-This page demonstrates content blocks written inline with the rest of the page content. The class line after each block keeps the authoring pattern short while still allowing Markdown inside the block.
+This page presents the same examples as the YAML syntax content blocks page, written in Markdown. Class lines sit outside the block they style. Nested quotes group columns, images and captions, or cards; automatic page cards use a short Liquid include.
 
-> ### Background colour ribbon
+> ## Text-only block
 >
-> This block uses `.jcu-block` and `.jcu-block--coloured-bkgnd` for a full-width pale secondary background.
+> The image-text block without an image uses the full content-panel width and is useful for short explanations, introductions, and narrative content. This example uses the optional secondary background colour on the block itself.
 >
-> The content inside can include **emphasis**, [links](https://www.jcu.edu.au/), and ordinary Markdown lists.
+> Northern Queensland supports rainforest, reef, woodland, wetland, and savanna habitats. These landscapes are home to animals found nowhere else in Australia.
+{:.jcu-block .jcu-bg-secondary}
+
+> ## Two-column block
 >
-> - Write the block where it should appear on the page.
-> - Keep using Markdown for the content.
-> - Add the class line directly underneath the block.
->   {:.jcu-block .jcu-block--coloured-bkgnd}
-
-> ![Abstract project setting image]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})
+> > ### Rainforest species
+> >
+> > The southern cassowary and Lumholtz's tree-kangaroo are strongly associated with Wet Tropics rainforest. They rely on connected habitat and healthy native vegetation.
+> {:.jcu-column}
 >
-> ### Block with image left
+> > ### Coastal and marine species
+> >
+> > Estuarine crocodiles and green turtles connect freshwater, coastal, and reef systems. Their life cycles are shaped by water quality, nesting habitat, and climate.
+> {:.jcu-column}
+{:.jcu-block .jcu-two-column}
+
+> ## Two-column block with primary background
 >
-> The image is floated to the left of the text. Add the image as the first line inside the block and include `.jcu-block--image-left` in the class line.
-> {:.jcu-block .jcu-block--image-left}
-
-This paragraph sits between two inline blocks, so authors can mix normal page content and styled sections in the order they want readers to encounter them.
-
-> ## Card block with a primary-colour line
+> > ### Rainforest research
+> >
+> > This example uses `background: "primary"` to place both columns inside a coloured content panel. The block heading uses the matching primary text colour.
+> >
+> > Research in the Wet Tropics explores how connected forests support wildlife and seed dispersal.
+> {:.jcu-column}
 >
-> This version uses `.jcu-block--card` and `.jcu-block--accent` to add a primary-colour line. It is useful for a short note, project update, or highlighted takeaway.
+> > ### Coastal research
+> >
+> > Each column retains its surface background and matching text and link colours, making it readable against the surrounding primary panel.
+> >
+> > Coastal research connects seagrass meadows, reef habitats, and nesting beaches.
+> >
+> > [View the sample pages](../).
+> {:.jcu-column}
+{:.jcu-block .jcu-two-column .jcu-bg-primary}
+
+> > ## Image and text block, image left, without background
+> >
+> > This example uses `image_position: "left"` and omits `background`. The image and text sit directly on the page, with a gap between them and no outer panel padding.
+> >
+> > Southern cassowaries disperse the seeds of many rainforest plants. Their movement through connected forest helps maintain the diversity of the Wet Tropics.
+> {:.jcu-text}
 >
-> Use it for brief notes that should stand apart from the surrounding page content.
-> {:.jcu-block .jcu-block--card .jcu-block--accent}
+> > ![Stylised southern cassowary in rainforest]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})
+> >
+> > Omit background to use the normal page background.
+> {:.jcu-media}
+{:.jcu-block .jcu-image-text .jcu-image-left .jcu-image-small}
 
-The card style can also be combined with the secondary block style when the section should use the full-width pale secondary background.
-
-> ## Card block with secondary background
+> > ## Image and text block, image left, with background
+> >
+> > This block places an optional image beside a single text column. The image can be positioned on the left or right and set to small, medium, or large.
+> >
+> > Lumholtz's tree-kangaroo is an arboreal marsupial of the Wet Tropics. It moves through the forest canopy and is vulnerable to habitat fragmentation.
+> {:.jcu-text}
 >
-> This combines `.jcu-block--card` and `.jcu-block--coloured-bkgnd`, so the block uses the secondary background treatment while keeping the same spacing as the card block.
-> {:.jcu-block .jcu-block--card .jcu-block--coloured-bkgnd}
+> > ![Stylised Lumholtz's tree-kangaroo in rainforest]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})
+> >
+> > Example with image_position: left, image_size: small, and background contained within the content panel.
+> {:.jcu-media}
+{:.jcu-block .jcu-image-text .jcu-image-left .jcu-image-small .jcu-bg-secondary}
 
-The same card block can include an image and the image can be floated to the left or right. Add the image as the first line inside the block and include `.jcu-block--image-left` or `.jcu-block--image-right` in the class line.
-
-## Card blocks with image
-
-> ![Abstract project setting image]({{ "/assets/sample-images/card-project-setting.svg" | relative_url }})
+> > ## Image and text block, image right, with background
+> >
+> > Use `image_position: "right"` to place the image beside the text on the right. The background stays within the content panel, and the image has no padding on its outer side.
+> >
+> > Green turtles connect reef and seagrass habitats with coastal nesting beaches. Protecting these linked environments supports their life cycle.
+> {:.jcu-text}
 >
-> ### Card block image at top
+> > ![Stylised green turtle in coastal waters]({{ "/assets/sample-images/card-green-turtle.svg" | relative_url }})
+> >
+> > The image sits flush with the right edge of the coloured panel.
+> {:.jcu-media}
+{:.jcu-block .jcu-image-text .jcu-image-right .jcu-bg-secondary}
+
+> ## Image gallery block
 >
-> This block uses `.jcu-block` and `.jcu-block--card``. The image is written as a normal Markdown image inside the block.
-> {:.jcu-block .jcu-block--card}
+> [![Southern cassowary]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }}) **Southern cassowary**]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
+> [![Lumholtz's tree-kangaroo]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }}) **Lumholtz's tree-kangaroo**]({{ "/sample-content/content-blocks/lumholtzs-tree-kangaroo/" | relative_url }})
+> [![Estuarine crocodile]({{ "/assets/sample-images/card-crocodile.svg" | relative_url }}) **Estuarine crocodile**]({{ "/sample-content/content-blocks/estuarine-crocodile/" | relative_url }})
+> [![Green turtle]({{ "/assets/sample-images/card-green-turtle.svg" | relative_url }}) **Green turtle**]({{ "/sample-content/content-blocks/green-turtle/" | relative_url }})
+> {:.jcu-gallery .jcu-columns-4}
+{:.jcu-block}
 
-> ![Abstract project setting image]({{ "/assets/sample-images/card-project-setting.svg" | relative_url }})
+> ## Partner logos block
 >
-> ### Card block, image to the left
+> The partner logo block can use a `columns` override in front matter as the maximum number of logos per row, with optional links from each logo. If `columns` is omitted, it uses `partner_logo_max_items_per_row` from `_config.yml`.
+> A `background` colour setting is optional.
 >
-> This block adds `.jcu-block--image-left` to float the first image to the left of the Markdown content.
+> ![Partner organisation]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
+> ![Rainforest research partner]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
+> ![Reef research partner]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
+> ![Funding partner]({{ "/assets/sample-images/partner-mosaic.svg" | relative_url }})
+> {:.jcu-partner-logos .jcu-columns-4}
+{:.jcu-block}
+
+> ## Partner logos block with background: primary
 >
-> The image stacks above the text on smaller screens.
-> {:.jcu-block .jcu-block--card .jcu-block--image-left}
-
-> ![Abstract research context image]({{ "/assets/sample-images/card-research-context.svg" | relative_url }})
+> White reverse mono logos have transparent backgrounds, so the primary colour shows through their negative spaces.
 >
-> ### Card block image to the right
+> ![Partner organisation]({{ "/assets/sample-images/partner-placeholder-reverse-mono.svg" | relative_url }})
+> ![Rainforest research partner]({{ "/assets/sample-images/partner-rainforest-reverse-mono.svg" | relative_url }})
+> ![Reef research partner]({{ "/assets/sample-images/partner-reef-reverse-mono.svg" | relative_url }})
+> ![Funding partner]({{ "/assets/sample-images/partner-mosaic-reverse-mono.svg" | relative_url }})
+> {:.jcu-partner-logos .jcu-columns-2}
+{:.jcu-block .jcu-bg-primary}
+
+> ## Cards block, > 1 column
 >
-> This version uses `.jcu-block--image-right` to float the first image to the right while the text starts on the left.
-> {:.jcu-block .jcu-block--card .jcu-block--image-right}
-
-## Inline partner logos
-
-This example uses `.jcu-partner-logos`, combined with `.jcu-block--coloured-bkgnd`. The maximum number of logo tiles in each row is set in `_config.yml` with `partner_logo_max_items_per_row`.
-
-![Partner organisation logo]({{ "/assets/sample-images/partner-placeholder.svg" | relative_url }})
-![Rainforest research partner logo]({{ "/assets/sample-images/partner-rainforest.svg" | relative_url }})
-![Reef research partner logo]({{ "/assets/sample-images/partner-reef.svg" | relative_url }})
-![Funding partner logo]({{ "/assets/sample-images/partner-mosaic.svg" | relative_url }})
-{:.jcu-block .jcu-block--coloured-bkgnd .jcu-partner-logos}
-
-## Inline image gallery
-
-This example uses `.jcu-image-gallery`. The maximum number of image tiles in each row is set in `_config.yml` with `image_gallery_max_items_per_row`, and the layout steps down to fewer items per row as the screen narrows.
-
-[![Southern cassowary]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
-[![Lumholtz's tree-kangaroo]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})]({{ "/sample-content/content-blocks/lumholtzs-tree-kangaroo/" | relative_url }})
-[![Estuarine crocodile]({{ "/assets/sample-images/card-crocodile.svg" | relative_url }})]({{ "/sample-content/content-blocks/estuarine-crocodile/" | relative_url }})
-[![Green turtle]({{ "/assets/sample-images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content/content-blocks/green-turtle/" | relative_url }})
-{:.jcu-image-gallery}
-
-## Alert blocks
-
-Alert boxes use `.jcu-alert` plus a type class.
-
-> **Note**
+> These cards use the same surface colours and styling as page cards, but their content is written here rather than collected from other pages. Images and links are optional.
+> The number of colums is configurable but if you add too many it won't look good or be very responsive.
 >
-> Uses `.jcu-alert--note` for general information that users should take into account, even when skimming.
-> {:.jcu-alert .jcu-alert--note}
-
-> **Important**
+> > > [![Stylised southern cassowary in rainforest]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
+> > {:.jcu-card-image}
+> >
+> > > ### Rainforest wildlife
+> > >
+> > > **Southern cassowaries** help disperse rainforest seeds throughout the Wet Tropics.
+> > >
+> > > [Read species profile]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
+> > > {:.jcu-card-link}
+> > {:.jcu-card-body}
+> {:.jcu-card}
 >
-> Uses `.jcu-alert--important` for crucial information necessary for users to succeed.
-> {:.jcu-alert .jcu-alert--important}
-
-> **Warning**
+> > > ### Coastal habitats
+> > >
+> > > This text-only card needs no image or link. It can include Markdown:
+> > >
+> > > - Seagrass meadows
+> > > - Nesting beaches
+> > > - Connected reef habitats
+> > {:.jcu-card-body}
+> {:.jcu-card}
 >
-> Uses `.jcu-alert--warning` for critical content demanding immediate user attention due to potential risks.
-> {:.jcu-alert .jcu-alert--warning}
+> > > ![Stylised Lumholtz's tree-kangaroo in rainforest]({{ "/assets/sample-images/card-tree-kangaroo.svg" | relative_url }})
+> > {:.jcu-card-image}
+> >
+> > > ### Tree-kangaroo habitat
+> > >
+> > > This card has an image without a link. Protecting connected forest supports canopy-dwelling wildlife.
+> > {:.jcu-card-body}
+> {:.jcu-card}
+{:.jcu-block .jcu-cards .jcu-columns-3}
 
-> **Caution**
+> ## Cards block, 1 column
 >
-> Uses `.jcu-alert--caution` for negative potential consequences of an action.
-> {:.jcu-alert .jcu-alert--caution}
+> With `columns: 1`, images appear beside the text on desktop. Text-only cards use the full row. On smaller screens, images stack above the text.
+>
+> > > [![Stylised green turtle in coastal waters]({{ "/assets/sample-images/card-green-turtle.svg" | relative_url }})]({{ "/sample-content/content-blocks/green-turtle/" | relative_url }})
+> > {:.jcu-card-image}
+> >
+> > > ### Green turtle
+> > >
+> > > Green turtles depend on linked marine habitats and coastal nesting beaches.
+> > >
+> > > [Read species profile]({{ "/sample-content/content-blocks/green-turtle/" | relative_url }})
+> > > {:.jcu-card-link}
+> > {:.jcu-card-body}
+> {:.jcu-card}
+>
+> > > ### Research priorities
+> > >
+> > > A text-only card fills the row without reserving an empty image column.
+> > >
+> > > Use the same `title`, `text`, `image`, `image_alt`, `url`, and `link_text` fields as landing-page section cards.
+> > {:.jcu-card-body}
+> {:.jcu-card}
+{:.jcu-block .jcu-cards .jcu-columns-1}
+
+{% include page-cards.html
+  title="Page cards block, four per row"
+  folder="sample-content/animals/"
+  columns=4
+  link_text="Read species profile"
+  content="This card block uses `columns: 4`. Each card is generated from a Markdown page in the animals folder."
+%}
+
+{% include page-cards.html
+  title="Page cards block, one per row"
+  folder="sample-content/animals/"
+  columns=1
+  link_text="Open full profile"
+  content="This card block uses `columns: 1`, so each card displays as a wide row with the image on the left and the summary on the right on desktop screens."
+%}
+
+> ## Note alert block
+>
+> Use a Note for supporting information. **Markdown** is supported in the alert content, including lists and [links](../).
+{:.jcu-alert .jcu-alert--note}
+
+> ## Important alert block
+>
+> Use Important for details that readers need to complete a task successfully. For example, keep image paths relative to the site assets directory.
+{:.jcu-alert .jcu-alert--important}
+
+> ## Warning alert block
+>
+> Use Warning to draw attention to a risk. Check that project information is approved for public release before publishing it.
+{:.jcu-alert .jcu-alert--warning}
+
+> ## Caution alert block
+>
+> Use Caution for actions that may have unwanted consequences. Keep a copy of your content before replacing sample pages.
+{:.jcu-alert .jcu-alert--caution}
