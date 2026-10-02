@@ -79,6 +79,7 @@ Use the ordered `blocks` list for every block below the hero. Each item needs on
 - `feature`: the same fields on a band using `secondary_color`
 - `highlight`: the same fields on a strong band using `primary_color`
 - `partner-logos`: organisation and funder logos
+- `page-cards`: cards generated from pages in a folder, with configurable columns
 
 Blocks render in list order, so authors can place a section before or after the carousel without using duplicate YAML keys.
 
@@ -197,6 +198,36 @@ blocks:
         logo: "/assets/sample-images/partner-mosaic-reverse-mono.svg"
 ```
 
+## Page cards
+
+Use `type: "page-cards"` anywhere in `blocks` to collect pages from a folder.
+Cards use each page's `title`, optional `image`, and `summary` (or `description`),
+sorted by `order`. The current page and `index.md` pages are excluded.
+
+```yml
+blocks:
+  - type: "page-cards"
+    id: "project-pages"
+    eyebrow: "Explore"
+    title: "Project pages"
+    folder: "project-pages/"
+    columns: 3
+    link_text: "Read more"
+    background: "secondary"
+    separator: true
+    content: |
+      Read about our **research**, people, and outputs.
+```
+
+`columns` and `link_text` default to `theme_settings.page_card_columns` and
+`theme_settings.page_card_link_text`. With `columns: 1`, images sit beside text
+on desktop; text-only cards fill the row. Cards stack at 900px or narrower.
+
+The heading, eyebrow, introduction, ID, and separator override are optional.
+`background: "primary"` or `"secondary"` fills the browser width using the
+highlight or feature style. Omit it for the normal page background.
+`background_mode` is not used. Each card retains the surface colours.
+
 ## Style options
 
 The layout uses the existing theme colours:
@@ -242,6 +273,9 @@ The layout generates these main classes:
 - `.landing-carousel`
 - `.landing-carousel-slide`
 - `.landing-partners`
+- `.landing-page-cards`
+- `.page-cards`
+- `.page-card`
 - `.landing-section-actions`
 
 Researchers usually should not need to edit these classes. Change content in front matter first, and only edit CSS for project-specific design requirements.

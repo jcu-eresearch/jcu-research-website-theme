@@ -148,6 +148,24 @@ blocks:
         url: "/contact/"
       - label: "Browse samples"
         url: "/sample-content/"
+  - type: "page-cards"
+    id: "species-page-cards"
+    eyebrow: "Generated from pages"
+    title: "Page cards block, three per row"
+    folder: "sample-content/animals/"
+    columns: 3
+    link_text: "Read species profile"
+    background: "primary"
+    separator: true
+    content: |
+      These cards are collected from the animals folder and displayed in page order. The primary background fills the browser width, while each card uses the configured surface colours.
+  - type: "page-cards"
+    title: "Page cards block, one per row"
+    folder: "sample-content/animals/"
+    columns: 1
+    link_text: "Open full profile"
+    content: |
+      With `columns: 1`, images sit beside their summaries on desktop and stack above them on smaller screens. Omit `background` to use the normal page background.
   - type: "partner-logos"
     background: "primary"
     columns: 2
@@ -188,7 +206,7 @@ blocks:
 
 Create a page with `layout: landing-page`, then add a `hero` and the ordered `blocks` the page needs.
 
-Each item in `blocks` needs a `type`: `achievements`, `carousel`, `standard`, `feature`, `highlight`, or `partner-logos`. The blocks render in list order.
+Each item in `blocks` needs a `type`: `achievements`, `carousel`, `standard`, `feature`, `highlight`, `page-cards`, or `partner-logos`. The blocks render in list order.
 
 The `standard`, `feature`, and `highlight` types share the same content fields and differ only in presentation.
 

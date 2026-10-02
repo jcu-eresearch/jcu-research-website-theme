@@ -83,6 +83,8 @@ layout: default
         {% include landing-section.html section=block style="highlight" default_separator=landing_block_separators %}
       {% when "partner-logos" %}
         {% include landing-partners.html block=block index=forloop.index default_separator=landing_block_separators %}
+      {% when "page-cards" %}
+        {% include landing-page-cards.html block=block default_separator=landing_block_separators %}
     {% endcase %}
   {% endfor %}
 </article>

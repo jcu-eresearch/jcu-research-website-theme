@@ -1,0 +1,26 @@
+{% assign block = include.block %}
+{% assign block_separator = include.default_separator %}
+{% unless block.separator == nil %}
+  {% assign block_separator = block.separator %}
+{% endunless %}
+
+<section{% if block.id %} id="{{ block.id }}"{% endif %} class="landing-section landing-page-cards{% if block.background == "primary" %} landing-section--highlight{% elsif block.background == "secondary" %} landing-section--feature{% endif %}{% if block_separator %} landing-block--separator{% endif %}">
+  {% if block.eyebrow or block.title or block.content %}
+    <div class="landing-section-body">
+      <div class="landing-section-header">
+        {% if block.eyebrow %}
+          <p class="eyebrow">{{ block.eyebrow }}</p>
+        {% endif %}
+        {% if block.title %}
+          <h2>{{ block.title }}</h2>
+        {% endif %}
+        {% if block.content %}
+          <div class="prose">
+            {{ block.content | markdownify }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {% include blocks/page-card-grid.html block=block %}
+</section>
