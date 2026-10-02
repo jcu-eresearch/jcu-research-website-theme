@@ -17,12 +17,12 @@
       </div>
     {% endif %}
     {% if section.link_url and section.link_text %}
-      <a class="landing-text-link" href="{{ section.link_url | relative_url }}">{{ section.link_text }}</a>
+      <a class="landing-text-link" href="{% include link-url.html url=section.link_url %}">{{ section.link_text }}</a>
     {% endif %}
     {% if section.actions %}
       <div class="landing-section-actions">
         {% for action in section.actions limit: 2 %}
-          <a class="landing-button{% if forloop.first %} landing-button--primary{% else %} landing-button--secondary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
+          <a class="landing-button{% if forloop.first %} landing-button--primary{% else %} landing-button--secondary{% endif %}" href="{% include link-url.html url=action.url %}">{{ action.label }}</a>
         {% endfor %}
       </div>
     {% endif %}
@@ -47,7 +47,7 @@
               <div class="landing-card-text">{{ card.text | markdownify }}</div>
             {% endif %}
             {% if card.url and card.link_text %}
-              <a href="{{ card.url | relative_url }}">{{ card.link_text }}</a>
+              <a href="{% include link-url.html url=card.url %}">{{ card.link_text }}</a>
             {% endif %}
           </div>
         </article>

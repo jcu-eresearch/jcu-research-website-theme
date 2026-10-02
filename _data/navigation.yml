@@ -1,5 +1,16 @@
 - title: Home
   url: /
+- title: Using the Theme
+  url: /using-the-theme/
+  children:
+    - title: Landing-page styles
+      url: /using-the-theme/landing-page-styles/
+    - title: YAML page content
+      url: /using-the-theme/yaml-page-content/
+    - title: Markdown page content
+      url: /using-the-theme/markdown-page-content/
+    - title: HTML and Markdown page content
+      url: /using-the-theme/html-markdown-page-content/
 - title: Sample content styles
   url: /sample-content/
   children:

@@ -95,5 +95,5 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
-  - landing_page_styles.md
   - README.md
+  - assets/images/rwt/README.md

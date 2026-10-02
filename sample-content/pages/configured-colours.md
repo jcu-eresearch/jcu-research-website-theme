@@ -32,7 +32,7 @@ This page shows the background colours and their matching text and link colours 
     <article class="colour-sample colour-sample--pair" id="colour-{{ prefix }}">
       <div class="colour-swatch colour-swatch--pair" style="background-color: {{ display_colour_value }}; color: {{ text_value }};">
         <span>Sample text</span>
-        <a href="#colour-{{ prefix }}" style="color: {{ link_value }};">Sample link</a>
+        <a href="#how-these-colours-are-used" style="color: {{ link_value }};">How colours are used</a>
       </div>
       <div class="colour-sample-body">
         <h2>{{ parts[1] }} colours</h2>

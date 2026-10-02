@@ -12,7 +12,7 @@ hero:
     - label: "View sample content"
       url: "/sample-content/"
     - label: "Read the README"
-      url: "https://github.com/jcu-eresearch/jcu-research-website-theme"
+      url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
 blocks:
   - type: "achievements"
     eyebrow: "What it provides"
@@ -96,7 +96,7 @@ blocks:
     content: |
       The theme keeps presentation details in layouts, includes, CSS, and configuration so researchers can focus on writing clear content. Sites can start from sample content, then delete what they do not need.
     link_text: "Read the documentation"
-    link_url: "https://github.com/jcu-eresearch/jcu-research-website-theme"
+    link_url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
   - type: "standard"
     title: "Start with the sample content"
     eyebrow: "Next step"

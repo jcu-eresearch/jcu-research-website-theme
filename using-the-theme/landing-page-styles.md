@@ -1,4 +1,10 @@
-# Landing-page styles
+---
+layout: page
+title: "Landing-page styles"
+permalink: /using-the-theme/landing-page-styles/
+order: 1
+summary: "Build a project overview with heroes, full-width sections, cards, and partner logos."
+---
 
 The `landing-page` layout is designed for research project websites that need a polished page without requiring the author to make design decisions. Most content is edited in page front matter.
 
@@ -27,7 +33,7 @@ title: Home
 permalink: /
 hero:
   type: "split"
-  eyebrow: "JCU research project"
+  eyebrow: "Research project"
   title: "Research with purpose, shared with clarity"
   lead: "A short plain-language description of the project."
   image: "/assets/sample-images/gallery-background.svg"
@@ -39,6 +45,12 @@ hero:
       url: "#our-research"
     - label: "Contact us"
       url: "/contact/"
+blocks:
+  - type: "standard"
+    id: "our-research"
+    title: "Our research"
+    content: |
+      Explain the research problem and what the project aims to achieve.
 ---
 ```
 
@@ -58,7 +70,7 @@ Background images fill the hero without distortion. They keep their aspect ratio
 ```yml
 hero:
   type: "background"
-  eyebrow: "JCU research project"
+  eyebrow: "Research project"
   title: "Research with purpose"
   title_alignment: "center"
   lead: "A short introduction to the project."
@@ -108,20 +120,22 @@ blocks:
     content: |
       Explain the research problem, why it matters, and how the project responds.
     actions:
-      - label: "Read about the research"
-        url: "/research/"
-      - label: "Meet the team"
-        url: "/people/"
+      - label: "View content-block examples"
+        url: "/sample-content/content-blocks/"
+      - label: "Browse samples"
+        url: "/sample-content/"
     separator: true
 ```
 
 The optional `actions` list supports up to two buttons. The first uses `primary_color` with `primary_link_color`; the second uses `surface_color` with `surface_link_color` and the standard `border_color`. Hero and section buttons use the same colours and underline on hover. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
 
-Set `separator: true` on any block to add a primary-colour separator bar after it.
+Set `separator: true` on any block to add a primary-colour separator bar after it. Set `content_separator` in page front matter to control the separator after optional Markdown body content.
+
+Use `id` on a section and a fragment such as `#our-research` for an action that jumps within the page. Give each ID a unique name. For achievements, carousel, and partner-logo blocks, the ID is attached to the heading; include a title when using a heading as an anchor.
 
 ## Achievements
 
-Use `type: "achievements"` for three prominent facts, outcomes, or milestones. Each tile can use `value`, `icon`, or `image`.
+Use `type: "achievements"` for prominent facts, outcomes, or milestones. Three items work well in the desktop grid, but the list is not limited to three. Each tile accepts `value`, `icon`, and `image`; an image takes precedence over an icon, and a value can appear alongside either. The eyebrow and title default to “Achievements” when omitted.
 
 ```yml
 blocks:
@@ -168,13 +182,13 @@ Cards work well for media items, projects, news, people, or impact stories.
 ```yml
 blocks:
   - type: "standard"
-    title: "Latest news"
+    title: "Species profiles"
     eyebrow: "Updates"
     cards:
-      - title: "Project milestone"
-        text: "A short update with **recent progress** and a [project link](/projects/)."
-        link_text: "Read more"
-        url: "/news/project-milestone/"
+      - title: "Southern cassowary"
+        text: "Read about this **rainforest species** and its role in seed dispersal."
+        link_text: "Read southern cassowary profile"
+        url: "/sample-content/content-blocks/southern-cassowary/"
 ```
 
 ## Partner organisations
@@ -209,8 +223,8 @@ blocks:
   - type: "page-cards"
     id: "project-pages"
     eyebrow: "Explore"
-    title: "Project pages"
-    folder: "project-pages/"
+    title: "Species profiles"
+    folder: "sample-content/animals/"
     columns: 3
     link_text: "Read more"
     background: "secondary"
@@ -239,11 +253,9 @@ The layout uses the existing theme colours:
 - `warning_color` for Warning alerts; pair it with `warning_text_color` and `warning_link_color`
 - `border_color` for structural borders
 
-Useful optional future settings would be:
+Alert settings apply when you include alert content in the Markdown body. Each alert type has `TYPE_background_color`, `TYPE_text_color`, and `TYPE_link_color`; `TYPE_color` supplies its left border, where `TYPE` is `note`, `important`, `warning`, or `caution`.
 
-- `hero_overlay_color` if using photographic hero images that need consistent text contrast
-- `landing_card_background_color` if cards need to differ from other surfaces
-- `landing_section_spacing` if a site needs denser or more spacious landing pages
+Hero overlays use `background_color` and `overlay_opacity` in `hero`. Cards use the shared surface colours. Configure the current settings rather than adding unsupported keys.
 
 ## CSS classes
 
@@ -279,3 +291,9 @@ The layout generates these main classes:
 - `.landing-section-actions`
 
 Researchers usually should not need to edit these classes. Change content in front matter first, and only edit CSS for project-specific design requirements.
+
+## Editing and previewing
+
+Keep one ordered `blocks` list in front matter. Indent nested fields with spaces and use `|` for multiline Markdown. Split hero images and carousel images need useful alt text; background hero images are decorative. Replace sample assets and destinations with your own before using an example on a project site. Section cards are a simple grid; use `page-cards` when you need folder-generated cards or explicit column settings.
+
+[View the working landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) or [return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).

@@ -8,7 +8,7 @@ blocks:
       - title: "Project enquiries"
         content: |
           **Name:** Project contact  
-          **Email:** [project@example.edu.au](mailto:project@example.edu.au)
+          **Email (sample):** `project@example.edu.au`
       - title: "Institution"
         content: |
           James Cook University  
