@@ -36,13 +36,10 @@
   --color-caution-text: {{ site.theme_settings.caution_text_color | default: "#354F52" }};
   --color-caution-link: {{ site.theme_settings.caution_link_color | default: "#75471A" }};
   --color-border: {{ site.theme_settings.border_color | default: "#D0D5DD" }};
-  --sidebar-project-logo-tile-bg: {{ site.theme_settings.sidebar_project_logo_tile_background | default: site.theme_settings.sidebar_logo_tile_background | default: "#FFFFFF" }};
-  --sidebar-project-logo-tile-border: {{ site.theme_settings.sidebar_project_logo_tile_border_color | default: site.theme_settings.sidebar_logo_tile_border_color | default: "rgba(255, 255, 255, 0.45)" }};
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
   --partner-logo-max-items-per-row: {{ site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 }};
   --image-gallery-max-items-per-row: {{ site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 }};
   --button-radius: {% if site.theme_settings.button_shape == "lozenge" %}999px{% else %}0.35rem{% endif %};
-  --sidebar-width: 19rem;
   --content-width: 68rem;
   --site-main-inline-padding: clamp(1.25rem, 5vw, 5rem);
   --block-spacing: 2.5rem;
@@ -100,69 +97,6 @@ a:hover {
   transform: translateY(0);
 }
 
-.site-shell {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-  background: var(--color-primary);
-}
-
-.site-sidebar {
-  --color-text: var(--color-primary-text);
-  --color-link: var(--color-primary-link);
-  --color-heading: var(--color-primary-text);
-  position: sticky;
-  top: 0;
-  align-self: start;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1.25rem;
-  background: var(--color-primary);
-  color: var(--color-primary-text);
-}
-
-.brand {
-  display: grid;
-  gap: 1rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-}
-
-.brand-project-logo {
-  width: 12.75rem;
-  max-width: 100%;
-}
-
-.brand-project-logo {
-  display: block;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-}
-
-.brand-project-logo {
-  background: var(--sidebar-project-logo-tile-bg);
-  border: 1px solid var(--sidebar-project-logo-tile-border);
-}
-
-.brand-project-logo img {
-  width: 100%;
-  height: auto;
-}
-
-.brand-title {
-  color: var(--color-primary-link);
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.menu-toggle {
-  display: none;
-}
-
 .menu-toggle-icon {
   position: relative;
   display: block;
@@ -190,53 +124,6 @@ a:hover {
 
 .menu-toggle-icon::after {
   top: 0.75rem;
-}
-
-.site-nav {
-  display: grid;
-  gap: 0.35rem;
-  margin-top: 1.5rem;
-}
-
-.site-nav-group {
-  display: grid;
-  gap: 0.25rem;
-}
-
-.site-nav-link {
-  display: block;
-  color: var(--color-primary-link);
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.7rem 0.8rem;
-  border-radius: var(--button-radius);
-}
-
-.site-nav-link:hover {
-  color: var(--color-primary-link);
-  background: rgba(255, 255, 255, 0.16);
-  text-decoration: underline;
-}
-
-.site-nav-link[aria-current="page"],
-.site-nav-group.is-active > .site-nav-link {
-  color: var(--color-surface-link);
-  background: var(--color-surface);
-  border: 0;
-}
-
-.site-nav-children {
-  display: grid;
-  gap: 0.2rem;
-  margin-left: 1rem;
-  padding-left: 0.75rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.28);
-}
-
-.site-nav-link--child {
-  font-size: 0.92rem;
-  font-weight: 600;
-  padding: 0.5rem 0.65rem;
 }
 
 .site-main {
@@ -341,6 +228,30 @@ h3 {
 h2 {
   margin: 0 0 1rem;
   font-size: clamp(1.65rem, 4vw, 2.15rem);
+}
+
+.prose > h1 {
+  margin-top: 2.5rem;
+}
+
+.prose > h2 {
+  margin-top: 2rem;
+}
+
+.prose > h3 {
+  margin-top: 1.5rem;
+}
+
+.prose > h4 {
+  margin-top: 1.25rem;
+}
+
+.prose > h5 {
+  margin-top: 1rem;
+}
+
+.prose > h6 {
+  margin-top: 0.75rem;
 }
 
 h3 {
@@ -1086,10 +997,6 @@ a.partner-logo:hover {
   background: var(--color-bg);
 }
 
-.layout-landing-page .site-sidebar {
-  display: none;
-}
-
 .layout-landing-page .site-main {
   width: 100%;
   padding: 0;
@@ -1624,96 +1531,6 @@ a.partner-logo:hover {
 @media (max-width: 900px) {
   :root {
     --site-main-inline-padding: 1rem;
-  }
-
-  .site-shell {
-    display: block;
-  }
-
-  .site-sidebar {
-    position: relative;
-    min-height: 0;
-    padding: 1rem;
-  }
-
-  .brand {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 0.8rem;
-    padding-bottom: 1rem;
-  }
-
-  .brand-project-logo {
-    width: 7.125rem;
-  }
-
-  .brand-title {
-    font-size: 1.1rem;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.45rem;
-    min-height: 2.75rem;
-    padding: 0.65rem 0.75rem;
-    color: var(--color-primary-text);
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.34);
-    border-radius: var(--button-radius);
-    font: inherit;
-    font-weight: 800;
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  .menu-toggle:hover,
-  .menu-toggle:focus-visible {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  .menu-toggle[aria-expanded="true"] .menu-toggle-icon {
-    border-color: transparent;
-  }
-
-  .menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
-    top: 0.4rem;
-    transform: rotate(45deg);
-  }
-
-  .menu-toggle[aria-expanded="true"] .menu-toggle-icon::after {
-    top: 0.4rem;
-    transform: rotate(-45deg);
-  }
-
-  .site-nav {
-    display: none;
-    gap: 0.4rem;
-    margin-top: 1rem;
-    padding-bottom: 0.25rem;
-  }
-
-  .site-sidebar.is-menu-open .site-nav {
-    display: grid;
-  }
-
-  .site-nav-group {
-    gap: 0.3rem;
-  }
-
-  .site-nav-link {
-    padding: 0.55rem 0.7rem;
-  }
-
-  .site-nav-children {
-    margin-left: 0.4rem;
-    padding-left: 0.4rem;
-  }
-
-  .site-nav-link--child {
-    font-size: 0.86rem;
-    padding: 0.45rem 0.6rem;
   }
 
   .site-main {

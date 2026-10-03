@@ -171,4 +171,4 @@ Set shared fonts, colours, `content_alignment`, grid defaults, and `block_separa
 
 Image and card/gallery URL fields accept site paths; the template adds the base URL. In `content` and `text`, write normal Markdown links, such as `[Overview](../)`, relative to the published page. Do not insert Liquid expressions in those text fields. Check that each URL matches its label and exists before publishing.
 
-[Compare the Markdown format]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) or [the HTML and Markdown format]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }}).
+[Compare Markdown with layout classes]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) or [the HTML and Markdown format]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }}).

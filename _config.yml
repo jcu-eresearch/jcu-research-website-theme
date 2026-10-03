@@ -15,11 +15,6 @@ theme_settings:
   header_logo: "/assets/images/rwt/app-reverse-mono-transparent.png"
   project_logo_alt: "RWT tropical leaf logo"
 
-  sidebar_logo_tile_background: "transparent"
-  sidebar_logo_tile_border_color: "transparent"
-  # Optional project-logo-specific overrides. Leave commented to use the sidebar logo tile settings above.
-  sidebar_project_logo_tile_background: "#transparent"
-  sidebar_project_logo_tile_border_color: "transparent"
 
   font_family: "Lato, Arial, Helvetica, sans-serif"
   heading_font_family: "Lora, Georgia, serif"

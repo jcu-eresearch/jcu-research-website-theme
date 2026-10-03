@@ -13,7 +13,7 @@ This theme lets you create research project websites using ready-made layouts an
 | Layout | Purpose | How you write content |
 | --- | --- | --- |
 | `landing-page` | A homepage or project overview that introduces the project and guides visitors to more detail. Includes a hero, full-width sections, achievements, a carousel, cards, and partner logos. | Configure `hero` and an ordered `blocks` list in YAML front matter. Optional Markdown body content appears between the hero and the blocks. |
-| `page` | Detail pages such as research background, methods, outputs, people, contact information, and these guides. Includes a page title, optional lead and breadcrumbs, and reusable content blocks. | Use YAML blocks, Markdown blocks, or HTML wrappers with Markdown. |
+| `page` | Detail pages such as research background, methods, outputs, people, contact information, and these guides. Includes a page title, optional lead and breadcrumbs, and reusable content blocks. | Use plain Markdown, YAML blocks, Markdown with layout classes, or HTML wrappers with Markdown. |
 
 Both layouts share the header, navigation, typography, colours, and responsive styling. A site can use a landing page for its homepage and standard pages for the supporting information. The catalogue integration layout is a specialist option described in the repository README; the two layouts above cover general content authoring.
 
@@ -21,19 +21,22 @@ Both layouts share the header, navigation, typography, colours, and responsive s
 
 ## Choose a page-content format
 
-The three formats are alternative ways to create the same styled page content. Choose the method that feels easiest to you; you do not need to learn all three.
+Start with plain Markdown for simple pages, or choose one of the three block formats when you need richer layouts. The block formats provide equivalent styling options; plain Markdown provides ordinary document formatting with the shared theme appearance. Choose the method that feels easiest to write and maintain.
 
 | Format | Best suited to | How it works |
 | --- | --- | --- |
+| Plain Markdown | Authors who want simple information pages with minimal syntax. | Write headings, paragraphs, lists, links, images, tables, quotations, and code in the page body. No layout classes are required. |
 | YAML front matter | Authors who prefer named fields and a consistent structure. | Declare blocks and their fields in `blocks:` above the page body. Write Markdown inside text fields. |
-| Markdown blocks | Authors who prefer keeping the whole story in the page body. | Group content using nested blockquotes and attach the theme's classes underneath each group. |
+| Markdown with layout classes | Authors who prefer keeping the whole story in the page body. | Group content using nested blockquotes and attach the theme's classes underneath each group. |
 | HTML wrappers with Markdown | Authors who find named opening and closing elements easier than nested blockquotes. | Use `section`, `div`, and `article` wrappers with the same theme classes; write Markdown inside them. |
 
-All three provide the same core styling options: text panels, two columns, images beside text, cards, galleries, partner logos, generated page cards, and alerts. They use the same theme colours, image sizes, card surfaces, grid settings, and responsive behaviour. You select those options with YAML fields in the first format and CSS classes in the other two. Generated page cards use a short Liquid include in the body formats because they collect content from other files.
+The three block formats—YAML, Markdown with layout classes, and HTML wrappers with Markdown—provide the same core styling options: text panels, two columns, images beside text, cards, galleries, partner logos, generated page cards, and alerts. They use the same theme colours, image sizes, card surfaces, grid settings, and responsive behaviour. You select those options with YAML fields in the first format and CSS classes in the other two. Generated page cards use a short Liquid include in the body formats because they collect content from other files.
 
-[YAML page-content guide]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) · [Markdown page-content guide]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) · [HTML and Markdown page-content guide]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }})
+[Plain Markdown guide]({{ "/using-the-theme/plain-markdown/" | relative_url }}) · [YAML page-content guide]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) · [Markdown with layout classes guide]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) · [HTML and Markdown page-content guide]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }})
 
 ## Styling equivalents
+
+These options apply to the three block formats. Plain Markdown uses ordinary document elements and does not select these layouts.
 
 | Option | YAML | Markdown and HTML classes |
 | --- | --- | --- |
@@ -65,7 +68,7 @@ Write your page content here.
 
 The current configuration defaults ordinary pages to `layout: page`; setting it explicitly makes the choice clear. Add the page's title and permalink to `_data/navigation.yml` when it should appear in the menu. The theme generates the page's main heading, so use `##` for main sections in the body.
 
-YAML blocks appear after all body content. Body formats let you place styled blocks between ordinary paragraphs. You can combine formats on a page, but keeping one main method usually makes editing easier.
+YAML blocks appear after all body content. Markdown with layout classes and HTML wrappers let you place styled blocks between ordinary paragraphs. Plain Markdown needs no blocks. You can combine formats on a page, but keeping one main method usually makes editing easier.
 
 ## Configure the shared appearance
 

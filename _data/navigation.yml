@@ -5,9 +5,11 @@
   children:
     - title: Landing-page styles
       url: /using-the-theme/landing-page-styles/
+    - title: Plain Markdown pages
+      url: /using-the-theme/plain-markdown/
     - title: YAML page content
       url: /using-the-theme/yaml-page-content/
-    - title: Markdown page content
+    - title: Markdown with layout classes
       url: /using-the-theme/markdown-page-content/
     - title: HTML and Markdown page content
       url: /using-the-theme/html-markdown-page-content/

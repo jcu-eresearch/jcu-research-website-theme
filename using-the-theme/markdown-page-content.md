@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Markdown page content"
+title: "Markdown with layout classes"
 permalink: /using-the-theme/markdown-page-content/
 order: 3
 summary: "Create standard-page blocks with nested Markdown groups and theme classes."
 ---
+
+For simple text pages, you can also use [plain Markdown]({{ "/using-the-theme/plain-markdown/" | relative_url }}) without layout classes.
 
 Use this format when you want the whole story in the Markdown page body. Nested blockquotes group the content, and class lines select the theme layout and styling. The classes reuse the styles used by YAML blocks and HTML wrappers.
 
