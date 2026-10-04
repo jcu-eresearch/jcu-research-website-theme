@@ -1822,10 +1822,12 @@ a.partner-logo:hover {
   transform: translateY(0.15rem) rotate(225deg);
 }
 
-.header-nav-link:hover {
-  color: var(--color-surface-link);
-  background: var(--color-surface);
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .header-nav-link:hover {
+    color: var(--color-surface-link);
+    background: var(--color-surface);
+    text-decoration: underline;
+  }
 }
 
 .header-nav-link[aria-current="page"],
@@ -1858,15 +1860,19 @@ a.partner-logo:hover {
   font-size: 0.9rem;
 }
 
-.header-submenu a:hover,
 .header-submenu a[aria-current="page"] {
   color: var(--color-surface-link);
   background: var(--color-surface);
   border: 0;
 }
 
-.header-submenu a:hover {
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .header-submenu a:hover {
+    color: var(--color-surface-link);
+    background: var(--color-surface);
+    border: 0;
+    text-decoration: underline;
+  }
 }
 
 .header-nav-group.is-submenu-open > .header-submenu {
