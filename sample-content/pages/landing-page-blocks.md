@@ -1,9 +1,11 @@
 ---
 layout: landing-page
 title: Landing page blocks
+card_title: "Landing-page blocks"
+card_category: "Landing page"
 permalink: /sample-content/landing-page-blocks/
-order: 5
-image: "/assets/sample-images/gallery-background.svg"
+order: 0
+image: "/assets/sample-images/sample-landing-page-blocks.svg"
 summary: "Examples of each block and style available in the landing-page layout."
 content_separator: true
 hero:
@@ -109,6 +111,7 @@ blocks:
     eyebrow: "Cards"
     cards:
       - title: "Card with image"
+        card_category: "Species profile"
         image: "/assets/sample-images/card-cassowary.svg"
         image_alt: "Southern cassowary"
         text: "Cards can include an optional image, text, and link."
@@ -200,6 +203,28 @@ blocks:
         logo: "/assets/sample-images/partner-reef.svg"
       - name: "Funding partner"
         logo: "/assets/sample-images/partner-mosaic.svg"
+  - type: highlight
+    title: "Table on primary background"
+    content: |
+      The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
+  - type: standard
+    title: "Table on standard background"
+    content: |
+      No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
 ---
 
 ## How to use landing page blocks

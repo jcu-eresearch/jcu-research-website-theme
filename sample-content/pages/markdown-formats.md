@@ -1,8 +1,10 @@
 ---
 title: Markdown formatting
+card_title: "Plain Markdown"
+card_category: "Page content"
 permalink: /sample-content/markdown-formats/
-order: 1
-image: "/assets/sample-images/card-project-setting.svg"
+order: 2.5
+image: "/assets/sample-images/sample-markdown-formatting.svg"
 summary: "This page shows the Markdown formatting available with this template."
 ---
 ## Headings

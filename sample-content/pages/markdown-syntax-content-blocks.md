@@ -1,8 +1,10 @@
 ---
 title: Markdown syntax content blocks
+card_title: "Markdown with classes"
+card_category: "Page content"
 permalink: /sample-content/inline-content-blocks/
 order: 3
-image: "/assets/sample-images/card-project-setting.svg"
+image: "/assets/sample-images/sample-markdown-blocks.svg"
 summary: "Examples of content blocks written directly in the Markdown page body."
 ---
 
@@ -126,6 +128,9 @@ This page presents the same examples as the YAML syntax content blocks page, wri
 > > > [![Stylised southern cassowary in rainforest]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
 > > {:.jcu-card-image}
 > >
+> > > Species profile
+> > > {:.jcu-card-category}
+> > >
 > > > ### Rainforest wildlife
 > > >
 > > > **Southern cassowaries** help disperse rainforest seeds throughout the Wet Tropics.
@@ -215,3 +220,27 @@ This page presents the same examples as the YAML syntax content blocks page, wri
 >
 > Use Caution for actions that may have unwanted consequences. Keep a copy of your content before replacing sample pages.
 {:.jcu-alert .jcu-alert--caution}
+
+> ## Table on primary background
+>
+> The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
+>
+> | Activity | Habitat | Purpose |
+> | --- | --- | --- |
+> | Wildlife survey | Rainforest | Record species observations. |
+> | Water sampling | Estuary | Monitor water quality. |
+> | Nest monitoring | Coast | Track nesting success. |
+> | Habitat mapping | Reef | Identify important habitat areas. |
+{:.jcu-block .jcu-bg-primary}
+
+> ## Table on standard background
+>
+> No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
+>
+> | Activity | Habitat | Purpose |
+> | --- | --- | --- |
+> | Wildlife survey | Rainforest | Record species observations. |
+> | Water sampling | Estuary | Monitor water quality. |
+> | Nest monitoring | Coast | Track nesting success. |
+> | Habitat mapping | Reef | Identify important habitat areas. |
+{:.jcu-block}

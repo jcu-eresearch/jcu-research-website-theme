@@ -6,14 +6,18 @@
 <div class="page-cards{% if page_card_columns == 1 %} page-cards--single{% endif %}" style="--page-card-columns: {{ page_card_columns }};">
   {% for card_page in card_pages %}
     {% unless card_page.path == page.path or card_page.name == 'index.md' %}
+      {% assign card_title = card_page.card_title | default: card_page.title %}
       <article class="page-card{% unless card_page.image %} page-card--no-image{% endunless %}">
         {% if card_page.image %}
-          <a class="page-card-image" href="{{ card_page.url | relative_url }}" aria-label="View {{ card_page.title }}">
+          <a class="page-card-image" href="{{ card_page.url | relative_url }}" aria-label="View {{ card_title | escape }}">
             <img src="{{ card_page.image | relative_url }}" alt="">
           </a>
         {% endif %}
         <div class="page-card-body">
-          <h3>{{ card_page.title }}</h3>
+          {% if card_page.card_category %}
+            <p class="page-card-category">{{ card_page.card_category | escape }}</p>
+          {% endif %}
+          <h3>{{ card_title | escape }}</h3>
           {% if card_page.summary %}
             <p>{{ card_page.summary }}</p>
           {% elsif card_page.description %}

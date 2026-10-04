@@ -186,10 +186,13 @@ blocks:
     eyebrow: "Updates"
     cards:
       - title: "Southern cassowary"
+        card_category: "Species profile"
         text: "Read about this **rainforest species** and its role in seed dispersal."
         link_text: "Read southern cassowary profile"
         url: "/sample-content/content-blocks/southern-cassowary/"
 ```
+
+The optional `card_category` field adds a short label above a manually authored card's title. Omit it to keep the existing appearance. It is plain text, displayed in uppercase using the card's surface text colour; it is separate from the title and link.
 
 ## Partner organisations
 
@@ -241,6 +244,23 @@ The heading, eyebrow, introduction, ID, and separator override are optional.
 `background: "primary"` or `"secondary"` fills the browser width using the
 highlight or feature style. Omit it for the normal page background.
 `background_mode` is not used. Each card retains the surface colours.
+
+### Optional titles and categories for generated cards
+
+Set these fields in the front matter of each source page collected by `folder`:
+
+```yaml
+---
+title: Southern cassowary research profile
+card_title: Southern cassowary
+card_category: Species profile
+permalink: /sample-content/content-blocks/southern-cassowary/
+summary: A rainforest seed disperser.
+order: 1
+---
+```
+
+`card_category` is an optional plain-text label above the card heading. `card_title` is an optional shorter heading for the card; the page itself keeps its `title`. If omitted, the category is hidden and the card uses the page title. These fields work with generated page cards in both layouts and with the `page-cards.html` include used in Markdown and HTML bodies. Put them on the source page, not on the collecting block or include.
 
 ## Style options
 

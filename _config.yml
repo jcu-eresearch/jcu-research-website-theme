@@ -65,7 +65,6 @@ theme_settings:
   content_alignment: "left"
   # button_shape options: "rectangular", "lozenge"
   button_shape: "rectangular"
-  table_banded_rows: true
 
   # block_separator_style options: "none", "line", "accent", "band"
   block_separator_style: "none"

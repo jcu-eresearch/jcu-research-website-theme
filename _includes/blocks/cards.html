@@ -24,6 +24,9 @@
           {% endif %}
         {% endif %}
         <div class="page-card-body">
+          {% if card.card_category %}
+            <p class="page-card-category">{{ card.card_category | escape }}</p>
+          {% endif %}
           {% if card.title %}<h3>{{ card.title | escape }}</h3>{% endif %}
           {% if card.text %}<div class="page-card-text">{{ card.text | markdownify }}</div>{% endif %}
           {% if card.url and card.link_text %}

@@ -1,8 +1,10 @@
 ---
 title: Configured colours
+card_title: "Configured colours"
+card_category: "Theme settings"
 permalink: /sample-content/configured-colours/
 order: 4
-image: "/assets/sample-images/card-green-turtle.svg"
+image: "/assets/sample-images/sample-configured-colours.svg"
 summary: "A visual reference for the colour settings configured in this theme."
 ---
 

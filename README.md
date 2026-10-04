@@ -103,7 +103,6 @@ theme_settings:
   # content_alignment options: "left", "center"
   content_alignment: "left"
   button_shape: "rectangular"
-  table_banded_rows: true
   block_separator_style: "none"
   partner_logo_max_height: "6rem"
   partner_logo_max_items_per_row: 3
@@ -453,12 +452,9 @@ Markdown pipe tables use the configured secondary colour for the header row. Int
 | Paragraph | Text |
 ```
 
-Set alternating table row backgrounds in `_config.yml`:
+On ordinary page backgrounds, table headings use the secondary background and matching text colour. Inside coloured panels, cards, and alerts, headers reverse the surrounding colours: the panel text colour becomes the header background, and the panel background becomes the header text colour. Body text inherits its surrounding text colour, with borders separating rows and columns.
 
-```yml
-theme_settings:
-  table_banded_rows: true
-```
+Tables automatically receive subtle alternating row stripes on light backgrounds and remain unshaded on dark backgrounds. The theme classifies the existing page, primary, secondary, surface, and alert background colours at build time; nested cards and alerts use their own background rather than the outer panel. Stripe colours mix 94% of the background with 6% of its matching text colour. No additional configuration is needed. Use opaque three- or six-digit hex colours for build-time classification (`white` and `black` also work). Other colour expressions remain unshaded because their brightness cannot be resolved by this build-time helper.
 
 ### Image gallery
 
@@ -547,6 +543,51 @@ The card fields match landing-page section cards:
   occupy the full row. At 900px or less, cards stack into a single column.
 - The block also accepts `background` and `background_mode`, like page cards.
 
+### Optional categories on manually authored cards
+
+In a `type: cards` block, or the `cards` list of a landing-page section, add `card_category` to an individual card:
+
+```yaml
+cards:
+  - title: Southern cassowary
+    card_category: Species profile
+    text: A rainforest seed disperser.
+    url: /sample-content/content-blocks/southern-cassowary/
+    link_text: Read species profile
+```
+
+The optional label appears above the title. It is plain text and uses the surface text colour; omit it for an unlabelled card. In body formats, place the category inside `jcu-card-body`, before its heading:
+
+```markdown
+> > > Species profile
+> > > {:.jcu-card-category}
+> > >
+> > > ### Southern cassowary
+> > >
+> > > A rainforest seed disperser.
+> > {:.jcu-card-body}
+> {:.jcu-card}
+{:.jcu-block .jcu-cards .jcu-columns-3}
+```
+
+```html
+<article class="jcu-card" markdown="1">
+
+<div class="jcu-card-body" markdown="1">
+
+<p class="jcu-card-category">Species profile</p>
+
+### Southern cassowary
+
+A rainforest seed disperser.
+
+</div>
+
+</article>
+```
+
+Wrap HTML cards in a `jcu-block jcu-cards` section, as shown in the HTML and Markdown guide.
+
 ### Page cards
 
 Set card defaults in `_config.yml`:
@@ -590,6 +631,23 @@ For landing-page blocks, `background: "primary"` or `background: "secondary"`
 uses the same browser-wide background as highlight or feature sections. Omit
 `background` for the normal page background; `background_mode` is not used in
 this layout. Cards retain their surface text and link colours on either background.
+
+### Generated card metadata
+
+Set these fields in the front matter of each source page collected by `folder`:
+
+```yaml
+---
+title: Southern cassowary research profile
+card_title: Southern cassowary
+card_category: Species profile
+permalink: /sample-content/content-blocks/southern-cassowary/
+summary: A rainforest seed disperser.
+order: 1
+---
+```
+
+`card_category` is an optional plain-text label above the card heading. `card_title` is an optional shorter heading for the card; the page itself keeps its `title`. If omitted, the category is hidden and the card uses the page title. These fields work with generated page cards in both layouts and with the `page-cards.html` include used in Markdown and HTML bodies. Put them on the source page, not on the collecting block or include.
 
 ## Local development
 

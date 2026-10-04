@@ -2,6 +2,46 @@
 ---
 
 :root {
+  {% assign table_background = site.theme_settings.background_color | default: "#F4F6F3" %}
+  --table-background-stripe: {% include table-stripe-color.html color=table_background background="var(--color-bg)" foreground="var(--color-background-text)" %};
+  {% assign table_background = site.theme_settings.primary_color | default: "#354F52" %}
+  --table-primary-stripe: {% include table-stripe-color.html color=table_background background="var(--color-primary)" foreground="var(--color-primary-text)" %};
+  {% assign table_background = site.theme_settings.secondary_color | default: "#C3D5C7" %}
+  --table-secondary-stripe: {% include table-stripe-color.html color=table_background background="var(--color-secondary)" foreground="var(--color-secondary-text)" %};
+  {% assign table_background = site.theme_settings.surface_color | default: "#FFFFFF" %}
+  --table-surface-stripe: {% include table-stripe-color.html color=table_background background="var(--color-surface)" foreground="var(--color-surface-text)" %};
+  {% assign table_background = site.theme_settings.note_background_color %}
+  {% assign table_alert_fallback = false %}
+  {% unless table_background %}
+    {% assign table_background = site.theme_settings.note_color | default: "#354F52" %}
+    {% assign table_alert_fallback = true %}
+  {% endunless %}
+  --table-note-stripe: {% include table-stripe-color.html color=table_background background="var(--color-note-background, color-mix(in srgb, var(--color-note) 10%, #fff))" foreground="var(--color-note-text)" alert_fallback=table_alert_fallback %};
+  {% assign table_background = site.theme_settings.important_background_color %}
+  {% assign table_alert_fallback = false %}
+  {% unless table_background %}
+    {% assign table_background = site.theme_settings.important_color | default: "#527C66" %}
+    {% assign table_alert_fallback = true %}
+  {% endunless %}
+  --table-important-stripe: {% include table-stripe-color.html color=table_background background="var(--color-important-background, color-mix(in srgb, var(--color-important) 10%, #fff))" foreground="var(--color-important-text)" alert_fallback=table_alert_fallback %};
+  {% assign table_background = site.theme_settings.warning_background_color %}
+  {% assign table_alert_fallback = false %}
+  {% unless table_background %}
+    {% assign table_background = site.theme_settings.warning_color | default: "#C83B35" %}
+    {% assign table_alert_fallback = true %}
+  {% endunless %}
+  --table-warning-stripe: {% include table-stripe-color.html color=table_background background="var(--color-warning-background, color-mix(in srgb, var(--color-warning) 10%, #fff))" foreground="var(--color-warning-text)" alert_fallback=table_alert_fallback %};
+  {% assign table_background = site.theme_settings.caution_background_color %}
+  {% assign table_alert_fallback = false %}
+  {% unless table_background %}
+    {% assign table_background = site.theme_settings.caution_color | default: "#A86A2B" %}
+    {% assign table_alert_fallback = true %}
+  {% endunless %}
+  --table-caution-stripe: {% include table-stripe-color.html color=table_background background="var(--color-caution-background, color-mix(in srgb, var(--color-caution) 10%, #fff))" foreground="var(--color-caution-text)" alert_fallback=table_alert_fallback %};
+  --table-row-stripe: var(--table-background-stripe);
+  --table-header-background: var(--color-secondary);
+  --table-header-text: var(--color-secondary-text);
+
   --font-body: {{ site.theme_settings.font_family | default: "Lato, Arial, Helvetica, sans-serif" }};
   --font-heading: {{ site.theme_settings.heading_font_family | default: "Lora, Georgia, serif" }};
   --color-primary: {{ site.theme_settings.primary_color | default: "#354F52" }};
@@ -426,7 +466,6 @@ h3 {
 
 .prose table {
   --table-line-color: color-mix(in srgb, var(--color-secondary) 34%, #fff);
-  --table-banded-row-bg: {% if site.theme_settings.table_banded_rows == false %}transparent{% else %}color-mix(in srgb, var(--color-secondary) 5%, #fff){% endif %};
   width: 100%;
   margin-top: var(--inline-block-spacing);
   border-collapse: collapse;
@@ -441,8 +480,8 @@ h3 {
 }
 
 .prose thead th {
-  color: var(--color-secondary-text);
-  background: var(--color-secondary);
+  color: var(--table-header-text);
+  background: var(--table-header-background);
   font-weight: 800;
 }
 
@@ -459,7 +498,7 @@ h3 {
 }
 
 .prose tbody tr:nth-child(even) {
-  background: var(--table-banded-row-bg);
+  background: var(--table-row-stripe, transparent);
 }
 
 .prose th + th,
@@ -2150,4 +2189,75 @@ a.partner-logo:hover {
 .jcu-cards > p,
 .jcu-block:has(> .jcu-partner-logos) > p:not(.jcu-partner-logos) {
   max-width: 48rem;
+}
+
+/* Resolve table stripes at the nearest background container. Nested surface
+   cards and alerts override the stripe inherited from their outer panel. */
+.content-block--bg-primary,
+.jcu-bg-primary,
+.landing-section--highlight {
+  --table-row-stripe: var(--table-primary-stripe);
+  --table-header-background: var(--color-primary-text);
+  --table-header-text: var(--color-primary);
+}
+
+.content-block--bg-secondary,
+.jcu-bg-secondary,
+.landing-section--feature,
+.block-separators--band .content-block--bg-secondary {
+  --table-row-stripe: var(--table-secondary-stripe);
+  --table-header-background: var(--color-secondary-text);
+  --table-header-text: var(--color-secondary);
+}
+
+.column-panel,
+.colour-sample,
+.page-card,
+.landing-card,
+.landing-achievement,
+.jcu-column,
+.jcu-card,
+.block-separators--band .content-block:nth-of-type(even):not(.content-block--bg-primary):not(.content-block--bg-secondary) {
+  --table-row-stripe: var(--table-surface-stripe);
+  --table-header-background: var(--color-surface-text);
+  --table-header-text: var(--color-surface);
+}
+
+.jcu-alert,
+.jcu-alert--note {
+  --table-row-stripe: var(--table-note-stripe);
+  --table-header-background: var(--color-note-text);
+  --table-header-text: var(--jcu-alert-background);
+}
+
+.jcu-alert--important {
+  --table-row-stripe: var(--table-important-stripe);
+  --table-header-background: var(--color-important-text);
+  --table-header-text: var(--jcu-alert-background);
+}
+
+.jcu-alert--warning {
+  --table-row-stripe: var(--table-warning-stripe);
+  --table-header-background: var(--color-warning-text);
+  --table-header-text: var(--jcu-alert-background);
+}
+
+.jcu-alert--caution {
+  --table-row-stripe: var(--table-caution-stripe);
+  --table-header-background: var(--color-caution-text);
+  --table-header-text: var(--jcu-alert-background);
+}
+
+.page-card-body .page-card-category,
+.landing-card-body .page-card-category {
+  margin: 0 0 0.55rem;
+  color: var(--color-surface-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.jcu-card-category {
+  @extend .page-card-category;
 }

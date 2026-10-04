@@ -25,14 +25,13 @@ Start with plain Markdown for simple pages, or choose one of the three block for
 
 | Format | Best suited to | How it works |
 | --- | --- | --- |
-| Plain Markdown | Authors who want simple information pages with minimal syntax. | Write headings, paragraphs, lists, links, images, tables, quotations, and code in the page body. No layout classes are required. |
-| YAML front matter | Authors who prefer named fields and a consistent structure. | Declare blocks and their fields in `blocks:` above the page body. Write Markdown inside text fields. |
-| Markdown with layout classes | Authors who prefer keeping the whole story in the page body. | Group content using nested blockquotes and attach the theme's classes underneath each group. |
-| HTML wrappers with Markdown | Authors who find named opening and closing elements easier than nested blockquotes. | Use `section`, `div`, and `article` wrappers with the same theme classes; write Markdown inside them. |
+| [Plain Markdown]({{ "/using-the-theme/plain-markdown/" | relative_url }}) | Authors who want simple information pages with minimal syntax. | Write headings, paragraphs, lists, links, images, tables, quotations, and code in the page body. No layout classes are required. |
+| [YAML front matter]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) | Authors who prefer named fields and a consistent structure. | Declare blocks and their fields in `blocks:` above the page body. Write Markdown inside text fields. |
+| [Markdown with layout classes]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) | Authors who prefer keeping the whole story in the page body. | Group content using nested blockquotes and attach the theme's classes underneath each group. |
+| [HTML wrappers with Markdown]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }}) | Authors who find named opening and closing elements easier than nested blockquotes. | Use `section`, `div`, and `article` wrappers with the same theme classes; write Markdown inside them. |
 
 The three block formats—YAML, Markdown with layout classes, and HTML wrappers with Markdown—provide the same core styling options: text panels, two columns, images beside text, cards, galleries, partner logos, generated page cards, and alerts. They use the same theme colours, image sizes, card surfaces, grid settings, and responsive behaviour. You select those options with YAML fields in the first format and CSS classes in the other two. Generated page cards use a short Liquid include in the body formats because they collect content from other files.
 
-[Plain Markdown guide]({{ "/using-the-theme/plain-markdown/" | relative_url }}) · [YAML page-content guide]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) · [Markdown with layout classes guide]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) · [HTML and Markdown page-content guide]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }})
 
 ## Styling equivalents
 
@@ -89,6 +88,12 @@ theme_settings:
 
 [Inspect the configured colours]({{ "/sample-content/configured-colours/" | relative_url }}) or [browse the working content samples]({{ "/sample-content/" | relative_url }}).
 
+## Table styling
+
+On ordinary page backgrounds, table headers use the secondary background and text colours. In coloured panels, cards, and alerts, the header reverses the surrounding colours: the panel text colour supplies the header background, and the panel background supplies the header text colour. Nested containers use their own colour pair.
+
+Tables automatically receive subtle alternating row stripes on light backgrounds and remain unshaded on dark backgrounds. The theme classifies the existing page, primary, secondary, surface, and alert background colours at build time; nested cards and alerts use their own background rather than the outer panel. Stripe colours mix 94% of the background with 6% of its matching text colour. No additional configuration is needed. Use opaque three- or six-digit hex colours for build-time classification (`white` and `black` also work). Other colour expressions remain unshaded because their brightness cannot be resolved by this build-time helper.
+
 ## Images and links
 
 Store images in `assets/images/` or another assets folder. Use descriptive alternative text and link labels that identify the destination. YAML image and URL fields are site paths such as `/assets/sample-images/card-cassowary.svg`; the theme handles the site's `baseurl` where those fields are rendered through its path filter.
@@ -103,3 +108,7 @@ In Markdown body content, use Liquid's `relative_url` filter for internal site p
 {% endraw %}
 
 Liquid expressions are evaluated in the page body, including inside code fences unless protected with `raw`. Do not put Liquid expressions in YAML text fields; use normal Markdown with a relative link such as `[Overview](../)` instead. Partner URL fields are output directly, so prefer a complete external URL for an organisation's website, or include the site's base path explicitly for an internal partner link.
+
+## Accessibility
+
+Use the [accessibility and colour choices guide]({{ "/using-the-theme/accessibility/" | relative_url }}) to plan readable colour pairs, write for screen readers, and check your pages with browser tools and manual tests.

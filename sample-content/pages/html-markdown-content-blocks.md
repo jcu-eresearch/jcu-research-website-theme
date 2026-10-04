@@ -1,8 +1,10 @@
 ---
 title: HTML wrappers and Markdown content blocks
+card_title: "HTML with Markdown"
+card_category: "Page content"
 permalink: /sample-content/html-markdown-content-blocks/
 order: 3.5
-image: "/assets/sample-images/card-project-setting.svg"
+image: "/assets/sample-images/sample-html-markdown-blocks.svg"
 summary: "Examples of content blocks using HTML wrappers with Markdown inside."
 ---
 
@@ -195,6 +197,8 @@ The number of colums is configurable but if you add too many it won't look good 
 
 <div class="jcu-card-body" markdown="1">
 
+<p class="jcu-card-category">Species profile</p>
+
 ### Rainforest wildlife
 
 **Southern cassowaries** help disperse rainforest seeds throughout the Wet Tropics.
@@ -335,3 +339,32 @@ Use Caution for actions that may have unwanted consequences. Keep a copy of your
 
 </section>
 
+<section class="jcu-block jcu-bg-primary" markdown="1">
+
+## Table on primary background
+
+The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
+
+| Activity | Habitat | Purpose |
+| --- | --- | --- |
+| Wildlife survey | Rainforest | Record species observations. |
+| Water sampling | Estuary | Monitor water quality. |
+| Nest monitoring | Coast | Track nesting success. |
+| Habitat mapping | Reef | Identify important habitat areas. |
+
+</section>
+
+<section class="jcu-block" markdown="1">
+
+## Table on standard background
+
+No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
+
+| Activity | Habitat | Purpose |
+| --- | --- | --- |
+| Wildlife survey | Rainforest | Record species observations. |
+| Water sampling | Estuary | Monitor water quality. |
+| Nest monitoring | Coast | Track nesting success. |
+| Habitat mapping | Reef | Identify important habitat areas. |
+
+</section>

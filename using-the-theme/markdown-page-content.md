@@ -87,6 +87,9 @@ The outer group sets the grid. Each card has a body and an optional image group;
 > > > [![Southern cassowary in rainforest]({{ "/assets/sample-images/card-cassowary.svg" | relative_url }})]({{ "/sample-content/content-blocks/southern-cassowary/" | relative_url }})
 > > {:.jcu-card-image}
 > >
+> > > Species profile
+> > > {:.jcu-card-category}
+> > >
 > > > ### Southern cassowary
 > > >
 > > > A large bird that disperses **rainforest seeds**.
@@ -104,6 +107,8 @@ The outer group sets the grid. Each card has a body and an optional image group;
 {:.jcu-block .jcu-cards .jcu-columns-3 .jcu-bg-secondary}
 ```
 {% endraw %}
+
+Add an optional category paragraph at the start of `jcu-card-body` and put `{:.jcu-card-category}` immediately below it at the same quote depth. The example above uses “Species profile”. Omit that paragraph for an unlabelled card.
 
 ## Linked-image galleries
 
@@ -166,6 +171,23 @@ Automatic page cards use a short Liquid include in both body formats. A CSS clas
 {% endraw %}
 
 Place this include directly in the page body, outside HTML wrappers or blockquotes. `folder` is a source-file folder, not a public permalink prefix. Cards use each page's `title`, optional `image`, and `summary` (or `description`), sorted by `order`. The current page and files named `index.md` are excluded. Defaults use `page_card_columns` and `page_card_link_text`. `columns=1` produces wide rows on desktop; text-only cards fill the row. Optional `content` accepts Markdown.
+
+### Optional titles and categories for generated cards
+
+Set these fields in the front matter of each source page collected by `folder`:
+
+```yaml
+---
+title: Southern cassowary research profile
+card_title: Southern cassowary
+card_category: Species profile
+permalink: /sample-content/content-blocks/southern-cassowary/
+summary: A rainforest seed disperser.
+order: 1
+---
+```
+
+`card_category` is an optional plain-text label above the card heading. `card_title` is an optional shorter heading for the card; the page itself keeps its `title`. If omitted, the category is hidden and the card uses the page title. These fields work with generated page cards in both layouts and with the `page-cards.html` include used in Markdown and HTML bodies. Put them on the source page, not on the collecting block or include.
 
 ## Shared style options
 

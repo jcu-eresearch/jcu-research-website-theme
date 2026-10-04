@@ -1,8 +1,10 @@
 ---
 title: YAML syntax content blocks
+card_title: "YAML blocks"
+card_category: "Page content"
 permalink: /sample-content/content-blocks/
 order: 2
-image: "/assets/sample-images/card-cassowary.svg"
+image: "/assets/sample-images/sample-yaml-blocks.svg"
 summary: "Examples of each content block style available with this template."
 blocks:
   - type: image-text
@@ -131,6 +133,7 @@ blocks:
       The number of colums is configurable but if you add too many it won't look good or be very responsive.
     cards:
       - title: "Rainforest wildlife"
+        card_category: "Species profile"
         image: "/assets/sample-images/card-cassowary.svg"
         image_alt: "Stylised southern cassowary in rainforest"
         text: |
@@ -199,6 +202,29 @@ blocks:
     title: "Caution alert block"
     content: |
       Use Caution for actions that may have unwanted consequences. Keep a copy of your content before replacing sample pages.
+  - type: one-column
+    title: "Table on primary background"
+    background: primary
+    content: |
+      The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
+  - type: one-column
+    title: "Table on standard background"
+    content: |
+      No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
 ---
 
 This page demonstrates the reusable content block types using sample content about native animals of northern Queensland.

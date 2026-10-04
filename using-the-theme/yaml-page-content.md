@@ -84,6 +84,7 @@ blocks:
       Read more about rainforest wildlife.
     cards:
       - title: Southern cassowary
+        card_category: Species profile
         image: /assets/sample-images/card-cassowary.svg
         image_alt: Southern cassowary in rainforest
         text: "A large bird that disperses **rainforest seeds**."
@@ -132,6 +133,8 @@ blocks:
 
 Use `partners`, rather than the landing layout's `items`. Names provide alt text. Add an optional `url` with the organisation's full website address to make a logo clickable. Omit it when no destination is available. Transparent logos sit directly on the panel, without individual tiles. Choose a reverse white logo on a dark primary background. `columns` defaults to `partner_logo_max_items_per_row`; logo height uses `partner_logo_max_height`. The heading and introduction are optional.
 
+The optional `card_category` field adds a short label above a manually authored card's title. Omit it to keep the existing appearance. It is plain text, displayed in uppercase using the card's surface text colour; it is separate from the title and link.
+
 ## Cards generated from pages
 
 ```yaml
@@ -146,7 +149,24 @@ blocks:
       These cards use information from the species pages.
 ```
 
-Set `folder` to the source-file folder, not the pages' public permalink prefix. Pages are sorted by `order`; the current page and files named `index.md` are excluded. Each page supplies `title`, optional `image`, and `summary` (falling back to `description`). Configure those fields on the source pages. Defaults come from `page_card_columns` and `page_card_link_text`. The same one-column row treatment applies.
+Set `folder` to the source-file folder, not the pages' public permalink prefix. Pages are sorted by `order`; the current page and files named `index.md` are excluded. Each page supplies `title`, optional `image`, and `summary` (falling back to `description`). Configure those fields on the source pages. Optional `card_title` supplies a shorter card heading without changing the page title; `card_category` adds a small category label above it. Defaults come from `page_card_columns` and `page_card_link_text`. The same one-column row treatment applies.
+
+### Optional titles and categories for generated cards
+
+Set these fields in the front matter of each source page collected by `folder`:
+
+```yaml
+---
+title: Southern cassowary research profile
+card_title: Southern cassowary
+card_category: Species profile
+permalink: /sample-content/content-blocks/southern-cassowary/
+summary: A rainforest seed disperser.
+order: 1
+---
+```
+
+`card_category` is an optional plain-text label above the card heading. `card_title` is an optional shorter heading for the card; the page itself keeps its `title`. If omitted, the category is hidden and the card uses the page title. These fields work with generated page cards in both layouts and with the `page-cards.html` include used in Markdown and HTML bodies. Put them on the source page, not on the collecting block or include.
 
 ## Alerts
 

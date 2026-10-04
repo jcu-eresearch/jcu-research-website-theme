@@ -1,0 +1,55 @@
+{%- comment -%}
+Classify opaque hex colours at build time using weighted RGB brightness.
+Unknown colour expressions stay unshaded. Alert fallback backgrounds mix
+10% of their accent with white, so classify that same mixture.
+{%- endcomment -%}
+{%- assign stripe_colour = include.color | strip | downcase -%}
+{%- if stripe_colour == 'white' -%}{%- assign stripe_colour = '#ffffff' -%}{%- endif -%}
+{%- if stripe_colour == 'black' -%}{%- assign stripe_colour = '#000000' -%}{%- endif -%}
+{%- assign stripe_prefix = stripe_colour | slice: 0, 1 -%}
+{%- assign stripe_hex = stripe_colour | remove_first: '#' -%}
+{%- assign stripe_length = stripe_hex | size -%}
+{%- assign stripe_valid = false -%}
+{%- if stripe_prefix == '#' -%}
+  {%- if stripe_length == 3 or stripe_length == 6 -%}{%- assign stripe_valid = true -%}{%- endif -%}
+{%- endif -%}
+{%- assign stripe_digits = '0123456789abcdef' | split: '' -%}
+{%- assign stripe_characters = stripe_hex | split: '' -%}
+{%- assign stripe_red = 0 -%}
+{%- assign stripe_green = 0 -%}
+{%- assign stripe_blue = 0 -%}
+{%- for stripe_character in stripe_characters -%}
+  {%- unless stripe_digits contains stripe_character -%}{%- assign stripe_valid = false -%}{%- endunless -%}
+  {%- assign stripe_value = 0 -%}
+  {%- for stripe_digit in stripe_digits -%}
+    {%- if stripe_digit == stripe_character -%}{%- assign stripe_value = forloop.index0 -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if stripe_length == 3 -%}
+    {%- assign stripe_value = stripe_value | times: 17 -%}
+    {%- case forloop.index0 -%}
+      {%- when 0 -%}{%- assign stripe_red = stripe_value -%}
+      {%- when 1 -%}{%- assign stripe_green = stripe_value -%}
+      {%- when 2 -%}{%- assign stripe_blue = stripe_value -%}
+    {%- endcase -%}
+  {%- else -%}
+    {%- if forloop.index0 < 2 -%}
+      {%- assign stripe_red = stripe_red | times: 16 | plus: stripe_value -%}
+    {%- elsif forloop.index0 < 4 -%}
+      {%- assign stripe_green = stripe_green | times: 16 | plus: stripe_value -%}
+    {%- else -%}
+      {%- assign stripe_blue = stripe_blue | times: 16 | plus: stripe_value -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign stripe_brightness = stripe_red | times: 299 -%}
+{%- assign stripe_green_weight = stripe_green | times: 587 -%}
+{%- assign stripe_blue_weight = stripe_blue | times: 114 -%}
+{%- assign stripe_brightness = stripe_brightness | plus: stripe_green_weight | plus: stripe_blue_weight -%}
+{%- if include.alert_fallback -%}
+  {%- assign stripe_brightness = stripe_brightness | divided_by: 10 | plus: 229500 -%}
+{%- endif -%}
+{%- if stripe_valid and stripe_brightness >= 160000 -%}
+color-mix(in srgb, {{ include.background }} 94%, {{ include.foreground }} 6%)
+{%- else -%}
+transparent
+{%- endif -%}

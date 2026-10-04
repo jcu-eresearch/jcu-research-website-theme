@@ -53,7 +53,7 @@ Add the page to `_data/navigation.yml` if it should appear in the menu. Writing 
 | Links | `[Meaningful label](destination)` | Link colours and hover styling. |
 | Images | `![Description](image-path)` | Images constrained to the content width. |
 | Linked images | `[![Description](image-path)](destination)` | A clickable image with ordinary link behaviour. |
-| Tables | Pipe-separated headings and rows | Styled headings, borders, and optional alternating row backgrounds. |
+| Tables | Pipe-separated headings and rows | Styled headings and borders; subtle stripes on light backgrounds. |
 | Quotations | `> Quoted text` | Standard quotation styling. |
 | Code | Backticks or fenced code blocks | Distinct inline code and formatted code examples. |
 | Horizontal rules | `---` in the body, separated by blank lines | A visual break between parts of the text. |
@@ -70,7 +70,7 @@ Use a table for compact comparisons rather than to arrange a page into columns:
 | Communication | Share the results. |
 ```
 
-The theme uses secondary colours for the table heading. Body text inherits the surrounding page's text colour, and alternating row backgrounds follow the theme's table styling when `table_banded_rows` is enabled. Keep tables short and check wide tables on a narrow screen.
+On an ordinary page, the theme uses secondary colours for the table heading. Tables inside coloured blocks reverse the block background and text colours for their header. Body rows inherit the surrounding text colour. Light backgrounds receive subtle alternate-row stripes; dark backgrounds remain unshaded. Borders separate the rows. Keep tables short and check wide tables on a narrow screen.
 
 ## Images and captions
 
