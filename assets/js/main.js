@@ -47,6 +47,7 @@ const headerNav = document.querySelector("#header-nav");
 const submenuToggles = Array.from(document.querySelectorAll(".header-submenu-trigger"));
 
 if (siteHeader && headerMenuToggle && headerNav) {
+  const burgerMenuLayout = window.matchMedia("(max-width: 1040px)");
   const closeSubmenus = (exceptGroup = null) => {
     document.querySelectorAll(".header-nav-group.is-submenu-open").forEach((group) => {
       if (group !== exceptGroup) {
@@ -66,6 +67,7 @@ if (siteHeader && headerMenuToggle && headerNav) {
   };
 
   setMenuOpen(false);
+  burgerMenuLayout.addEventListener("change", () => setMenuOpen(false));
 
   headerMenuToggle.addEventListener("click", () => {
     setMenuOpen(headerMenuToggle.getAttribute("aria-expanded") !== "true");
@@ -88,21 +90,23 @@ if (siteHeader && headerMenuToggle && headerNav) {
     };
 
     group.addEventListener("pointerenter", (event) => {
-      if (event.pointerType === "touch") return;
+      if (event.pointerType !== "mouse" || burgerMenuLayout.matches) return;
       pointerInside = true;
       openedByHover = !group.classList.contains("is-submenu-open");
       openSubmenu();
     });
-    group.addEventListener("pointerleave", () => {
+    group.addEventListener("pointerleave", (event) => {
+      if (event.pointerType !== "mouse" || burgerMenuLayout.matches) return;
       pointerInside = false;
       if (!group.contains(document.activeElement)) closeSubmenu();
     });
     group.addEventListener("focusout", (event) => {
+      if (burgerMenuLayout.matches) return;
       if (!pointerInside && !group.contains(event.relatedTarget)) closeSubmenu();
     });
     toggle.addEventListener("click", () => {
       // The first click on a hover-opened submenu keeps it open.
-      if (group.classList.contains("is-submenu-open") && !openedByHover) {
+      if (group.classList.contains("is-submenu-open") && (burgerMenuLayout.matches || !openedByHover)) {
         closeSubmenu();
       } else {
         openSubmenu();
@@ -126,6 +130,7 @@ if (siteHeader && headerMenuToggle && headerNav) {
 
   document.addEventListener("click", (event) => {
     if (!siteHeader.contains(event.target)) {
+      if (burgerMenuLayout.matches) setMenuOpen(false);
       closeSubmenus();
     }
   });
