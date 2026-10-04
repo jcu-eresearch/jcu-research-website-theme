@@ -36,6 +36,7 @@
               {% if item.children %}
                 <button class="header-nav-link header-submenu-trigger" type="button" aria-expanded="false" aria-controls="header-submenu-{{ forloop.index }}">
                   {{ item.title }}
+                  <span class="header-submenu-chevron" aria-hidden="true"></span>
                 </button>
               {% else %}
                 <a class="header-nav-link" href="{{ item_url }}"{% if parent_active %} aria-current="page"{% endif %}>

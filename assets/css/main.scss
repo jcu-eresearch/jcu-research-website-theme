@@ -1805,6 +1805,21 @@ a.partner-logo:hover {
   font-family: inherit;
   text-align: left;
   cursor: pointer;
+  gap: 0.75rem;
+}
+
+.header-submenu-chevron {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex-shrink: 0;
+  margin-left: auto;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+}
+
+.header-submenu-trigger[aria-expanded="true"] .header-submenu-chevron {
+  transform: translateY(0.15rem) rotate(225deg);
 }
 
 .header-nav-link:hover {
