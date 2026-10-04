@@ -88,12 +88,13 @@ if (siteHeader && headerMenuToggle && headerNav) {
     };
 
     group.addEventListener("pointerenter", (event) => {
-      if (event.pointerType === "touch") return;
+      if (event.pointerType !== "mouse") return;
       pointerInside = true;
       openedByHover = !group.classList.contains("is-submenu-open");
       openSubmenu();
     });
-    group.addEventListener("pointerleave", () => {
+    group.addEventListener("pointerleave", (event) => {
+      if (event.pointerType !== "mouse") return;
       pointerInside = false;
       if (!group.contains(document.activeElement)) closeSubmenu();
     });
