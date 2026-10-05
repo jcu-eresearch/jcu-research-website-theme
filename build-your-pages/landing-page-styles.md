@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "Landing-page styles"
-permalink: /using-the-theme/landing-page-styles/
+permalink: /build-your-pages/landing-page-styles/
 order: 1
 summary: "Build a project overview with heroes, full-width sections, cards, and partner logos."
 ---
+
+This is a reference guide. New to website editing? Start with [Beginners]({{ "/beginners/" | relative_url }}). Landing pages can combine a YAML hero, Markdown body content (including styled body blocks), and landing-page YAML blocks. They render in that order.
 
 The `landing-page` layout is designed for research project websites that need a polished page without requiring the author to make design decisions. Most content is edited in page front matter.
 
@@ -316,4 +318,4 @@ Researchers usually should not need to edit these classes. Change content in fro
 
 Keep one ordered `blocks` list in front matter. Indent nested fields with spaces and use `|` for multiline Markdown. Split hero images and carousel images need useful alt text; background hero images are decorative. Replace sample assets and destinations with your own before using an example on a project site. Section cards are a simple grid; use `page-cards` when you need folder-generated cards or explicit column settings.
 
-[View the working landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) or [return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).
+[View the working landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) or [return to Build your pages]({{ "/build-your-pages/" | relative_url }}).

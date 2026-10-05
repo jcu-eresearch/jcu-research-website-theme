@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "HTML and Markdown page content"
-permalink: /using-the-theme/html-markdown-page-content/
+permalink: /reference/html-markdown-page-content/
 order: 4
 summary: "Create standard-page blocks with named HTML wrappers and Markdown."
 ---
+
+This is a reference guide. New to website editing? Start with [Beginners]({{ "/beginners/" | relative_url }}). All these methods can share a standard page: plain Markdown, YAML blocks, Markdown with classes, and HTML wrappers. See [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) for a complete example and the rendering order.
 
 Use HTML wrappers when named opening and closing groups are easier for you to follow than nested blockquotes. The wrappers select the layout and styling; Markdown inside them supplies the content. The same classes and styles are used by the Markdown format and match the YAML blocks.
 
@@ -253,4 +255,24 @@ Liquid is evaluated before Markdown, even in fenced code examples. When writing 
 
 Preview both desktop and narrow-screen layouts. Check group nesting, image paths, link destinations, and the selected theme colours. You can move a block to another position in the body without changing its style.
 
-[Compare the YAML format]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) or [return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).
+[Compare the YAML format]({{ "/reference/yaml-page-content/" | relative_url }}) or [return to Content and styling reference]({{ "/reference/" | relative_url }}).
+
+## Native HTML features
+
+HTML wrappers are also useful beyond layout blocks. The [HTML alongside Markdown samples]({{ "/sample-content/html-markdown-content-blocks/#html-alongside-ordinary-markdown" | relative_url }}) demonstrate collapsible sections, highlighting, subscript, superscript, abbreviations, figures and captions, explicit line breaks, and hidden comments.
+
+Use a descriptive `summary` in a `details` element, and add `markdown="1"` when its body contains Markdown:
+
+```html
+<details markdown="1">
+<summary>Read the sampling notes</summary>
+
+We visit each location **three times**.
+
+- Record dates and conditions.
+- Explain any departures from the protocol.
+
+</details>
+```
+
+Do not hide essential instructions in a collapsed section. Spell out abbreviations in the text rather than relying on a `title` tooltip. A `figcaption` supplies an image's context; it does not replace useful alt text. HTML comments are hidden visually but remain public in the source.

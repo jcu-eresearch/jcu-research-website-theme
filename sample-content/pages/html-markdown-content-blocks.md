@@ -5,7 +5,7 @@ card_category: "Page content"
 permalink: /sample-content/html-markdown-content-blocks/
 order: 3.5
 image: "/assets/sample-images/sample-html-markdown-blocks.svg"
-summary: "Examples of content blocks using HTML wrappers with Markdown inside."
+summary: "HTML wrappers, Markdown content blocks, and useful native HTML elements."
 ---
 
 This page presents the same examples as the YAML and Markdown syntax content blocks pages. HTML wrappers name each group, while `markdown="1"` enables Markdown inside them. Keep blank lines around the Markdown content. Automatic page cards use the same short Liquid include.
@@ -368,3 +368,117 @@ No background colour is specified for this block. The table body uses the standa
 | Habitat mapping | Reef | Identify important habitat areas. |
 
 </section>
+
+## HTML alongside ordinary Markdown
+
+HTML also provides elements that ordinary Markdown does not define. These examples work without a layout block. Keep blank lines around block elements and add `markdown="1"` when a container should parse its contents as Markdown.
+
+## Collapsible sections
+
+Use `details` and a descriptive `summary` to let readers reveal supplementary information. Keep essential instructions visible. This native control can be operated with the keyboard.
+
+<details markdown="1">
+<summary>Read the sampling notes</summary>
+
+We visited each location **three times**.
+
+- Record the observation date.
+- Note weather and habitat conditions.
+
+</details>
+
+{% raw %}
+````html
+<details markdown="1">
+<summary>Read the sampling notes</summary>
+
+We visited each location **three times**.
+
+- Record the observation date.
+- Note weather and habitat conditions.
+
+</details>
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}
+
+## Highlighting, subscript, and superscript
+
+These are inline HTML elements. Use `mark` for relevant highlighting, and `sub` or `sup` for notation. Explain specialised notation in the surrounding text.
+
+The <mark>sampling period</mark> is highlighted. Water is H<sub>2</sub>O; the study area is measured in km<sup>2</sup>.
+
+{% raw %}
+````html
+The <mark>sampling period</mark> is highlighted. Water is H<sub>2</sub>O; the study area is measured in km<sup>2</sup>.
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}
+
+## Abbreviations in HTML
+
+An abbreviation can carry a title, but its meaning should also be written in the text for readers who cannot use a tooltip.
+
+Environmental DNA (<abbr title="Environmental DNA">eDNA</abbr>) helps identify species.
+
+{% raw %}
+````html
+Environmental DNA (<abbr title="Environmental DNA">eDNA</abbr>) helps identify species.
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}
+
+## Figures and captions
+
+Use `figure` and `figcaption` to group an image with its caption. Alternative text describes the relevant image content; the caption supplies context.
+
+<figure>
+  <img src="{{ "/assets/sample-images/card-cassowary.svg" | relative_url }}" alt="Illustration of a southern cassowary">
+  <figcaption>Southern cassowaries help disperse rainforest seeds.</figcaption>
+</figure>
+
+{% raw %}
+````html
+<figure>
+  <img src="{{ "/assets/sample-images/card-cassowary.svg" | relative_url }}" alt="Illustration of a southern cassowary">
+  <figcaption>Southern cassowaries help disperse rainforest seeds.</figcaption>
+</figure>
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}
+
+## Explicit line breaks
+
+A `br` element creates a line break within a paragraph. Use separate paragraphs for separate ideas rather than adding repeated breaks to create spacing.
+
+Fieldwork team<br>
+Coastal research project
+
+{% raw %}
+````html
+Fieldwork team<br>
+Coastal research project
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}
+
+## Hidden HTML comments
+
+Comments are absent from the visible page but remain in its source. Use them for editing notes, not confidential information.
+
+This sentence is visible.
+
+<!-- Editing note: review this description after the next survey. -->
+
+This sentence is also visible.
+
+{% raw %}
+````html
+This sentence is visible.
+
+<!-- Editing note: review this description after the next survey. -->
+
+This sentence is also visible.
+````
+{: .jcu-alert .jcu-alert--note}
+{% endraw %}

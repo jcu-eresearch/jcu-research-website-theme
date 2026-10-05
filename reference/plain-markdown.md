@@ -1,14 +1,16 @@
 ---
 layout: page
 title: "Plain Markdown pages"
-permalink: /using-the-theme/plain-markdown/
+permalink: /reference/plain-markdown/
 order: 1.5
 summary: "Write simple pages with ordinary Markdown and automatic theme styling."
 ---
 
+This is a reference guide. New to website editing? Start with [Beginners]({{ "/beginners/" | relative_url }}). All these methods can share a standard page: plain Markdown, YAML blocks, Markdown with classes, and HTML wrappers. See [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) for a complete example and the rendering order.
+
 Use plain Markdown for pages whose main purpose is to communicate information: project background, methods, updates, frequently asked questions, or contact details. You write headings, paragraphs, lists, links, and images in reading order. The theme provides the typography, spacing, colours, navigation, and responsive page container automatically.
 
-You do not need layout classes, HTML wrappers, or a YAML `blocks` list. This is the simplest authoring option. It has fewer layout controls than the three block formats, but uses the same site appearance.
+You do not need layout classes, HTML wrappers, or a YAML `blocks` list. This is the simplest authoring option. Ordinary Markdown has fewer layout controls than styled blocks, but uses the same site appearance. You can add a block whenever the content needs one.
 
 ## Create a page
 
@@ -86,10 +88,10 @@ The relative image path above works from this guide's published address. Adjust 
 
 ## Links and paths
 
-Relative URLs work without Liquid or classes. They are resolved from the page's **published permalink**, which can differ from the Markdown file's source folder. On this page, `[Using the Theme](../)` goes to the section overview, and `[Contact us](../../contact/)` goes to the contact page. Full external website URLs work normally.
+Relative URLs work without Liquid or classes. They are resolved from the page's **published permalink**, which can differ from the Markdown file's source folder. On this page, `[Content and styling reference](../)` goes to the section overview, and `[Contact us](../../contact/)` goes to the contact page. Full external website URLs work normally.
 
 ```markdown
-[Using the Theme](../)
+[Content and styling reference](../)
 [Contact us](../../contact/)
 [Tables on this page](#tables)
 ```
@@ -116,11 +118,11 @@ Fenced code blocks preserve indentation and display an example as code rather th
 
 Ordinary blockquotes remain quotations. They do not become Note, Important, Warning, or Caution panels unless you use the classes or YAML blocks described in the other guides.
 
-## What needs a block format
+## When to add a styled block
 
 Plain Markdown does not select the theme's two-column panels, side-by-side image-and-text layouts, configurable card grids, linked-image galleries, partner-logo grids, coloured section panels, styled alerts, or automatically generated page cards. Ordinary lists, images, and tables remain useful, but do not reproduce those components.
 
-Use [Markdown with layout classes]({{ "/using-the-theme/markdown-page-content/" | relative_url }}), [YAML page content]({{ "/using-the-theme/yaml-page-content/" | relative_url }}), or [HTML and Markdown page content]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }}) when you need those layouts. For a hero, carousel, achievements, or full-width overview sections, use the [landing-page layout]({{ "/using-the-theme/landing-page-styles/" | relative_url }}).
+Use [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}), [YAML page content]({{ "/reference/yaml-page-content/" | relative_url }}), or [HTML and Markdown page content]({{ "/reference/html-markdown-page-content/" | relative_url }}) when you need those layouts. For a hero, carousel, achievements, or full-width overview sections, use the [landing-page layout]({{ "/build-your-pages/landing-page-styles/" | relative_url }}).
 
 You can begin with plain Markdown and add a styled block later. The page does not need to be rewritten in another format to add a class-based block in its body. YAML blocks, when used, appear after all body content.
 
@@ -130,4 +132,4 @@ Fonts, heading colours, background and text colours, link colours, and table sty
 
 Preview the page on desktop and a narrow screen. Check heading order, list nesting, image paths, link destinations, and table readability. Keep blank lines between paragraphs and around lists, quotations, and code examples.
 
-[View the Markdown formatting samples]({{ "/sample-content/markdown-formats/" | relative_url }}) or [return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).
+[View the Markdown formatting samples]({{ "/sample-content/markdown-formats/" | relative_url }}) or [return to Content and styling reference]({{ "/reference/" | relative_url }}).

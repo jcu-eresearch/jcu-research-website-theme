@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Accessibility and colour choices"
-permalink: /using-the-theme/accessibility/
+permalink: /check-and-maintain/accessibility/
 order: 6
 summary: "Make content easier to read, navigate, and understand, and check your colour choices."
 ---
@@ -86,4 +86,4 @@ Also carry out a few manual checks:
 
 The theme does not currently run an accessibility audit during the build. A successful build or a perfect automated score is not proof of WCAG conformance. [W3C guidance on selecting evaluation tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/).
 
-[Return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).
+[Return to Check and maintain]({{ "/check-and-maintain/" | relative_url }}).

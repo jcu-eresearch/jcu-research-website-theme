@@ -455,6 +455,15 @@ h3 {
   color: var(--color-text);
 }
 
+.prose ol > li {
+  padding-inline-start: 0.35rem;
+}
+
+.prose li > ol,
+.prose li > ul {
+  padding-inline-start: 1.1em;
+}
+
 .prose dt {
   color: var(--color-heading);
   font-weight: 800;
@@ -462,6 +471,36 @@ h3 {
 
 .prose dd {
   margin: 0 0 0.8rem 1.25rem;
+}
+
+.prose .footnotes {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+}
+
+.prose .footnotes li {
+  margin-block: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.35rem;
+  scroll-margin-top: 7rem;
+}
+
+.prose .footnotes li > :first-child {
+  margin-top: 0;
+}
+
+.prose .footnotes li > :last-child {
+  margin-bottom: 0;
+}
+
+.prose .footnotes li:target {
+  --color-text: var(--color-surface-text);
+  --color-link: var(--color-surface-link);
+  color: var(--color-surface-text);
+  background: var(--color-surface);
+  box-shadow: inset 0.2rem 0 0 currentColor;
+  outline: 1px solid currentColor;
 }
 
 .prose table {
@@ -1809,6 +1848,7 @@ a.partner-logo:hover {
 }
 
 .header-submenu-chevron {
+  display: none;
   width: 0.45rem;
   height: 0.45rem;
   flex-shrink: 0;
@@ -1918,6 +1958,10 @@ a.partner-logo:hover {
 }
 
 @media (max-width: 1040px) {
+  .header-submenu-chevron {
+    display: block;
+  }
+
   .site-header-inner {
     flex-wrap: wrap;
     gap: 0.75rem 1rem;

@@ -1,14 +1,16 @@
 ---
 layout: page
 title: "Markdown with layout classes"
-permalink: /using-the-theme/markdown-page-content/
+permalink: /reference/markdown-page-content/
 order: 3
 summary: "Create standard-page blocks with nested Markdown groups and theme classes."
 ---
 
-For simple text pages, you can also use [plain Markdown]({{ "/using-the-theme/plain-markdown/" | relative_url }}) without layout classes.
+This is a reference guide. New to website editing? Start with [Beginners]({{ "/beginners/" | relative_url }}). All these methods can share a standard page: plain Markdown, YAML blocks, Markdown with classes, and HTML wrappers. See [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) for a complete example and the rendering order.
 
-Use this format when you want the whole story in the Markdown page body. Nested blockquotes group the content, and class lines select the theme layout and styling. The classes reuse the styles used by YAML blocks and HTML wrappers.
+For simple text pages, you can also use [plain Markdown]({{ "/reference/plain-markdown/" | relative_url }}) without layout classes.
+
+Use this method when you want the whole story in the Markdown page body. Nested blockquotes group the content, and class lines select the theme layout and styling. The classes reuse the styles used by YAML blocks and HTML wrappers.
 
 [View the working examples]({{ "/sample-content/inline-content-blocks/" | relative_url }}).
 
@@ -205,4 +207,4 @@ Liquid is evaluated before Markdown, even in fenced code examples. When writing 
 
 Preview both desktop and narrow-screen layouts. Check group nesting, image paths, link destinations, and the selected theme colours. You can move a block to another position in the body without changing its style.
 
-[Compare the YAML format]({{ "/using-the-theme/yaml-page-content/" | relative_url }}) or [return to Using the Theme]({{ "/using-the-theme/" | relative_url }}).
+[Compare the YAML format]({{ "/reference/yaml-page-content/" | relative_url }}) or [return to Content and styling reference]({{ "/reference/" | relative_url }}).

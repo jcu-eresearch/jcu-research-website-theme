@@ -75,7 +75,6 @@ if (siteHeader && headerMenuToggle && headerNav) {
 
   submenuToggles.forEach((toggle) => {
     const group = toggle.closest(".header-nav-group");
-    let openedByHover = false;
     let pointerInside = false;
 
     const openSubmenu = () => {
@@ -86,32 +85,29 @@ if (siteHeader && headerMenuToggle && headerNav) {
     const closeSubmenu = () => {
       group.classList.remove("is-submenu-open");
       toggle.setAttribute("aria-expanded", "false");
-      openedByHover = false;
     };
 
     group.addEventListener("pointerenter", (event) => {
       if (event.pointerType !== "mouse" || burgerMenuLayout.matches) return;
       pointerInside = true;
-      openedByHover = !group.classList.contains("is-submenu-open");
       openSubmenu();
     });
     group.addEventListener("pointerleave", (event) => {
       if (event.pointerType !== "mouse" || burgerMenuLayout.matches) return;
       pointerInside = false;
-      if (!group.contains(document.activeElement)) closeSubmenu();
+      if (!group.querySelector(".header-submenu").contains(document.activeElement)) closeSubmenu();
     });
     group.addEventListener("focusout", (event) => {
       if (burgerMenuLayout.matches) return;
       if (!pointerInside && !group.contains(event.relatedTarget)) closeSubmenu();
     });
     toggle.addEventListener("click", () => {
-      // The first click on a hover-opened submenu keeps it open.
-      if (group.classList.contains("is-submenu-open") && (burgerMenuLayout.matches || !openedByHover)) {
+      if (!burgerMenuLayout.matches) return;
+      if (group.classList.contains("is-submenu-open")) {
         closeSubmenu();
       } else {
         openSubmenu();
       }
-      openedByHover = false;
     });
     toggle.addEventListener("keydown", (event) => {
       if (event.key === "ArrowDown") {

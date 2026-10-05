@@ -2,19 +2,58 @@
   url: /
 - title: Using the Theme
   url: /using-the-theme/
+- title: Beginners
+  url: /beginners/
   children:
+    - title: What this theme does
+      url: /beginners/what-this-theme-does/
+    - title: How your website gets online
+      url: /beginners/how-your-website-gets-online/
+    - title: Create your first website
+      url: /beginners/create-your-first-website/
+    - title: Write your first page
+      url: /beginners/write-your-first-page/
+- title: Build your pages
+  url: /build-your-pages/
+  children:
+    - title: Choose a layout
+      url: /build-your-pages/choose-a-layout/
+    - title: Understand content blocks
+      url: /build-your-pages/content-blocks/
+    - title: Combine writing methods
+      url: /build-your-pages/combine-writing-methods/
     - title: Landing-page styles
-      url: /using-the-theme/landing-page-styles/
+      url: /build-your-pages/landing-page-styles/
+- title: Content and styling reference
+  url: /reference/
+  children:
     - title: Plain Markdown pages
-      url: /using-the-theme/plain-markdown/
+      url: /reference/plain-markdown/
+    - title: YAML basics
+      url: /reference/yaml-basics/
+    - title: Content block recipes
+      url: /reference/content-block-recipes/
+    - title: Cards and page collections
+      url: /reference/cards-and-page-collections/
     - title: YAML page content
-      url: /using-the-theme/yaml-page-content/
+      url: /reference/yaml-page-content/
     - title: Markdown with layout classes
-      url: /using-the-theme/markdown-page-content/
+      url: /reference/markdown-page-content/
     - title: HTML and Markdown page content
-      url: /using-the-theme/html-markdown-page-content/
+      url: /reference/html-markdown-page-content/
+    - title: Site appearance
+      url: /reference/site-appearance/
+    - title: Navigation and links
+      url: /reference/navigation-and-links/
+- title: Check and maintain
+  url: /check-and-maintain/
+  children:
     - title: Accessibility and colour choices
-      url: /using-the-theme/accessibility/
+      url: /check-and-maintain/accessibility/
+    - title: Preview and troubleshoot
+      url: /check-and-maintain/preview-and-troubleshoot/
+    - title: Keep your site current
+      url: /check-and-maintain/keep-your-site-current/
 - title: Sample content styles
   url: /sample-content/
   children:

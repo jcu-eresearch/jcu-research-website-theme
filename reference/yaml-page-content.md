@@ -1,10 +1,12 @@
 ---
 layout: page
 title: "YAML page content"
-permalink: /using-the-theme/yaml-page-content/
+permalink: /reference/yaml-page-content/
 order: 2
 summary: "Create standard-page blocks with named fields in front matter."
 ---
+
+This is a reference guide. New to website editing? Start with [Beginners]({{ "/beginners/" | relative_url }}). All these methods can share a standard page: plain Markdown, YAML blocks, Markdown with classes, and HTML wrappers. See [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) for a complete example and the rendering order.
 
 Use YAML when you prefer a list of named fields for each section. The theme turns those fields into styled page content. Text fields can contain Markdown; you do not need to write HTML.
 
@@ -191,4 +193,4 @@ Set shared fonts, colours, `content_alignment`, grid defaults, and `block_separa
 
 Image and card/gallery URL fields accept site paths; the template adds the base URL. In `content` and `text`, write normal Markdown links, such as `[Overview](../)`, relative to the published page. Do not insert Liquid expressions in those text fields. Check that each URL matches its label and exists before publishing.
 
-[Compare Markdown with layout classes]({{ "/using-the-theme/markdown-page-content/" | relative_url }}) or [the HTML and Markdown format]({{ "/using-the-theme/html-markdown-page-content/" | relative_url }}).
+[Compare Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}) or [the HTML and Markdown format]({{ "/reference/html-markdown-page-content/" | relative_url }}).
