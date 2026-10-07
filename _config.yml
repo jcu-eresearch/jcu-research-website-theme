@@ -92,4 +92,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CONTRIBUTING.md
+  - docs/maintainer
   - assets/images/rwt/README.md
