@@ -8,7 +8,7 @@ main contains completed, tested work. A development branch is a separate line of
 
 Merging into main and publishing a theme release are separate tasks. A release tag identifies a tested snapshot. If the documentation website deploys from main, merging may publish its updated content before a theme release is created.
 
-### 1 Start from an updated main branch
+### Start from an updated main branch
 
 Open the repository in VS Code and use its integrated terminal. Check your branch and working files first. Commit unfinished work on its existing branch or save it safely before switching branches.
 
@@ -21,7 +21,7 @@ git pull --ff-only
 
 If pull reports that the branches have diverged, stop and inspect the history. Do not discard local commits to force the update.
 
-### 2 Create a branch for the work
+### Create a branch for the work
 
 ```bash
 git switch -c maintenance/update-build-dependencies
@@ -32,7 +32,7 @@ The example uses a dependency update. Choose another descriptive name for other 
 
 ## Develop and test the changes
 
-### 3 Make and review changes
+### Make and review changes
 
 Edit the required files on the development branch. Use VS Code Source Control to inspect each changed file, or review the differences in the terminal. Keep generated site files, local caches and credentials out of the commit.
 
@@ -41,11 +41,11 @@ git status
 git diff
 ```
 
-### 4 Update dependencies when needed
+### Update dependencies when needed
 
 Follow the [dependency update guide](dependency-updates.md), then return here to build, test, commit and review the changes.
 
-### 5 Build and preview
+### Build and preview
 
 ```bash
 bundle exec jekyll build
@@ -58,7 +58,7 @@ Each consuming website has its own Gemfile and lockfile. Updating this repositor
 
 ## Save work and create a pull request
 
-### 6 Commit and push the branch
+### Commit and push the branch
 
 Stage the intended files explicitly. For a dependency update, include both the Gemfile and lockfile. Use other file paths when working on another feature.
 
@@ -71,7 +71,7 @@ git push -u origin maintenance/update-build-dependencies
 
 A commit saves only staged changes. The first push sets the upstream branch; later pushes can use git push. Continue making focused commits as needed. Before committing later work, run git status and confirm that you are still on the intended branch.
 
-### 7 Open the pull request on GitHub
+### Open the pull request on GitHub
 
 Open the repository on GitHub. Use Compare and pull request if the branch banner appears, or select Pull requests, New pull request. Set base to main and compare to maintenance/update-build-dependencies. Check these selections carefully: the base receives the changes.
 
@@ -81,7 +81,7 @@ Review Files changed, give the request a clear title, and describe the problem, 
 
 Use the actual old and new versions and results in your description. For example: “Updates the GitHub Pages build dependency from [old version] to [new version] and refreshes Gemfile.lock. Validation: [build result], [preview checks] and [consuming site checks]. Setup changes: [requirements, or none].”
 
-### 8 Review and address feedback
+### Review and address feedback
 
 Read the complete diff, confirm that only intended files changed, and check any automated checks configured for the repository. Request a review when another reviewer is available. For solo work, review the request yourself; GitHub does not allow you to approve your own pull request.
 
@@ -89,7 +89,7 @@ Commit and push fixes on the same development branch. The existing pull request 
 
 ## Keep the branch current and merge the pull request
 
-### 9 Bring in main changes if necessary
+### Bring in main changes if necessary
 
 If main has advanced and the branch needs updating, first commit your work and confirm that the working tree is clean. Then merge the latest remote main into your development branch:
 
@@ -101,11 +101,11 @@ git merge origin/main
 
 If conflicts occur, review both versions and edit each conflicted file to retain the correct final behaviour. Remove conflict markers, stage the resolved files, and run git merge --continue. Use git merge --abort to cancel an in-progress merge if you need to reconsider. Retest and push the resulting branch. Do not blindly choose one whole file over another.
 
-### 10 Confirm the request is ready
+### Confirm the request is ready
 
 On the GitHub pull request, confirm base is main, the latest changes are reviewed, required checks pass, any required approvals are present, and conflicts are resolved. If repository rules block merging, satisfy those requirements before proceeding.
 
-### 11 Merge from the pull request
+### Merge from the pull request
 
 At the bottom of the pull request, choose an available merge method from the merge dropdown. Squash and merge is a useful default for one focused change: it creates one commit on main from the branch’s work. Create a merge commit preserves the individual branch commits and adds a merge commit. Rebase and merge preserves separate commits with new commit IDs.
 
@@ -113,13 +113,13 @@ Click the selected merge button. For a squash merge, review the proposed commit 
 
 Confirm that GitHub marks the pull request Merged. main now contains the changes. You do not need to perform another local merge of the development branch into main.
 
-### 12 Verify the website deployment
+### Verify the website deployment
 
 If merging triggers a website deployment, inspect its GitHub Actions run or Pages deployment and then check the published website. A successful merge does not guarantee a successful deployment. If a problem appears, diagnose it and use a follow-up fix or reviewed revert rather than rewriting main history.
 
 ## Synchronise clean up and continue
 
-### 13 Update your local main branch
+### Update your local main branch
 
 After the GitHub merge, return to main and download the merged result. Start with a clean working tree.
 
@@ -133,7 +133,7 @@ git status
 
 bundle install installs the versions recorded in the updated lockfile. Check the merged result, especially if conflict resolution changed behaviour. If the build fails, investigate before tagging a release.
 
-### 14 Remove the completed branch
+### Remove the completed branch
 
 Use Delete branch on the merged GitHub pull request if the remote branch was not deleted automatically. Then clean up your local branch:
 
@@ -144,7 +144,7 @@ git branch -d maintenance/update-build-dependencies
 
 After a squash or rebase merge, Git may refuse -d because the original branch commits are not ancestors of main. Confirm the pull request is Merged, all intended changes are present on main, and no uncommitted or unpushed work remains. Only then use git branch -D maintenance/update-build-dependencies to remove the local branch. This deliberately overrides the ancestry check.
 
-### 15 Begin the next task or prepare a release
+### Begin the next task or prepare a release
 
 Create a fresh branch from updated main for the next task. Avoid continuing work on a branch whose pull request has already merged. When a release is ready, follow the [release guide](creating-a-release.md): choose the theme version, test the exact release commit, create an immutable tag and publish release notes.
 
