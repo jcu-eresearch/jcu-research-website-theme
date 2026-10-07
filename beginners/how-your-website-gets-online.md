@@ -27,4 +27,5 @@ A typical project website address is `https://USERNAME.github.io/REPOSITORY-NAME
 
 Follow GitHub's [publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for the current setup options. The next guide uses the straightforward branch-publishing route.
 
-Next: [Create your first website]({{ "/beginners/create-your-first-website/" | relative_url }}).
+[← Previous]({{ "/beginners/what-this-theme-does/" | relative_url }}) [Next →]({{ "/beginners/create-your-first-website/" | relative_url }})
+{: .jcu-page-navigation}

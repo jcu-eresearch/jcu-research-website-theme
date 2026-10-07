@@ -24,21 +24,76 @@ const generatedHeadingId = (text) => {
   return count ? `${baseId}-${count}` : baseId;
 };
 
+let headingCopyStatus;
+const announceHeadingCopy = (message) => {
+  if (!headingCopyStatus) {
+    headingCopyStatus = document.createElement("div");
+    headingCopyStatus.className = "heading-copy-status";
+    headingCopyStatus.setAttribute("role", "status");
+    headingCopyStatus.setAttribute("aria-live", "polite");
+    headingCopyStatus.setAttribute("aria-atomic", "true");
+    document.body.append(headingCopyStatus);
+  }
+  headingCopyStatus.textContent = "";
+  window.setTimeout(() => { headingCopyStatus.textContent = message; }, 50);
+};
+
+const copyHeadingUrl = async (url) => {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(url);
+    return;
+  }
+
+  const previousFocus = document.activeElement;
+  const input = document.createElement("textarea");
+  input.value = url;
+  input.className = "heading-copy-status";
+  input.setAttribute("aria-label", "Section URL to copy");
+  document.body.append(input);
+  try {
+    input.select();
+    if (!document.execCommand("copy")) throw new Error("Copy unavailable");
+  } finally {
+    input.remove();
+    previousFocus?.focus({ preventScroll: true });
+  }
+};
+
 document.querySelectorAll(".prose h1[id], .prose h2[id], .prose h3[id], .prose h4[id], .prose h5[id], .prose h6[id]").forEach((heading) => {
-  if (heading.querySelector(".heading-anchor")) {
-    return;
-  }
+  if (heading.querySelector(".heading-anchor")) return;
+  const headingText = heading.textContent.trim();
+  if (heading.id === generatedHeadingId(headingText)) return;
 
-  if (heading.id === generatedHeadingId(heading.textContent)) {
-    return;
-  }
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "heading-anchor";
+  button.setAttribute("aria-label", `Copy link to ${headingText}`);
+  button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 .1l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.1l-3 3a5 5 0 0 0 7 7l2-2"/></svg>';
+  const tooltip = document.createElement("span");
+  tooltip.className = "heading-anchor-tooltip";
+  tooltip.setAttribute("aria-hidden", "true");
+  button.append(tooltip);
+  let feedbackTimer;
 
-  const anchor = document.createElement("a");
-  anchor.className = "heading-anchor";
-  anchor.href = `#${heading.id}`;
-  anchor.setAttribute("aria-label", `Link to ${heading.textContent.trim()}`);
-  anchor.textContent = "🔗";
-  heading.append(anchor);
+  button.addEventListener("click", async () => {
+    const url = new URL(window.location.href);
+    url.hash = heading.id;
+    try {
+      await copyHeadingUrl(url.href);
+      tooltip.textContent = "Copied";
+      announceHeadingCopy("Link copied.");
+    } catch {
+      tooltip.textContent = "Could not copy";
+      announceHeadingCopy("Could not copy the link. Please try again.");
+    }
+    button.classList.add("is-feedback");
+    window.clearTimeout(feedbackTimer);
+    feedbackTimer = window.setTimeout(() => {
+      button.classList.remove("is-feedback");
+      tooltip.textContent = "";
+    }, 1800);
+  });
+  heading.append(button);
 });
 
 const siteHeader = document.querySelector(".site-header");

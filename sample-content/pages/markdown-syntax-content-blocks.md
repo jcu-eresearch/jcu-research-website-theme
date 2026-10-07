@@ -10,6 +10,8 @@ summary: "Examples of content blocks written directly in the Markdown page body.
 
 This page presents the same examples as the YAML syntax content blocks page, written in Markdown. Class lines sit outside the block they style. Nested quotes group columns, images and captions, or cards; automatic page cards use a short Liquid include.
 
+To shorten the class lines, use the [reusable layout attributes file]({{ "/sample-content/markdown-layout-attributes.md" | relative_url }}). Copy the definitions you need into your page and follow its usage example. The [Markdown with layout classes guide]({{ "/reference/markdown-page-content/" | relative_url }}#reusable-attributes) explains how these names replace class lines while keeping the same nested layout structure.
+
 > ## Text-only block
 >
 > The image-text block without an image uses the full content-panel width and is useful for short explanations, introductions, and narrative content. This example uses the optional secondary background colour on the block itself.

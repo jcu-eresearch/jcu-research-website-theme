@@ -276,3 +276,6 @@ We visit each location **three times**.
 ```
 
 Do not hide essential instructions in a collapsed section. Spell out abbreviations in the text rather than relying on a `title` tooltip. A `figcaption` supplies an image's context; it does not replace useful alt text. HTML comments are hidden visually but remain public in the source.
+
+[Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}) [Site appearance]({{ "/reference/site-appearance/" | relative_url }})
+{: .jcu-page-navigation}

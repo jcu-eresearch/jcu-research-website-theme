@@ -32,4 +32,5 @@ A published change is live to visitors. If your team needs review before publica
 
 Change one thing at a time and compare against a working example. GitHub's file history lets you inspect previous versions and recover earlier text without guessing what changed.
 
-Next: [Keep your site current]({{ "/check-and-maintain/keep-your-site-current/" | relative_url }}).
+[← Previous]({{ "/check-and-maintain/accessibility/" | relative_url }}) [Next →]({{ "/check-and-maintain/keep-your-site-current/" | relative_url }})
+{: .jcu-page-navigation}

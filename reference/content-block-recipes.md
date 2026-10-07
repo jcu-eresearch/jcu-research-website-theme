@@ -48,3 +48,6 @@ These controls select equivalent core styles across the block methods. Plain Mar
 ## See complete pages
 
 Browse the [sample content styles]({{ "/sample-content/" | relative_url }}) to see each method in context. For full-width homepage sections, achievements, a carousel, or a hero, use the [landing-page guide]({{ "/build-your-pages/landing-page-styles/" | relative_url }}).
+
+[YAML basics]({{ "/reference/yaml-basics/" | relative_url }}) [Cards and page collections]({{ "/reference/cards-and-page-collections/" | relative_url }})
+{: .jcu-page-navigation}

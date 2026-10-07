@@ -15,6 +15,7 @@ Use `theme_settings` in `_config.yml` to set colours, fonts, logos, and defaults
 ```yaml
 theme_settings:
   content_alignment: left
+  bullet_style: line
   block_separator_style: none
   page_card_columns: 3
   page_card_link_text: "Read more"
@@ -26,6 +27,10 @@ theme_settings:
 `content_alignment` accepts `left` or `center`. Standard page separators accept `none`, `line`, `accent`, or `band`. Grid column settings describe desktop layouts; cards and columns stack or reduce their column count on narrower screens. Partner-logo and gallery counts are maximums rather than fixed counts on every screen.
 
 [Inspect the configured colours]({{ "/sample-content/configured-colours/" | relative_url }}) or [browse the working content samples]({{ "/sample-content/" | relative_url }}).
+
+## List markers
+
+Set `theme_settings.bullet_style` to `line` (the default) or `circle` for solid unordered-list markers. The same marker is used at every nesting level, including lists inside footnotes and alerts. Indentation shows the hierarchy. Numbered lists, task-list checkboxes, and navigation controls keep their existing behaviour.
 
 ## Table styling
 
@@ -51,3 +56,6 @@ Liquid expressions are evaluated in the page body, including inside code fences 
 ## Check your colour pairs
 
 Use [Accessibility and colour choices]({{ "/check-and-maintain/accessibility/" | relative_url }}) to check text, links, and table headers against their actual backgrounds.
+
+[HTML and Markdown page content]({{ "/reference/html-markdown-page-content/" | relative_url }}) [Navigation and links]({{ "/reference/navigation-and-links/" | relative_url }})
+{: .jcu-page-navigation}

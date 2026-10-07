@@ -133,3 +133,6 @@ Fonts, heading colours, background and text colours, link colours, and table sty
 Preview the page on desktop and a narrow screen. Check heading order, list nesting, image paths, link destinations, and table readability. Keep blank lines between paragraphs and around lists, quotations, and code examples.
 
 [View the Markdown formatting samples]({{ "/sample-content/markdown-formats/" | relative_url }}) or [return to Content and styling reference]({{ "/reference/" | relative_url }}).
+
+[Content and styling reference]({{ "/reference/" | relative_url }}) [YAML basics]({{ "/reference/yaml-basics/" | relative_url }})
+{: .jcu-page-navigation}

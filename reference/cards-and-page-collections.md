@@ -65,3 +65,6 @@ A Liquid include can generate cards at a chosen place in the body. Liquid is the
 {% endraw %}
 
 See [YAML page content]({{ "/reference/yaml-page-content/" | relative_url }}), [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}), or [HTML and Markdown]({{ "/reference/html-markdown-page-content/" | relative_url }}) for complete manual and generated examples.
+
+[Content block recipes]({{ "/reference/content-block-recipes/" | relative_url }}) [YAML page content]({{ "/reference/yaml-page-content/" | relative_url }})
+{: .jcu-page-navigation}

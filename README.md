@@ -102,6 +102,8 @@ theme_settings:
   border_color: "#D0D5DD"
   # content_alignment options: "left", "center"
   content_alignment: "left"
+  # bullet_style options: "line", "circle"
+  bullet_style: "line"
   button_shape: "rectangular"
   block_separator_style: "none"
   partner_logo_max_height: "6rem"
@@ -127,6 +129,8 @@ The optional `header_logo` appears at the left of the shared site header, fallin
 The optional `favicon` appears in the browser tab. Set `favicon: false` to omit the favicon link.
 
 The `markdown` and `kramdown` settings enable GitHub-flavoured Markdown features such as pipe tables and task lists.
+
+Set `theme_settings.bullet_style` to `line` (the default) or `circle` for solid content-list markers. All nesting levels use the same marker, including lists in alerts and footnotes. Numbered lists, task-list checkboxes, and navigation controls retain their existing behaviour.
 
 Set `theme_settings.content_alignment` to `left` or `center` to control how
 content is aligned within page, block, card, and landing-page section containers.

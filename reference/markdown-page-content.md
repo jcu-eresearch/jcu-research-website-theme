@@ -29,6 +29,12 @@ Place ordinary Markdown and styled blocks after this front matter, in reading or
 
 Write a class line immediately after the block it styles, without an intervening blank line. Put the class line outside that group: a nested quote closes with one fewer `>` marker before its class line. Blank quote lines separate paragraphs and nested groups. These styled quotes become layout containers rather than ordinary quotation callouts.
 
+## Reusable attributes
+
+The [reusable layout attributes file]({{ "/sample-content/markdown-layout-attributes.md" | relative_url }}) in `sample-content/markdown-layout-attributes.md` provides named Kramdown attributes for every class combination in the Markdown-with-classes sample, including nested columns, card parts, backgrounds, and alerts. It also includes instructions and a two-column example.
+
+Copy the definitions you need into your own Markdown page, then use their names instead of repeating the full class lines. For example, copy `{:two-column: .jcu-block .jcu-two-column}` and use `{:two-column}` immediately after a two-column block. Keep the nested blockquote structure shown in the examples. Definitions apply only to the page containing them; the theme does not load this file automatically. Automatic page cards still use the Liquid include described below.
+
 ## Text panels
 
 Use a coloured text panel for introductions or a focused explanation. Omit the background class for normal page content.
@@ -191,6 +197,10 @@ order: 1
 
 `card_category` is an optional plain-text label above the card heading. `card_title` is an optional shorter heading for the card; the page itself keeps its `title`. If omitted, the category is hidden and the card uses the page title. These fields work with generated page cards in both layouts and with the `page-cards.html` include used in Markdown and HTML bodies. Put them on the source page, not on the collecting block or include.
 
+## Previous and Next links
+
+Use `{: .jcu-page-navigation}` immediately beneath a paragraph containing two links to place the first on the left and the second on the right. See [Previous and Next links]({{ "/reference/navigation-and-links/" | relative_url }}#previous-and-next-links) for a copyable example and advice on choosing destinations.
+
 ## Shared style options
 
 Use `jcu-block` for a complete layout block, adding `jcu-bg-primary` or `jcu-bg-secondary` for a contained coloured panel. Omit those background classes for normal page content. Two-column panels and cards retain their surface colours, while surrounding panels use matching background, text, and link colours.
@@ -208,3 +218,6 @@ Liquid is evaluated before Markdown, even in fenced code examples. When writing 
 Preview both desktop and narrow-screen layouts. Check group nesting, image paths, link destinations, and the selected theme colours. You can move a block to another position in the body without changing its style.
 
 [Compare the YAML format]({{ "/reference/yaml-page-content/" | relative_url }}) or [return to Content and styling reference]({{ "/reference/" | relative_url }}).
+
+[YAML page content]({{ "/reference/yaml-page-content/" | relative_url }}) [HTML and Markdown page content]({{ "/reference/html-markdown-page-content/" | relative_url }})
+{: .jcu-page-navigation}

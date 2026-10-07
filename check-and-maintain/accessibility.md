@@ -87,3 +87,6 @@ Also carry out a few manual checks:
 The theme does not currently run an accessibility audit during the build. A successful build or a perfect automated score is not proof of WCAG conformance. [W3C guidance on selecting evaluation tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/).
 
 [Return to Check and maintain]({{ "/check-and-maintain/" | relative_url }}).
+
+[← Overview]({{ "/check-and-maintain/" | relative_url }}) [Next →]({{ "/check-and-maintain/preview-and-troubleshoot/" | relative_url }})
+{: .jcu-page-navigation}

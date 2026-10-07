@@ -21,4 +21,5 @@ Use a standard page when visitors need to read a connected explanation. Use a la
 
 Changing the layout name does not translate existing blocks: landing-page block fields and standard-page block fields differ. Use the matching guide when moving content between layouts.
 
-Next: [Understand content blocks]({{ "/build-your-pages/content-blocks/" | relative_url }}).
+[← Overview]({{ "/build-your-pages/" | relative_url }}) [Next →]({{ "/build-your-pages/content-blocks/" | relative_url }})
+{: .jcu-page-navigation}

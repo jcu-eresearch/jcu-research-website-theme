@@ -27,3 +27,6 @@ Use short commit descriptions that explain the result, such as “Update fieldwo
 If your site uses `remote_theme`, its theme comes from another repository. A site can pin that setting to a tag or commit to control when it adopts updates. Ask a technical collaborator to help choose a version when needed. If your site instead copies theme files, those files need a separate update process.
 
 After a theme update, check your key pages, menus, cards, images, tables, and colour contrast. Keep your own content and settings in your project repository so the team can maintain them over time.
+
+[← Previous]({{ "/check-and-maintain/preview-and-troubleshoot/" | relative_url }}) [Overview →]({{ "/check-and-maintain/" | relative_url }})
+{: .jcu-page-navigation}

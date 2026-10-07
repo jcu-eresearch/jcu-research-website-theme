@@ -63,6 +63,8 @@ theme_settings:
 
   # content_alignment options: "left", "center"
   content_alignment: "left"
+  # bullet_style options: "line", "circle"
+  bullet_style: "line"
   # button_shape options: "rectangular", "lozenge"
   button_shape: "rectangular"
 

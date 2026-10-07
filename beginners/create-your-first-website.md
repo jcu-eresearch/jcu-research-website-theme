@@ -61,4 +61,5 @@ In the repository settings, open **Pages**. Choose **Deploy from a branch**, sel
 
 Check the deployment in the repository's **Actions** tab. After it succeeds, open the website address shown in Pages settings. Confirm that the homepage and menu appear. If they do not, use [Preview and troubleshoot]({{ "/check-and-maintain/preview-and-troubleshoot/" | relative_url }}).
 
-Next: [Write your first page]({{ "/beginners/write-your-first-page/" | relative_url }}).
+[← Previous]({{ "/beginners/how-your-website-gets-online/" | relative_url }}) [Next →]({{ "/beginners/write-your-first-page/" | relative_url }})
+{: .jcu-page-navigation}

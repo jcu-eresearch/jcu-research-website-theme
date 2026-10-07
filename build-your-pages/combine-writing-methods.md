@@ -67,4 +67,5 @@ Keep blank lines around HTML content, add `markdown="1"` to wrappers that contai
 
 Choose the method easiest for your team to maintain. It is fine to keep most content as plain Markdown and use only a few styled blocks.
 
-Next: [Content block recipes]({{ "/reference/content-block-recipes/" | relative_url }}).
+[← Previous]({{ "/build-your-pages/content-blocks/" | relative_url }}) [Next →]({{ "/build-your-pages/landing-page-styles/" | relative_url }})
+{: .jcu-page-navigation}

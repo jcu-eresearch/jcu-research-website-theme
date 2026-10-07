@@ -53,3 +53,6 @@ The `|` starts a multiline text value. Indent all its lines further than `conten
 All authoring methods can use YAML front matter for the title, address, and layout. A `blocks:` list is optional. Text below the closing `---` belongs to the page body, not to the YAML settings.
 
 Use [Write your first page]({{ "/beginners/write-your-first-page/" | relative_url }}) for a complete file or [YAML page content]({{ "/reference/yaml-page-content/" | relative_url }}) for supported block fields.
+
+[Plain Markdown pages]({{ "/reference/plain-markdown/" | relative_url }}) [Content block recipes]({{ "/reference/content-block-recipes/" | relative_url }})
+{: .jcu-page-navigation}

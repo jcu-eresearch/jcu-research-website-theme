@@ -52,3 +52,6 @@ The menu URL must match the page's `permalink`. Keep the existing Home item. Com
 ## Continue at your own pace
 
 Use [Plain Markdown pages]({{ "/reference/plain-markdown/" | relative_url }}) for images, tables, links, and more text formatting. Learn [YAML basics]({{ "/reference/yaml-basics/" | relative_url }}) when you need additional settings. When the story calls for panels, columns, or cards, go to [Build your pages]({{ "/build-your-pages/" | relative_url }}).
+
+[← Previous]({{ "/beginners/create-your-first-website/" | relative_url }}) [Overview →]({{ "/beginners/" | relative_url }})
+{: .jcu-page-navigation}

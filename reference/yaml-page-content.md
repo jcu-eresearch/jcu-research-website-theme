@@ -194,3 +194,6 @@ Set shared fonts, colours, `content_alignment`, grid defaults, and `block_separa
 Image and card/gallery URL fields accept site paths; the template adds the base URL. In `content` and `text`, write normal Markdown links, such as `[Overview](../)`, relative to the published page. Do not insert Liquid expressions in those text fields. Check that each URL matches its label and exists before publishing.
 
 [Compare Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}) or [the HTML and Markdown format]({{ "/reference/html-markdown-page-content/" | relative_url }}).
+
+[Cards and page collections]({{ "/reference/cards-and-page-collections/" | relative_url }}) [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }})
+{: .jcu-page-navigation}

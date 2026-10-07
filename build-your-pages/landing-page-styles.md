@@ -319,3 +319,6 @@ Researchers usually should not need to edit these classes. Change content in fro
 Keep one ordered `blocks` list in front matter. Indent nested fields with spaces and use `|` for multiline Markdown. Split hero images and carousel images need useful alt text; background hero images are decorative. Replace sample assets and destinations with your own before using an example on a project site. Section cards are a simple grid; use `page-cards` when you need folder-generated cards or explicit column settings.
 
 [View the working landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) or [return to Build your pages]({{ "/build-your-pages/" | relative_url }}).
+
+[← Previous]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) [Overview →]({{ "/build-your-pages/" | relative_url }})
+{: .jcu-page-navigation}

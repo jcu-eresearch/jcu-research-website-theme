@@ -34,3 +34,6 @@ These are content decisions before they are formatting decisions. Write clear he
 The theme supplies matching styling through YAML fields or body classes. A class is a named styling instruction such as `jcu-bg-primary`. You can create the same core block styles through YAML, Markdown with classes, or HTML wrappers. Plain Markdown remains useful between them.
 
 See [Content block recipes]({{ "/reference/content-block-recipes/" | relative_url }}) for examples, then [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) to place them on a page.
+
+[← Previous]({{ "/build-your-pages/choose-a-layout/" | relative_url }}) [Next →]({{ "/build-your-pages/combine-writing-methods/" | relative_url }})
+{: .jcu-page-navigation}

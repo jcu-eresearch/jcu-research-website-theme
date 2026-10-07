@@ -28,4 +28,5 @@ Your website starts as editable text and image files. A tool called **Jekyll** t
 
 Markdown (`.md`) is a simple way to mark headings, lists, and links in text. YAML (`.yml`) stores named settings and lists. You will learn each through small examples.
 
-Next: [How your website gets online]({{ "/beginners/how-your-website-gets-online/" | relative_url }}).
+[← Overview]({{ "/beginners/" | relative_url }}) [Next →]({{ "/beginners/how-your-website-gets-online/" | relative_url }})
+{: .jcu-page-navigation}
