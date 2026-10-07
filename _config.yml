@@ -40,6 +40,12 @@ theme_settings:
   card_heading_line_height: "1.2"
   label_letter_spacing: "0.09em"
 
+  # Landing heroes and blocks select these pairs with background: "primary"
+  # or "secondary" in page front matter. Omit background for the normal page
+  # background. Coloured landing blocks and heroes span the window width.
+  # Use type: "standard" for text/image/action sections; select their colour
+  # with background rather than the former feature/highlight types.
+  # Heroes over images can override text_color and link_color for readability.
   primary_color: "#354F52"
   primary_text_color: "#FFFFFF"
   primary_link_color: "#FFFFFF"
@@ -55,6 +61,8 @@ theme_settings:
   background_text_color: "#354F52"
   background_link_color: "#354F52"
 
+  # Cards and the second action button use the surface colour pair.
+  # "surface" is not a supported landing-block background value.
   surface_color: "#FFFFFF"
   surface_text_color: "#354F52"
   surface_link_color: "#354F52"
@@ -91,6 +99,9 @@ theme_settings:
 
   # block_separator_style options: "none", "line", "accent", "band"
   block_separator_style: "none"
+  # Default separators for landing blocks without a primary/secondary background.
+  # A block's separator field overrides this default; coloured blocks always
+  # hide separators, even when separator: true is set.
   landing_block_separators: false
 
   partner_logo_max_height: "6rem"
