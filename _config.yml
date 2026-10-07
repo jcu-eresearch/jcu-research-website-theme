@@ -18,6 +18,27 @@ theme_settings:
 
   font_family: "Lato, Arial, Helvetica, sans-serif"
   heading_font_family: "Lora, Georgia, serif"
+  # Match the downloaded families, weights and styles to the settings below.
+  # Use [] for system fonts, or a site path for a self-hosted font stylesheet.
+  font_stylesheets:
+    - "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+  font_size_scale: "1"
+  body_font_size: "1rem"
+  body_line_height: "1.65"
+  body_letter_spacing: "0"
+  heading_line_height: "1.15"
+  heading_letter_spacing: "0"
+  font_weight_regular: "400"
+  font_weight_bold: "700"
+  font_weight_emphasis: "700"
+  font_weight_heavy: "900"
+  heading_font_weight: "700"
+  compact_line_height: "1.4"
+  hero_heading_line_height: "1.1"
+  hero_text_line_height: "1.55"
+  display_line_height: "1"
+  card_heading_line_height: "1.2"
+  label_letter_spacing: "0.09em"
 
   primary_color: "#354F52"
   primary_text_color: "#FFFFFF"

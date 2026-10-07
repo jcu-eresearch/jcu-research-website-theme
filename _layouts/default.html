@@ -12,9 +12,13 @@
     {% if site.theme_settings.app_icon %}
       <link rel="apple-touch-icon" href="{{ site.theme_settings.app_icon | relative_url }}">
     {% endif %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
+    {% for font_stylesheet in site.theme_settings.font_stylesheets %}
+      {% if font_stylesheet contains "://" %}
+        <link rel="stylesheet" href="{{ font_stylesheet | escape }}">
+      {% else %}
+        <link rel="stylesheet" href="{{ font_stylesheet | relative_url | escape }}">
+      {% endif %}
+    {% endfor %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% if page.layout == "jcudl-catalog" %}
       {% assign jcudl_icon_stylesheet = page.jcudl_icon_stylesheet | default: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" %}

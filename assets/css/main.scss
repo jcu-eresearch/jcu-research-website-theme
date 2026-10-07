@@ -44,6 +44,23 @@
 
   --font-body: {{ site.theme_settings.font_family | default: "Lato, Arial, Helvetica, sans-serif" }};
   --font-heading: {{ site.theme_settings.heading_font_family | default: "Lora, Georgia, serif" }};
+  --font-size-scale: {{ site.theme_settings.font_size_scale | default: "1" }};
+  --body-font-size: {{ site.theme_settings.body_font_size | default: "1rem" }};
+  --body-line-height: {{ site.theme_settings.body_line_height | default: "1.65" }};
+  --body-letter-spacing: {{ site.theme_settings.body_letter_spacing | default: "0" }};
+  --heading-line-height: {{ site.theme_settings.heading_line_height | default: "1.15" }};
+  --heading-letter-spacing: {{ site.theme_settings.heading_letter_spacing | default: "0" }};
+  --font-weight-regular: {{ site.theme_settings.font_weight_regular | default: "400" }};
+  --font-weight-bold: {{ site.theme_settings.font_weight_bold | default: "700" }};
+  --font-weight-emphasis: {{ site.theme_settings.font_weight_emphasis | default: "700" }};
+  --font-weight-heavy: {{ site.theme_settings.font_weight_heavy | default: "900" }};
+  --heading-font-weight: {{ site.theme_settings.heading_font_weight | default: "700" }};
+  --compact-line-height: {{ site.theme_settings.compact_line_height | default: "1.4" }};
+  --hero-heading-line-height: {{ site.theme_settings.hero_heading_line_height | default: "1.1" }};
+  --hero-text-line-height: {{ site.theme_settings.hero_text_line_height | default: "1.55" }};
+  --display-line-height: {{ site.theme_settings.display_line_height | default: "1" }};
+  --card-heading-line-height: {{ site.theme_settings.card_heading_line_height | default: "1.2" }};
+  --label-letter-spacing: {{ site.theme_settings.label_letter_spacing | default: "0.09em" }};
   --color-primary: {{ site.theme_settings.primary_color | default: "#354F52" }};
   --color-primary-text: {{ site.theme_settings.primary_text_color | default: "#FFFFFF" }};
   --color-primary-link: {{ site.theme_settings.primary_link_color | default: "#FFFFFF" }};
@@ -98,13 +115,19 @@ input[type="reset"] {
   border-radius: var(--button-radius);
 }
 
+html {
+  font-size: calc(100% * var(--font-size-scale));
+}
+
 body {
   margin: 0;
   color: var(--color-text);
   background: var(--color-primary);
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: var(--body-font-size);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--body-letter-spacing);
+  line-height: var(--body-line-height);
 }
 
 img {
@@ -181,7 +204,7 @@ a:hover {
   margin-bottom: 1.25rem;
   color: var(--color-text);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .breadcrumbs ol {
@@ -235,8 +258,8 @@ a:hover {
   margin: 0 0 0.7rem;
   color: var(--color-primary);
   font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0;
+  font-weight: var(--font-weight-emphasis);
+  letter-spacing: var(--heading-letter-spacing);
   text-transform: uppercase;
 }
 
@@ -247,9 +270,10 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  font-weight: var(--heading-font-weight);
   color: var(--color-heading);
-  line-height: 1.15;
-  letter-spacing: 0;
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
 }
 
 .page-header h1,
@@ -364,8 +388,8 @@ h3 {
   border-radius: 0.2rem;
   font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.4;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--compact-line-height);
   white-space: nowrap;
 }
 
@@ -548,7 +572,7 @@ h3 {
 
 .prose dt {
   color: var(--color-heading);
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .prose dd {
@@ -611,7 +635,7 @@ h3 {
 .prose thead th {
   color: var(--table-header-text);
   background: var(--table-header-background);
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .prose thead th:first-child {
@@ -733,7 +757,7 @@ h3 {
   padding: 1rem;
   color: #fff;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.72));
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
   opacity: 0;
   transform: translateY(0.5rem);
   transition: opacity 180ms ease, transform 180ms ease;
@@ -947,7 +971,7 @@ h3 {
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem;
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .colour-sample-body {
@@ -970,7 +994,7 @@ h3 {
 
 .colour-sample dt {
   color: var(--color-text);
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .colour-sample dd {
@@ -984,7 +1008,7 @@ h3 {
 
 .colour-sample p {
   margin: 0;
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .image-gallery {
@@ -1025,7 +1049,7 @@ h3 {
   padding: 1rem;
   color: #fff;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.72));
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .gallery-item:hover img {
@@ -1130,7 +1154,7 @@ a.partner-logo:hover {
 
 .page-card-link {
   margin-top: auto;
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .page-card-text {
@@ -1248,7 +1272,7 @@ a.partner-logo:hover {
   margin: 0;
   color: var(--hero-text-color, var(--color-primary));
   font-size: clamp(2rem, 4.5vw, 2.65rem);
-  line-height: 1.1;
+  line-height: var(--hero-heading-line-height);
 }
 
 .landing-hero-heading--center h1 {
@@ -1268,7 +1292,7 @@ a.partner-logo:hover {
   margin: 1.25rem 0 0;
   color: var(--hero-text-color, var(--color-text));
   font-size: clamp(1.12rem, 2.4vw, 1.35rem);
-  line-height: 1.55;
+  line-height: var(--hero-text-line-height);
 }
 
 .landing-hero-lead a {
@@ -1346,7 +1370,7 @@ a.partner-logo:hover {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--button-radius);
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
   text-decoration: none;
 }
 
@@ -1526,7 +1550,7 @@ a.partner-logo:hover {
   display: inline-flex;
   margin-top: 1rem;
   color: var(--color-link);
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .landing-section-actions {
@@ -1592,7 +1616,7 @@ a.partner-logo:hover {
 .landing-card-body > a {
   display: inline-flex;
   margin-top: 1rem;
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .landing-achievement {
@@ -1608,7 +1632,7 @@ a.partner-logo:hover {
   place-items: center;
   color: var(--color-surface-text);
   background: transparent;
-  font-weight: 900;
+  font-weight: var(--font-weight-heavy);
 }
 
 .landing-achievement img {
@@ -1621,7 +1645,7 @@ a.partner-logo:hover {
 .landing-achievement > strong {
   color: var(--color-surface-text);
   font-size: 2rem;
-  line-height: 1;
+  line-height: var(--display-line-height);
 }
 
 .landing-carousel-frame {
@@ -1660,7 +1684,7 @@ a.partner-logo:hover {
 .landing-carousel-slide figcaption {
   padding: 1rem;
   color: var(--color-surface-text);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .landing-carousel-controls {
@@ -1681,7 +1705,7 @@ a.partner-logo:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--button-radius);
   font: inherit;
-  font-weight: 900;
+  font-weight: var(--font-weight-heavy);
   cursor: pointer;
 }
 
@@ -1876,8 +1900,8 @@ a.partner-logo:hover {
   align-items: center;
   color: var(--header-link-color);
   font-family: var(--font-body);
-  font-weight: 900;
-  line-height: 1.2;
+  font-weight: var(--font-weight-heavy);
+  line-height: var(--card-heading-line-height);
   text-decoration: none;
 }
 
@@ -1919,7 +1943,7 @@ a.partner-logo:hover {
 
 .header-nav-link,
 .header-submenu a {
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
   text-decoration: none;
 }
 
@@ -2077,7 +2101,7 @@ a.partner-logo:hover {
     border: 0;
     border-radius: var(--button-radius);
     font: inherit;
-    font-weight: 800;
+    font-weight: var(--font-weight-emphasis);
     cursor: pointer;
   }
 
@@ -2293,7 +2317,7 @@ a.partner-logo:hover {
   padding: 1rem;
   color: #fff;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.72));
-  font-weight: 800;
+  font-weight: var(--font-weight-emphasis);
 }
 
 .jcu-partner-logos {
@@ -2434,11 +2458,17 @@ a.partner-logo:hover {
   margin: 0 0 0.55rem;
   color: var(--color-surface-text);
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--label-letter-spacing);
   text-transform: uppercase;
 }
 
 .jcu-card-category {
   @extend .page-card-category;
+}
+
+/* Keep semantic emphasis aligned with the configured body font weights. */
+b,
+strong {
+  font-weight: var(--font-weight-bold);
 }

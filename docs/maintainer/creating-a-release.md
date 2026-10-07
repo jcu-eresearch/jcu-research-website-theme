@@ -91,16 +91,43 @@ Choose one of the two tag-creation methods below. The terminal method pins the e
 
 ### Create and push an annotated tag
 
-Replace RELEASE_COMMIT_SHA with the full tested commit ID. Run these commands in the theme repository only after the checks pass:
+An annotated tag gives a name, such as `v1.0.0`, to the complete repository snapshot at a particular commit. It also records a message and the person who created the tag. It includes all tracked files at that commit, not just the files changed by that commit.
+
+Run the following commands in the theme repository after the release checks pass. Replace `RELEASE_COMMIT_SHA` with the full commit ID you recorded and tested, and replace `v1.0.0` consistently with your chosen version.
+
+First, create the tag locally and check which commit it identifies:
 
 ```bash
 git tag -a v1.0.0 RELEASE_COMMIT_SHA -m "Release v1.0.0"
-git show --no-patch v1.0.0
+git rev-parse "v1.0.0^{commit}"
+```
+
+The second command prints the full commit ID identified by the tag. Compare it with your recorded release commit ID. They must match before you upload the tag. This check does not change any files.
+
+If Git reports that the tag already exists, stop and inspect it with the same `git rev-parse` command. Do not delete or overwrite it to make the command succeed. If the name already identifies a different published release, choose a new version number.
+
+Once the local check passes, upload that specific tag to GitHub:
+
+```bash
 git push origin v1.0.0
+```
+
+This uploads only `v1.0.0`. Avoid `git push --tags`, which could upload other local tags that you did not intend to publish. If Git rejects the upload because the tag already exists on GitHub, inspect the remote tag before proceeding; do not force-push over it.
+
+Finally, check the tag stored on GitHub:
+
+```bash
 git ls-remote --tags origin refs/tags/v1.0.0 "refs/tags/v1.0.0^{}"
 ```
 
-Check the tag points to the tested commit. For an annotated tag, the line ending in ^{} shows the underlying commit ID. Push the named tag only, rather than all local tags. If Git says the tag exists, stop and inspect it; do not overwrite it.
+For an annotated tag, this normally prints two lines:
+
+```text
+TAG_OBJECT_ID      refs/tags/v1.0.0
+RELEASE_COMMIT_ID  refs/tags/v1.0.0^{}
+```
+
+The first ID identifies the tag's own information, including its message. The second line, ending in `^{}`, identifies the actual repository commit. Compare the second ID with your recorded release commit ID; they must match. The placeholders above represent full IDs in the actual output. If the tag is missing or the commit differs, resolve that before creating the GitHub Release.
 
 ### Create the release in GitHub
 

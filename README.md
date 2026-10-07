@@ -146,6 +146,12 @@ Set colours, logos, fonts and other options under `theme_settings` in your site'
 `_config.yml`. The theme supplies generic assets; replace them with your project's
 own branding. It includes no institutional logo.
 
+Font families and loading are configured together: set `font_family`,
+`heading_font_family`, and `font_stylesheets`. Use an empty stylesheet list for
+system fonts. Sites upgrading from the fixed Google Fonts loader must explicitly
+list their font stylesheet to keep downloading Lato and Lora. Shared typography
+settings control size scaling, weights, line heights, and letter spacing.
+
 Each configurable background has matching text and link colours. Choose these
 together and check their contrast. Tables receive subtle stripes on recognised
 light backgrounds and remain unshaded on dark backgrounds. In coloured blocks,
