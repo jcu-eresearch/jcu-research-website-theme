@@ -10,44 +10,7 @@ layout: default
 <article class="landing-page">
   {% assign hero = page.hero %}
   {% if hero %}
-    {% assign hero_type = hero.type | default: 'split' %}
-    {% assign hero_title_alignment = hero.title_alignment | default: 'left' %}
-    {% assign hero_has_background_image = false %}
-    {% if hero_type == 'background' and hero.background_image %}
-      {% assign hero_has_background_image = true %}
-    {% endif %}
-    {% assign hero_separator = landing_block_separators %}
-    {% unless hero.separator == nil %}
-      {% assign hero_separator = hero.separator %}
-    {% endunless %}
-    <header class="landing-hero landing-hero--{{ hero_type }}{% if hero_has_background_image %} landing-hero--with-background-image{% endif %}{% if hero_separator %} landing-block--separator{% endif %}"
-      {% if hero.background_color or hero.text_color or hero.link_color or hero.overlay_opacity or hero_has_background_image %}
-        style="{% if hero.background_color %}--hero-background-color: {{ hero.background_color }};{% endif %}{% if hero.text_color %} --hero-text-color: {{ hero.text_color }};{% endif %}{% if hero.link_color %} --hero-link-color: {{ hero.link_color }};{% endif %}{% if hero.overlay_opacity %} --hero-overlay-opacity: {{ hero.overlay_opacity }};{% endif %}{% if hero_has_background_image %} --hero-background-image: url('{{ hero.background_image | relative_url }}');{% endif %}"
-      {% endif %}>
-      <div class="landing-hero-heading landing-hero-heading--{{ hero_title_alignment }}">
-        {% if hero.eyebrow %}
-          <p class="eyebrow">{{ hero.eyebrow }}</p>
-        {% endif %}
-        <h1>{{ hero.title | default: page.title }}</h1>
-      </div>
-      <div class="landing-hero-content">
-        {% if hero.lead %}
-          <div class="landing-hero-lead">{{ hero.lead | markdownify }}</div>
-        {% endif %}
-        {% if hero.actions %}
-          <div class="landing-actions">
-            {% for action in hero.actions %}
-              <a class="landing-button{% if forloop.first %} landing-button--primary{% else %} landing-button--secondary{% endif %}" href="{% include link-url.html url=action.url %}">{{ action.label }}</a>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-      {% if hero_type == 'split' and hero.image %}
-        <figure class="landing-hero-media{% if hero.image_fit == 'contain' %} landing-hero-media--contain{% endif %}">
-          <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt | default: '' }}">
-        </figure>
-      {% endif %}
-    </header>
+    {% include landing-hero.html hero=hero tag="header" heading="h1" default_separator=landing_block_separators %}
   {% else %}
     <header class="landing-hero landing-hero--simple{% if landing_block_separators %} landing-block--separator{% endif %}">
       <div class="landing-hero-content">
@@ -59,7 +22,8 @@ layout: default
     </header>
   {% endif %}
 
-  {% if content != blank %}
+  {% assign landing_body = content | strip %}
+  {% if landing_body != empty %}
     {% assign content_separator = landing_block_separators %}
     {% unless page.content_separator == nil %}
       {% assign content_separator = page.content_separator %}
@@ -76,11 +40,11 @@ layout: default
       {% when "carousel" %}
         {% include landing-carousel.html block=block index=forloop.index default_separator=landing_block_separators %}
       {% when "standard" %}
-        {% include landing-section.html section=block style="standard" default_separator=landing_block_separators %}
-      {% when "feature" %}
-        {% include landing-section.html section=block style="feature" default_separator=landing_block_separators %}
-      {% when "highlight" %}
-        {% include landing-section.html section=block style="highlight" default_separator=landing_block_separators %}
+        {% include landing-section.html section=block default_separator=landing_block_separators %}
+      {% when "split-hero" %}
+        {% include landing-hero.html hero=block type="split" default_separator=landing_block_separators %}
+      {% when "background-hero" %}
+        {% include landing-hero.html hero=block type="background" default_separator=landing_block_separators %}
       {% when "partner-logos" %}
         {% include landing-partners.html block=block index=forloop.index default_separator=landing_block_separators %}
       {% when "page-cards" %}

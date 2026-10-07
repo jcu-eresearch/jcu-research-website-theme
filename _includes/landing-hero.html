@@ -1,0 +1,44 @@
+{% assign hero = include.hero %}
+{% assign hero_tag = include.tag | default: "section" %}
+{% assign hero_heading = include.heading | default: "h2" %}
+{% assign hero_type = include.type | default: hero.type | default: 'split' %}
+{% assign hero_title_alignment = hero.title_alignment | default: 'left' %}
+{% assign hero_has_background_image = false %}
+{% if hero_type == 'background' and hero.background_image %}
+  {% assign hero_has_background_image = true %}
+{% endif %}
+{% assign hero_separator = include.default_separator %}
+{% unless hero.separator == nil %}
+  {% assign hero_separator = hero.separator %}
+{% endunless %}
+{% if hero.background == "primary" or hero.background == "secondary" %}
+  {% assign hero_separator = false %}
+{% endif %}
+<{{ hero_tag }}{% if hero.id %} id="{{ hero.id }}"{% endif %} class="landing-hero landing-hero--{{ hero_type }}{% if hero.background == 'primary' or hero.background == 'secondary' %} landing-hero--bg-{{ hero.background }}{% endif %}{% if hero_has_background_image %} landing-hero--with-background-image{% endif %}{% if hero_separator %} landing-block--separator{% endif %}"
+  {% if hero.background_color or hero.text_color or hero.link_color or hero.overlay_opacity or hero_has_background_image %}
+    style="{% if hero.background_color %}--hero-background-color: {{ hero.background_color }};{% endif %}{% if hero.text_color %} --hero-text-color: {{ hero.text_color }};{% endif %}{% if hero.link_color %} --hero-link-color: {{ hero.link_color }};{% endif %}{% if hero.overlay_opacity %} --hero-overlay-opacity: {{ hero.overlay_opacity }};{% endif %}{% if hero_has_background_image %} --hero-background-image: url('{{ hero.background_image | relative_url }}');{% endif %}"
+  {% endif %}>
+  <div class="landing-hero-heading landing-hero-heading--{{ hero_title_alignment }}">
+    {% if hero.eyebrow %}
+      <p class="eyebrow">{{ hero.eyebrow }}</p>
+    {% endif %}
+    <{{ hero_heading }}>{{ hero.title | default: page.title }}</{{ hero_heading }}>
+  </div>
+  <div class="landing-hero-content">
+    {% if hero.lead %}
+      <div class="landing-hero-lead">{{ hero.lead | markdownify }}</div>
+    {% endif %}
+    {% if hero.actions %}
+      <div class="landing-actions">
+        {% for action in hero.actions limit: 2 %}
+          <a class="landing-button{% if forloop.first %} landing-button--primary{% else %} landing-button--secondary{% endif %}" href="{% include link-url.html url=action.url %}">{{ action.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  {% if hero_type == 'split' and hero.image %}
+    <figure class="landing-hero-media{% if hero.image_fit == 'contain' %} landing-hero-media--contain{% endif %}">
+      <img src="{{ hero.image | relative_url }}" alt="{{ hero.image_alt | default: '' }}">
+    </figure>
+  {% endif %}
+</{{ hero_tag }}>

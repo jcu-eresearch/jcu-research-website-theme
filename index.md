@@ -14,7 +14,8 @@ hero:
     - label: "Read the README"
       url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
 blocks:
-  - type: "feature"
+  - type: "standard"
+    background: "secondary"
     title: "Build a professional project site quickly"
     id: "theme-overview"
     eyebrow: "Theme purpose"
@@ -71,7 +72,8 @@ blocks:
         text: "Write readable pages with headings, lists, quotations, tables, links, and images using simple Markdown syntax."
         link_text: "Explore Markdown formatting"
         url: "/sample-content/markdown-formats/"
-  - type: "highlight"
+  - type: "standard"
+    background: "primary"
     title: "Use a starter site"
     eyebrow: "Recommended workflow"
     cards:
@@ -120,7 +122,8 @@ blocks:
         text: "Check accessibility and colour choices, preview your site, troubleshoot problems, and keep your content current."
         link_text: "Check your website"
         url: "/check-and-maintain/"
-  - type: "feature"
+  - type: "standard"
+    background: "secondary"
     title: "Designed to stay maintainable"
     eyebrow: "For project teams"
     content: |

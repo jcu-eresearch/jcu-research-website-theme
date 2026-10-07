@@ -10,11 +10,11 @@ summary: "Examples of each block and style available in the landing-page layout.
 content_separator: true
 hero:
   type: "background"
-  eyebrow: "Full-width layout sample"
+  eyebrow: "background-hero"
   title: "Landing page blocks"
   title_alignment: "center"
-  lead: "Use this page to see each landing page section style and understand which front matter fields are optional."
-  background_color: "#102A20"
+  lead: "This background hero (type: background) places content over a full-width background image. Explore the split hero and other landing blocks below."
+  background: "secondary"
   background_image: "/assets/sample-images/rainforest-canopy-hero.jpg"
   text_color: "#FFFFFF"
   link_color: "#FFFFFF"
@@ -25,8 +25,34 @@ hero:
     - label: "Read documentation"
       url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
 blocks:
+  - type: "split-hero"
+    background: "primary"
+    eyebrow: "split-hero"
+    title: "Split hero block"
+    lead: |
+      This split hero uses `type: "split-hero"` in the blocks list. It places an image beside the lead and actions, with its heading above both. `background: "primary"` selects the matching theme text and link colours.
+    image: "/assets/images/rwt/hero-reverse-mono-transparent.png"
+    image_fit: "contain"
+    image_alt: "RWT tropical leaf logo"
+    actions:
+      - label: "Read the landing-page guide"
+        url: "/build-your-pages/landing-page-styles/"
+      - label: "Browse samples"
+        url: "/sample-content/"
+  - type: "standard"
+    eyebrow: "standard"
+    title: "How to use landing page blocks"
+    content: |
+      Create a page with `layout: landing-page`, then add a `hero` and the ordered `blocks` the page needs.
+
+      Each item in `blocks` needs a `type`: `achievements`, `carousel`, `standard`, `page-cards`, `partner-logos`, `split-hero`, or `background-hero`. The blocks render in the order they appear in the YAML `blocks` list, from top to bottom.
+
+      Every landing block accepts `background: "primary"` or `"secondary"`. Omit it for the normal page background. The `standard` type handles text, images, actions, and cards on any of these backgrounds.
+
+      The only block most landing pages should always have is `hero`. Everything in `blocks` is optional and can be added or reordered as the project grows.
   - type: "achievements"
-    eyebrow: "Achievement tiles"
+    background: "secondary"
+    eyebrow: "achievements"
     title: "Achievements block"
     lead: "Use achievements for project metrics, major outputs, milestones, or key facts. `eyebrow`, `lead`, and `separator` are optional. Each item can use a `value`, an `icon`, or an `image`."
     items:
@@ -40,13 +66,8 @@ blocks:
         image_alt: "Green turtle"
         label: "Field sites"
         text: "Use `image` and `image_alt` when a small picture is more meaningful."
-  - type: "feature"
-    title: "Section before the carousel"
-    eyebrow: "Placement"
-    content: |
-      This `type: "feature"` block uses the configured secondary colour. Its position in `blocks` places it between achievements and the carousel.
   - type: "carousel"
-    eyebrow: "Image carousel"
+    eyebrow: "carousel"
     title: "Carousel block"
     lead: "Use the carousel for fieldwork, project locations, lab work, community activities, or visual summaries. The carousel `eyebrow`, `title`, `lead`, `separator`, and slide `caption` fields are optional."
     items:
@@ -62,18 +83,18 @@ blocks:
   - type: "standard"
     id: "standard-section"
     title: "Standard text section"
-    eyebrow: "Default"
+    eyebrow: "standard"
     content: |
       This is the default landing section style. Use it for ordinary explanatory content.
 
       Required: `type: "standard"` and `title`.
 
-      Optional: `id`, `eyebrow`, `content`, `link_text`, `link_url`, `actions`, `image`, `image_alt`, `image_position`, `cards`, and `separator`.
+      Optional: `id`, `eyebrow`, `content`, `link_text`, `link_url`, `actions`, `image`, `image_alt`, `image_position`, `cards`, `background`, and `separator`.
     link_text: "Browse content samples"
     link_url: "/sample-content/"
   - type: "standard"
     title: "Section with image"
-    eyebrow: "Media"
+    eyebrow: "standard"
     image: "/assets/sample-images/card-research-context.svg"
     image_alt: "Abstract research context image"
     content: |
@@ -82,33 +103,35 @@ blocks:
       Optional: set `image_position: "left"` to reverse the layout.
   - type: "standard"
     title: "Image on the left"
-    eyebrow: "Media"
+    eyebrow: "standard"
     image_position: "left"
     image: "/assets/sample-images/card-project-setting.svg"
     image_alt: "Abstract project setting image"
     content: |
       This section uses `image_position: "left"`. The layout stacks cleanly on small screens.
-  - type: "feature"
-    title: "Feature band"
-    eyebrow: "Style"
+  - type: "standard"
+    background: "secondary"
+    title: "Standard block on secondary background"
+    eyebrow: "standard"
     image: "/assets/sample-images/card-tree-kangaroo.svg"
     image_alt: "Abstract feature image"
     content: |
-      Use `type: "feature"` for a full-width background band. It uses `secondary_color` from `_config.yml`.
+      Use `type: "standard"` with `background: "secondary"` for a full-width background band. It uses `secondary_color` from `_config.yml`.
 
       Good for project summaries, research focus areas, or sections that need gentle emphasis.
-  - type: "highlight"
-    title: "Highlight band"
-    eyebrow: "Style"
+  - type: "standard"
+    background: "primary"
+    title: "Standard block on primary background"
+    eyebrow: "standard"
     content: |
-      Use `type: "highlight"` for a strong full-width band using `primary_color`.
+      Use `type: "standard"` with `background: "primary"` for a strong full-width band using `primary_color`.
 
       Good for impacts, calls to action, key findings, or short statements that should stand apart.
     link_text: "View generated species cards"
     link_url: "#species-page-cards"
   - type: "standard"
     title: "Card grid section"
-    eyebrow: "Cards"
+    eyebrow: "standard"
     cards:
       - title: "Card with image"
         card_category: "Species profile"
@@ -125,9 +148,10 @@ blocks:
         image: "/assets/sample-images/card-crocodile.svg"
         image_alt: "Estuarine crocodile"
         text: "Leave out `url` and `link_text` when the card is informational only."
-  - type: "feature"
-    title: "Feature card grid"
-    eyebrow: "Cards"
+  - type: "standard"
+    background: "secondary"
+    title: "Standard card grid on secondary background"
+    eyebrow: "standard"
     cards:
       - title: "Markdown content blocks"
         text: "See how Markdown content blocks present text, images, galleries, and cards."
@@ -143,9 +167,9 @@ blocks:
         url: "/sample-content/configured-colours/"
   - type: "standard"
     title: "Section with action buttons"
-    eyebrow: "Actions"
+    eyebrow: "standard"
     content: |
-      Add up to two optional `actions` to any landing section. The first action uses the primary colour and the second uses the secondary colour.
+      Add up to two optional `actions` to any landing section. The first action uses the primary colour and the second uses the surface colour.
     actions:
       - label: "Contact us"
         url: "/contact/"
@@ -153,31 +177,57 @@ blocks:
         url: "/sample-content/"
   - type: "page-cards"
     id: "species-page-cards"
-    eyebrow: "Generated from pages"
+    eyebrow: "page-cards"
     title: "Page cards block, three per row"
     folder: "sample-content/animals/"
     columns: 3
     link_text: "Read species profile"
-    background: "primary"
+    background: "secondary"
     separator: true
     content: |
-      These cards are collected from the animals folder and displayed in page order. The primary background fills the browser width, while each card uses the configured surface colours.
+      These cards are collected from the animals folder and displayed in page order. The secondary background fills the browser width, while each card uses the configured surface colours.
   - type: "page-cards"
+    eyebrow: "page-cards"
     title: "Page cards block, one per row"
     folder: "sample-content/animals/"
     columns: 1
     link_text: "Open full profile"
     content: |
       With `columns: 1`, images sit beside their summaries on desktop and stack above them on smaller screens. Omit `background` to use the normal page background.
+  - type: "standard"
+    eyebrow: "standard"
+    background: "primary"
+    title: "Table on primary background"
+    content: |
+      The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
+  - type: standard
+    eyebrow: "standard"
+    title: "Table on standard background"
+    content: |
+      No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
+
+      | Activity | Habitat | Purpose |
+      | --- | --- | --- |
+      | Wildlife survey | Rainforest | Record species observations. |
+      | Water sampling | Estuary | Monitor water quality. |
+      | Nest monitoring | Coast | Track nesting success. |
+      | Habitat mapping | Reef | Identify important habitat areas. |
   - type: "partner-logos"
     background: "primary"
     columns: 2
-    eyebrow: "Partners"
+    eyebrow: "partner-logos"
     title: "Partner logos with background: primary"
     content: |
       White reverse mono logos have transparent backgrounds, so the primary colour shows through their negative spaces.
 
-      Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. The title is optional, and this example leaves it blank. Place the block wherever it belongs in `blocks`.
+      Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. The title is optional. Place the block wherever it belongs in `blocks`.
     items:
       - name: "Partner organisation"
         logo: "/assets/sample-images/partner-placeholder-reverse-mono.svg"
@@ -190,7 +240,7 @@ blocks:
   - type: "partner-logos"
     background: "secondary"
     columns: 3
-    eyebrow: "Partners"
+    eyebrow: "partner-logos"
     title: "Partners on a secondary background"
     content: |
       Use `type: "partner-logos"` for funders, collaborators, institutions, and participating groups. This example displays a heading and uses a secondary background with up to three logos per row. Place the block wherever it belongs in `blocks`.
@@ -203,36 +253,4 @@ blocks:
         logo: "/assets/sample-images/partner-reef.svg"
       - name: "Funding partner"
         logo: "/assets/sample-images/partner-mosaic.svg"
-  - type: highlight
-    title: "Table on primary background"
-    content: |
-      The table uses the primary background and matching text colours. Light backgrounds receive subtle alternating row stripes; dark backgrounds remain unshaded. Borders separate the rows.
-
-      | Activity | Habitat | Purpose |
-      | --- | --- | --- |
-      | Wildlife survey | Rainforest | Record species observations. |
-      | Water sampling | Estuary | Monitor water quality. |
-      | Nest monitoring | Coast | Track nesting success. |
-      | Habitat mapping | Reef | Identify important habitat areas. |
-  - type: standard
-    title: "Table on standard background"
-    content: |
-      No background colour is specified for this block. The table body uses the standard page background and matching text colours, with subtle alternating stripes when that background is light.
-
-      | Activity | Habitat | Purpose |
-      | --- | --- | --- |
-      | Wildlife survey | Rainforest | Record species observations. |
-      | Water sampling | Estuary | Monitor water quality. |
-      | Nest monitoring | Coast | Track nesting success. |
-      | Habitat mapping | Reef | Identify important habitat areas. |
 ---
-
-## How to use landing page blocks
-
-Create a page with `layout: landing-page`, then add a `hero` and the ordered `blocks` the page needs.
-
-Each item in `blocks` needs a `type`: `achievements`, `carousel`, `standard`, `feature`, `highlight`, `page-cards`, or `partner-logos`. The blocks render in list order.
-
-The `standard`, `feature`, and `highlight` types share the same content fields and differ only in presentation.
-
-The only block most landing pages should always have is `hero`. Everything in `blocks` is optional and can be added or reordered as the project grows.

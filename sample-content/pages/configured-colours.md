@@ -59,8 +59,8 @@ This page shows the background colours and their matching text and link colours 
 
 ## How these colours are used
 
-- **Primary** is used for the shared header, highlight bands, primary buttons, and structural rules.
-- **Secondary** is used for feature bands, coloured content blocks, and table headers.
+- **Primary** is used for the shared header, primary background bands, primary buttons, and structural rules.
+- **Secondary** is used for secondary background bands, coloured content blocks, and table headers.
 - **Background** is used for the main page and open content areas.
 - **Surface** is used for cards, panels, menus, and neutral buttons.
 - **Note, Important, Warning, and Caution** each have a configured background, left-border colour, and matching text and link colours. These settings are shared by YAML and Markdown alert blocks.

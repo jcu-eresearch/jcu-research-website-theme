@@ -3,13 +3,16 @@
 {% unless block.separator == nil %}
   {% assign block_separator = block.separator %}
 {% endunless %}
+{% if block.background == "primary" or block.background == "secondary" %}
+  {% assign block_separator = false %}
+{% endif %}
 {% if block.id %}
   {% assign block_id = block.id %}
 {% else %}
   {% capture block_id %}landing-carousel-{{ include.index }}{% endcapture %}
 {% endif %}
 
-<section class="landing-section landing-carousel{% if block_separator %} landing-block--separator{% endif %}" aria-labelledby="{{ block_id }}">
+<section class="landing-section landing-carousel{% if block.background == "primary" or block.background == "secondary" %} landing-section--bg-{{ block.background }}{% endif %}{% if block_separator %} landing-block--separator{% endif %}" aria-labelledby="{{ block_id }}">
   <div class="landing-section-header">
     {% if block.eyebrow %}
       <p class="eyebrow">{{ block.eyebrow }}</p>

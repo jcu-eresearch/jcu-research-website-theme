@@ -1,11 +1,13 @@
 {% assign section = include.section %}
-{% assign section_style = include.style | default: "standard" %}
 {% assign section_separator = include.default_separator %}
 {% unless section.separator == nil %}
   {% assign section_separator = section.separator %}
 {% endunless %}
+{% if section.background == "primary" or section.background == "secondary" %}
+  {% assign section_separator = false %}
+{% endif %}
 
-<section{% if section.id %} id="{{ section.id }}"{% endif %} class="landing-section landing-section--{{ section_style }}{% if section.image %} landing-section--with-media{% endif %}{% if section.image_position == 'left' %} landing-section--image-left{% endif %}{% if section_separator %} landing-block--separator{% endif %}">
+<section{% if section.id %} id="{{ section.id }}"{% endif %} class="landing-section{% if section.background == "primary" or section.background == "secondary" %} landing-section--bg-{{ section.background }}{% endif %}{% if section.image %} landing-section--with-media{% endif %}{% if section.image_position == 'left' %} landing-section--image-left{% endif %}{% if section_separator %} landing-block--separator{% endif %}">
   <div class="landing-section-body">
     {% if section.eyebrow %}
       <p class="eyebrow">{{ section.eyebrow }}</p>

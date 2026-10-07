@@ -20,7 +20,7 @@ theme_settings:
   button_shape: "rectangular"
 ```
 
-When `landing_block_separators` is `true`, landing blocks show separator bars unless a block sets `separator: false`. When it is `false`, blocks hide separator bars unless a block sets `separator: true`.
+For blocks without a theme background, `landing_block_separators: true` shows separator bars unless a block sets `separator: false`; when the default is `false`, a block can enable one with `separator: true`. Blocks with `background: "primary"` or `"secondary"` always hide separator bars, including when `separator: true` is set.
 
 Set `theme_settings.button_shape` to `rectangular` (the default, with slightly
 rounded corners) or `lozenge` (fully rounded ends). Hero and section action
@@ -35,6 +35,7 @@ title: Home
 permalink: /
 hero:
   type: "split"
+  background: "primary"
   eyebrow: "Research project"
   title: "Research with purpose, shared with clarity"
   lead: "A short plain-language description of the project."
@@ -56,14 +57,30 @@ blocks:
 ---
 ```
 
-The hero follows `theme_settings.landing_block_separators` unless `hero.separator` is set.
+The hero follows `theme_settings.landing_block_separators` unless `hero.separator` is set. A primary or secondary background suppresses its separator.
 
-There are two hero types:
+The top-level `hero` uses `type: "split"` or `"background"`. To place additional heroes in the ordered `blocks` list, use `type: "split-hero"` or `"background-hero"` with the same fields. Additional heroes use level-two headings, while the top hero supplies the page heading. For example:
 
-- `type: "split"` (the default) places a separate image beside the lead and actions. Supply `image` and `image_alt`. Its eyebrow and title span the hero above the lead, actions, and image. An optional `background_color` fills the hero behind them.
+```yml
+blocks:
+  - type: "split-hero"
+    background: "primary"
+    eyebrow: "Research project"
+    title: "Meet our project"
+    lead: "A split hero placed below the top hero."
+    image: "/assets/images/rwt/hero-reverse-mono-transparent.png"
+    image_fit: "contain"
+    image_alt: "RWT tropical leaf logo"
+```
+
+There are two hero presentations:
+
+- `type: "split"` (the default) places a separate image beside the lead and actions. Supply `image` and `image_alt`. Its eyebrow and title span the hero above the lead, actions, and image. Set `background: "primary"` or `"secondary"` to fill the hero behind them and automatically use that theme colour's matching text and link colours. Omit `background` for a transparent hero on the normal page background. Unrecognised values also use this default.
 - `type: "background"` places the content on a background colour that spans the full browser width. `background_image` is optional; when present, it also spans the full browser width and the background colour forms a subtle overlay. The text stays within the normal content width. Background images are decorative, so they do not use `image_alt`. Use this type when no image is needed.
 
 For a split hero displaying a logo, set `image_fit: "contain"` to show the complete image on a transparent media panel. Ordinary hero images use `cover`.
+
+The existing `background_color`, `text_color`, and `link_color` fields remain available for custom colours and override the corresponding colours selected by `background`.
 
 Both types accept `title_alignment: "left"`, `"center"`, or `"right"`; the default is left. This aligns the eyebrow and title together across the hero, while the lead and buttons keep their own layout. `text_color` optionally overrides the eyebrow, title, and lead colours, while `link_color` overrides links in the lead. Set them when a custom background or image makes the theme colours difficult to read; buttons use the text or link colour paired with their own background.
 
@@ -76,7 +93,7 @@ hero:
   title: "Research with purpose"
   title_alignment: "center"
   lead: "A short introduction to the project."
-  background_color: "#0B4F8A"
+  background: "primary"
   background_image: "/assets/sample-images/gallery-background.svg"
   text_color: "#FFFFFF"
   link_color: "#FFFFFF"
@@ -89,11 +106,13 @@ Use the ordered `blocks` list for every block below the hero. Each item needs on
 
 - `achievements`: facts, outcomes, or milestones
 - `carousel`: a sequence of project images
-- `standard`: text, images, actions, or cards on the normal page background
-- `feature`: the same fields on a band using `secondary_color`
-- `highlight`: the same fields on a strong band using `primary_color`
+- `standard`: text, images, actions, or cards
+- `split-hero`: an additional split hero with a separate image
+- `background-hero`: an additional hero with an optional background image
 - `partner-logos`: organisation and funder logos
 - `page-cards`: cards generated from pages in a folder, with configurable columns
+
+Every landing block accepts `background: "primary"` or `"secondary"`, automatically using the matching theme text and link colours. Omit `background` for the normal page background. Other values, including `surface`, do not select a theme background. Coloured sections and split heroes fill the browser width while their content stays within the normal content width.
 
 Blocks render in list order, so authors can place a section before or after the carousel without using duplicate YAML keys.
 
@@ -114,7 +133,8 @@ Markdown is supported in section `content`, hero and block `lead`, card and achi
 
 ```yml
 blocks:
-  - type: "feature"
+  - type: "standard"
+    background: "secondary"
     title: "Our research"
     eyebrow: "Focus"
     image: "/assets/sample-images/card-research-context.svg"
@@ -129,9 +149,9 @@ blocks:
     separator: true
 ```
 
-The optional `actions` list supports up to two buttons. The first uses `primary_color` with `primary_link_color`; the second uses `surface_color` with `surface_link_color` and the standard `border_color`. Hero and section buttons use the same colours and underline on hover. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
+The optional `actions` list supports up to two buttons. The first uses `primary_color` with `primary_link_color`; the second uses `surface_color` with `surface_link_color` and the standard `border_color`. Hero and section buttons use the same colours and underline on hover. On primary backgrounds, the primary button receives a border in `primary_text_color` so it remains visibly distinct. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
 
-Set `separator: true` on any block to add a primary-colour separator bar after it. Set `content_separator` in page front matter to control the separator after optional Markdown body content.
+Set `separator: true` on a block without a primary or secondary background to add a primary-colour separator bar after it. Set `content_separator` in page front matter to control the separator after optional Markdown body content.
 
 Use `id` on a section and a fragment such as `#our-research` for an action that jumps within the page. Give each ID a unique name. For achievements, carousel, and partner-logo blocks, the ID is attached to the heading; include a title when using a heading as an anchor.
 
@@ -244,7 +264,7 @@ on desktop; text-only cards fill the row. Cards stack at 900px or narrower.
 
 The heading, eyebrow, introduction, ID, and separator override are optional.
 `background: "primary"` or `"secondary"` fills the browser width using the
-highlight or feature style. Omit it for the normal page background.
+matching theme text and link colours. Omit it for the normal page background.
 `background_mode` is not used. Each card retains the surface colours.
 
 ### Optional titles and categories for generated cards
@@ -268,8 +288,8 @@ order: 1
 
 The layout uses the existing theme colours:
 
-- `primary_color` for hero headings, primary buttons, highlight sections, and structural emphasis; pair it with `primary_text_color` and `primary_link_color`
-- `secondary_color` for feature bands and coloured content-block backgrounds; pair it with `secondary_text_color` and `secondary_link_color`
+- `primary_color` for hero headings, primary buttons, primary background sections, and structural emphasis; pair it with `primary_text_color` and `primary_link_color`
+- `secondary_color` for secondary background bands and coloured content-block backgrounds; pair it with `secondary_text_color` and `secondary_link_color`
 - `background_color` for the normal page background; pair it with `background_text_color` and `background_link_color`
 - `surface_color` for cards and callouts; pair it with `surface_text_color` and `surface_link_color`
 - `warning_color` for Warning alerts; pair it with `warning_text_color` and `warning_link_color`
@@ -297,8 +317,8 @@ The layout generates these main classes:
 - `.landing-button`
 - `.landing-block--separator`
 - `.landing-section`
-- `.landing-section--feature`
-- `.landing-section--highlight`
+- `.landing-section--bg-secondary`
+- `.landing-section--bg-primary`
 - `.landing-section--with-media`
 - `.landing-card-grid`
 - `.landing-card`

@@ -3,8 +3,11 @@
 {% unless block.separator == nil %}
   {% assign block_separator = block.separator %}
 {% endunless %}
+{% if block.background == "primary" or block.background == "secondary" %}
+  {% assign block_separator = false %}
+{% endif %}
 
-<section{% if block.id %} id="{{ block.id }}"{% endif %} class="landing-section landing-page-cards{% if block.background == "primary" %} landing-section--highlight{% elsif block.background == "secondary" %} landing-section--feature{% endif %}{% if block_separator %} landing-block--separator{% endif %}">
+<section{% if block.id %} id="{{ block.id }}"{% endif %} class="landing-section landing-page-cards{% if block.background == "primary" or block.background == "secondary" %} landing-section--bg-{{ block.background }}{% endif %}{% if block_separator %} landing-block--separator{% endif %}">
   {% if block.eyebrow or block.title or block.content %}
     <div class="landing-section-body">
       <div class="landing-section-header">
