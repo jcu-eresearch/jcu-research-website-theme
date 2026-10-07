@@ -24,11 +24,11 @@ If pull reports that the branches have diverged, stop and inspect the history. D
 ### 2 Create a branch for the work
 
 ```bash
-git switch -c codex/update-build-dependencies
+git switch -c maintenance/update-build-dependencies
 git branch --show-current
 ```
 
-The example uses a dependency update. Choose another descriptive name for other work, such as codex/improve-card-spacing. Create separate branches for unrelated tasks. VS Code shows the current branch in its status bar.
+The example uses a dependency update. Choose another descriptive name for other work, such as feature/improve-card-spacing. Create separate branches for unrelated tasks. VS Code shows the current branch in its status bar.
 
 ## Develop and test the changes
 
@@ -66,14 +66,14 @@ Stage the intended files explicitly. For a dependency update, include both the G
 git add Gemfile Gemfile.lock
 git diff --cached
 git commit -m "Update GitHub Pages build dependencies"
-git push -u origin codex/update-build-dependencies
+git push -u origin maintenance/update-build-dependencies
 ```
 
 A commit saves only staged changes. The first push sets the upstream branch; later pushes can use git push. Continue making focused commits as needed. Before committing later work, run git status and confirm that you are still on the intended branch.
 
 ### 7 Open the pull request on GitHub
 
-Open the repository on GitHub. Use Compare and pull request if the branch banner appears, or select Pull requests, New pull request. Set base to main and compare to codex/update-build-dependencies. Check these selections carefully: the base receives the changes.
+Open the repository on GitHub. Use Compare and pull request if the branch banner appears, or select Pull requests, New pull request. Set base to main and compare to maintenance/update-build-dependencies. Check these selections carefully: the base receives the changes.
 
 Review Files changed, give the request a clear title, and describe the problem, final changes, validation and any setup requirements. Select Create pull request when ready, or create a draft if work is still in progress.
 
@@ -94,7 +94,7 @@ Commit and push fixes on the same development branch. The existing pull request 
 If main has advanced and the branch needs updating, first commit your work and confirm that the working tree is clean. Then merge the latest remote main into your development branch:
 
 ```bash
-git switch codex/update-build-dependencies
+git switch maintenance/update-build-dependencies
 git fetch origin
 git merge origin/main
 ```
@@ -139,10 +139,10 @@ Use Delete branch on the merged GitHub pull request if the remote branch was not
 
 ```bash
 git fetch --prune
-git branch -d codex/update-build-dependencies
+git branch -d maintenance/update-build-dependencies
 ```
 
-After a squash or rebase merge, Git may refuse -d because the original branch commits are not ancestors of main. Confirm the pull request is Merged, all intended changes are present on main, and no uncommitted or unpushed work remains. Only then use git branch -D codex/update-build-dependencies to remove the local branch. This deliberately overrides the ancestry check.
+After a squash or rebase merge, Git may refuse -d because the original branch commits are not ancestors of main. Confirm the pull request is Merged, all intended changes are present on main, and no uncommitted or unpushed work remains. Only then use git branch -D maintenance/update-build-dependencies to remove the local branch. This deliberately overrides the ancestry check.
 
 ### 15 Begin the next task or prepare a release
 

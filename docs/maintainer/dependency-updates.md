@@ -10,7 +10,7 @@ Check the [GitHub Pages gem documentation and supported dependencies](https://gi
 
 ## Update on a development branch
 
-Follow the [development workflow](development-workflow.md) to start from updated main and create a branch such as `codex/update-build-dependencies`.
+Follow the [development workflow](development-workflow.md) to start from updated main and create a branch such as `maintenance/update-build-dependencies`.
 
 The current constraint is:
 
