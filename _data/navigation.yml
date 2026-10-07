@@ -1,7 +1,5 @@
 - title: Home
   url: /
-- title: Using the Theme
-  url: /using-the-theme/
 - title: Beginners
   url: /beginners/
   children:

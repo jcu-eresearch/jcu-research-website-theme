@@ -19,6 +19,12 @@ Both layouts share the header, navigation, typography, colours, and responsive s
 
 Use a standard page when visitors need to read a connected explanation. Use a landing page when visitors need a quick overview and routes into the rest of the site. Both use YAML front matter for page settings, and both can contain Markdown body text.
 
+## Choose a homepage
+
+Use `layout: landing-page` for a homepage with a hero and distinct visual sections that introduce the project and link to more detail. Use `layout: page` for a simpler homepage built around readable text, images, and optional content blocks. A standard page can be the homepage too: give it `permalink: /`.
+
+Compare the [landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) and [standard-page content blocks]({{ "/sample-content/content-blocks/" | relative_url }}) to see the two approaches. Choose the one that best suits your research story; neither requires you to write custom CSS or JavaScript.
+
 Changing the layout name does not translate existing blocks: landing-page block fields and standard-page block fields differ. Use the matching guide when moving content between layouts.
 
 [← Overview]({{ "/build-your-pages/" | relative_url }}) [Next →]({{ "/build-your-pages/content-blocks/" | relative_url }})

@@ -1540,6 +1540,14 @@ a.partner-logo:hover {
   min-width: 9rem;
 }
 
+.landing-section > .landing-section-body ~ .landing-card-grid {
+  margin-top: 1.5rem;
+}
+
+.landing-section > .landing-section-body:not(:has(.prose, .landing-text-link, .landing-section-actions)) ~ .landing-card-grid {
+  margin-top: 0.5rem;
+}
+
 .landing-card-grid,
 .landing-achievement-grid {
   display: grid;
