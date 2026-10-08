@@ -1579,6 +1579,17 @@ a.partner-logo:hover {
   object-fit: cover;
 }
 
+/* Preserve the full source proportions for maps, diagrams and logos. */
+.landing-section-media--contain img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.landing-section-media > a {
+  display: block;
+}
+
 .landing-text-link {
   display: inline-flex;
   margin-top: 1rem;

@@ -149,6 +149,23 @@ blocks:
     separator: true
 ```
 
+Standard section images use a cropped 4:3 frame by default. Set `image_fit: "contain"` to preserve the source image's natural proportions and show it fully, which is useful for maps, diagrams and logos. Omitting this option, or using another value, keeps the default cropped presentation.
+
+Set `image_link` to make the image clickable. Internal paths respect the site's `baseurl`; external URLs and page fragments are also supported. `image_link_label` supplies the accessible name of the link and defaults to “View full-size image”. Keep `image_alt` descriptive of the image itself.
+
+```yml
+blocks:
+  - type: "standard"
+    title: "Research diagram"
+    image: "/assets/sample-images/card-research-context.svg"
+    image_alt: "Abstract research context image"
+    image_fit: "contain"
+    image_link: "/assets/sample-images/card-research-context.svg"
+    image_link_label: "View the full-size research diagram"
+    content: |
+      Select the image to view the complete diagram.
+```
+
 The optional `actions` list supports up to two buttons. The first uses `primary_color` with `primary_link_color`; the second uses `surface_color` with `surface_link_color` and the standard `border_color`. Hero and section buttons use the same colours and underline on hover. On primary backgrounds, the primary button receives a border in `primary_text_color` so it remains visibly distinct. Use `link_text` and `link_url` instead when a section only needs a quiet text link.
 
 Set `separator: true` on a block without a primary or secondary background to add a primary-colour separator bar after it. Set `content_separator` in page front matter to control the separator after optional Markdown body content.

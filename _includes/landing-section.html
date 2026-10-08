@@ -31,8 +31,14 @@
   </div>
 
   {% if section.image %}
-    <figure class="landing-section-media">
-      <img src="{{ section.image | relative_url }}" alt="{{ section.image_alt | default: '' }}">
+    <figure class="landing-section-media{% if section.image_fit == 'contain' %} landing-section-media--contain{% endif %}">
+      {% if section.image_link %}
+        <a href="{% include link-url.html url=section.image_link %}" aria-label="{{ section.image_link_label | default: 'View full-size image' | escape }}">
+      {% endif %}
+      <img src="{{ section.image | relative_url }}" alt="{{ section.image_alt | default: '' | escape }}">
+      {% if section.image_link %}
+        </a>
+      {% endif %}
     </figure>
   {% endif %}
 

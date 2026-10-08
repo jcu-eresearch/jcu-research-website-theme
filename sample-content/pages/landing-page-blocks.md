@@ -89,7 +89,7 @@ blocks:
 
       Required: `type: "standard"` and `title`.
 
-      Optional: `id`, `eyebrow`, `content`, `link_text`, `link_url`, `actions`, `image`, `image_alt`, `image_position`, `cards`, `background`, and `separator`.
+      Optional: `id`, `eyebrow`, `content`, `link_text`, `link_url`, `actions`, `image`, `image_alt`, `image_fit`, `image_link`, `image_link_label`, `image_position`, `cards`, `background`, and `separator`.
     link_text: "Browse content samples"
     link_url: "/sample-content/"
   - type: "standard"
@@ -101,6 +101,18 @@ blocks:
       Add `image` to place media beside the text. The image sits on the right by default.
 
       Optional: set `image_position: "left"` to reverse the layout.
+  - type: "standard"
+    title: "Complete, clickable image"
+    eyebrow: "standard"
+    image: "/assets/sample-images/card-research-context.svg"
+    image_alt: "Abstract research context image"
+    image_fit: "contain"
+    image_link: "/assets/sample-images/card-research-context.svg"
+    image_link_label: "View the full-size research context image"
+    content: |
+      Set `image_fit: "contain"` to show the complete image at its natural proportions. This is useful for maps, diagrams and logos.
+
+      `image_link` makes the image clickable. Use `image_link_label` to describe the link's purpose; the default is “View full-size image”.
   - type: "standard"
     title: "Image on the left"
     eyebrow: "standard"
