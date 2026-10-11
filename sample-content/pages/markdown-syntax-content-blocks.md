@@ -246,3 +246,13 @@ To shorten the class lines, use the [reusable layout attributes file]({{ "/sampl
 > | Nest monitoring | Coast | Track nesting success. |
 > | Habitat mapping | Reef | Identify important habitat areas. |
 {:.jcu-block}
+
+## Gallery image shapes
+
+This Markdown gallery sets square framing on the whole group. The second photo
+uses its own portrait shape and top crop. Open an image to view the source.
+
+[![Square team portrait]({{ '/assets/sample-images/shape-square.jpg' | relative_url }}) **Square**]({{ '/assets/sample-images/shape-square.jpg' | relative_url }})
+[![Tall team portrait]({{ '/assets/sample-images/shape-portrait.jpg' | relative_url }}){:.jcu-image-shape-portrait .jcu-image-crop-top} **Portrait override**]({{ '/assets/sample-images/shape-portrait.jpg' | relative_url }})
+[![Coastal research photo]({{ '/assets/sample-images/shape-wide.jpg' | relative_url }}){:.jcu-image-fit-contain} **Square, contain**]({{ '/assets/sample-images/shape-wide.jpg' | relative_url }})
+{:.jcu-gallery .jcu-columns-3 .jcu-image-shape-square}

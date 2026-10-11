@@ -258,4 +258,4 @@ Reusable theme files are in `_layouts`, `_includes` and `assets`. The repository
 pages document the theme for website authors; consuming sites provide their own
 content, navigation and configuration.
 
-Image-text and card blocks support `image_shape: landscape|wide|square|portrait|original`, `image_fit: cover|contain`, and `image_crop_position: center|top|bottom|left|right`. See [image shapes and cropping](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/cards-and-page-collections/#image-shapes-and-cropping) and the [shape samples](https://jcu-eresearch.github.io/jcu-research-website-theme/sample-content/image-shapes/).
+Image-text and card blocks support `image_shape: landscape|wide|square|portrait|original`, `image_fit: cover|contain`, and `image_crop_position: center|top|bottom|left|right`. See [image shapes and cropping](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/image-handling/#image-shapes-and-cropping) and the [shape samples](https://jcu-eresearch.github.io/jcu-research-website-theme/sample-content/image-shapes/).

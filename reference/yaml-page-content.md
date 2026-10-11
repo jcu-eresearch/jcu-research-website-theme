@@ -198,4 +198,6 @@ Image and card/gallery URL fields accept site paths; the template adds the base 
 [Cards and page collections]({{ "/reference/cards-and-page-collections/" | relative_url }}) [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }})
 {: .jcu-page-navigation}
 
-For image framing options, see [image shapes and cropping](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/cards-and-page-collections/#image-shapes-and-cropping).
+For image framing options, see [image shapes and cropping](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/image-handling/#image-shapes-and-cropping).
+
+Gallery shape, fit, and crop options are described in the [Image handling guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/image-handling/#gallery-image-shapes).

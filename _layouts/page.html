@@ -28,6 +28,8 @@ layout: default
         {% include blocks/image-text.html block=block %}
       {% when 'two-column' %}
         {% include blocks/two-column.html block=block %}
+      {% when 'carousel' %}
+        {% include landing-carousel.html block=block index=forloop.index default_separator=false %}
       {% when 'gallery' %}
         {% include blocks/gallery.html block=block %}
       {% when 'partner-logos' %}

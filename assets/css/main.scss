@@ -2533,3 +2533,48 @@ img.theme-shaped-image.theme-shaped-image.theme-shaped-image {
   object-fit: var(--image-fit);
   object-position: var(--image-crop-position);
 }
+
+// Original carousel photos retain their natural proportions and fit within
+// a modest display height. The grid reserves the tallest slide's height.
+.landing-carousel-slide img.theme-shaped-image.theme-shaped-image.theme-shaped-image[data-image-shape="original"] {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(32rem, 70vh);
+  margin-inline: auto;
+}
+
+// YAML gallery framing is opt-in so existing galleries keep their defaults.
+.image-gallery--shaped .gallery-item { min-height: 0; }
+.image-gallery--shaped .gallery-item img {
+  height: auto;
+  min-height: 0;
+}
+
+// Named options for Markdown/HTML galleries. Set a class on the gallery to
+// share framing; classes on an image override inherited choices.
+.jcu-image-shape-landscape { --jcu-image-shape-ratio: 4 / 3; }
+.jcu-image-shape-wide { --jcu-image-shape-ratio: 16 / 9; }
+.jcu-image-shape-square { --jcu-image-shape-ratio: 1 / 1; }
+.jcu-image-shape-portrait { --jcu-image-shape-ratio: 3 / 4; }
+.jcu-image-shape-original { --jcu-image-shape-ratio: auto; }
+.jcu-image-fit-cover { --jcu-image-fit: cover; }
+.jcu-image-fit-contain { --jcu-image-fit: contain; }
+@each $position in center, top, bottom, left, right {
+  .jcu-image-crop-#{$position} { --jcu-image-crop-position: #{$position}; }
+}
+
+:is(.jcu-gallery, .jcu-image-gallery):is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"]) img,
+:is(.jcu-gallery, .jcu-image-gallery) img:is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"]) {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  align-self: start;
+  aspect-ratio: var(--jcu-image-shape-ratio, 4 / 3);
+  object-fit: var(--jcu-image-fit, cover);
+  object-position: var(--jcu-image-crop-position, center);
+}
+:is(.jcu-gallery, .jcu-image-gallery):is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"]) > a,
+:is(.jcu-gallery, .jcu-image-gallery) > a:has(img:is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"])) {
+  min-height: 0;
+}

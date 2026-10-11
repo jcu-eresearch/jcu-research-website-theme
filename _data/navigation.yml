@@ -1,5 +1,3 @@
-- title: Home
-  url: /
 - title: Beginners
   url: /beginners/
   children:
@@ -33,6 +31,8 @@
       url: /reference/content-block-recipes/
     - title: Cards and page collections
       url: /reference/cards-and-page-collections/
+    - title: Image handling
+      url: /reference/image-handling/
     - title: YAML page content
       url: /reference/yaml-page-content/
     - title: Markdown with layout classes

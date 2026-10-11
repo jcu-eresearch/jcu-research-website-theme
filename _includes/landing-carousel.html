@@ -28,7 +28,7 @@
     <div class="landing-carousel-track">
       {% for item in block.items %}
         <figure class="landing-carousel-slide{% if forloop.first %} is-active{% endif %}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: '' }}">
+          <img {% include image-attributes.html image=item block=block default_ratio="16 / 7" %} src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: '' }}">
           {% if item.caption %}
             <figcaption>{{ item.caption | markdownify }}</figcaption>
           {% endif %}

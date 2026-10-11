@@ -15,6 +15,8 @@ Look up a specific task here. If the terminology is unfamiliar, begin with [Begi
 - [Content block recipes]({{ "/reference/content-block-recipes/" | relative_url }}): find a layout by the information you want to present.
 - [Cards and page collections]({{ "/reference/cards-and-page-collections/" | relative_url }}): manual cards, generated cards, categories, and ordering.
 
+- [Image handling](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/image-handling/): shapes, fitting, cropping, and image behaviour across writing methods.
+
 ## Detailed syntax guides
 
 These are compatible methods, not mutually exclusive page layouts. See [Combine writing methods]({{ "/build-your-pages/combine-writing-methods/" | relative_url }}) for an example using them together.

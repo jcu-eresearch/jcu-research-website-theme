@@ -13,5 +13,5 @@
   {%- unless fit == 'contain' -%}{%- assign fit = 'cover' -%}{%- endunless -%}
   {%- assign crop_options = 'center,top,bottom,left,right' | split: ',' -%}
   {%- unless crop_options contains crop -%}{%- assign crop = 'center' -%}{%- endunless -%}
-class="theme-shaped-image" style="--image-shape-ratio: {{ ratio }}; --image-fit: {{ fit }}; --image-crop-position: {{ crop }};"
+{% if ratio == 'auto' %}data-image-shape="original" {% endif %}class="theme-shaped-image" style="--image-shape-ratio: {{ ratio }}; --image-fit: {{ fit }}; --image-crop-position: {{ crop }};"
 {%- endif -%}

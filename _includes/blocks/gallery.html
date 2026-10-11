@@ -1,3 +1,12 @@
+{% assign gallery_has_framing = false %}
+{% if include.block.image_shape or include.block.image_fit or include.block.image_crop_position %}
+  {% assign gallery_has_framing = true %}
+{% endif %}
+{% for item in include.block.items %}
+  {% if item.image_shape or item.image_fit or item.image_crop_position %}
+    {% assign gallery_has_framing = true %}
+  {% endif %}
+{% endfor %}
 {% assign block_background = include.block.background | default: "none" %}
 {% assign block_background_mode = include.block.background_mode | default: "block" %}
 
@@ -6,10 +15,10 @@
     <h2>{{ include.block.title }}</h2>
   {% endif %}
   {% assign image_gallery_max_items_per_row = include.block.columns | default: site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 %}
-  <div class="image-gallery" style="--image-gallery-max-items-per-row: {{ image_gallery_max_items_per_row }};">
+  <div class="image-gallery{% if gallery_has_framing %} image-gallery--shaped{% endif %}" style="--image-gallery-max-items-per-row: {{ image_gallery_max_items_per_row }};">
     {% for item in include.block.items %}
       <a class="gallery-item" href="{{ item.url | relative_url }}">
-        <img src="{{ item.image | relative_url }}" alt="">
+        <img {% include image-attributes.html image=item block=include.block default_ratio="4 / 3" %} src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: '' | escape }}">
         <span>{{ item.title }}</span>
       </a>
     {% endfor %}

@@ -482,3 +482,14 @@ This sentence is also visible.
 ````
 {: .jcu-alert .jcu-alert--note}
 {% endraw %}
+
+## Gallery image shapes
+
+The gallery uses landscape framing by default. Each image can override the shape
+or fit using named classes.
+
+<div class="jcu-gallery jcu-columns-3 jcu-image-shape-landscape">
+  <a href="{{ '/assets/sample-images/shape-landscape.jpg' | relative_url }}"><img src="{{ '/assets/sample-images/shape-landscape.jpg' | relative_url }}" alt="Research team in a landscape photo"><strong>Landscape</strong></a>
+  <a href="{{ '/assets/sample-images/shape-portrait.jpg' | relative_url }}"><img class="jcu-image-shape-portrait jcu-image-crop-top" src="{{ '/assets/sample-images/shape-portrait.jpg' | relative_url }}" alt="Tall team member portrait"><strong>Portrait override</strong></a>
+  <a href="{{ '/assets/sample-images/shape-square.jpg' | relative_url }}"><img class="jcu-image-shape-original" src="{{ '/assets/sample-images/shape-square.jpg' | relative_url }}" alt="Square portrait shown at original proportions"><strong>Original override</strong></a>
+</div>
