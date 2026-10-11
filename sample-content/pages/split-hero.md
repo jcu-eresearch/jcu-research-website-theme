@@ -11,7 +11,7 @@ hero:
   eyebrow: "Theme colour sample"
   title: "Split hero background"
   lead: |
-    This hero uses the primary background and automatically selects its matching text and link colours. See the [landing-page guide](/build-your-pages/landing-page-styles/) for the available options.
+    This hero uses the primary background and automatically selects its matching text and link colours. See the [landing-page guide](https://jcu-eresearch.github.io/jcu-research-website-theme/build-your-pages/landing-page-styles/) for the available options.
   image: "/assets/images/rwt/hero-reverse-mono-transparent.png"
   image_fit: "contain"
   image_alt: "RWT tropical leaf logo"

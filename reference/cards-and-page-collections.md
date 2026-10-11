@@ -133,5 +133,5 @@ ratio; invalid fit or crop options fall back to `cover` and `center`.
 ```
 {% endraw %}
 
-See [image shape samples]({{ '/sample-content/image-shapes/' | relative_url }})
+See [image shape samples](https://jcu-eresearch.github.io/jcu-research-website-theme/sample-content/image-shapes/)
 for square, portrait, landscape, wide, and original images.

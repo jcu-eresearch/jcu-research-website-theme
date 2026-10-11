@@ -23,7 +23,7 @@ hero:
     - label: "View sections"
       url: "#standard-section"
     - label: "Read documentation"
-      url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
+      url: "https://jcu-eresearch.github.io/jcu-research-website-theme/"
 blocks:
   - type: standard
     title: Square portrait cards
@@ -49,7 +49,7 @@ blocks:
     image_alt: "RWT tropical leaf logo"
     actions:
       - label: "Read the landing-page guide"
-        url: "/build-your-pages/landing-page-styles/"
+        url: "https://jcu-eresearch.github.io/jcu-research-website-theme/build-your-pages/landing-page-styles/"
       - label: "Browse samples"
         url: "/sample-content/"
   - type: "standard"

@@ -242,7 +242,7 @@ formats the quotation and citation; it does not generate references automaticall
 ```
 {: .jcu-alert .jcu-alert--note}
 
-Quotes can contain nested quotes, paragraphs, lists, and other Markdown. These ordinary quotes do not become layout blocks unless you add the classes described in the [Markdown with layout classes guide](../../reference/markdown-page-content/).
+Quotes can contain nested quotes, paragraphs, lists, and other Markdown. These ordinary quotes do not become layout blocks unless you add the classes described in the [Markdown with layout classes guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/markdown-page-content/).
 
 ### Example: Nested quotations
 {:.no_toc}
@@ -308,7 +308,7 @@ This sentence has a footnote containing Markdown.[^methods-note]
 [^1]: This is a simple, single-paragraph footnote.
 
 [^methods-note]:
-    Footnotes can include **bold**, _italic_, a [link to the Markdown guide](../../reference/plain-markdown/), and inline code such as `sample_id`.
+    Footnotes can include **bold**, _italic_, a [link to the Markdown guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/plain-markdown/), and inline code such as `sample_id`.
 
     This second paragraph belongs to the same footnote.
 
@@ -323,7 +323,7 @@ This sentence has a footnote containing Markdown.[^methods-note]
 [^1]: This is a simple, single-paragraph footnote.
 
 [^methods-note]:
-    Footnotes can include **bold**, _italic_, a [link to the Markdown guide](../../reference/plain-markdown/), and inline code such as `sample_id`.
+    Footnotes can include **bold**, _italic_, a [link to the Markdown guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/plain-markdown/), and inline code such as `sample_id`.
 
     This second paragraph belongs to the same footnote.
 
@@ -528,10 +528,10 @@ Add the section's ID after the destination page path to jump directly to that
 section. This relative link opens the Theme purpose section on the homepage
 landing page, which has the explicit ID `theme-overview`.
 
-[Goto Theme purpose](../../#theme-overview).
+[Goto Theme purpose](https://jcu-eresearch.github.io/jcu-research-website-theme/#theme-overview).
 
 ```markdown
-[Goto Theme purpose](../../#theme-overview).
+[Goto Theme purpose](https://jcu-eresearch.github.io/jcu-research-website-theme/#theme-overview).
 ```
 {: .jcu-alert .jcu-alert--note}
 
@@ -728,7 +728,7 @@ Section text.
 
 ## Attribute lists and reusable attributes
 
-Kramdown attributes can assign IDs or existing CSS classes to an element. An attribute alone does not create a new style. The theme-specific layouts are displayed on the [Markdown-with-classes sample](../inline-content-blocks/) and how to use them is explained in [Markdown with layout classes](../../reference/markdown-page-content/). Span attributes follow the text element; block attributes follow the block on a new line.
+Kramdown attributes can assign IDs or existing CSS classes to an element. An attribute alone does not create a new style. The theme-specific layouts are displayed on the [Markdown-with-classes sample](../inline-content-blocks/) and how to use them is explained in [Markdown with layout classes](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/markdown-page-content/). Span attributes follow the text element; block attributes follow the block on a new line.
 
 ### Example
 {:.no_toc}
@@ -796,7 +796,7 @@ An editing note that will not appear in the page.
 
 ## HTML alongside Markdown
 
-Inline HTML can supply elements Markdown does not define, such as highlighting, subscript, superscript, or collapsible sections. See the [HTML with Markdown sample](../../sample-content/html-markdown-content-blocks/) for rendered examples and copyable source, and the [HTML and Markdown guide](../../reference/html-markdown-page-content/) for authoring instructions.
+Inline HTML can supply elements Markdown does not define, such as highlighting, subscript, superscript, or collapsible sections. See the [HTML with Markdown sample](../../sample-content/html-markdown-content-blocks/) for rendered examples and copyable source, and the [HTML and Markdown guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/html-markdown-page-content/) for authoring instructions.
 
 ## Features requiring additional support
 

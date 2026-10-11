@@ -3,7 +3,7 @@ layout: page
 title: Image shapes
 card_title: Image shapes
 permalink: /sample-content/image-shapes/
-order: 0.5
+order: 3.75
 image: /assets/sample-images/shape-square.svg
 summary: Choose square, portrait, landscape, wide, or original image shapes without editing photos.
 blocks:
@@ -78,4 +78,4 @@ blocks:
     image_shape: square
 ---
 
-Choose a shape by name rather than editing every image. These illustrations have deliberately different source proportions so you can compare the results. [Read the image shape guide]({{ '/reference/cards-and-page-collections/#image-shapes-and-cropping' | relative_url }}).
+Choose a shape by name rather than editing every image. These illustrations have deliberately different source proportions so you can compare the results. [Read the image shape guide](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/cards-and-page-collections/#image-shapes-and-cropping).

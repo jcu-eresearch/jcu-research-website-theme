@@ -65,5 +65,7 @@
       url: /sample-content/inline-content-blocks/
     - title: HTML wrappers and Markdown content blocks
       url: /sample-content/html-markdown-content-blocks/
+    - title: Image shapes
+      url: /sample-content/image-shapes/
     - title: Configured colours
       url: /sample-content/configured-colours/

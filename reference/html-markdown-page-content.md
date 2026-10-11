@@ -280,4 +280,4 @@ Do not hide essential instructions in a collapsed section. Spell out abbreviatio
 [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }}) [Site appearance]({{ "/reference/site-appearance/" | relative_url }})
 {: .jcu-page-navigation}
 
-For image framing options, see [image shapes and cropping]({{ '/reference/cards-and-page-collections/#image-shapes-and-cropping' | relative_url }}).
+For image framing options, see [image shapes and cropping](https://jcu-eresearch.github.io/jcu-research-website-theme/reference/cards-and-page-collections/#image-shapes-and-cropping).
