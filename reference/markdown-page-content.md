@@ -221,3 +221,5 @@ Preview both desktop and narrow-screen layouts. Check group nesting, image paths
 
 [YAML page content]({{ "/reference/yaml-page-content/" | relative_url }}) [HTML and Markdown page content]({{ "/reference/html-markdown-page-content/" | relative_url }})
 {: .jcu-page-navigation}
+
+For image framing options, see [image shapes and cropping]({{ '/reference/cards-and-page-collections/#image-shapes-and-cropping' | relative_url }}).

@@ -1,4 +1,8 @@
 {% assign section = include.section %}
+{% assign section_image_ratio = '4 / 3' %}
+{% if section.image_fit == 'contain' %}
+  {% assign section_image_ratio = 'auto' %}
+{% endif %}
 {% assign section_separator = include.default_separator %}
 {% unless section.separator == nil %}
   {% assign section_separator = section.separator %}
@@ -35,7 +39,7 @@
       {% if section.image_link %}
         <a href="{% include link-url.html url=section.image_link %}" aria-label="{{ section.image_link_label | default: 'View full-size image' | escape }}">
       {% endif %}
-      <img src="{{ section.image | relative_url }}" alt="{{ section.image_alt | default: '' | escape }}">
+      <img {% include image-attributes.html block=section default_ratio=section_image_ratio %} src="{{ section.image | relative_url }}" alt="{{ section.image_alt | default: '' | escape }}">
       {% if section.image_link %}
         </a>
       {% endif %}
@@ -47,7 +51,7 @@
       {% for card in section.cards %}
         <article class="landing-card">
           {% if card.image %}
-            <img src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' }}">
+            <img {% include image-attributes.html image=card block=section default_ratio="16 / 9" %} src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' }}">
           {% endif %}
           <div class="landing-card-body">
             {% if card.card_category %}

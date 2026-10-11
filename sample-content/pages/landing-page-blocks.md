@@ -25,6 +25,19 @@ hero:
     - label: "Read documentation"
       url: "https://github.com/jcu-eresearch/jcu-research-website-theme#readme"
 blocks:
+  - type: standard
+    title: Square portrait cards
+    image_shape: square
+    cards:
+      - title: Team portrait
+        image: /assets/sample-images/shape-square.svg
+        image_alt: Square illustrated team portrait
+        text: Square framing works on landing-page cards too.
+      - title: Taller portrait
+        image: /assets/sample-images/shape-portrait.svg
+        image_alt: Tall illustrated portrait cropped into a square
+        image_crop_position: top
+        text: A top crop keeps the face visible.
   - type: "split-hero"
     background: "primary"
     eyebrow: "split-hero"

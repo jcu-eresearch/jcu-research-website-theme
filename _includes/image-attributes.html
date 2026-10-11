@@ -1,0 +1,17 @@
+{%- assign shape = include.image.image_shape | default: include.block.image_shape -%}
+{%- assign fit = include.image.image_fit | default: include.block.image_fit -%}
+{%- assign crop = include.image.image_crop_position | default: include.block.image_crop_position -%}
+{%- if shape or fit or crop -%}
+  {%- assign ratio = include.default_ratio | default: '4 / 3' -%}
+  {%- case shape -%}
+    {%- when 'landscape' -%}{%- assign ratio = '4 / 3' -%}
+    {%- when 'wide' -%}{%- assign ratio = '16 / 9' -%}
+    {%- when 'square' -%}{%- assign ratio = '1 / 1' -%}
+    {%- when 'portrait' -%}{%- assign ratio = '3 / 4' -%}
+    {%- when 'original' -%}{%- assign ratio = 'auto' -%}
+  {%- endcase -%}
+  {%- unless fit == 'contain' -%}{%- assign fit = 'cover' -%}{%- endunless -%}
+  {%- assign crop_options = 'center,top,bottom,left,right' | split: ',' -%}
+  {%- unless crop_options contains crop -%}{%- assign crop = 'center' -%}{%- endunless -%}
+class="theme-shaped-image" style="--image-shape-ratio: {{ ratio }}; --image-fit: {{ fit }}; --image-crop-position: {{ crop }};"
+{%- endif -%}

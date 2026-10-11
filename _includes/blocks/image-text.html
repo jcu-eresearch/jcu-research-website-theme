@@ -14,7 +14,7 @@
   </div>
   {% if include.block.image %}
     <figure class="image-text-media">
-      <img src="{{ include.block.image | relative_url }}" alt="{{ include.block.image_alt | default: '' }}">
+      <img {% include image-attributes.html block=include.block default_ratio="4 / 3" %} src="{{ include.block.image | relative_url }}" alt="{{ include.block.image_alt | default: '' }}">
       {% if include.block.caption %}
         <figcaption>{{ include.block.caption }}</figcaption>
       {% endif %}

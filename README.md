@@ -257,3 +257,5 @@ Reusable theme files are in `_layouts`, `_includes` and `assets`. The repository
 `assets/sample-images/`. The beginner, page-building, reference and maintenance
 pages document the theme for website authors; consuming sites provide their own
 content, navigation and configuration.
+
+Image-text and card blocks support `image_shape: landscape|wide|square|portrait|original`, `image_fit: cover|contain`, and `image_crop_position: center|top|bottom|left|right`. See [image shapes and cropping](reference/cards-and-page-collections.md#image-shapes-and-cropping) and the [shape samples](sample-content/pages/image-shapes.md).

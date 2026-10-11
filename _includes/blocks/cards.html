@@ -15,11 +15,11 @@
         {% if card.image %}
           {% if card.url %}
             <a class="page-card-image" href="{{ card.url | relative_url }}" aria-label="View {{ card.title | escape }}">
-              <img src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
+              <img {% include image-attributes.html image=card block=include.block default_ratio="16 / 9" %} src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
             </a>
           {% else %}
             <div class="page-card-image">
-              <img src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
+              <img {% include image-attributes.html image=card block=include.block default_ratio="16 / 9" %} src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' | escape }}">
             </div>
           {% endif %}
         {% endif %}

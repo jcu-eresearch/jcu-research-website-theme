@@ -2522,3 +2522,14 @@ strong {
 .landing-hero--bg-primary .landing-button--primary {
   border-color: var(--color-primary-text);
 }
+
+// Opt-in image framing. Repeated class ensures explicit shapes win over the
+// single-column and mobile card defaults without changing existing blocks.
+img.theme-shaped-image.theme-shaped-image.theme-shaped-image {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: var(--image-shape-ratio);
+  object-fit: var(--image-fit);
+  object-position: var(--image-crop-position);
+}

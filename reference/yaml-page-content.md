@@ -197,3 +197,5 @@ Image and card/gallery URL fields accept site paths; the template adds the base 
 
 [Cards and page collections]({{ "/reference/cards-and-page-collections/" | relative_url }}) [Markdown with layout classes]({{ "/reference/markdown-page-content/" | relative_url }})
 {: .jcu-page-navigation}
+
+For image framing options, see [image shapes and cropping]({{ '/reference/cards-and-page-collections/#image-shapes-and-cropping' | relative_url }}).
