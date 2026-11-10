@@ -11,3 +11,4 @@ blocks:
       These cards are generated from Markdown pages in the `sample-content/pages` folder.
 ---
 This page is an example of one form of the page-cards content block style.
+
