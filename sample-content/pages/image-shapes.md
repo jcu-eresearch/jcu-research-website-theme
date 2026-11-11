@@ -7,6 +7,24 @@ order: 3.75
 image: /assets/sample-images/shape-landscape.jpg
 summary: Compare landscape, wide, square, portrait, and original shapes, with photographic examples and cropping choices.
 blocks:
+  - type: image-text
+    title: Automatic sizing — portrait
+    image: /assets/sample-images/portrait-quoll.svg
+    image_alt: Minimal quoll silhouette with three spots
+    caption: Simple SVG quoll illustration for image sizing tests.
+    content: No image settings are needed. This portrait quoll image is shown in full within the default height limit, without cropping or enlargement. The landscape example below uses exactly the same automatic sizing rules.
+  - type: image-text
+    title: Automatic sizing — landscape
+    image: /assets/sample-images/shape-wide.jpg
+    image_alt: Two researchers in a wide landscape photograph
+    content: Landscape images keep their proportions and fit the column width. The same height limit prevents oversized images.
+  - type: image-text
+    title: Automatic sizing — wallaby portrait
+    image: /assets/sample-images/portrait-wallaby.svg
+    image_alt: Minimal upright wallaby silhouette with a long tail
+    image_position: left
+    caption: Simple SVG wallaby illustration for image sizing tests.
+    content: A second portrait tests the same automatic limits with the image on the left. No image shape, fitting, or size settings are required.
   - type: carousel
     id: source-photo-shapes
     title: The source photos, uncropped

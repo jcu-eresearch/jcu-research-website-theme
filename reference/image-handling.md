@@ -8,6 +8,44 @@ summary: Image shapes, fitting, cropping, and image behaviour across YAML blocks
 
 Use this guide to choose how photographs, diagrams, and logos appear on your pages. Image handling applies across several block types, not just cards.
 
+## Image corners
+
+All image elements use one shared corner setting, including plain Markdown,
+linked images, images beside text, cards, galleries, carousel images, and logos.
+Their clipping frames use the same value so square corners can be restored
+consistently. This does not change background images or inline SVG artwork.
+
+Set the radius once under `theme_settings` in your site's `_config.yml`:
+
+```yaml
+theme_settings:
+  image_corner_radius: "0.5rem"
+```
+
+The default is `0.5rem`. Use `"0"` for square corners or `"1rem"` for more
+rounded corners. No page-level classes are needed. Buttons and text-only panels
+keep their separate corner rules. Custom CSS can use `var(--image-radius)` to
+match the configured image corners.
+
+## Image size limits
+
+Standalone Markdown images (including linked images) and images beside text
+share these settings under `theme_settings` in your site's `_config.yml`:
+
+```yaml
+theme_settings:
+  image_max_height: "22rem"
+  image_max_height_mobile: "17.5rem"
+```
+
+Images fit within the available content width, preserve their original
+proportions, and are not enlarged beyond their source size. The smaller-screen
+limit applies up to 48rem wide. No image-specific settings are needed.
+
+Cards, galleries, carousels, heroes, logos, and explicitly framed images keep
+their own sizing rules. For detailed diagrams or unusually long images, link
+the displayed image to its original file so readers can view it at full size.
+
 ## Image shapes and cropping
 
 Choose an image shape to keep photographs consistent without editing each file.
@@ -24,11 +62,10 @@ images and cards. They also work with the `page-cards.html` Liquid include.
 | `original` | Source proportions | Diagrams, illustrations, and logos |
 
 You do not need to know the numbers: use `square` for team profiles, or `portrait`
-to show more of each person. Omit `image_shape` to keep the theme's existing
-layout defaults. `original` preserves each source's proportions, so differently
+to show more of each person. Omit `image_shape` for the default behaviour described below. `original` preserves each source's proportions, so differently
 shaped source images can produce uneven card rows.
 
-`image_fit: cover` is the default: it fills the frame and crops edges without
+`image_fit: cover` is the default for explicitly framed images: it fills the frame and crops edges without
 stretching the photo. `image_fit: contain` shows the entire image with space
 around it when its proportions differ. For a natural-sized logo or diagram,
 choose `image_shape: original`.
@@ -96,15 +133,33 @@ blocks:
         caption: A portrait photo shown uncropped.
 ```
 
+## Images beside text
+
+Standard landing-page sections and `image-text` blocks show the full image in
+its original proportions by default. Images fit within their column and are
+limited by the shared image size settings (22rem on desktop and 17.5rem on
+screens up to 48rem wide by default).
+Portrait covers stay modest, landscape images use the available width, and
+small images are not enlarged. No sizing settings are required.
+
+These limits also apply with `image_shape: original` or `image_fit: contain`
+without an explicit shape. An explicit shape such as `square` or `landscape`
+keeps the chosen frame and its existing sizing behaviour. Hero images, cards,
+galleries and carousels keep their separate rules.
+
+`image_size` on an `image-text` block still controls the column width rather
+than the image's height. The same default limits apply to Markdown and HTML
+`jcu-image-text` wrappers using `jcu-media`.
+
 ## Markdown and layout classes
 
-A plain Markdown image normally retains its source proportions and scales down
-to fit the available width. Layout classes add the theme's block styling:
+A plain Markdown image retains its source proportions and scales down
+to fit the available width and shared height limit. Layout classes add the theme's block styling:
 
 | Image context | Current default behaviour |
 | --- | --- |
-| Plain Markdown image | Original source proportions |
-| `jcu-image-text` with `jcu-media` | 4:3, cropped with `cover` |
+| Plain Markdown image | Original proportions, shared width and height limits |
+| `jcu-image-text` with `jcu-media` | Original proportions, constrained width and height |
 | A card grid with `jcu-card-image` | 16:9, cropped with `cover` |
 | Single-column cards | Image fills the row's image area on desktop; 16:9 on mobile |
 | Gallery images | 4:3, cropped with `cover` |

@@ -102,6 +102,25 @@ blocks:
 
       Optional: set `image_position: "left"` to reverse the layout.
   - type: "standard"
+    title: "Portrait image — automatic sizing"
+    eyebrow: "standard"
+    image: "/assets/sample-images/portrait-wallaby.svg"
+    image_alt: "Minimal upright wallaby silhouette with a long tail"
+    content: |
+      This Simple SVG wallaby illustration demonstrates automatic image sizing in a standard landing-page section. The full animal remains visible, with its original proportions preserved.
+
+      Only `image` and `image_alt` are needed. The image fits its column and is limited to 22rem high on desktop and 17.5rem on phones, so a tall portrait does not overwhelm the text.
+  - type: "standard"
+    title: "Portrait image — preserve the whole source"
+    eyebrow: "standard"
+    image: "/assets/sample-images/portrait-quoll-300px.jpg"
+    image_alt: "Minimal quoll silhouette with three spots"
+    image_shape: original
+    image_fit: contain
+    content: |
+      This JPEG version of the quoll illustration is 225 pixels wide and 300 pixels high. It uses `image_shape: original` and `image_fit: contain` to preserve its proportions within the shared image height limits.
+
+  - type: "standard"
     title: "Complete, clickable image"
     eyebrow: "standard"
     image: "/assets/sample-images/card-research-context.svg"

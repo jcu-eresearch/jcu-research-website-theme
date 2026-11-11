@@ -1,3 +1,7 @@
+{% assign image_text_ratio = '4 / 3' %}
+{% if include.block.image_fit == 'contain' %}
+  {% assign image_text_ratio = 'auto' %}
+{% endif %}
 {% assign image_position = include.block.image_position | default: "right" %}
 {% assign image_size = include.block.image_size | default: "medium" %}
 {% assign block_background = include.block.background | default: "none" %}
@@ -14,7 +18,7 @@
   </div>
   {% if include.block.image %}
     <figure class="image-text-media">
-      <img {% include image-attributes.html block=include.block default_ratio="4 / 3" %} src="{{ include.block.image | relative_url }}" alt="{{ include.block.image_alt | default: '' }}">
+      <img {% include image-attributes.html block=include.block default_ratio=image_text_ratio %} src="{{ include.block.image | relative_url }}" alt="{{ include.block.image_alt | default: '' }}">
       {% if include.block.caption %}
         <figcaption>{{ include.block.caption }}</figcaption>
       {% endif %}
