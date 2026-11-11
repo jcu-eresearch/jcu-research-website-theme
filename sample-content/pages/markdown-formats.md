@@ -12,6 +12,10 @@ This page demonstrates the Markdown features available with this theme's current
 
 You can combine these features with the theme's layout blocks. Ordinary Markdown needs no layout classes. The source examples use an alert class only to style their code containers; you do not need that class in your own content.
 
+Standalone images use the theme's shared width and height limits. To change
+these site-wide, set `image_max_height` and `image_max_height_mobile` under
+`theme_settings`; individual images need no sizing classes.
+
 ## Contents
 {:.no_toc}
 

@@ -179,3 +179,18 @@ Use [Accessibility and colour choices]({{ "/check-and-maintain/accessibility/" |
 
 [HTML and Markdown page content]({{ "/reference/html-markdown-page-content/" | relative_url }}) [Navigation and links]({{ "/reference/navigation-and-links/" | relative_url }})
 {: .jcu-page-navigation}
+
+## Image corners
+
+Set `theme_settings.image_corner_radius` to change all image corners together.
+The default is `"0.5rem"`; use `"0"` for square corners or `"1rem"` for more
+rounded corners. Plain Markdown images and images in blocks share this setting.
+See [Image handling]({{ '/reference/image-handling/' | relative_url }}) for details.
+
+## Image size limits
+
+`theme_settings.image_max_height` (default `"22rem"`) and
+`theme_settings.image_max_height_mobile` (default `"17.5rem"`) control
+standalone Markdown images and images beside text together. Images remain
+within the available width without cropping, stretching, or enlarging small
+sources. The smaller-screen setting applies up to 48rem wide.

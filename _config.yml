@@ -94,6 +94,11 @@ theme_settings:
   content_alignment: "left"
   # bullet_style options: "line", "circle"
   bullet_style: "line"
+  # Shared corners for all image elements and their clipping frames. Use "0" for square corners.
+  image_corner_radius: "0.5rem"
+  # Shared limits for standalone Markdown images and images beside text.
+  image_max_height: "22rem"
+  image_max_height_mobile: "17.5rem"
   # button_shape options: "rectangular", "lozenge"
   button_shape: "rectangular"
 

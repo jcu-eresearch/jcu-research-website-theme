@@ -96,6 +96,10 @@
   --partner-logo-max-height: {{ site.theme_settings.partner_logo_max_height | default: "4rem" }};
   --partner-logo-max-items-per-row: {{ site.theme_settings.partner_logo_max_items_per_row | default: site.theme_settings.partner_logo_columns | default: 4 }};
   --image-gallery-max-items-per-row: {{ site.theme_settings.image_gallery_max_items_per_row | default: site.theme_settings.image_gallery_columns | default: 3 }};
+  --image-radius: {{ site.theme_settings.image_corner_radius | default: "0.5rem" }};
+  --image-max-height: {{ site.theme_settings.image_max_height | default: "22rem" }};
+  --image-max-height-mobile: {{ site.theme_settings.image_max_height_mobile | default: "17.5rem" }};
+  --content-image-max-height: var(--image-max-height);
   --button-radius: {% if site.theme_settings.button_shape == "lozenge" %}999px{% else %}0.35rem{% endif %};
   --content-width: 68rem;
   --site-main-inline-padding: clamp(1.25rem, 5vw, 5rem);
@@ -133,6 +137,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  border-radius: var(--image-radius);
 }
 
 a {
@@ -742,7 +747,7 @@ h3 {
   min-width: 0;
   overflow: hidden;
   background: var(--color-surface);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
 }
 
 .jcu-image-gallery > a {
@@ -904,7 +909,6 @@ h3 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 0.5rem;
 }
 
 .image-text-media figcaption {
@@ -1026,7 +1030,7 @@ h3 {
   overflow: hidden;
   color: var(--color-primary-link);
   background: var(--color-primary);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
   text-decoration: none;
 }
 
@@ -1115,7 +1119,7 @@ a.partner-logo:hover {
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
   color: var(--color-surface-text);
 }
 
@@ -1365,7 +1369,7 @@ a.partner-logo:hover {
   margin: 0;
   overflow: hidden;
   background: var(--color-surface);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
 }
 
 .landing-hero-media img {
@@ -1570,7 +1574,7 @@ a.partner-logo:hover {
   margin: 0;
   overflow: hidden;
   background: var(--color-surface);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
 }
 
 .landing-section-media img {
@@ -1632,7 +1636,7 @@ a.partner-logo:hover {
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
   color: var(--color-surface-text);
 }
 
@@ -1682,7 +1686,7 @@ a.partner-logo:hover {
 .landing-achievement img {
   width: 3rem;
   height: 3rem;
-  border-radius: 0.35rem;
+  border-radius: var(--image-radius);
   object-fit: cover;
 }
 
@@ -1708,7 +1712,7 @@ a.partner-logo:hover {
   overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: var(--image-radius);
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
@@ -2577,4 +2581,33 @@ img.theme-shaped-image.theme-shaped-image.theme-shaped-image {
 :is(.jcu-gallery, .jcu-image-gallery):is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"]) > a,
 :is(.jcu-gallery, .jcu-image-gallery) > a:has(img:is([class*="jcu-image-shape-"], [class*="jcu-image-fit-"], [class*="jcu-image-crop-"])) {
   min-height: 0;
+}
+
+// Standalone prose images and images beside text share natural proportions
+// and size limits. Exclude layout wrappers that have their own framing rules.
+.prose img:not(:where(.jcu-media img, .jcu-card img, .jcu-card-image img, .jcu-gallery img, .jcu-image-gallery img, .jcu-partner-logos img, .page-card img, .landing-card img, .gallery-item img, .landing-carousel-slide img, .partner-logo img, .theme-shaped-image)),
+.image-text-media img:not(.theme-shaped-image),
+.landing-section-media img:not(.theme-shaped-image),
+.image-text-media img.theme-shaped-image.theme-shaped-image.theme-shaped-image[data-image-shape="original"],
+.landing-section-media img.theme-shaped-image.theme-shaped-image.theme-shaped-image[data-image-shape="original"] {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: var(--content-image-max-height);
+  aspect-ratio: auto;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+// The surrounding figure must not leave a full-width coloured panel behind
+// a narrow portrait or book cover.
+.landing-section-media {
+  background: transparent;
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --content-image-max-height: var(--image-max-height-mobile);
+  }
 }
