@@ -47,9 +47,10 @@
   {% endif %}
 
   {% if section.cards %}
-    <div class="landing-card-grid">
+    {% assign card_columns = section.columns | default: site.theme_settings.page_card_columns | default: 3 | plus: 0 | at_least: 1 %}
+    <div class="landing-card-grid{% if card_columns == 1 %} landing-card-grid--single{% endif %}" style="--landing-card-columns: {{ card_columns }};">
       {% for card in section.cards %}
-        <article class="landing-card">
+        <article class="landing-card{% unless card.image %} landing-card--no-image{% endunless %}">
           {% if card.image %}
             <img {% include image-attributes.html image=card block=section default_ratio="16 / 9" %} src="{{ card.image | relative_url }}" alt="{{ card.image_alt | default: '' }}">
           {% endif %}

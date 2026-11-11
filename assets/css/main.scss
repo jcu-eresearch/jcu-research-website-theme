@@ -1627,6 +1627,25 @@ a.partner-logo:hover {
   gap: 1rem;
 }
 
+.landing-card-grid {
+  grid-template-columns: repeat(var(--landing-card-columns, 3), minmax(0, 1fr));
+}
+
+.landing-card-grid--single .landing-card {
+  display: grid;
+  grid-template-columns: minmax(12rem, 32%) minmax(0, 1fr);
+}
+
+.landing-card-grid--single .landing-card--no-image {
+  display: block;
+}
+
+.landing-card-grid--single .landing-card > img {
+  height: 100%;
+  min-height: 13rem;
+  aspect-ratio: auto;
+}
+
 .landing-card,
 .landing-achievement {
   --color-text: var(--color-surface-text);
@@ -1799,10 +1818,12 @@ a.partner-logo:hover {
     grid-template-columns: 1fr;
   }
 
+  .landing-card-grid--single .landing-card,
   .page-cards--single .page-card {
     grid-template-columns: 1fr;
   }
 
+  .landing-card-grid--single .landing-card > img,
   .page-cards--single .page-card-image img {
     height: auto;
     min-height: 0;

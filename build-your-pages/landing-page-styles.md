@@ -223,6 +223,7 @@ blocks:
   - type: "standard"
     title: "Species profiles"
     eyebrow: "Updates"
+    columns: 2
     cards:
       - title: "Southern cassowary"
         card_category: "Species profile"
@@ -230,6 +231,13 @@ blocks:
         link_text: "Read southern cassowary profile"
         url: "/sample-content/content-blocks/southern-cassowary/"
 ```
+
+Set `columns` to the number of cards per row on desktop, just as for standard
+page cards. It defaults to `theme_settings.page_card_columns`, or `3` when that
+setting is omitted. Values are converted to integers with a minimum of `1`.
+With `columns: 1`, cards with images place the image beside the text; text-only
+cards fill the row. At 900px or narrower, all cards stack into one column and
+images sit above the text. Image shape, fitting, and crop options still apply.
 
 The optional `card_category` field adds a short label above a manually authored card's title. Omit it to keep the existing appearance. It is plain text, displayed in uppercase using the card's surface text colour; it is separate from the title and link.
 
@@ -353,7 +361,7 @@ Researchers usually should not need to edit these classes. Change content in fro
 
 ## Editing and previewing
 
-Keep one ordered `blocks` list in front matter. Indent nested fields with spaces and use `|` for multiline Markdown. Split hero images and carousel images need useful alt text; background hero images are decorative. Replace sample assets and destinations with your own before using an example on a project site. Section cards are a simple grid; use `page-cards` when you need folder-generated cards or explicit column settings.
+Keep one ordered `blocks` list in front matter. Indent nested fields with spaces and use `|` for multiline Markdown. Split hero images and carousel images need useful alt text; background hero images are decorative. Replace sample assets and destinations with your own before using an example on a project site. Both section cards and `page-cards` support explicit column settings. Use `page-cards` when you need folder-generated cards.
 
 [View the working landing-page examples]({{ "/sample-content/landing-page-blocks/" | relative_url }}) or [return to Build your pages]({{ "/build-your-pages/" | relative_url }}).
 

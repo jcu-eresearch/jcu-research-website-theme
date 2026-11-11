@@ -163,6 +163,7 @@ blocks:
   - type: "standard"
     title: "Card grid section"
     eyebrow: "standard"
+    columns: 2
     cards:
       - title: "Card with image"
         card_category: "Species profile"
@@ -196,6 +197,18 @@ blocks:
         text: "Review the theme colours used for text, links, panels, and alerts."
         link_text: "View configured colours"
         url: "/sample-content/configured-colours/"
+  - type: "standard"
+    id: "single-column-cards"
+    title: "One-column cards"
+    eyebrow: "standard"
+    columns: 1
+    cards:
+      - title: "Image beside text"
+        image: "/assets/sample-images/card-green-turtle.svg"
+        image_alt: "Green turtle"
+        text: "With columns: 1, the image sits beside the text on desktop and above it on smaller screens."
+      - title: "Text-only card"
+        text: "Cards without images use the full row."
   - type: "standard"
     title: "Section with action buttons"
     eyebrow: "standard"

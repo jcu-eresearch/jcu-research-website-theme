@@ -24,7 +24,11 @@ blocks:
         link_text: View publications
 ```
 
-This list belongs inside a standard page's existing front matter. Create a page at `/publications/` before using that destination. Manual card categories also work in landing-page card sections. For body cards, place a `jcu-card-category` paragraph inside `jcu-card-body`, above the card heading. See the syntax guides for complete wrappers.
+This list belongs inside a standard page's existing front matter. For a landing
+page, use `type: standard` with the same `columns` and `cards` fields. In both
+layouts, `columns` defaults to `theme_settings.page_card_columns` (or `3`).
+`columns: 1` places images beside text on desktop, while text-only cards fill
+the row. At 900px or narrower, cards stack with images above the text. Create a page at `/publications/` before using that destination. Manual card categories also work in landing-page card sections. For body cards, place a `jcu-card-category` paragraph inside `jcu-card-body`, above the card heading. See the syntax guides for complete wrappers.
 
 ## Generated page cards
 
