@@ -199,6 +199,7 @@ blocks:
         url: "/sample-content/configured-colours/"
   - type: "standard"
     id: "single-column-cards"
+    image_max_height: "200px"
     title: "One-column cards"
     eyebrow: "standard"
     columns: 1

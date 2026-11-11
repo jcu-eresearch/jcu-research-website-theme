@@ -30,6 +30,11 @@ layouts, `columns` defaults to `theme_settings.page_card_columns` (or `3`).
 `columns: 1` places images beside text on desktop, while text-only cards fill
 the row. At 900px or narrower, cards stack with images above the text. Create a page at `/publications/` before using that destination. Manual card categories also work in landing-page card sections. For body cards, place a `jcu-card-category` paragraph inside `jcu-card-body`, above the card heading. See the syntax guides for complete wrappers.
 
+Set `image_max_height: "200px"` on the card block to limit its images, or on
+an individual manual card to override the block limit. Use `image_shape: original`
+and `image_fit: contain` to preserve complete book covers and diagrams. See
+[Image handling]({{ "/reference/image-handling/" | relative_url }}) for an example.
+
 ## Generated page cards
 
 Generated cards collect information from other pages. Give each source page useful front matter:

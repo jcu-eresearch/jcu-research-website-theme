@@ -12,6 +12,28 @@ class ImageShapesTest < Minitest::Test
     assert_equal "", attributes
   end
 
+  def test_block_image_height_without_shape_options
+    result = attributes({"image_max_height" => "200px"})
+    assert_includes result, "max-height: 200px;"
+    assert_includes result, "max-width: 100%;"
+    assert_includes result, "height: auto; min-height: 0;"
+    assert_includes result, "margin-inline: auto;"
+  end
+
+  def test_individual_card_can_override_block_image_height
+    result = attributes({"image_max_height" => "200px"}, {"image_max_height" => "150px"})
+    assert_includes result, "max-height: 150px;"
+    refute_includes result, "max-height: 200px;"
+  end
+
+  def test_height_limit_retains_shape_and_fitting
+    result = attributes({"image_max_height" => "15rem", "image_shape" => "original", "image_fit" => "contain"})
+    assert_includes result, 'data-image-shape="original"'
+    assert_includes result, "--image-fit: contain;"
+    assert_includes result, "max-height: 15rem;"
+    refute_includes attributes, "max-height:"
+  end
+
   def test_named_shapes
     {"landscape" => "4 / 3", "wide" => "16 / 9", "square" => "1 / 1", "portrait" => "3 / 4", "original" => "auto"}.each do |shape, ratio|
       assert_includes attributes({"image_shape" => shape}), "--image-shape-ratio: #{ratio};"

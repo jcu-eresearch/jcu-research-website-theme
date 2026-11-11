@@ -1,7 +1,8 @@
 {%- assign shape = include.image.image_shape | default: include.block.image_shape -%}
 {%- assign fit = include.image.image_fit | default: include.block.image_fit -%}
 {%- assign crop = include.image.image_crop_position | default: include.block.image_crop_position -%}
-{%- if shape or fit or crop -%}
+{%- assign max_height = include.image.image_max_height | default: include.block.image_max_height -%}
+{%- if shape or fit or crop or max_height -%}
   {%- assign ratio = include.default_ratio | default: '4 / 3' -%}
   {%- case shape -%}
     {%- when 'landscape' -%}{%- assign ratio = '4 / 3' -%}
@@ -13,5 +14,5 @@
   {%- unless fit == 'contain' -%}{%- assign fit = 'cover' -%}{%- endunless -%}
   {%- assign crop_options = 'center,top,bottom,left,right' | split: ',' -%}
   {%- unless crop_options contains crop -%}{%- assign crop = 'center' -%}{%- endunless -%}
-{% if ratio == 'auto' %}data-image-shape="original" {% endif %}class="theme-shaped-image" style="--image-shape-ratio: {{ ratio }}; --image-fit: {{ fit }}; --image-crop-position: {{ crop }};"
+{% if ratio == 'auto' %}data-image-shape="original" {% endif %}class="theme-shaped-image" style="--image-shape-ratio: {{ ratio }}; --image-fit: {{ fit }}; --image-crop-position: {{ crop }};{% if max_height %} max-height: {{ max_height | escape }}; width: auto; max-width: 100%; height: auto; min-height: 0; display: block; margin-inline: auto;{% endif %}"
 {%- endif -%}

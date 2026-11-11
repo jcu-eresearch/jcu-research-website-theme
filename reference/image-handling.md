@@ -46,6 +46,43 @@ Cards, galleries, carousels, heroes, logos, and explicitly framed images keep
 their own sizing rules. For detailed diagrams or unusually long images, link
 the displayed image to its original file so readers can view it at full size.
 
+### Per-block image height
+
+Set `image_max_height` on a block to cap its images without enlarging them.
+This works for standard-page manual cards, generated page cards, and landing-page
+card sections, using the same shared image handling as image shapes. Individual
+manual cards can override the block value with their own `image_max_height`.
+Use a CSS length such as `"200px"` or `"15rem"`. The limit applies at all screen
+sizes, and images continue to fit the available width. Omit it to retain the
+theme's existing sizing.
+
+For book covers or other images that should remain fully visible, combine the
+limit with `image_shape: original` and `image_fit: contain`. These can also be
+set on the block and inherited by its cards. Images are centred in their frame.
+
+```yaml
+blocks:
+  - type: standard # Use type: cards on a standard page.
+    title: Books
+    columns: 1
+    image_max_height: "200px"
+    image_shape: original
+    image_fit: contain
+    cards:
+      - title: First book
+        image: /assets/images/book-cover.jpg
+        image_alt: Cover of the first book
+        text: A short description.
+      - title: Second book
+        image: /assets/images/second-cover.jpg
+        image_alt: Cover of the second book
+        image_max_height: "150px"
+        text: This card overrides the block's height limit.
+```
+
+For the `page-cards.html` Liquid include, pass `image_max_height="200px"` just
+like `image_shape` and `image_fit`.
+
 ## Image shapes and cropping
 
 Choose an image shape to keep photographs consistent without editing each file.

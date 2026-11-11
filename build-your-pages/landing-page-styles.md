@@ -241,6 +241,11 @@ images sit above the text. Image shape, fitting, and crop options still apply.
 
 The optional `card_category` field adds a short label above a manually authored card's title. Omit it to keep the existing appearance. It is plain text, displayed in uppercase using the card's surface text colour; it is separate from the title and link.
 
+Set `image_max_height: "200px"` on the card block to limit its images, or on
+an individual manual card to override the block limit. Use `image_shape: original`
+and `image_fit: contain` to preserve complete book covers and diagrams. See
+[Image handling]({{ "/reference/image-handling/" | relative_url }}) for an example.
+
 ## Partner organisations
 
 Use `type: "partner-logos"` for funders, collaborators, and institutions. Its position in `blocks` determines where it is displayed.
